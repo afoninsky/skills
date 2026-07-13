@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f6f6f6"/>
+  <rect x="230" y="190" width="740" height="420" rx="44" fill="#2b2b2b"/>
+  <text x="600" y="390" fill="#e8e8e8" font-family="Arial, sans-serif" font-size="48" font-weight="700" text-anchor="middle">Back panel</text>
+  <path d="M420 275 L735 500 M475 505 L790 310 M530 260 L655 545" stroke="#bdbdbd" stroke-width="12" stroke-linecap="round"/>
+  <text x="600" y="700" fill="#333" font-family="Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">Visible scratches on back</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f5f2ee"/>
+  <rect x="400" y="120" width="400" height="330" rx="42" fill="#2f3437"/>
+  <rect x="370" y="415" width="460" height="115" rx="48" fill="#25292c"/>
+  <rect x="570" y="525" width="60" height="135" fill="#4c5459"/>
+  <path d="M600 660 L430 735 M600 660 L770 735 M600 660 L600 755" stroke="#4c5459" stroke-width="30" stroke-linecap="round"/>
+  <text x="600" y="75" fill="#333" font-family="Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">Desk chair, brand not visible</text>
+  <text x="600" y="785" fill="#555" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">Large pickup-only item</text>
+</svg>

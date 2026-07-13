@@ -1,0 +1,60 @@
+{
+  "skill_name": "marktplaats-ad-creator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I uploaded photos of a used Sony WH-1000XM4 headset with the case and cable. Create a Marktplaats ad and price it so I have room to negotiate, but don't enable bids.",
+      "expected_output": "A Dutch listing draft with image-based condition analysis, comparable-market pricing logic using cited comparables, private floor/target/asking prices, confirmation before posting, and explicit Bieden disabled.",
+      "files": [
+        "evals/files/sony-wh1000xm4-overview.svg",
+        "evals/files/sony-wh1000xm4-accessories.svg"
+      ],
+      "expectations": [
+        "The output uses visible photo evidence, including the Sony WH-1000XM4 model and included case or cable.",
+        "The output asks for missing critical details only if needed.",
+        "The output includes a comparable evidence table with source, URL, price, condition, observed date, and pricing impact.",
+        "The output includes floor, target cash price, and asking price.",
+        "The output sets price type to Vraagprijs.",
+        "The output says Bieden toestaan must be toggled off if automatically enabled.",
+        "The output explicitly disables Bieden or bidding.",
+        "The output does not publish without confirmation."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Use these pictures of my old desk chair and list it on marktplaats. I want money, not just fastest sale. Pickup only in Amsterdam. Do not add the bet option.",
+      "expected_output": "A leverage-oriented Marktplaats draft that infers visible condition from photos, asks about brand/model or damage if unclear, sets pickup-only logistics, and avoids bidding/bet options.",
+      "files": [
+        "evals/files/desk-chair-overview.svg",
+        "evals/files/desk-chair-wear.svg"
+      ],
+      "expectations": [
+        "The output does not hard-stop solely because the exact chair model is unknown.",
+        "The output treats 'bet option' as the Marktplaats bidding option.",
+        "The output asks for brand/model or condition clarification if photos do not prove it.",
+        "The output applies furniture-specific pricing logic with pickup friction and local listing density.",
+        "The output uses pickup-only logistics.",
+        "The output avoids weak quick-sale wording.",
+        "The output includes an explicit pre-publish confirmation gate."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I have a Nintendo Switch OLED with dock, charger, 2 games, and visible scratches on the back. Please research price and create the Marktplaats listing in the browser. I'm open to a trade if it helps, but no bidding.",
+      "expected_output": "A researched listing plan with honest defect disclosure, private cash/trade leverage pricing, browser posting steps, Vraagprijs selected, Bieden toestaan off, Direct Kopen off unless requested, and user confirmation before publish.",
+      "files": [
+        "evals/files/switch-oled-overview.svg",
+        "evals/files/switch-oled-scratches.svg"
+      ],
+      "expectations": [
+        "The output discloses the visible scratches.",
+        "The output applies electronics-specific pricing logic using exact model, accessories, and working status.",
+        "The output preserves trade leverage without choosing a trade-only or bidding price type.",
+        "The output uses cited comparable evidence before pricing.",
+        "The output states that Bieden remains disabled.",
+        "The output verifies final review fields for price type, bidding state, Direct Kopen, and paid promotion before publish.",
+        "The output stops before final publication."
+      ]
+    }
+  ]
+}

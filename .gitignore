@@ -1,0 +1,5 @@
+.DS_Store
+*.py[cod]
+__pycache__/
+build/
+skills-list.txt

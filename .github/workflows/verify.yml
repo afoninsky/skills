@@ -1,0 +1,99 @@
+name: Verify skills
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.10"
+          - "3.14"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install lint dependency
+        run: python -m pip install ruff==0.15.21
+      - name: Validate public skill contents
+        run: python scripts/verify_skills.py --repository .
+      - name: Lint Python
+        run: ruff check --select E4,E7,E9,F,I scripts tests skills/agent-work-auditor/scripts
+      - name: Run repository verifier tests
+        run: python -m unittest tests/test_verify_skills.py -v
+      - name: Run auditor renderer tests
+        run: python skills/agent-work-auditor/scripts/test_generate_report.py
+      - name: Verify generated auditor example
+        run: |
+          mkdir -p build
+          python skills/agent-work-auditor/scripts/generate_report.py \
+            --input skills/agent-work-auditor/examples/post-hoc-audit.json \
+            --output build/post-hoc-audit.html
+          cmp skills/agent-work-auditor/examples/post-hoc-audit.html build/post-hoc-audit.html
+
+  install:
+    name: skills CLI discovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+      - name: Verify skills CLI discovery
+        run: |
+          npx --yes skills@1.5.16 add . --list | tee skills-list.txt
+          grep -F "agent-work-auditor" skills-list.txt
+          grep -F "marktplaats-ad-creator" skills-list.txt
+      - name: Verify clean Codex installation
+        run: |
+          install_root="$(mktemp -d)"
+          cd "$install_root"
+          npx --yes skills@1.5.16 add "$GITHUB_WORKSPACE" \
+            --skill agent-work-auditor \
+            --skill marktplaats-ad-creator \
+            --agent codex \
+            --copy \
+            --yes
+          test -f .agents/skills/agent-work-auditor/SKILL.md
+          test -f .agents/skills/marktplaats-ad-creator/SKILL.md
+
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 0
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          cache: false
+          go-version: 1.26.5
+      - name: Scan repository history for secrets
+        run: go run github.com/zricethezav/gitleaks/v8@v8.30.1 git . --no-banner --redact
+      - name: Scan working tree for secrets
+        run: go run github.com/zricethezav/gitleaks/v8@v8.30.1 dir . --no-banner --redact

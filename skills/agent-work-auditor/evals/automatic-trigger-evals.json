@@ -1,0 +1,82 @@
+[
+  {
+    "query": "I finished the checkout refactor across the API, database migration, and React flow. Run the relevant tests, make sure the mobile error state works, then give me the final handoff.",
+    "should_trigger": true
+  },
+  {
+    "query": "Codex says commit a18d9b introduced our intermittent websocket disconnect and that its new retry patch fixes it. Audit that root-cause claim before we ship.",
+    "should_trigger": true
+  },
+  {
+    "query": "The agent produced benchmark.json and claims the new parser is 23% faster without regressions. Check the experiment and final report before I send it to the team.",
+    "should_trigger": true
+  },
+  {
+    "query": "Complete the vendor recommendation using current pricing and security documentation, then verify the material source claims before finalizing the memo.",
+    "should_trigger": true
+  },
+  {
+    "query": "The workbook and PDF board report are ready. Reconcile the formulas, inspect the rendered pages, and do a final quality gate before handoff.",
+    "should_trigger": true
+  },
+  {
+    "query": "Three subagents implemented separate parts of the tenant migration. Integrate their changes, verify the final state, and prepare the completion report.",
+    "should_trigger": true
+  },
+  {
+    "query": "Apply the Terraform change to rotate the production secret and deploy it after checking rollback and side effects.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit the previous agent's one-line null check and verify its claim that issue #418 is fixed, even though the patch is tiny.",
+    "should_trigger": true
+  },
+  {
+    "query": "A prior task claims all tests passed and no unrelated files changed. Inspect its transcript and working tree and tell me whether that completion statement is trustworthy.",
+    "should_trigger": true
+  },
+  {
+    "query": "Finish the customer portal, verify the actual browser workflow and accessibility, and publish only when the integrated result is ready.",
+    "should_trigger": true
+  },
+  {
+    "query": "What is dependency injection, and why would I use it in a Python service?",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain what parseInvoice does in src/billing/parser.ts. Do not change anything.",
+    "should_trigger": false
+  },
+  {
+    "query": "Draft an implementation plan for adding SSO next quarter; we are not building it yet.",
+    "should_trigger": false
+  },
+  {
+    "query": "Brainstorm Postgres, DynamoDB, and SQLite tradeoffs for a future offline-first prototype.",
+    "should_trigger": false
+  },
+  {
+    "query": "Tell me the page count, paper size, and file size of annual-report.pdf.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this pre-existing pull request for bugs and missing tests. I am not asking you to validate another agent's claims or process.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix the spelling of 'recieve' in README.md and commit that metadata-only change.",
+    "should_trigger": false
+  },
+  {
+    "query": "Show me git status and summarize which files are modified; don't edit or verify the implementation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Locate the UserSession type and tell me which module exports it.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run date and tell me the current local time.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0",
+  "audit": {
+    "id": "audit-post-hoc-001",
+    "title": "Agent Work Audit",
+    "generatedAt": "2026-07-10T12:00:00+02:00",
+    "generatorVersion": "1.0.0",
+    "phase": "post_hoc",
+    "gateState": "not_applicable",
+    "iteration": 1,
+    "independence": "fresh_review",
+    "confidence": "high",
+    "risk": "low",
+    "humanConfirmation": "not_required",
+    "subject": {
+      "summary": "Post-hoc audit of the report contract",
+      "claimedState": "artifact sha256:audited-example",
+      "auditedState": "artifact sha256:audited-example",
+      "targetEnvironment": "Offline HTML in a current standards-compliant browser"
+    },
+    "redactionStatus": "reviewed"
+  },
+  "verdicts": {
+    "outcome": "pass",
+    "process": "pass",
+    "claims": "pass"
+  },
+  "summary": {
+    "text": "The post-hoc source record validates and renders as standalone HTML.",
+    "mainLimitation": "No external integration was required for this example.",
+    "decisiveEvidenceIds": ["E1"]
+  },
+  "inputs": [
+    {
+      "id": "I1",
+      "name": "user_contract",
+      "material": true,
+      "status": "found",
+      "location": "Current conversation",
+      "why": "Defines the required report behavior"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Post-hoc reports can mark the delivery gate not applicable.",
+      "priority": "critical",
+      "status": "satisfied",
+      "evidenceNeeded": "A validated post-hoc source record",
+      "evidenceIds": ["E1"],
+      "gap": ""
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "The post-hoc example passes renderer validation.",
+      "materiality": "material",
+      "classification": "verified",
+      "evidenceIds": ["E1"]
+    }
+  ],
+  "checks": [
+    {
+      "id": "K1",
+      "name": "Render post-hoc example",
+      "oracle": "The renderer exits zero and writes standalone HTML.",
+      "oracleProvenance": "Requirement R1",
+      "environment": "Python 3.10+ standard library",
+      "result": "passed",
+      "requirementIds": ["R1"],
+      "evidenceIds": ["E1"]
+    }
+  ],
+  "processChecks": [
+    {
+      "id": "P1",
+      "name": "Preserve ownership",
+      "status": "passed",
+      "notes": "The audit records evidence without changing the audited subject.",
+      "evidenceIds": ["E1"]
+    }
+  ],
+  "findings": [],
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "command",
+      "label": "Renderer execution",
+      "summary": "The source record validated and produced HTML.",
+      "locator": "scripts/generate_report.py",
+      "observedAt": "2026-07-10T12:00:00+02:00",
+      "stateId": "artifact sha256:audited-example",
+      "environment": "Python 3.10+ on the audit workstation",
+      "sourceVersion": "agent-work-auditor schema 1.0",
+      "coverage": "Schema validation and offline rendering for this fixture",
+      "refreshTrigger": "Any fixture, schema, validator, renderer, or state change",
+      "excerpt": "Wrote agent-work-audit.html",
+      "command": {
+        "display": "python3 scripts/generate_report.py --input examples/post-hoc-audit.json --output agent-work-audit.html",
+        "exitCode": 0
+      }
+    }
+  ],
+  "processSummary": "The post-hoc audit remained read-only and used fresh renderer evidence.",
+  "evidenceQuality": "The fixture exercises required metadata, verdicts, state identity, evidence provenance, and rendering.",
+  "residualRisks": [],
+  "recommendation": {
+    "decision": "accept",
+    "summary": "Accept the validated post-hoc report contract.",
+    "items": []
+  },
+  "corrections": []
+}
