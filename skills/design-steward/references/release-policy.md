@@ -1,0 +1,43 @@
+# Release and compatibility policy
+
+## Compatibility
+
+- Target agents that support the public `SKILL.md` format and relative bundled resources.
+- Require Python 3.10 or newer only for `scripts/validate_design_brief.py`; the written workflow and templates remain usable without Python when checked manually.
+- Keep the portable core independent of any design, research, analytics, repository, browser, or collaboration service.
+- Treat named services as replaceable examples selected per approved engagement.
+
+## Versioning
+
+Use semantic versioning for published package releases:
+
+- **Patch:** clarification, typo, equivalent template improvement, or validator fix that does not change accepted records or gate meaning.
+- **Minor:** backward-compatible capability, optional record type, benchmark fixture, or additional service-neutral guidance.
+- **Major:** changed Design Brief schema, authority boundary, evidence level, hard gate, record status, lifecycle gate, validator contract, or required migration.
+
+Record the package version and immutable commit in every engagement header. Fingerprint the exact package before a benchmark or product pilot.
+
+## Change control
+
+Require every portable-core change to state:
+
+- product-neutral problem and public evidence;
+- affected contract, template, validator, or fixture;
+- backward compatibility and migration effect;
+- benchmark scenarios affected;
+- hard-gate and authority-boundary review;
+- verification performed.
+
+Never promote an engagement-specific pattern, product term, artifact, metric, participant finding, or credential into the portable core. Abstract a reusable change and review it independently.
+
+## Migration
+
+- Preserve accepted engagement records under the package version that created them.
+- Migrate by creating a new record version with explicit `supersedes` links; do not rewrite accepted evidence or decisions.
+- Revalidate the Design Brief after any schema migration.
+- Repeat affected gates when a new version changes authority, constraints, evidence interpretation, hard gates, comparison logic, or artifact semantics.
+- Keep old benchmark fixtures addressable for regression comparison.
+
+## Deprecation
+
+Deprecate a field, status, or workflow for at least one minor release before removal unless continued use creates a safety, privacy, legal, or evidence-integrity risk. Document the safe replacement and migration check. Use a major release for removal.

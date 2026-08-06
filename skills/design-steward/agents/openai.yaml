@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Steward"
+  short_description: "Run evidence-led professional web UX engagements"
+  default_prompt: "Use $design-steward to turn this product-neutral brief into an evidence-led web UX engagement."
