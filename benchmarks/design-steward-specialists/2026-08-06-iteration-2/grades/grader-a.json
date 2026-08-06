@@ -1,0 +1,93 @@
+{
+  "grader_id": "A",
+  "grader_type": "independent-blind-model",
+  "cases": [
+    {
+      "case": 1,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 4,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "A",
+      "rationale": "A turns the object-first charter into a more specific, coherent workshop-bench system: its time bracket clarifies duration without urgency, its comparison hierarchy covers every supplied fact, and its unavailable-during-confirmation recovery is explicit without promising a hold. B is faithful and thorough, but its card-and-window-rail direction is more generic and its traceability is less complete."
+    },
+    {
+      "case": 2,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 4,
+        "distinctiveness": 4,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 4,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "B",
+      "rationale": "B offers the stronger brief-specific direction through an exactly-three-slot rail, explicit confirmation rows, and a disciplined unknown-state treatment for interruptions. Its narrow-screen collapsible facts summary slightly weakens the charter's continuously-visible-facts requirement, but the overall system is more distinctive and internally resolved than A's more familiar stepper-and-receipt treatment."
+    },
+    {
+      "case": 3,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "tie",
+      "rationale": "Both directions fully realize the status-first civic-record brief with a coherent provenance spine, restrained public-fixture character, explicit correction and failure paths, realistic responsive behavior, and careful high-contrast and non-color treatment. Neither invents the prohibited service facts, and neither has a material brief-specific advantage."
+    },
+    {
+      "case": 4,
+      "A": {
+        "brief_fidelity": 4,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": [
+          "The failed-confirmation state says it keeps the draft visible, inventing draft-retention behavior even though the output's Limitations section says draft persistence is undefined and requires a product decision."
+        ]
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "B",
+      "rationale": "B provides the stronger comparison-first workbench: its clipped decision tab cleanly distinguishes provisional intent from confirmed status, keeps keyboard and responsive transformations explicit, and carefully refuses to promise draft retention or other undefined recovery semantics. A is visually strong and well covered, but its failed-confirmation draft-retention statement conflicts with its own stated uncertainty."
+    }
+  ],
+  "limitations": "Independent blind text-only grading against the supplied protocol and case briefs. No interface was rendered or implemented, so visual execution, measured contrast, runtime behavior, and real assistive-technology behavior could not be verified."
+}

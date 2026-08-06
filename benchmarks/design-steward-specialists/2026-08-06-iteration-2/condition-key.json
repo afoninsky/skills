@@ -1,0 +1,25 @@
+{
+  "method": "candidate is A for odd cases and B for even cases",
+  "pairs": {
+    "case-1": {
+      "A": "candidate",
+      "B": "baseline",
+      "case_id": 1
+    },
+    "case-2": {
+      "A": "baseline",
+      "B": "candidate",
+      "case_id": 2
+    },
+    "case-3": {
+      "A": "candidate",
+      "B": "baseline",
+      "case_id": 3
+    },
+    "case-4": {
+      "A": "baseline",
+      "B": "candidate",
+      "case_id": 4
+    }
+  }
+}

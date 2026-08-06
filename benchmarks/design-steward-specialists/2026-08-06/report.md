@@ -2,6 +2,8 @@
 
 Date: 2026-08-06
 
+> **Release-readiness status:** superseded by the corrected matched run in `../2026-08-06-iteration-2/report.md`. This first run remains valid as historical ticket evidence, but its baseline used one agent for all four cases while the candidate used one fresh agent per case. Do not use its comparative effect size as release-readiness evidence.
+
 Base Design Steward: `fca00ad2c3e25be38169f5ab03913ddf9c7e6ae1`
 
 Skills CLI: `1.5.16`

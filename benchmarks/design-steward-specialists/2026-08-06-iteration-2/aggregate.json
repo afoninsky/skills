@@ -1,0 +1,119 @@
+{
+  "grader_files": [
+    "grades/grader-a.json",
+    "grades/grader-b.json"
+  ],
+  "limitations": [
+    "The outputs and blind reviews are textual model evidence, not rendered-interface or qualified-human evidence.",
+    "Four synthetic cases do not estimate population-level variance.",
+    "The exact service-side model identifier and sampling parameters were not exposed."
+  ],
+  "non_tie_preferences": 7,
+  "pairs": [
+    {
+      "case_id": 1,
+      "graders": [
+        {
+          "grader_id": "unknown",
+          "preference": "candidate"
+        },
+        {
+          "grader_id": "unknown",
+          "preference": "candidate"
+        }
+      ],
+      "pair_id": "case-1"
+    },
+    {
+      "case_id": 2,
+      "graders": [
+        {
+          "grader_id": "unknown",
+          "preference": "candidate"
+        },
+        {
+          "grader_id": "unknown",
+          "preference": "baseline"
+        }
+      ],
+      "pair_id": "case-2"
+    },
+    {
+      "case_id": 3,
+      "graders": [
+        {
+          "grader_id": "unknown",
+          "preference": "tie"
+        },
+        {
+          "grader_id": "unknown",
+          "preference": "candidate"
+        }
+      ],
+      "pair_id": "case-3"
+    },
+    {
+      "case_id": 4,
+      "graders": [
+        {
+          "grader_id": "unknown",
+          "preference": "candidate"
+        },
+        {
+          "grader_id": "unknown",
+          "preference": "candidate"
+        }
+      ],
+      "pair_id": "case-4"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "model-graded-results-before-release-interpretation",
+  "summary": {
+    "baseline": {
+      "mean_scores": {
+        "brief_fidelity": 4.875,
+        "coherence": 4.375,
+        "coherence_distinctiveness_mean": 4.3125,
+        "coverage": 5.0,
+        "distinctiveness": 4.25,
+        "traceability": 4.375
+      },
+      "preference_rate_among_non_ties": 0.14285714285714285,
+      "preferences": 1,
+      "tier1_failure_cases": [
+        4
+      ],
+      "word_count_maximum": 687,
+      "word_count_minimum": 597,
+      "word_counts": [
+        661,
+        597,
+        687,
+        686
+      ]
+    },
+    "candidate": {
+      "coherence_distinctiveness_gain": 0.6875,
+      "mean_scores": {
+        "brief_fidelity": 4.75,
+        "coherence": 5.0,
+        "coherence_distinctiveness_mean": 5.0,
+        "coverage": 5.0,
+        "distinctiveness": 5.0,
+        "traceability": 5.0
+      },
+      "preference_rate_among_non_ties": 0.8571428571428571,
+      "preferences": 6,
+      "tier1_failure_cases": [],
+      "word_count_maximum": 687,
+      "word_count_minimum": 671,
+      "word_counts": [
+        687,
+        671,
+        677,
+        680
+      ]
+    }
+  }
+}

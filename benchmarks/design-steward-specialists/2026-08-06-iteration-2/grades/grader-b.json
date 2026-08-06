@@ -1,0 +1,94 @@
+{
+  "grader_id": "B",
+  "grader_type": "independent-blind-model",
+  "cases": [
+    {
+      "case": "case-1",
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 4,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "A",
+      "rationale": "A turns the 30-minute comparison problem into a more distinctive and tightly controlled workshop-bracket system while preserving neutral availability, explicit recovery, and every representative field. B is complete and usable, but its window rail and card/grid treatment are more familiar and its traceability is less explicit about the open-axis choices."
+    },
+    {
+      "case": "case-2",
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 5,
+        "distinctiveness": 4,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 4,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "A",
+      "rationale": "A better protects the charter's requirement that confirmed facts remain continuously visible, including by moving the summary above the active control on small screens. B has the stronger exactly-three-slots motif and more explicit traceability, but making the narrow-screen facts ledger collapsible risks hiding confirmed facts at the point they are meant to remain continuously available."
+    },
+    {
+      "case": "case-3",
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 4,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "A",
+      "rationale": "Both directions faithfully cover the civic record, provenance, correction, responsive, failure, and high-contrast requirements. A is marginally stronger because the stewardship spine gives recorded history, unavailable information, recovery, and amendment a restrained but more specific visual grammar, while keeping the optional illustration outside the task path."
+    },
+    {
+      "case": "case-4",
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 4,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "B",
+      "rationale": "B's clipped-corner checkout tag is the more coherent provisional-decision marker: it remains explicitly textual, open, revisable before confirmation, and disappears cleanly in favor of supplied status and audit data. A is comprehensive, but its extra queue rail adds structure without clear brief value and the check-shaped review mark is less clearly provisional despite the accompanying label."
+    }
+  ],
+  "limitations": [
+    "Blind model grading of text-only specifications cannot substitute for rendered visual review, representative-user usability evaluation, accessibility conformance testing, or runtime verification.",
+    "The score distinctions among these generally strong outputs reflect rubric judgment at the upper end of a five-point scale."
+  ]
+}
