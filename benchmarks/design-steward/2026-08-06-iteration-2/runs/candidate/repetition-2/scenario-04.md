@@ -2,10 +2,10 @@
 
 I can’t responsibly create three information architectures yet. The shared baseline required for fair, independent directions is absent, and lorem ipsum would conceal rather than resolve domain meaning, navigation labels, content hierarchy, and state behavior. Any three outputs now would be arbitrary themed variants, not credible structural alternatives.
 
-**Proposed outcome:** **Iterate**  
-**Decision in scope:** readiness to generate three information architectures  
-**Brief version:** Unassigned — Blocking Unknown  
-**Human approver:** Unassigned — Blocking Unknown  
+**Proposed outcome:** **Iterate**
+**Decision in scope:** readiness to generate three information architectures
+**Brief version:** Unassigned — Blocking Unknown
+**Human approver:** Unassigned — Blocking Unknown
 **Evidence level:** **Not yet evidenced**; no validation claim is made.
 
 ## Blocking Unknowns

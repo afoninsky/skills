@@ -2,8 +2,8 @@
 
 I can create a responsive workflow from scratch, but I cannot use the competitor’s navigation, labels, or visual language under the current conditions. In From-scratch mode, those elements are Open; importing a competitor’s surface requires it to be deliberately admitted through an approved brief, with source provenance, rights, transformation, and transfer limitations recorded. User familiarity is a hypothesis, not evidence or permission.
 
-**Decision in scope:** G0/G1 intake and brief readiness; brief version: none supplied.  
-**Proposed outcome:** **Pivot** to an independently developed workflow.  
+**Decision in scope:** G0/G1 intake and brief readiness; brief version: none supplied.
+**Proposed outcome:** **Pivot** to an independently developed workflow.
 **Named approver:** **Unassigned — Blocking Unknown** (Product Owner name and role required).
 
 ## Gate status

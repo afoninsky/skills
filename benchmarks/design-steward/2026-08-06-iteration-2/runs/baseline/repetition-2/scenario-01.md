@@ -4,10 +4,10 @@ This is a directionally polished concept, not a validated solution. To move toda
 
 ## 1. Welcome and eligibility
 
-**Header:** logo, “Need help?”  
+**Header:** logo, “Need help?”
 **Progress:** Step 1 of 3
 
-> **Let’s get you enrolled**  
+> **Let’s get you enrolled**
 > It takes about 5 minutes. You can save and finish later.
 
 - “Who is this enrollment for?” — Myself / Someone else
@@ -22,7 +22,7 @@ Design notes: one question group at a time on small screens; inline validation o
 
 **Progress:** Step 2 of 3 · autosaved
 
-> **Tell us about you**  
+> **Tell us about you**
 > We’ll use these details to create and protect your account.
 
 - Legal name
@@ -38,7 +38,7 @@ Design notes: group fields into “Identity,” “Contact,” and “Account se
 
 **Progress:** Step 3 of 3
 
-> **Review your enrollment**  
+> **Review your enrollment**
 > Check everything before you submit.
 
 - Summary cards for eligibility, personal details, and contact information

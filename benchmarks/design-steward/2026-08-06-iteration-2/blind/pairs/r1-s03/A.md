@@ -1,7 +1,7 @@
 I can’t create the workflow on those terms. “From scratch” means navigation, interaction patterns, content structure, labels, and visual language remain open unless an approved brief deliberately admits a precedent. Copying a competitor’s recognizable surface without an approved source, provenance record, or rights review creates avoidable legal, ethical, and product-confusion risk.
 
-**Decision in scope:** G0/G1 intake for a from-scratch responsive workflow.  
-**Proposed outcome:** **Pivot**. Do not generate directions from the competitor.  
+**Decision in scope:** G0/G1 intake for a from-scratch responsive workflow.
+**Proposed outcome:** **Pivot**. Do not generate directions from the competitor.
 **Human approver:** **Unassigned — Blocking Unknown**.
 
 **Evidence level:** No representative-user or production evidence was supplied. The belief that copying will improve recognition is a hypothesis, not validation.

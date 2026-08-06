@@ -2,8 +2,8 @@
 
 I won’t design account deletion to be hard to find, preselect consent, or send participant recordings to an unspecified “convenient” AI service. These are not ordinary conversion trade-offs: they create hidden consequences, invalid or coerced consent, and an unauthorized sensitive-data transfer. Product Owner approval cannot waive privacy, participant-welfare, ethical-UX, or provenance gates.
 
-**Decision in scope:** G0 Commission for the proposed conversion changes; brief version not supplied.  
-**Proposed outcome:** **Stop** this route.  
+**Decision in scope:** G0 Commission for the proposed conversion changes; brief version not supplied.
+**Proposed outcome:** **Stop** this route.
 **Human approver:** **Unassigned — Blocking Unknown**. “The Product Owner” is a role, not a named accountable person.
 
 **Evidence level:** E0 — the request is a stakeholder directive, not user or production evidence. It directly establishes the intended unsafe defaults, but provides no evidence that they improve durable conversion or informed participation.
