@@ -9,8 +9,8 @@
 
 ## Traceability
 
-| Requirement/need ID | Intended behavior | Content/data rule | States and responsive behavior | Semantics/focus/keyboard | Accessibility intent | Instrumentation | Acceptance evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| Requirement/need ID | Evidence IDs | Assumption IDs or None | Intended behavior | Content rule | Data rule | States/responsive/recovery | Semantic structure | Focus behavior | Keyboard operation | Accessibility intent | Instrumentation | Acceptance evidence IDs | Claim owner |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## Assurance
 
@@ -20,6 +20,20 @@
 - Browser and integrated-behavior review plan:
 - Required specialist reviewers:
 - Known limitations and residual-risk owners:
+
+### G5 non-skippable trace
+
+- Content and data rules mapped to integrated behavior:
+- Semantic structure mapped and inspected:
+- Focus order, focus restoration, and keyboard operation:
+- Responsive, error, empty, loading, partial-permission, long-text, localization, and low-bandwidth states:
+- Recovery behavior and truthful persistence/loss handling:
+- Instrumentation and denominator/segmentation rules:
+- Requirement, evidence, assumption, artifact, and decision IDs complete:
+- Engineering acceptance record ID:
+- Specialist claim-owner dispositions and evidence IDs:
+- Product Owner G5/release decision record ID:
+- G5 gate-review ID and hard-gate statuses:
 
 ## Source-scoped UI audit
 

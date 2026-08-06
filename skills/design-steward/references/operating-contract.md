@@ -61,7 +61,7 @@ Never infer a hidden constraint from an implementation, convention, or stakehold
 - Keep users, outcomes, domain meaning, evidence, duties, platform realities, and explicit Fixed constraints binding.
 - Admit no prior product pattern, design system, brand convention, or stylistic precedent unless the approved brief deliberately supplies it.
 
-For both modes, create a new brief version and impact review when users, outcomes, mode, Fixed constraints, evidence, permissions, or evaluation criteria materially change.
+For both modes, when users, outcomes, mode, Fixed constraints, evidence, permissions, or evaluation criteria materially change, create a new brief version, complete an impact review, and obtain the named Product Owner's reapproval before generation or continuation.
 
 ## Authority model
 
@@ -78,6 +78,8 @@ Reserve these decisions for the Product Owner or service owner:
 - authorize launch, rollback, scaling, limitation, or retirement.
 
 Reserve evidence and risk claims for qualified specialists in their domains. The Steward must not certify research validity, accessibility, content truth, engineering feasibility, security, privacy, legal compliance, safety, or measurement quality on their behalf.
+
+Record each reserved human approver by human name and role; a role label alone is not a name. If no human has been named, record **Unassigned — Blocking Unknown** and keep the gate non-passing.
 
 ## Capability registry
 

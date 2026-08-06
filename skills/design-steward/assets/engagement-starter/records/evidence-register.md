@@ -6,8 +6,8 @@
 - Owner:
 - Updated:
 
-| Evidence ID | Claim supported | Level | Population and context | Method | Source/provenance | Recency | Confidence/uncertainty | Access class | Limitations | Supersedes |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Evidence ID | Claim ID and scoped claim | Requirement IDs | Assumption IDs | Level | Population | Context | Task | Artifact/release | Method | Source/provenance | Observed date/recency | Claim owner | Confidence/uncertainty | Access class | Limitations | Supersedes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## Representation statement
 

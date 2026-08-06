@@ -37,15 +37,28 @@ jobs:
       - name: Validate public skill contents
         run: python scripts/verify_skills.py --repository .
       - name: Lint Python
-        run: ruff check --select E4,E7,E9,F,I scripts tests skills/agent-work-auditor/scripts skills/design-steward/scripts
+        run: >-
+          ruff check --select E4,E7,E9,F,I
+          scripts
+          tests
+          skills/agent-work-auditor/scripts
+          skills/design-steward/scripts
+          benchmarks/design-steward/2026-08-06/scripts
       - name: Run repository verifier tests
         run: python -m unittest tests/test_verify_skills.py -v
       - name: Verify Design Steward specialist integration
         run: python -m unittest tests/test_design_steward_specialists.py -v
+      - name: Verify Design Steward release contract
+        run: python -m unittest tests/test_design_steward_release_contract.py -v
       - name: Run auditor renderer tests
         run: python skills/agent-work-auditor/scripts/test_generate_report.py
       - name: Run Design Brief validator tests
         run: python skills/design-steward/scripts/test_validate_design_brief.py
+      - name: Reproduce frozen benchmark aggregates
+        run: |
+          python benchmarks/design-steward/2026-08-06/scripts/build_blind_pairs.py
+          python benchmarks/design-steward/2026-08-06/scripts/aggregate_grades.py
+          git diff --exit-code -- +            benchmarks/design-steward/2026-08-06/blind +            benchmarks/design-steward/2026-08-06/condition-key.json +            benchmarks/design-steward/2026-08-06/aggregate.json
       - name: Verify generated auditor example
         run: |
           mkdir -p build
@@ -102,6 +115,8 @@ jobs:
           test -f .agents/skills/frontend-design/SKILL.md
           test -f .agents/skills/frontend-design/LICENSE.txt
           test -f .agents/skills/web-design-guidelines/SKILL.md
+          python "$GITHUB_WORKSPACE/skills/design-steward/scripts/verify_specialists.py" \
+            "$install_root"
 
   secrets:
     name: Secret scan

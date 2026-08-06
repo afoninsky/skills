@@ -17,7 +17,7 @@ A static `web-design-guidelines` review is E1 specialist/heuristic input. Record
 
 ## Claim language
 
-Record population, context, task, artifact or release, method, date, limitations, and evidence ID. Use language such as:
+Record a stable claim ID, linked requirement and applicable assumption IDs, claim owner, population, context, task, artifact or release, method, date, limitations, and evidence ID. Use language such as:
 
 - “E1 specialist review found…”
 - “E2 interviews suggest a hypothesis that…”
@@ -38,7 +38,7 @@ Track each as Pass, Fail, or Not yet evidenced:
 
 Do not permit a score, preference, schedule, or Product Owner decision to convert a failure into a pass. Preserve the objection and escalate or stop.
 
-Use **Fail** only when evidence demonstrates a violation. Use **Not yet evidenced** when a required method, reviewer, artifact, or result is absent or incomplete. Neither state passes the gate, but preserve the distinction so missing assurance is not misrepresented as an observed defect.
+Record exactly one status for each applicable hard gate. Use **Fail** when supplied or collected evidence demonstrates a violation, even when approval or review is also missing. Use **Not yet evidenced** only for the separate absent or incomplete method, reviewer, artifact, or result. Neither state passes, but preserve both facts without relabeling the observed violation as missing assurance.
 
 ## Design record graph
 
@@ -55,6 +55,8 @@ Maintain engagement-local records with stable typed IDs and explicit links:
 - live-learning hypotheses, changes, measures, and closure.
 
 Use **Draft**, **Reviewed**, **Accepted**, **Superseded**, or **Retired**. Never overwrite an accepted decision; supersede it and link both records.
+
+IDs are immutable. Link records by stable IDs, not headings or row positions. Supersession creates a new ID plus forward and backward links; it never mutates the accepted record.
 
 ## Sensitive data boundary
 

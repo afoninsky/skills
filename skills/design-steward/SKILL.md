@@ -1,6 +1,7 @@
 ---
 name: design-steward
 description: Run product-neutral, evidence-led design stewardship for responsive websites and web applications. Use when Codex must frame or conduct an end-to-end UX engagement, prepare or validate an approved Design Brief, plan representative-user research, create independently developed design directions, choose prototyping fidelity, compare variants against a frozen rubric, govern accessibility/content/privacy/ethics gates, produce an implementation contract, or organize post-launch learning. Do not use for a quick isolated UI code tweak, pure visual polish, or an unapproved production write.
+metadata: {version: "1.0.0"}
 ---
 
 # Design Steward
@@ -61,6 +62,19 @@ At every gate, record exactly one proposed outcome: **Proceed**, **Iterate**, **
 
 Use **Not yet evidenced** when required review or evidence is missing; use **Fail** only when evidence shows the gate is violated. Treat both as non-passing. Prefer **Iterate** for a safely remediable gap, **Pivot** when the framing or route must change, and **Stop** when work is unauthorized, unsafe, prohibited, or lacks an accountable owner.
 
+## Check every gate response
+
+Before returning a gate decision or recommendation, verify the relevant items below. Do not omit a material item merely to be concise.
+
+- **Unknowns:** list Blocking Unknowns, which stop generation, separately from Working Assumptions, which require rationale, risk, owner, evidence plan, and review or expiry. Write **None** for an empty category.
+- **Mode and change control:** in Evolution, classify legacy constraints. After a material change, create a new brief version, perform an impact review, and obtain the named Product Owner's reapproval before generation or continuation. In From-scratch, default information architecture, navigation, interaction, content structure, and visual language to Open while users, outcomes, domain meaning, evidence, duties, platform realities, and explicit Fixed constraints remain binding.
+- **Content baseline:** name gaps in objects, terminology, representative content, data conditions, and critical or hostile states before structure or direction work.
+- **Evidence:** link each material claim to stable claim, requirement, evidence, and applicable assumption IDs; scope it to the artifact or release, population, context, task, method, observation date or recency, and limitations; state direct contradictions, methodological mismatches, and missing evidence separately.
+- **Precedent:** record source, original context, abstracted principle, rights, transformation, and transfer limitations; never copy a surface.
+- **Hard gates:** record exactly one status for each applicable gate. Use **Fail** when supplied or collected evidence establishes a violation, even if approval or review is also missing. Use **Not yet evidenced** only for the separate missing assurance. Neither passes; Product Owner preference cannot waive or relabel either.
+- **G5 assurance:** for every requirement and delta, trace content rules, data rules, semantic structure, focus behavior, keyboard operation, responsive and hostile states, recovery, and instrumentation to integrated behavior and acceptance evidence IDs.
+- **Authority and next step:** record each human approver by name and role, qualified specialist claim owners, dissent and residual-risk owners, the proposed outcome, and the exact next approval or safe recovery action. A role label alone is not a human name; if none is supplied, record **Unassigned — Blocking Unknown** and do not propose Proceed. Specialists approve only scoped claims, engineering accepts implementation evidence, and the named Product Owner or service owner records the exact G5 or release decision; one approval cannot substitute for another.
+
 ## Compose capabilities deliberately
 
 Select the least-powerful capable mechanism:
@@ -81,9 +95,11 @@ Do not decide conflicts by vote, model confidence, or aesthetic averaging. Resol
 
 Default to three structurally distinct directions. Reduce the count only before generation with an approved rationale.
 
+In From-scratch mode, do not import a prior product pattern, design system, brand convention, or stylistic precedent unless the approved brief deliberately supplies it. Keep the full binding set named in the response checklist while leaving solution form Open.
+
 1. Freeze the approved brief, evidence baseline, realistic content and hostile states, hard gates, comparison rubric, and one distinct structural charter per direction.
 2. Develop each direction in isolation. When available and authorized, use a fresh `frontend-design` specialist sub-agent for the visual system. Do not expose sibling solution forms before its rationale and artifacts are frozen.
-3. Cite precedent and abstract it to a principle; record source, context, rights, and the transformation. Do not copy a surface.
+3. Cite precedent and abstract it to a principle; record source, original context, abstracted principle, rights, transformation, and transfer limitations. Do not copy a surface.
 4. Match prototype fidelity to the decisive risk. Preserve editable source and a portable review/export for every artifact.
 5. Freeze directions, run sameness review, then obtain specialist cross-critique.
 6. Disqualify any direction that fails a hard gate. Compare survivors against the frozen rubric and the claim-appropriate evidence.

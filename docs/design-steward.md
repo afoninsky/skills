@@ -2,6 +2,8 @@
 
 Design Steward runs a product-neutral, evidence-led design engagement for responsive websites and web applications. It helps frame the work, prepare an approved Design Brief, develop and compare independent directions, govern hard gates, create an implementation contract, and plan live learning. It recommends decisions; accountable humans approve them.
 
+Current package version: **1.0.0**.
+
 ## Install
 
 Install the portable core:
@@ -30,7 +32,15 @@ npx --yes skills@1.5.16 add vercel-labs/agent-skills \
   --yes
 ```
 
-The core has no required MCP, browser, design framework, paid service, or runtime dependency. Python 3.10 or newer is needed only for the optional Design Brief validator. The UI-audit specialist needs network access to retrieve its current canonical rules; when that source cannot be verified, the Steward records the audit as unavailable instead of fabricating a result.
+Verify that the installed companions match the revisions evaluated with this release:
+
+```bash
+python3 <skill-directory>/scripts/verify_specialists.py <project-root>
+```
+
+Stop if verification reports a missing skill or hash mismatch. Review and update provenance through a new Design Steward release instead of silently accepting upstream drift.
+
+The core has no required MCP, browser, design framework, paid service, or runtime dependency. Python 3.10 or newer is needed only for the optional Design Brief and specialist-integrity validators. The UI-audit specialist needs network access to retrieve its current canonical rules; when that source cannot be verified, the Steward records the audit as unavailable instead of fabricating a result.
 
 ## Start an engagement
 
@@ -55,6 +65,8 @@ directions after the brief is generation-ready.
 ```
 
 Create an engagement-local workspace outside the installed skill. Copy `assets/engagement-starter/` from the installed Design Steward directory into it. Complete `design-brief.json`; record missing material facts as Blocking Unknowns and safe temporary beliefs as Working Assumptions.
+
+Use the starter requirement and evidence registers to assign immutable IDs before implementation handoff. Link every material claim and G5 contract row to requirement, evidence, and applicable assumption IDs; supersede accepted records instead of rewriting them.
 
 Validate the structure:
 
@@ -94,6 +106,8 @@ Design Steward uses seven gates:
 
 At every gate, the Steward preserves evidence scope, assumptions, dissent, limitations, and the next human or specialist approval. **Fail** means evidence demonstrates a violation. **Not yet evidenced** means required assurance is absent. Neither passes.
 
+Material changes to users, outcomes, mode, Fixed constraints, evidence, permissions, or evaluation criteria require an impact review, a new brief version, and Product Owner reapproval before affected work resumes.
+
 ## Specialist behavior
 
 After G1 approval and G3 readiness, the Steward may give each direction to a fresh isolated `frontend-design` sub-agent. The specialist receives only that direction's authorized brief slice and may not invent users, content, brand rules, or product context. Its visual choices must trace to the brief, evidence, or explicitly Open axes.
@@ -119,4 +133,6 @@ The Steward does not contact participants, spend money, publish, modify producti
 
 ## First real-battle test
 
-Start with one bounded journey and one accountable Product Owner. Keep the first engagement local, choose Evolution or From-scratch explicitly, admit context only through the brief, and stop at an implementation contract. Use the output to verify the workflow and records before authorizing a production change or participant study.
+After the release's structural benchmark and integrity checks pass, start with one bounded journey and one named, accountable Product Owner. The released Steward is ready to accept real G0/G1 intake: keep the engagement local, choose Evolution or From-scratch explicitly, and admit context only through the approved brief.
+
+Readiness to take an engagement is not blanket approval to generate, ship, or claim validation. Before direction generation or comparison, satisfy the brief, evidence, specialist, and human gates in the engagement and the pilot eligibility rule in `references/benchmark-and-pilot.md`. Stop the first engagement at an implementation contract; use the records to verify the workflow before authorizing participant contact, a production change, or launch.

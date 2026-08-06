@@ -60,7 +60,7 @@ Runs a product-neutral, evidence-led design loop for responsive websites and web
 
 The package includes engagement-local record templates, a deterministic Design Brief readiness validator, and ten adversarial benchmark fixtures. It is service-independent and keeps target-product context outside the portable core.
 
-Requirements: Python 3.10 or newer for the optional Design Brief validator. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
+Requirements: Python 3.10 or newer for the optional Design Brief and specialist-integrity validators. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
 
 [Read the skill](skills/design-steward/SKILL.md)
 

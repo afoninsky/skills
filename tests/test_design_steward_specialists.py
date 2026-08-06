@@ -2,12 +2,16 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 DESIGN_STEWARD = REPOSITORY_ROOT / "skills" / "design-steward"
 PROVENANCE_PATH = DESIGN_STEWARD / "references" / "specialist-provenance.json"
+VERIFY_SPECIALISTS = DESIGN_STEWARD / "scripts" / "verify_specialists.py"
 
 
 class DesignStewardSpecialistTests(unittest.TestCase):
@@ -64,6 +68,29 @@ class DesignStewardSpecialistTests(unittest.TestCase):
         for record in self.provenance["skills"].values():
             self.assertRegex(record["license_evidence"], r"github\.com/.+/blob/[0-9a-f]{40}/")
             self.assertIn(record["license"], notice)
+
+    def test_installed_specialist_verifier_passes_repository_copy(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(VERIFY_SPECIALISTS), str(REPOSITORY_ROOT)],
+            capture_output=True,
+            check=False,
+            text=True,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertTrue(json.loads(result.stdout)["ok"])
+
+    def test_installed_specialist_verifier_fails_missing_copy(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            result = subprocess.run(
+                [sys.executable, str(VERIFY_SPECIALISTS), directory],
+                capture_output=True,
+                check=False,
+                text=True,
+            )
+
+        self.assertEqual(result.returncode, 1)
+        self.assertFalse(json.loads(result.stdout)["ok"])
 
 
 if __name__ == "__main__":

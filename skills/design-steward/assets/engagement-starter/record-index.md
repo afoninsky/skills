@@ -14,6 +14,7 @@
 | Record ID | Type | Status | Version | Supersedes | Related IDs | Owner | Path |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | BRIEF-001 | Design Brief | Draft | 0.1.0 | — | — | Product Owner | `design-brief.json` |
+| REQ-REGISTER-001 | Requirement register | Draft | 0.1.0 | — | BRIEF-001 | Product Owner | `records/requirement-register.md` |
 
 ## Restricted stores
 
