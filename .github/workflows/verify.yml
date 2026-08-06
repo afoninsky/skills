@@ -44,6 +44,8 @@ jobs:
           skills/agent-work-auditor/scripts
           skills/design-steward/scripts
           benchmarks/design-steward/2026-08-06/scripts
+          benchmarks/design-steward/2026-08-06-iteration-2/scripts
+          benchmarks/design-steward-specialists/2026-08-06-iteration-2/scripts
       - name: Run repository verifier tests
         run: python -m unittest tests/test_verify_skills.py -v
       - name: Verify Design Steward specialist integration
@@ -58,7 +60,20 @@ jobs:
         run: |
           python benchmarks/design-steward/2026-08-06/scripts/build_blind_pairs.py
           python benchmarks/design-steward/2026-08-06/scripts/aggregate_grades.py
-          git diff --exit-code -- +            benchmarks/design-steward/2026-08-06/blind +            benchmarks/design-steward/2026-08-06/condition-key.json +            benchmarks/design-steward/2026-08-06/aggregate.json
+          python benchmarks/design-steward/2026-08-06-iteration-2/scripts/build_blind_pairs.py
+          python benchmarks/design-steward/2026-08-06-iteration-2/scripts/aggregate_grades.py
+          python benchmarks/design-steward-specialists/2026-08-06-iteration-2/scripts/build_blind_pairs.py
+          python benchmarks/design-steward-specialists/2026-08-06-iteration-2/scripts/aggregate_grades.py
+          git diff --exit-code -- \
+            benchmarks/design-steward/2026-08-06/blind \
+            benchmarks/design-steward/2026-08-06/condition-key.json \
+            benchmarks/design-steward/2026-08-06/aggregate.json \
+            benchmarks/design-steward/2026-08-06-iteration-2/blind \
+            benchmarks/design-steward/2026-08-06-iteration-2/condition-key.json \
+            benchmarks/design-steward/2026-08-06-iteration-2/aggregate.json \
+            benchmarks/design-steward-specialists/2026-08-06-iteration-2/blind \
+            benchmarks/design-steward-specialists/2026-08-06-iteration-2/condition-key.json \
+            benchmarks/design-steward-specialists/2026-08-06-iteration-2/aggregate.json
       - name: Verify generated auditor example
         run: |
           mkdir -p build

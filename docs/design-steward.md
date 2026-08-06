@@ -64,7 +64,35 @@ through the approved Design Brief. Prepare three structurally distinct
 directions after the brief is generation-ready.
 ```
 
+For a first live test, use this bounded intake prompt:
+
+```text
+$design-steward
+
+Open a new G0/G1 engagement. The commissioned decision is: <decision>.
+Mode: <Evolution or From-scratch>.
+Product Owner: <name and role>.
+Permitted sources: <exact files, URLs, or none>.
+Do not inspect anything else. Create the intake and Design Brief records,
+classify every missing material fact as a Blocking Unknown, and stop before
+direction generation until the Product Owner approves a generation-ready brief.
+```
+
+The expected first response is an intake decision, explicit **Blocking Unknowns** and **Working Assumptions** (use `None` where applicable), a non-passing hard-gate status until evidence exists, and the exact next named approval. A polished visual direction at this point is a failure, not helpful initiative.
+
 Create an engagement-local workspace outside the installed skill. Copy `assets/engagement-starter/` from the installed Design Steward directory into it. Complete `design-brief.json`; record missing material facts as Blocking Unknowns and safe temporary beliefs as Working Assumptions.
+
+For the standard project-local Codex installation, the concrete setup is:
+
+```bash
+cp -R .agents/skills/design-steward/assets/engagement-starter \
+  ./design-steward-engagement
+
+python3 .agents/skills/design-steward/scripts/validate_design_brief.py \
+  ./design-steward-engagement/design-brief.json
+```
+
+Keep `design-steward-engagement/` in the engagement's approved workspace, not inside the installed skill. The portable package is immutable reference material; the engagement folder holds product context, decisions, approvals, evidence, and artifacts.
 
 Use the starter requirement and evidence registers to assign immutable IDs before implementation handoff. Link every material claim and G5 contract row to requirement, evidence, and applicable assumption IDs; supersede accepted records instead of rewriting them.
 
