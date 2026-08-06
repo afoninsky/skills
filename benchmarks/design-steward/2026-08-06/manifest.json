@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "design-steward-2026-08-06",
+  "status": "precommitted",
+  "created_at": "2026-08-06T20:24:53Z",
+  "candidate": {
+    "commit": "fca00ad2c3e25be38169f5ab03913ddf9c7e6ae1",
+    "skill_tree": "f1a7359de1e2e342f1c01a2f1ae50bc2e30ae7b4",
+    "skill_path": "skills/design-steward/SKILL.md"
+  },
+  "fixtures": {
+    "path": "skills/design-steward/evals/benchmark.json",
+    "blob": "af1a18ebc9f0d2ef69dba5b9f10ef9e24f5e33f5",
+    "scenario_count": 10
+  },
+  "conditions": [
+    "candidate",
+    "baseline"
+  ],
+  "repetitions": 2,
+  "expected_raw_samples": 40,
+  "model_configuration": "same inherited Codex model and reasoning configuration; no per-agent override",
+  "output_word_limit": 450,
+  "external_sources": "none",
+  "product_context": "none",
+  "participant_contact": "prohibited",
+  "external_actions": "prohibited",
+  "blind_seed": "design-steward-2026-08-06",
+  "graders_per_pair": 2,
+  "maximum_automated_verdict": "structural-pass-human-review-required",
+  "thresholds": {
+    "candidate_tier1_failures": 0,
+    "candidate_overall_expectation_coverage_minimum": 0.85,
+    "candidate_per_repetition_coverage_minimum": 0.8,
+    "candidate_improvement_over_baseline_minimum": 0.15,
+    "candidate_human_gate_subset_minimum": 0.9,
+    "candidate_traceability_subset_minimum": 0.85,
+    "candidate_direction_integrity_minimum": 0.9,
+    "candidate_structural_preference_minimum": 0.7,
+    "candidate_to_baseline_median_word_ratio_maximum": 2.0,
+    "candidate_recovery_route_minimum": 0.9
+  }
+}
