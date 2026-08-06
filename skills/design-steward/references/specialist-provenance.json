@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "source_path": "skills/frontend-design/SKILL.md",
+      "upstream_commit": "2235be7c60b551f5de82ade908fd3816455afcda",
+      "upstream_blob": "decdff43d05908b4c1fc2cfd2d80fc5743440934",
+      "installed_sha256": "1608ea77fbb6fc30d13a97d12cfa8ebf31358d40f0dd97beed24829d6b3f45dd",
+      "license": "Apache-2.0",
+      "license_path": ".agents/skills/frontend-design/LICENSE.txt",
+      "license_sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "license_evidence": "https://github.com/anthropics/skills/blob/ef740771ac901e03fbca3ce4e1c453a96010f30a/skills/frontend-design/LICENSE.txt"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "source_path": "skills/web-design-guidelines/SKILL.md",
+      "upstream_commit": "ba46938889d4e58635362fb8f618e1178ac3ec46",
+      "upstream_blob": "ceae92ab319216a68274168fba9b63b998b65997",
+      "installed_sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+      "license": "MIT",
+      "license_path": null,
+      "license_sha256": null,
+      "license_evidence": "https://github.com/vercel-labs/agent-skills/blob/7c180d9044c9ae2b442b567aad4e42a28dd5ed62/README.md#license"
+    }
+  }
+}

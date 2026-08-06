@@ -40,6 +40,8 @@ jobs:
         run: ruff check --select E4,E7,E9,F,I scripts tests skills/agent-work-auditor/scripts skills/design-steward/scripts
       - name: Run repository verifier tests
         run: python -m unittest tests/test_verify_skills.py -v
+      - name: Verify Design Steward specialist integration
+        run: python -m unittest tests/test_design_steward_specialists.py -v
       - name: Run auditor renderer tests
         run: python skills/agent-work-auditor/scripts/test_generate_report.py
       - name: Run Design Brief validator tests
@@ -69,6 +71,9 @@ jobs:
           grep -F "agent-work-auditor" skills-list.txt
           grep -F "design-steward" skills-list.txt
           grep -F "marktplaats-ad-creator" skills-list.txt
+          npx --yes skills@1.5.16 list --json | tee installed-skills.json
+          grep -F '"name": "frontend-design"' installed-skills.json
+          grep -F '"name": "web-design-guidelines"' installed-skills.json
       - name: Verify clean Codex installation
         run: |
           install_root="$(mktemp -d)"
@@ -80,9 +85,23 @@ jobs:
             --agent codex \
             --copy \
             --yes
+          npx --yes skills@1.5.16 add anthropics/skills \
+            --skill frontend-design \
+            --agent codex \
+            --copy \
+            --yes
+          npx --yes skills@1.5.16 add vercel-labs/agent-skills \
+            --skill web-design-guidelines \
+            --agent codex \
+            --copy \
+            --yes
           test -f .agents/skills/agent-work-auditor/SKILL.md
           test -f .agents/skills/design-steward/SKILL.md
+          test -f .agents/skills/design-steward/references/specialist-capabilities.md
           test -f .agents/skills/marktplaats-ad-creator/SKILL.md
+          test -f .agents/skills/frontend-design/SKILL.md
+          test -f .agents/skills/frontend-design/LICENSE.txt
+          test -f .agents/skills/web-design-guidelines/SKILL.md
 
   secrets:
     name: Secret scan

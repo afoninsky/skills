@@ -21,6 +21,13 @@ npx skills add afoninsky/skills --skill design-steward
 npx skills add afoninsky/skills --skill marktplaats-ad-creator
 ```
 
+For Design Steward's optional visual-design and UI-audit specialists, also install:
+
+```bash
+npx skills add anthropics/skills --skill frontend-design
+npx skills add vercel-labs/agent-skills --skill web-design-guidelines
+```
+
 Add `-g` to install globally instead of into the current project:
 
 ```bash
@@ -56,6 +63,8 @@ The package includes engagement-local record templates, a deterministic Design B
 Requirements: Python 3.10 or newer for the optional Design Brief validator. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
 
 [Read the skill](skills/design-steward/SKILL.md)
+
+[Use Design Steward](docs/design-steward.md)
 
 ### Marktplaats Ad Creator
 

@@ -17,6 +17,9 @@
 - Frozen rubric and hard gates:
 - Allowed precedent sources:
 - Isolation boundary and freeze time:
+- Visual specialist delegation ID, skill hash, and availability:
+- Open visual axes and forbidden inventions:
+- Visual decision trace links:
 
 ## Artifact manifest
 
@@ -31,3 +34,4 @@
 - Shared-skeleton risks:
 - Cross-critique received after freeze:
 - Revisions preserving the thesis:
+- Visual coherence/distinctiveness review and limitations:

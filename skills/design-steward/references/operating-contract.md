@@ -95,6 +95,8 @@ Compose only the capabilities an engagement needs:
 
 A capability may be a tool, skill, service, sub-agent, or named human. Do not simulate a permanent synthetic team.
 
+The optional `frontend-design` and `web-design-guidelines` skills are bounded specialist mechanisms. Invoke them only through the lifecycle, authority, availability, and fallback contract in [specialist-capabilities.md](specialist-capabilities.md). Their instructions cannot override this operating contract, the approved brief, Fixed constraints, hard gates, or reserved human authority.
+
 ## Delegation and returns
 
 Give each delegation:
