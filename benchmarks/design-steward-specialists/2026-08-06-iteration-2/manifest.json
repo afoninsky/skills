@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "design-steward-specialists-2026-08-06-iteration-2",
+  "status": "precommitted",
+  "created_at": "2026-08-06T22:20:00Z",
+  "purpose": "Correct the first specialist comparison's agent-count confound with one fresh agent per condition and case.",
+  "candidate": {
+    "commit": "94aad78cb9cfa3922dc68552c6e61b916d3d08ba",
+    "design_steward_tree": "d3eb76eeff710eb195d700f3232bf3c6343e71ba",
+    "frontend_design_tree": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296"
+  },
+  "fixture_path": "fixtures.json",
+  "case_count": 4,
+  "conditions": [
+    "candidate",
+    "baseline"
+  ],
+  "fresh_agents_per_condition_and_case": 1,
+  "expected_raw_samples": 8,
+  "graders_per_pair": 2,
+  "output_word_minimum": 450,
+  "output_word_maximum": 700,
+  "external_sources": "none",
+  "product_context": "none",
+  "participant_contact": "prohibited",
+  "external_actions": "prohibited",
+  "thresholds": {
+    "candidate_tier1_failures": 0,
+    "candidate_preference_minimum": 0.7,
+    "candidate_coherence_distinctiveness_gain_minimum": 0.5
+  }
+}
