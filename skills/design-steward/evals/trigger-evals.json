@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Use $design-steward to plan three independent UX directions for a responsive web onboarding flow, starting from a Product Owner-approved Design Brief.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a Design Brief and tell me what must be approved before an AI generates alternative web application designs.",
+    "should_trigger": true
+  },
+  {
+    "query": "Run an evidence-led comparison of these three dashboard UX directions, including accessibility and representative-user gates.",
+    "should_trigger": true
+  },
+  {
+    "query": "We are redesigning a legacy website. Classify fixed, challengeable, and open constraints before exploring variants.",
+    "should_trigger": true
+  },
+  {
+    "query": "Plan a from-scratch responsive web UX engagement from discovery through post-launch learning without importing a prior product design system.",
+    "should_trigger": true
+  },
+  {
+    "query": "Choose the right artifact fidelity for testing navigation, keyboard behavior, responsive layout, and content comprehension.",
+    "should_trigger": true
+  },
+  {
+    "query": "Prepare a traceable implementation contract from the selected UX direction and record implementation drift.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our usability claim is based on synthetic personas and a heuristic review. Decide what we can honestly call validated.",
+    "should_trigger": true
+  },
+  {
+    "query": "Set up a clean-room audit-and-alternatives pilot for a product after the reusable Design Steward passes its benchmark.",
+    "should_trigger": true
+  },
+  {
+    "query": "Use the Design Steward to govern post-launch UX learning when conversion improves but accessibility complaints rise.",
+    "should_trigger": true
+  },
+  {
+    "query": "Change this button from blue to green in the existing component and run its unit test.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this React pull request for bugs and missing tests.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain the difference between CSS Grid and Flexbox.",
+    "should_trigger": false
+  },
+  {
+    "query": "Generate a hero illustration for a landing page.",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix the mobile overflow bug in the checked-out website.",
+    "should_trigger": false
+  },
+  {
+    "query": "Audit this page against WCAG and web interface guidelines only; do not plan a broader design engagement.",
+    "should_trigger": false
+  },
+  {
+    "query": "Make a quick disposable prototype to compare whether tabs or an accordion feel better.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize the user interviews I pasted without changing the research plan.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a Figma file that reproduces this supplied design exactly.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write acceptance tests for the already-approved checkout specification.",
+    "should_trigger": false
+  }
+]
