@@ -1,0 +1,12 @@
+I wouldn’t run the exploration exactly that way. It would produce three correlated variants, obscure authorship, and make the final choice look more evidence-based than it is.
+
+Use one shared baseline, but isolate the alternatives until they are frozen:
+
+- Give all three designers the same approved brief, realistic content and edge states, fixed constraints, hard gates, and precommitted comparison rubric.
+- Assign genuinely distinct structural charters—for example, task-first, object-first, and guided/progressive disclosure. Shared tokens, data definitions, and reusable components are efficient; a shared dashboard skeleton is not, because it predetermines the central design decision.
+- Have each designer work in a separate page, branch, or file with sibling directions hidden. Direction 2 should not “improve Direction 1” during generation. After all three rationales and artifacts are frozen, Direction 2’s designer may critique Direction 1 adversarially without rewriting its thesis.
+- Record published precedents with source, date, original audience, rights, transferable principle, and limitations. Abstract the strongest example’s principle; do not recreate its surface, proprietary assets, brand language, or interactions pixel for pixel. If an exact reproduction is truly required for an authorized internal comparison, first establish ownership or explicit permission and keep it clearly labeled as a non-original reference artifact—not as a candidate direction.
+
+After freeze, evaluate accessibility, content truth, privacy, ethical UX/safety, and provenance first. Any unresolved critical failure is disqualifying and cannot be rescued by a high score. Score the survivors individually against the frozen rubric, keeping observed evidence, specialist judgment, implementation estimates, and Product Owner preference separate. Do not average scores across directions; averages hide decisive strengths, weaknesses, and dissent.
+
+For convergence, select one coherent structural backbone through an explicit Product Owner decision. Import a piece from another direction only when it addresses a documented weakness, fits the backbone’s mental model and interaction grammar, and is supported by evidence or specialist reasoning. Record each import and retest the synthesized direction against the hard gates and rubric. The shared file can then contain the frozen alternatives, critiques, decision record, and final synthesis—with clear artifact IDs and provenance—rather than serving as a live cross-contamination space.

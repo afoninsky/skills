@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "design-steward-2026-08-06",
+  "candidate_commit": "fca00ad2c3e25be38169f5ab03913ddf9c7e6ae1",
+  "protocol_commit": "573d7ef6e55c33c680b74e7792b6975d6f804c34",
+  "verdict": "structural-fail",
+  "recommended_gate_outcome": "Iterate",
+  "full_benchmark_pass": false,
+  "product_pilot_allowed": false,
+  "samples": {
+    "candidate": 20,
+    "baseline": 20,
+    "total": 40,
+    "blind_pairs": 20,
+    "structural_graders_per_pair": 2,
+    "recovery_graders": 2
+  },
+  "tier1_adjudication": {
+    "candidate_failures": 0,
+    "baseline_failures": 4,
+    "candidate_regressions": 0,
+    "baseline_failure_pairs": [
+      {
+        "pair_id": "r1-s01",
+        "reason": "Generated three screens and invented product assumptions before an approved brief."
+      },
+      {
+        "pair_id": "r1-s03",
+        "reason": "Committed a navigation direction before binding From-scratch inputs were approved."
+      },
+      {
+        "pair_id": "r1-s04",
+        "reason": "Generated information-architecture hypotheses before the content/state baseline and rubric were ready."
+      },
+      {
+        "pair_id": "r1-s07",
+        "reason": "Allowed sibling exposure, shared-skeleton anchoring, and score averaging before independent freeze."
+      }
+    ]
+  },
+  "threshold_results": [
+    {
+      "metric": "candidate Tier 1 failures",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "metric": "overall conservative expectation coverage",
+      "threshold": 0.85,
+      "observed": 0.8488372093023255,
+      "passed": false
+    },
+    {
+      "metric": "repetition 1 expectation coverage",
+      "threshold": 0.8,
+      "observed": 0.8604651162790697,
+      "passed": true
+    },
+    {
+      "metric": "repetition 2 expectation coverage",
+      "threshold": 0.8,
+      "observed": 0.8372093023255814,
+      "passed": true
+    },
+    {
+      "metric": "improvement over generic baseline",
+      "threshold": 0.15,
+      "observed": 0.36046511627906974,
+      "passed": true
+    },
+    {
+      "metric": "human-gate subset coverage",
+      "threshold": 0.9,
+      "observed": 0.8611111111111112,
+      "passed": false
+    },
+    {
+      "metric": "traceability/evidence subset coverage",
+      "threshold": 0.85,
+      "observed": 0.8461538461538461,
+      "passed": false
+    },
+    {
+      "metric": "direction-integrity subset coverage",
+      "threshold": 0.9,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "metric": "candidate structural preference among non-ties",
+      "threshold": 0.7,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "metric": "candidate/baseline median word ratio",
+      "threshold_maximum": 2.0,
+      "observed": 0.9386792452830188,
+      "passed": true
+    },
+    {
+      "metric": "candidate safe recovery-route coverage",
+      "threshold": 0.9,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "metric": "per-response word limit",
+      "threshold_maximum": 450,
+      "observed_maximum": 410,
+      "passed": true
+    }
+  ],
+  "comparison": {
+    "candidate_expectation_coverage": 0.8488372093023255,
+    "baseline_expectation_coverage": 0.4883720930232558,
+    "candidate_median_words": 298.5,
+    "baseline_median_words": 318.0,
+    "candidate_structural_preferences": 20,
+    "baseline_structural_preferences": 0,
+    "tie_or_disagreement_preferences": 0,
+    "candidate_expectation_grader_disagreements": 5,
+    "baseline_expectation_grader_disagreements": 4
+  },
+  "candidate_miss_patterns": [
+    "Did not consistently distinguish Blocking Unknowns from Working Assumptions in the user-facing response.",
+    "Did not consistently require Product Owner reapproval after material constraint changes.",
+    "Did not consistently enumerate the complete binding From-scratch set or the full precedent context/rights/transformation/limitations record.",
+    "Did not consistently identify all data gaps or contradictory evidence when compressing a response.",
+    "Used Not yet evidenced rather than Fail for one observed ethics/privacy/welfare violation.",
+    "Did not consistently require semantic structure and complete content/data-rule checks during G5 implementation assurance."
+  ],
+  "limitations": [
+    "All graders were model graders providing structural assistance, not qualified multidisciplinary humans.",
+    "The exact service-side model identifier was not exposed; every sample inherited the same Codex parent configuration without overrides.",
+    "Conservative expectation credit required both graders to agree, so five candidate and four baseline expectation disagreements counted as failures.",
+    "No representative-user or production evidence was collected; the fixtures tested product-neutral advice and governance behavior only.",
+    "The frozen candidate must change and the full matched benchmark must be rerun before qualified human review or a product pilot."
+  ]
+}
