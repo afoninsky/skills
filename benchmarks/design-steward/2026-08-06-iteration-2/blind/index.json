@@ -1,0 +1,144 @@
+{
+  "pairs": [
+    {
+      "a_path": "blind/pairs/r1-s01/A.md",
+      "b_path": "blind/pairs/r1-s01/B.md",
+      "pair_id": "r1-s01",
+      "repetition": 1,
+      "scenario_id": 1
+    },
+    {
+      "a_path": "blind/pairs/r1-s02/A.md",
+      "b_path": "blind/pairs/r1-s02/B.md",
+      "pair_id": "r1-s02",
+      "repetition": 1,
+      "scenario_id": 2
+    },
+    {
+      "a_path": "blind/pairs/r1-s03/A.md",
+      "b_path": "blind/pairs/r1-s03/B.md",
+      "pair_id": "r1-s03",
+      "repetition": 1,
+      "scenario_id": 3
+    },
+    {
+      "a_path": "blind/pairs/r1-s04/A.md",
+      "b_path": "blind/pairs/r1-s04/B.md",
+      "pair_id": "r1-s04",
+      "repetition": 1,
+      "scenario_id": 4
+    },
+    {
+      "a_path": "blind/pairs/r1-s05/A.md",
+      "b_path": "blind/pairs/r1-s05/B.md",
+      "pair_id": "r1-s05",
+      "repetition": 1,
+      "scenario_id": 5
+    },
+    {
+      "a_path": "blind/pairs/r1-s06/A.md",
+      "b_path": "blind/pairs/r1-s06/B.md",
+      "pair_id": "r1-s06",
+      "repetition": 1,
+      "scenario_id": 6
+    },
+    {
+      "a_path": "blind/pairs/r1-s07/A.md",
+      "b_path": "blind/pairs/r1-s07/B.md",
+      "pair_id": "r1-s07",
+      "repetition": 1,
+      "scenario_id": 7
+    },
+    {
+      "a_path": "blind/pairs/r1-s08/A.md",
+      "b_path": "blind/pairs/r1-s08/B.md",
+      "pair_id": "r1-s08",
+      "repetition": 1,
+      "scenario_id": 8
+    },
+    {
+      "a_path": "blind/pairs/r1-s09/A.md",
+      "b_path": "blind/pairs/r1-s09/B.md",
+      "pair_id": "r1-s09",
+      "repetition": 1,
+      "scenario_id": 9
+    },
+    {
+      "a_path": "blind/pairs/r1-s10/A.md",
+      "b_path": "blind/pairs/r1-s10/B.md",
+      "pair_id": "r1-s10",
+      "repetition": 1,
+      "scenario_id": 10
+    },
+    {
+      "a_path": "blind/pairs/r2-s01/A.md",
+      "b_path": "blind/pairs/r2-s01/B.md",
+      "pair_id": "r2-s01",
+      "repetition": 2,
+      "scenario_id": 1
+    },
+    {
+      "a_path": "blind/pairs/r2-s02/A.md",
+      "b_path": "blind/pairs/r2-s02/B.md",
+      "pair_id": "r2-s02",
+      "repetition": 2,
+      "scenario_id": 2
+    },
+    {
+      "a_path": "blind/pairs/r2-s03/A.md",
+      "b_path": "blind/pairs/r2-s03/B.md",
+      "pair_id": "r2-s03",
+      "repetition": 2,
+      "scenario_id": 3
+    },
+    {
+      "a_path": "blind/pairs/r2-s04/A.md",
+      "b_path": "blind/pairs/r2-s04/B.md",
+      "pair_id": "r2-s04",
+      "repetition": 2,
+      "scenario_id": 4
+    },
+    {
+      "a_path": "blind/pairs/r2-s05/A.md",
+      "b_path": "blind/pairs/r2-s05/B.md",
+      "pair_id": "r2-s05",
+      "repetition": 2,
+      "scenario_id": 5
+    },
+    {
+      "a_path": "blind/pairs/r2-s06/A.md",
+      "b_path": "blind/pairs/r2-s06/B.md",
+      "pair_id": "r2-s06",
+      "repetition": 2,
+      "scenario_id": 6
+    },
+    {
+      "a_path": "blind/pairs/r2-s07/A.md",
+      "b_path": "blind/pairs/r2-s07/B.md",
+      "pair_id": "r2-s07",
+      "repetition": 2,
+      "scenario_id": 7
+    },
+    {
+      "a_path": "blind/pairs/r2-s08/A.md",
+      "b_path": "blind/pairs/r2-s08/B.md",
+      "pair_id": "r2-s08",
+      "repetition": 2,
+      "scenario_id": 8
+    },
+    {
+      "a_path": "blind/pairs/r2-s09/A.md",
+      "b_path": "blind/pairs/r2-s09/B.md",
+      "pair_id": "r2-s09",
+      "repetition": 2,
+      "scenario_id": 9
+    },
+    {
+      "a_path": "blind/pairs/r2-s10/A.md",
+      "b_path": "blind/pairs/r2-s10/B.md",
+      "pair_id": "r2-s10",
+      "repetition": 2,
+      "scenario_id": 10
+    }
+  ]
+}

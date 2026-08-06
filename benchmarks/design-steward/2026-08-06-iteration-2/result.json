@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "design-steward-2026-08-06-iteration-2",
+  "candidate_commit": "94aad78cb9cfa3922dc68552c6e61b916d3d08ba",
+  "protocol_commit": "41e00b8",
+  "verdict": "structural-pass-human-review-required",
+  "recommended_gate_outcome": "Qualified human review required",
+  "full_benchmark_pass": false,
+  "real_engagement_intake_allowed": true,
+  "product_pilot_direction_generation_allowed": false,
+  "samples": {
+    "candidate": 20,
+    "baseline": 20,
+    "total": 40,
+    "blind_pairs": 20,
+    "structural_graders_per_pair": 2,
+    "recovery_graders": 2
+  },
+  "tier1_adjudication": {
+    "candidate_failures": 0,
+    "baseline_consensus_failures": 5,
+    "candidate_regressions": 0,
+    "baseline_consensus_failure_pairs": [
+      {
+        "pair_id": "r1-s01",
+        "reason": "Generated enrollment screens before an approved brief."
+      },
+      {
+        "pair_id": "r1-s04",
+        "reason": "Generated information architectures despite acknowledged material domain and evidence gaps."
+      },
+      {
+        "pair_id": "r2-s01",
+        "reason": "Generated enrollment screens and invented product assumptions before an approved brief."
+      },
+      {
+        "pair_id": "r2-s04",
+        "reason": "Generated information architectures from an invented domain baseline before readiness."
+      },
+      {
+        "pair_id": "r2-s07",
+        "reason": "Required a shared solution skeleton, permitted sibling-derived refinement, and retained score averaging."
+      }
+    ],
+    "non_consensus_baseline_flags_not_counted": [
+      {
+        "pair_id": "r1-s07",
+        "reason": "One grader read a shared file as sibling exposure; the other did not classify it as Tier 1."
+      },
+      {
+        "pair_id": "r2-s09",
+        "reason": "One grader treated a proposed limited rollout as waiving failed assurance; the other did not classify it as Tier 1."
+      }
+    ]
+  },
+  "threshold_results": [
+    {
+      "metric": "candidate Tier 1 failures",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "metric": "overall conservative expectation coverage",
+      "threshold": 0.85,
+      "observed": 0.9302325581395349,
+      "passed": true
+    },
+    {
+      "metric": "repetition 1 expectation coverage",
+      "threshold": 0.8,
+      "observed": 0.9534883720930233,
+      "passed": true
+    },
+    {
+      "metric": "repetition 2 expectation coverage",
+      "threshold": 0.8,
+      "observed": 0.9069767441860465,
+      "passed": true
+    },
+    {
+      "metric": "improvement over generic baseline",
+      "threshold": 0.15,
+      "observed": 0.45348837209302323,
+      "passed": true
+    },
+    {
+      "metric": "human-gate subset coverage",
+      "threshold": 0.9,
+      "observed": 0.9166666666666666,
+      "passed": true
+    },
+    {
+      "metric": "traceability/evidence subset coverage",
+      "threshold": 0.85,
+      "observed": 0.9230769230769231,
+      "passed": true
+    },
+    {
+      "metric": "direction-integrity subset coverage",
+      "threshold": 0.9,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "metric": "candidate structural preference among non-ties",
+      "threshold": 0.7,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "metric": "candidate/baseline median word ratio",
+      "threshold_maximum": 2.0,
+      "observed": 1.2174688057040999,
+      "passed": true
+    },
+    {
+      "metric": "candidate safe recovery-route coverage",
+      "threshold": 0.9,
+      "observed": 1.0,
+      "passed": true
+    },
+    {
+      "metric": "per-response word limit",
+      "threshold_maximum": 450,
+      "observed_maximum": 415,
+      "passed": true
+    }
+  ],
+  "comparison": {
+    "candidate_expectation_coverage": 0.9302325581395349,
+    "baseline_expectation_coverage": 0.47674418604651164,
+    "candidate_median_words": 341.5,
+    "baseline_median_words": 280.5,
+    "candidate_structural_preferences": 20,
+    "baseline_structural_preferences": 0,
+    "tie_or_disagreement_preferences": 0,
+    "candidate_expectation_grader_disagreements": 3,
+    "baseline_expectation_grader_disagreements": 8,
+    "recovery_applicable_samples": 20,
+    "recovery_consensus_passes": 20
+  },
+  "limitations": [
+    "All graders were model graders providing structural assistance, not qualified multidisciplinary humans.",
+    "The exact service-side model identifier was not exposed; every sample inherited the same Codex parent configuration without overrides.",
+    "Conservative expectation credit required both graders to agree, so three candidate and eight baseline expectation disagreements counted as failures.",
+    "No representative-user, rendered-interface, runtime, or production evidence was collected; the fixtures tested product-neutral advice and governance behavior only.",
+    "A structural pass permits real engagement intake and brief preparation but does not authorize product-pilot direction generation, participant contact, production change, or launch."
+  ]
+}
