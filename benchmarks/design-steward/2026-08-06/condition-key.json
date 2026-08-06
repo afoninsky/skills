@@ -1,0 +1,125 @@
+{
+  "pairs": {
+    "r1-s01": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 1
+    },
+    "r1-s02": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 1,
+      "scenario_id": 2
+    },
+    "r1-s03": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 3
+    },
+    "r1-s04": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 4
+    },
+    "r1-s05": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 5
+    },
+    "r1-s06": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 6
+    },
+    "r1-s07": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 1,
+      "scenario_id": 7
+    },
+    "r1-s08": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 1,
+      "scenario_id": 8
+    },
+    "r1-s09": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 9
+    },
+    "r1-s10": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 1,
+      "scenario_id": 10
+    },
+    "r2-s01": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 2,
+      "scenario_id": 1
+    },
+    "r2-s02": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 2,
+      "scenario_id": 2
+    },
+    "r2-s03": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 2,
+      "scenario_id": 3
+    },
+    "r2-s04": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 2,
+      "scenario_id": 4
+    },
+    "r2-s05": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 2,
+      "scenario_id": 5
+    },
+    "r2-s06": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 2,
+      "scenario_id": 6
+    },
+    "r2-s07": {
+      "A": "baseline",
+      "B": "candidate",
+      "repetition": 2,
+      "scenario_id": 7
+    },
+    "r2-s08": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 2,
+      "scenario_id": 8
+    },
+    "r2-s09": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 2,
+      "scenario_id": 9
+    },
+    "r2-s10": {
+      "A": "candidate",
+      "B": "baseline",
+      "repetition": 2,
+      "scenario_id": 10
+    }
+  },
+  "seed": "design-steward-2026-08-06"
+}
