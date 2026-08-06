@@ -90,6 +90,8 @@ Precommit thresholds before running candidates. Require:
 - documented uncertainty, evaluator disagreement, and run variance;
 - no claim of validation beyond the evaluation population and conditions.
 
+For the optional visual specialist, run a matched blind comparison against the same direction workflow without `frontend-design`. Precommit zero Tier 1 regressions, candidate preference in at least 70% of blind-review pairs, and at least 0.5 points of mean improvement on a five-point brief-specific coherence and distinctiveness rubric. Report traceability, realistic-state coverage, variance, disagreement, evaluator identity or qualifications, and every limitation. Treat this as evidence about outputs under the tested conditions, not product validation.
+
 Record candidate fingerprint, fixture version, model and tool versions, permissions, run IDs, raw outputs, evaluator identities or qualifications, scoring rubric, adjudication, and analysis.
 
 ## Clean-room product pilot

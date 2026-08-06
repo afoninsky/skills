@@ -22,6 +22,7 @@ Act as one accountable Steward for the professional design loop. Compose bounded
 - Read [operating-contract.md](references/operating-contract.md) before intake, brief work, delegation, or gate decisions.
 - Read [directions-and-artifacts.md](references/directions-and-artifacts.md) before creating alternatives, choosing tools, prototyping, comparing, or synthesizing.
 - Read [evidence-and-records.md](references/evidence-and-records.md) before research, evidence claims, hard-gate review, implementation assurance, or live learning.
+- Read [specialist-capabilities.md](references/specialist-capabilities.md) before delegating visual design or a UI code audit.
 - Read [benchmark-and-pilot.md](references/benchmark-and-pilot.md) only when evaluating this skill or preparing a later clean-room product pilot.
 - Read [release-policy.md](references/release-policy.md) when changing, publishing, or migrating the portable package.
 
@@ -51,9 +52,9 @@ Use the smallest evidence and artifact set that can answer each gate. Combine lo
 | G0 Commission | Is the work authorized, safe, bounded, and worth investigating? | Record owner, decision, affected people, harms, mode candidate, access, and clean-room boundary. |
 | G1 Brief | Is the approved brief generation-ready? | Validate complete schema, zero Blocking Unknowns, constraints, assumptions, rubric, permissions, and approvals. |
 | G2 Research | Is evidence collection appropriate and the problem sufficiently framed? | Obtain specialist method approval before contact; record needs, variation, limitations, outcomes, and guardrails. |
-| G3 Structure | Are realistic structure, content, states, and a fair comparison contract ready? | Freeze shared baseline, hard gates, evidence thresholds, and direction charters before alternatives. |
-| G4 Direction | Which direction, if any, deserves convergence? | Compare frozen directions, evidence, dissent, and risks; recommend Proceed, Iterate, Pivot, or Stop. |
-| G5 Implementation | Is intent complete, feasible, traceable, and faithfully integrated? | Produce and maintain the implementation contract plus delta log; verify integrated behavior. |
+| G3 Structure | Are realistic structure, content, states, and a fair comparison contract ready? | Freeze shared baseline, hard gates, evidence thresholds, and direction charters before alternatives or visual-specialist delegation. |
+| G4 Direction | Which direction, if any, deserves convergence? | Compare frozen directions, visual rationale, evidence, dissent, and risks; recommend Proceed, Iterate, Pivot, or Stop. |
+| G5 Implementation | Is intent complete, feasible, traceable, and faithfully integrated? | Produce and maintain the implementation contract plus delta log; verify integrated behavior and source-scoped UI audit findings. |
 | G6 Live learning | Should the accountable owner launch, change, scale, limit, roll back, or retire? | Verify readiness, measurement and harm routes; preserve specialist objections; recommend only. |
 
 At every gate, record exactly one proposed outcome: **Proceed**, **Iterate**, **Pivot**, or **Stop**. Name the human approver and each specialist claim owner. A Product Owner preference cannot waive a failed hard gate or relabel invalid evidence.
@@ -72,6 +73,8 @@ Select the least-powerful capable mechanism:
 
 Create a delegation packet from the starter template before delegation. Provide only the authorized brief slice and evidence IDs. Require the return envelope defined in [operating-contract.md](references/operating-contract.md). Classify every return as **Accepted**, **Revision requested**, **Escalated**, or **Rejected**, with rationale.
 
+For visual direction work, delegate each eligible direction to a fresh isolated sub-agent using `frontend-design`. For implementation review, delegate a read-only, path-bounded audit to a fresh isolated sub-agent using `web-design-guidelines`. These are optional specialists, not authorities or release gates by themselves. Follow the precedence, availability, isolation, and provenance rules in [specialist-capabilities.md](references/specialist-capabilities.md).
+
 Do not decide conflicts by vote, model confidence, or aesthetic averaging. Resolve them through evidence quality, Fixed constraints, specialist authority, the frozen rubric, and explicit human trade-off decisions.
 
 ## Create and compare directions
@@ -79,7 +82,7 @@ Do not decide conflicts by vote, model confidence, or aesthetic averaging. Resol
 Default to three structurally distinct directions. Reduce the count only before generation with an approved rationale.
 
 1. Freeze the approved brief, evidence baseline, realistic content and hostile states, hard gates, comparison rubric, and one distinct structural charter per direction.
-2. Develop each direction in isolation. Do not expose sibling solution forms before its rationale and artifacts are frozen.
+2. Develop each direction in isolation. When available and authorized, use a fresh `frontend-design` specialist sub-agent for the visual system. Do not expose sibling solution forms before its rationale and artifacts are frozen.
 3. Cite precedent and abstract it to a principle; record source, context, rights, and the transformation. Do not copy a surface.
 4. Match prototype fidelity to the decisive risk. Preserve editable source and a portable review/export for every artifact.
 5. Freeze directions, run sameness review, then obtain specialist cross-critique.

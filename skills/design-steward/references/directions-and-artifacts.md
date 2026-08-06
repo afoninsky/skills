@@ -16,6 +16,8 @@ Freeze a shared baseline before work begins:
 
 Give each direction the same baseline but an isolated context. Do not reveal sibling solution forms, layout, interaction, content framing, or visual choices before freeze. Route factual corrections through the Steward without leaking solutions.
 
+When visual development is warranted, use one fresh `frontend-design` specialist sub-agent per direction under [specialist-capabilities.md](specialist-capabilities.md). Supply only that direction's authorized context and Open visual axes. Freeze its traced visual thesis and system before any sibling output or cross-critique is visible.
+
 Make charters structurally distinct. Examples of structural differences include task-first versus object-first navigation, guided versus direct manipulation, progressive disclosure versus overview-first, or centralized versus contextual control. Color, typography, spacing, and ornament alone do not create distinct directions.
 
 Use realistic content, error, empty, loading, partial-permission, long-text, localization, low-bandwidth, and keyboard-only states. Record which Working Assumptions each artifact depends on.

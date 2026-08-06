@@ -13,6 +13,8 @@ Label every material claim with the strongest supporting level:
 
 Evidence levels are not a universal ranking of value. Match the method to the claim. Do not upgrade a claim because several weak sources agree.
 
+A static `web-design-guidelines` review is E1 specialist/heuristic input. Record the inspected implementation revision, authorized paths and exclusions, immutable guideline revision when available, retrieval URL and time, SHA-256 content hash, findings, limitations, and remediation status. It cannot establish representative usability, accessibility certification, runtime behavior, engineering approval, or release readiness. If current rules cannot be retrieved and verified, record the audit as not run and required coverage as **Not yet evidenced**.
+
 ## Claim language
 
 Record population, context, task, artifact or release, method, date, limitations, and evidence ID. Use language such as:

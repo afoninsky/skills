@@ -21,6 +21,20 @@
 - Required specialist reviewers:
 - Known limitations and residual-risk owners:
 
+## Source-scoped UI audit
+
+- Audit ID and status: Not run | Unavailable | Findings open | Remediated | Superseded
+- Specialist skill version or content hash:
+- Inspected implementation commit or content hash:
+- Authorized paths and exclusions:
+- Guideline immutable revision, URL, retrieved time, and SHA-256:
+- Network or freshness limitations:
+
+| Finding ID | File:line | Guideline/rule | Observation and severity | Requirement/contract/delta link | Remediation and owner | Re-audit evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+
+This audit is E1 heuristic input, not validation, accessibility certification, runtime/browser assurance, engineering approval, or ship approval.
+
 ## Implementation delta log
 
 | Delta ID | Date | Intended design | Integrated behavior | Reason | Evidence impact | Owner | Approval | Gate returned to |
