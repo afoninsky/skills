@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "prototype": true,
+  "question": "Can a service-independent artifact set carry one design decision from journey to interactive comparison and review with an open fallback at every stage?",
+  "scenario": "Community repair-session rescheduling",
+  "briefVersion": "representative-prototype-1",
+  "artifacts": [
+    {
+      "id": "journey",
+      "fidelity": "journey",
+      "source": "journey.mmd",
+      "sourceFormat": "Mermaid text",
+      "review": "journey.svg",
+      "reviewFormat": "SVG",
+      "preferredTools": ["Mermaid CLI", "Miro when facilitated collaboration is required"],
+      "cloudIndependent": true
+    },
+    {
+      "id": "structure",
+      "fidelity": "information architecture",
+      "source": "ia.mmd",
+      "sourceFormat": "Mermaid text",
+      "review": "ia.svg",
+      "reviewFormat": "SVG",
+      "preferredTools": ["Mermaid CLI", "Excalidraw for collaborative restructuring"],
+      "cloudIndependent": true
+    },
+    {
+      "id": "wireframe",
+      "fidelity": "wireframe",
+      "source": "wireframe.excalidraw",
+      "sourceFormat": "Excalidraw JSON",
+      "review": "wireframe.svg",
+      "reviewFormat": "SVG",
+      "preferredTools": ["Excalidraw", "Penpot or Figma when a shared canvas is already authorized"],
+      "cloudIndependent": true
+    },
+    {
+      "id": "directions",
+      "fidelity": "high-fidelity responsive directions",
+      "source": ["index.html", "styles.css", "app.js"],
+      "sourceFormat": "HTML/CSS/JavaScript",
+      "review": "Browser at ?variant=A, ?variant=B, and ?variant=C",
+      "reviewFormat": "interactive browser, print/PDF, screenshot",
+      "preferredTools": ["Code-native prototype", "Penpot", "Figma"],
+      "cloudIndependent": true
+    },
+    {
+      "id": "decision",
+      "fidelity": "decision review",
+      "source": "decision-review.md",
+      "sourceFormat": "Markdown",
+      "review": "decision-review.md",
+      "reviewFormat": "rendered Markdown or PDF",
+      "preferredTools": ["GitHub", "authorized document workspace"],
+      "cloudIndependent": true
+    }
+  ],
+  "humanGates": [
+    "Approve the brief and artifact question",
+    "Authorize any cloud workspace or sensitive upload",
+    "Review structurally distinct directions",
+    "Approve representative-user research",
+    "Select a direction against the precommitted rubric",
+    "Accept implementation handoff and consequential changes"
+  ],
+  "prototypeLimits": [
+    "No representative users evaluated this artifact set",
+    "No cloud design service was authorized or used",
+    "SVG fallbacks were authored from the same model rather than exported by a cloud canvas",
+    "The interactive prototype has no backend, persistence, authentication, or production hardening"
+  ]
+}

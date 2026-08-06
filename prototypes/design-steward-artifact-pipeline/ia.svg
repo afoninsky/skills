@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Information architecture for repair-session rescheduling</title>
+  <desc id="desc">An existing booking leads to compatible sessions, suitability selection, review, and confirmation, with an explicit recovery loop.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#16324f"/></marker>
+  </defs>
+  <rect width="1200" height="520" fill="#e8eff1"/>
+  <style>
+    .display{font:700 32px Rockwell,Georgia,serif;fill:#16324f}.label{font:700 12px Menlo,monospace;letter-spacing:1px;fill:#e4572e}.box{fill:#fff;stroke:#16324f;stroke-width:2}.decision{fill:#fff0c9;stroke:#e4572e;stroke-width:3}.recovery{fill:#e7f4eb;stroke:#2d6a4f;stroke-width:2}.head{font:700 17px Avenir,Arial,sans-serif;fill:#16324f}.small{font:14px Avenir,Arial,sans-serif;fill:#515960}.edge{stroke:#16324f;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+  </style>
+  <text x="55" y="55" class="label">ARTIFACT 02/06 · STRUCTURE</text>
+  <text x="55" y="100" class="display">Task and recovery architecture</text>
+  <path d="M235 255 H330" class="edge"/>
+  <path d="M510 255 H600" class="edge"/>
+  <path d="M765 255 H855" class="edge"/>
+  <path d="M1030 255 H1100" class="edge"/>
+  <path d="M680 340 V410 H420 V330" class="edge"/>
+  <g transform="translate(55 190)">
+    <rect width="180" height="130" rx="4" class="box"/>
+    <text x="18" y="35" class="head">Existing booking</text>
+    <text x="18" y="66" class="small">Item + category</text>
+    <text x="18" y="90" class="small">Current time</text>
+    <text x="18" y="114" class="small">Notes + access</text>
+  </g>
+  <g transform="translate(330 190)">
+    <rect width="180" height="130" rx="4" class="box"/>
+    <text x="18" y="35" class="head">Compatible sessions</text>
+    <text x="18" y="66" class="small">Time + room</text>
+    <text x="18" y="90" class="small">Repairers + access</text>
+    <text x="18" y="114" class="small">Availability</text>
+  </g>
+  <g transform="translate(600 180)">
+    <path d="M85 0 L170 75 L85 150 L0 75 Z" class="decision"/>
+    <text x="85" y="62" text-anchor="middle" class="head">Suitable and</text>
+    <text x="85" y="85" text-anchor="middle" class="head">available?</text>
+  </g>
+  <g transform="translate(855 190)">
+    <rect width="175" height="130" rx="4" class="box"/>
+    <text x="18" y="35" class="head">Change review</text>
+    <text x="18" y="66" class="small">Old → new</text>
+    <text x="18" y="90" class="small">Carried data</text>
+    <text x="18" y="114" class="small">Consequences</text>
+  </g>
+  <g transform="translate(1020 190)">
+    <rect width="150" height="130" rx="4" class="box"/>
+    <text x="18" y="35" class="head">Confirmation</text>
+    <text x="18" y="66" class="small">Reference</text>
+    <text x="18" y="90" class="small">Calendar</text>
+    <text x="18" y="114" class="small">Undo/support</text>
+  </g>
+  <g transform="translate(330 385)">
+    <rect width="180" height="90" rx="4" class="recovery"/>
+    <text x="18" y="34" class="head">Recovery</text>
+    <text x="18" y="62" class="small">Waitlist · category · support</text>
+  </g>
+  <text x="785" y="235" class="label">YES</text>
+  <text x="685" y="375" class="label">NO</text>
+</svg>

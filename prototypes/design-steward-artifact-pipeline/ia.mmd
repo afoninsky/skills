@@ -1,0 +1,14 @@
+flowchart LR
+    Booking[Existing booking\nitem · category · current time]
+    Options[Compatible sessions\ndate · time · repairers · access · room]
+    Selection{Available and suitable?}
+    Review[Change review\nold → new · carried data · consequence]
+    Confirm[Confirmation\nreference · calendar · undo/support]
+    Recovery[Recovery\nwaitlist · change category · contact support]
+
+    Booking --> Options
+    Options --> Selection
+    Selection -->|Yes| Review
+    Selection -->|No| Recovery
+    Recovery --> Options
+    Review --> Confirm

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Journey for rescheduling a community repair session</title>
+  <desc id="desc">Four stages: re-enter the task, compare viable changes, understand consequences, and commit and recover. The most difficult point is resolving a full or unsuitable session.</desc>
+  <rect width="1200" height="560" fill="#e8eff1"/>
+  <style>
+    .display{font:700 34px Rockwell,Georgia,serif;fill:#16324f}.label{font:700 12px Menlo,monospace;letter-spacing:1px;fill:#e4572e}.body{font:600 16px Avenir,Arial,sans-serif;fill:#20252b}.small{font:14px Avenir,Arial,sans-serif;fill:#515960}.stage{fill:#fff;stroke:#16324f;stroke-width:2}.node{fill:#16324f}.risk{fill:#e4572e}.line{stroke:#16324f;stroke-width:4;fill:none}.dash{stroke:#91969b;stroke-width:2;stroke-dasharray:5 7;fill:none}
+  </style>
+  <text x="64" y="65" class="label">ARTIFACT 01/06 · JOURNEY</text>
+  <text x="64" y="112" class="display">Reschedule a repair session</text>
+  <text x="64" y="143" class="small">The decision object stays stable: existing booking → compatible time → understood change → recoverable confirmation.</text>
+  <path d="M105 292 H1090" class="line"/>
+  <path d="M820 292 C875 292 875 440 930 440 C985 440 985 292 1040 292" class="dash"/>
+  <g transform="translate(65 190)">
+    <rect width="225" height="205" class="stage"/>
+    <text x="20" y="33" class="label">01 · RE-ENTER</text>
+    <text x="20" y="72" class="body">Open booking</text>
+    <text x="20" y="103" class="body">Confirm item</text>
+    <text x="20" y="134" class="body">Keep repair category</text>
+    <text x="20" y="176" class="small">Confidence: high</text>
+  </g>
+  <g transform="translate(335 190)">
+    <rect width="225" height="205" class="stage"/>
+    <text x="20" y="33" class="label">02 · COMPARE</text>
+    <text x="20" y="72" class="body">Times and room</text>
+    <text x="20" y="103" class="body">Access and repairers</text>
+    <text x="20" y="134" class="body">Choose replacement</text>
+    <text x="20" y="176" class="small">Risk: choice overload</text>
+  </g>
+  <g transform="translate(605 190)">
+    <rect width="225" height="205" class="stage"/>
+    <text x="20" y="33" class="label">03 · CONSEQUENCE</text>
+    <text x="20" y="72" class="body">What carries forward?</text>
+    <text x="20" y="103" class="body">What changes?</text>
+    <text x="20" y="134" class="body">What if a slot is full?</text>
+    <text x="20" y="176" class="small">Critical recovery point</text>
+  </g>
+  <g transform="translate(875 190)">
+    <rect width="260" height="205" class="stage"/>
+    <text x="20" y="33" class="label">04 · COMMIT / RECOVER</text>
+    <text x="20" y="72" class="body">Confirm new time</text>
+    <text x="20" y="103" class="body">Receive reference</text>
+    <text x="20" y="134" class="body">Undo or get support</text>
+    <text x="20" y="176" class="small">Confidence: restored</text>
+  </g>
+  <circle cx="105" cy="292" r="10" class="node"/>
+  <circle cx="375" cy="292" r="10" class="node"/>
+  <circle cx="645" cy="292" r="10" class="risk"/>
+  <circle cx="915" cy="292" r="10" class="node"/>
+  <g transform="translate(64 472)">
+    <rect width="1070" height="48" fill="#16324f"/>
+    <text x="20" y="30" style="font:700 14px Menlo,monospace;fill:#fff">EVIDENCE NEEDED · realistic content · unavailable state · consequence comprehension · keyboard flow · representative-user task research</text>
+  </g>
+</svg>

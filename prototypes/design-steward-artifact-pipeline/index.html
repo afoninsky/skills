@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Repair session rescheduling — artifact pipeline prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#prototype-root">Skip to rescheduling options</a>
+
+    <header class="prototype-masthead">
+      <div>
+        <p class="artifact-kicker">Throwaway prototype · Artifact 04/06</p>
+        <p class="prototype-title">Community repair session</p>
+      </div>
+      <a class="manifest-link" href="artifact-manifest.json">View artifact manifest</a>
+    </header>
+
+    <main id="prototype-root" tabindex="-1"></main>
+
+    <p id="prototype-announcer" class="visually-hidden" aria-live="polite"></p>
+
+    <nav class="prototype-switcher" aria-label="Prototype variants" data-prototype-only>
+      <button id="previous-variant" type="button" aria-label="Previous prototype variant">←</button>
+      <span id="variant-label" aria-live="polite"></span>
+      <button id="next-variant" type="button" aria-label="Next prototype variant">→</button>
+    </nav>
+
+    <script src="app.js"></script>
+  </body>
+</html>
