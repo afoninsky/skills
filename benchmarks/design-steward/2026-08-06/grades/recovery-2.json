@@ -1,0 +1,106 @@
+{
+  "grader_id": "recovery-2",
+  "grader_type": "model-structural-assistance",
+  "samples": [
+    {
+      "sample_id": "r1-s01",
+      "recovery_route": true,
+      "evidence": "Provides a same-day unblock packet: name an owner, approve a testable brief, resolve blocking unknowns, then generate three directions."
+    },
+    {
+      "sample_id": "r1-s02",
+      "recovery_route": true,
+      "evidence": "Proposes a short constraint-triage pass that inventories and classifies legacy conventions before direction generation resumes."
+    },
+    {
+      "sample_id": "r1-s03",
+      "recovery_route": true,
+      "evidence": "Offers a clean-room route: approve the brief, build independent directions from non-proprietary principles, and test recognition with representative users."
+    },
+    {
+      "sample_id": "r1-s04",
+      "recovery_route": true,
+      "evidence": "Defines a minimum baseline of objects, terms, realistic content, states, permissions, and constraints, followed by three distinct IA directions."
+    },
+    {
+      "sample_id": "r1-s05",
+      "recovery_route": true,
+      "evidence": "Replaces deceptive tactics with visible deletion, neutral consent, protected research data, and ethical conversion experiments."
+    },
+    {
+      "sample_id": "r1-s06",
+      "recovery_route": true,
+      "evidence": "Specifies launch recovery steps: define measures, test with representative users, validate analytics, obtain specialist reviews, and prepare rollback criteria."
+    },
+    {
+      "sample_id": "r1-s07",
+      "recovery_route": true,
+      "evidence": "Provides a concrete isolated-direction workflow, followed by frozen comparison and controlled synthesis around one coherent backbone."
+    },
+    {
+      "sample_id": "r1-s08",
+      "recovery_route": true,
+      "evidence": "Pivots from an unavailable proprietary tool to specific portable formats while preserving source, provenance, decision links, and migration limits."
+    },
+    {
+      "sample_id": "r1-s09",
+      "recovery_route": true,
+      "evidence": "Gives a five-step release recovery: log deltas, restore or approve behavior, verify the integrated build, obtain sign-offs, and return for launch approval."
+    },
+    {
+      "sample_id": "r1-s10",
+      "recovery_route": true,
+      "evidence": "Directs the team to pause expansion, correct denominators, diagnose accessibility and subgroup harms, and run a guarded staged test before reconsidering scale."
+    },
+    {
+      "sample_id": "r2-s01",
+      "recovery_route": true,
+      "evidence": "Supplies a minimum same-day unblock packet and identifies an approved disposable three-screen prototype as the next deliverable afterward."
+    },
+    {
+      "sample_id": "r2-s02",
+      "recovery_route": true,
+      "evidence": "Sets out a convention-triage ledger and the exact owner, journeys, states, constraints, and rubric needed to resume modernization safely."
+    },
+    {
+      "sample_id": "r2-s03",
+      "recovery_route": true,
+      "evidence": "Offers independent workflow design from user needs and broad conventions, with representative testing and a separately gated precedent route if essential."
+    },
+    {
+      "sample_id": "r2-s04",
+      "recovery_route": true,
+      "evidence": "Requires one shared realistic baseline, then proposes task-first, object-first, and guided-workflow IA alternatives for fair comparison."
+    },
+    {
+      "sample_id": "r2-s05",
+      "recovery_route": true,
+      "evidence": "Provides a four-part safe conversion plan covering findable deletion, opt-in consent, controlled recordings, and non-deceptive conversion improvements."
+    },
+    {
+      "sample_id": "r2-s06",
+      "recovery_route": true,
+      "evidence": "Advances Direction B only as a hypothesis through representative testing, a bounded instrumented pilot, hard-gate review, and explicit approval."
+    },
+    {
+      "sample_id": "r2-s07",
+      "recovery_route": true,
+      "evidence": "Replaces cross-contaminated design work with isolated structural charters, provenance-aware precedent use, hard-gate review, and controlled synthesis."
+    },
+    {
+      "sample_id": "r2-s08",
+      "recovery_route": true,
+      "evidence": "Details a continuity plan to freeze service editing, export or reconstruct authorized material, choose portable substitutes, and reapprove gates after migration."
+    },
+    {
+      "sample_id": "r2-s09",
+      "recovery_route": true,
+      "evidence": "Calls for production-like keyboard, recovery, reflow, and analytics verification, specialist sign-off, delta correction, and a repeated implementation gate."
+    },
+    {
+      "sample_id": "r2-s10",
+      "recovery_route": true,
+      "evidence": "Defines a safe pivot to containment, inclusive reanalysis, accessibility investigation, subgroup incident triage, correction, and bounded retesting."
+    }
+  ]
+}

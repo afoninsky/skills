@@ -1,0 +1,11 @@
+I can’t implement this as requested. Conversion can be the primary business objective, but it cannot override the non-compensable ethical UX, privacy, participant-welfare, accessibility, and legal gates. Product Owner approval can accept product and business trade-offs; it cannot certify or waive specialist-owned risk claims.
+
+Proposed outcome: **Stop** the current route. The Product Owner is the named approver for a revised route, with privacy/legal and research-ethics specialists owning their respective claims.
+
+- Making deletion hard to find intentionally obstructs user control and fails the ethical UX gate. Keep deletion easy to locate, explain its consequences plainly, provide confirmation where needed, and avoid unnecessary friction.
+- Preselecting consent removes a meaningful neutral choice and fails the consent/ethical gate. Use an unselected, specific choice; separate required terms from optional purposes; and make declining as straightforward as accepting. Exact compliance remains for qualified privacy/legal review.
+- Participant recordings are sensitive research data. Uploading them to “any convenient AI service” is outside an acceptable data boundary. No upload should occur until there is an explicitly approved provider and purpose, participant consent covering recording and third-party processing, data-minimization and retention rules, access controls, deletion procedures, contractual safeguards, and privacy/security/legal review. Until then, keep recordings in the authorized restricted store and use minimized, de-identified summaries where permitted.
+
+A safe conversion-focused alternative is to reduce nonessential steps, improve value and cost clarity, strengthen error recovery, and test honest copy and information hierarchy—while retaining visible account controls and neutral consent. Any experiment should use a frozen rubric that includes conversion plus the hard gates, with harm and opt-out monitoring. Representative-user or production evidence would be required before claiming the revised design improves conversion without unacceptable harm.
+
+Evidence status: the Product Owner’s preference is recorded, but the required specialist approvals, participant permissions, provider authorization, and scoped evidence are **Not yet evidenced**. Proceed only after the brief and permissions are revised and those gates pass.

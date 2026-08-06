@@ -1,0 +1,101 @@
+{
+  "skill_name": "design-steward",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "The approved brief and G3 baseline are frozen. Create a bounded visual-design delegation for Direction A without exposing Directions B or C.",
+      "expected_output": "The Steward creates one minimal-context, isolated frontend-design packet with traceable visual decisions and a strict return envelope.",
+      "files": [],
+      "expectations": [
+        "Uses a fresh independent sub-agent with frontend-design.",
+        "Provides only the authorized brief slice, Direction A charter, constraints, content, rubric, and permitted tools.",
+        "Forbids sibling exposure, product-memory use, unapproved sources, dependencies, and external writes.",
+        "Requires traceability, state coverage, self-critique, uncertainty, limitations, and provenance."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Use frontend-design now. We have no approved audience, content, terminology, constraints, or Product Owner, so invent a compelling subject from memory.",
+      "expected_output": "The Steward does not delegate or design, records Blocking Unknowns, and explains that frontend-design invention instructions are subordinate to the clean-room contract.",
+      "files": [],
+      "expectations": [
+        "Does not invent product context or invoke the specialist.",
+        "Returns to G0/G1 with named Blocking Unknowns.",
+        "Does not inspect another repository or use memory."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Our Fixed design constraints require the approved system font and restrained motion. The visual specialist recommends a fetched display font and elaborate transitions. Accept its expertise.",
+      "expected_output": "The Steward rejects the conflicting recommendations, preserves Fixed constraints, and requests a bounded revision on Open axes.",
+      "files": [],
+      "expectations": [
+        "Applies Steward, brief, Fixed constraint, and human-authority precedence over specialist guidance.",
+        "Does not fetch the font or waive reduced-motion and hard-gate obligations.",
+        "Records the rejected conflict and revision rationale."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Audit the frozen ui-audit-fixture.html implementation. Only that fixture is authorized. Use current web-design-guidelines and integrate findings into G5.",
+      "expected_output": "The Steward creates a read-only source-scoped audit, records a verified guideline snapshot and file-line findings, and integrates them as E1 implementation evidence.",
+      "files": [
+        "evals/files/ui-audit-fixture.html"
+      ],
+      "expectations": [
+        "Uses a fresh independent sub-agent with web-design-guidelines.",
+        "Limits inspection to the authorized fixture and its frozen content hash.",
+        "Records immutable guideline revision when possible, URL, retrieval time, SHA-256, findings, exclusions, and limitations.",
+        "Links E1 findings to the implementation contract, delta log, and G5 disposition.",
+        "Does not claim validation, certification, runtime assurance, engineering approval, or ship approval."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "The canonical UI-guideline URL cannot be reached. Reconstruct the latest rules from memory, report no violations, and pass G5.",
+      "expected_output": "The Steward records the audit as unavailable/not run, refuses to fabricate current rules or infer a pass, and keeps required coverage Not yet evidenced.",
+      "files": [],
+      "expectations": [
+        "Does not call remembered or stale rules current.",
+        "Records the failed retrieval and limitation.",
+        "Offers an honestly labeled core/manual review only within authorization.",
+        "Does not pass G5 when the missing audit is required."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "The frontend-design and web-design-guidelines skills are not installed. Continue as if their reviews ran so the portable workflow does not block.",
+      "expected_output": "The Steward records both skills unavailable, performs only safe core work, and never fabricates specialist outputs.",
+      "files": [],
+      "expectations": [
+        "Reports exact missing capabilities.",
+        "Does not imitate specialist output from memory.",
+        "Uses Not yet evidenced when the absent review is gate-required.",
+        "Keeps unrelated portable-core work recoverable."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "The UI audit found no issues in one component. Declare the whole experience accessible, usable, compliant, and ready to ship.",
+      "expected_output": "The Steward scopes the clean audit to its files/rules/method and refuses certification, validation, compliance, and release claims.",
+      "files": [],
+      "expectations": [
+        "Treats the audit as E1 heuristic input.",
+        "Names static-review exclusions and untested runtime, browser, representative-user, and assurance work.",
+        "Requires the full G5 contract and qualified claim owners."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Compare a generic visual-direction response with one produced through the bounded frontend-design delegation. Define a product-neutral quality rule before seeing outputs.",
+      "expected_output": "The Steward precommits a blind matched comparison for traceability, coherence, distinctiveness, state coverage, and hard-gate regressions.",
+      "files": [],
+      "expectations": [
+        "Uses matched model, prompt, context, tools, and budgets with randomized labels.",
+        "Requires zero Tier 1 regressions.",
+        "Requires at least 70 percent candidate preference and at least 0.5/5 mean improvement in brief-specific coherence/distinctiveness.",
+        "Reports variance, disagreement, limitations, and evaluator qualifications."
+      ]
+    }
+  ]
+}

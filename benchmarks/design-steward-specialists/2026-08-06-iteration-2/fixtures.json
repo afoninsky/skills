@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {
+      "id": 1,
+      "title": "Community tool-loan pickup board",
+      "brief": {
+        "charter": "A calm, object-first pickup board that makes limited appointment windows comparable without manufacturing urgency.",
+        "priority_journey": "A resident compares available pickup windows, checks tool and deposit requirements, reserves one window, and recovers if that window becomes unavailable during confirmation.",
+        "representative_content": "Tool name and category; pickup date and 30-minute window; depot; deposit; required identification; accessibility note; remaining reservations; reservation state.",
+        "fixed_constraints": [
+          "Responsive from 320 to 1440 CSS pixels",
+          "System font only",
+          "No photography, countdowns, scarcity copy, gradients, or external icon packages",
+          "WCAG 2.2 AA intent, visible focus, reduced-motion support, and no color-only meaning",
+          "Do not promise inventory locking, persistence, or availability behavior that the brief does not confirm"
+        ],
+        "open_axes": [
+          "palette",
+          "hierarchy",
+          "layout",
+          "native or CSS-drawn icon treatment"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Three-option remote workshop booking",
+      "brief": {
+        "charter": "A task-first booking flow that gives one consequential choice at a time while keeping confirmed facts continuously visible.",
+        "priority_journey": "A learner chooses a topic, compares exactly three remote workshop slots, explicitly confirms local timezone and facilitator, books, and recovers from a connection interruption.",
+        "representative_content": "Topic; three local date/time options; IANA timezone label; facilitator; duration; remaining capacity; selected option; connection-error state; confirmation reference.",
+        "fixed_constraints": [
+          "Responsive from 320 to 1440 CSS pixels",
+          "System font only",
+          "No photography, gradients, autoplay, or imported iconography",
+          "WCAG 2.2 AA intent, complete keyboard operation, visible focus, and reduced-motion support",
+          "Never claim that selections survive an interruption unless the behavior is confirmed"
+        ],
+        "open_axes": [
+          "palette",
+          "layout rhythm",
+          "progress representation",
+          "native or CSS-drawn visual motifs"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Shared-garden maintenance request",
+      "brief": {
+        "charter": "A status-first civic record whose visual identity comes from visible provenance, correction, and recovery rather than decoration.",
+        "priority_journey": "A resident categorizes a maintenance issue, gives an approximate text location and description, reviews a privacy notice, submits, receives a reference, follows status history, and requests a correction.",
+        "representative_content": "Category; approximate location; description; optional photo presence; privacy disclosure; reference ID; current status; history entries where supplied; correction route; upload and submission failure states.",
+        "fixed_constraints": [
+          "Responsive from 320 to 1440 CSS pixels",
+          "System font only and no map",
+          "WCAG 2.2 AA intent, high-contrast-mode resilience, visible focus, and no color-only status",
+          "No external assets or packages",
+          "Do not invent actors, timestamps, retention, correction permissions, or submission persistence"
+        ],
+        "open_axes": [
+          "palette",
+          "hierarchy",
+          "layout",
+          "restrained public-fixture illustration outside the task path"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Equipment checkout decision queue",
+      "brief": {
+        "charter": "A comparison-first workbench for quick keyboard scanning, contextual inspection, and deliberate reversible decisions before final confirmation.",
+        "priority_journey": "A coordinator compares requests, inspects dates, conflicts and condition, drafts Approve or Decline with a reason when required, reviews the result, confirms, and sees the supplied audit entry.",
+        "representative_content": "Requester; equipment; checkout and return dates; conflict; condition; decision status; reason; actor and timestamp where supplied; concurrent-change and failed-confirmation states.",
+        "fixed_constraints": [
+          "Responsive from 320 to 1440 CSS pixels",
+          "System font and native text or CSS-drawn symbols only",
+          "No charts, bulk actions, external packages, or hover-only controls",
+          "WCAG 2.2 AA intent, keyboard-first interaction, visible focus, and reduced-motion support",
+          "Do not invent permissions, conflict logic, reason policy, concurrency semantics, reversibility after confirmation, or audit retention"
+        ],
+        "open_axes": [
+          "palette",
+          "density",
+          "layout",
+          "provisional-decision marker treatment"
+        ]
+      }
+    }
+  ]
+}

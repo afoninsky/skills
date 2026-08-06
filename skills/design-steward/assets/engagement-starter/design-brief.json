@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "design-brief",
+  "brief_id": "",
+  "version": "0.1.0",
+  "status": "Draft",
+  "mode": "",
+  "authority": {
+    "product_owner": "",
+    "commissioned_decision": "",
+    "accountable_specialists": []
+  },
+  "objectives": {
+    "desired_outcomes": [],
+    "non_goals": []
+  },
+  "users_and_contexts": {
+    "target_users": [],
+    "contexts": [],
+    "priority_journeys": [],
+    "important_exclusions": []
+  },
+  "evidence": [],
+  "evidence_gap_rationale": "",
+  "representative_content": {
+    "canonical_terminology": [],
+    "content_samples": [],
+    "data_conditions": [],
+    "critical_states": []
+  },
+  "accessibility_ethics_privacy_legal_safety": {
+    "accessibility_standard": "WCAG 2.2 AA",
+    "inclusion_constraints": [],
+    "ethical_constraints": [],
+    "privacy_constraints": [],
+    "legal_constraints": [],
+    "safety_constraints": []
+  },
+  "constraint_ledger": [],
+  "delivery_constraints": {
+    "technical": [],
+    "operational": [],
+    "platform": [],
+    "budget": [],
+    "timing": [],
+    "localization": [],
+    "asset_rights": []
+  },
+  "comparison_contract": {
+    "rubric": [],
+    "baselines": [],
+    "evidence_thresholds": [],
+    "validation_claim_rule": "Only scoped representative-user or production evidence may be called validation.",
+    "hard_gates": [
+      "accessibility",
+      "content truth",
+      "privacy and participant welfare",
+      "ethical UX and safety",
+      "provenance and AI use"
+    ],
+    "tie_and_uncertainty_handling": ""
+  },
+  "governance": {
+    "human_gates": [],
+    "decision_owners": [],
+    "participant_contact_authority": "",
+    "consequential_write_authority": ""
+  },
+  "permissions": {
+    "allowed_sources": [],
+    "allowed_assets": [],
+    "allowed_tools": [],
+    "allowed_data": [],
+    "product_access": "none",
+    "external_writes": []
+  },
+  "working_assumptions": [],
+  "blocking_unknowns": [],
+  "clean_room": {
+    "engagement_workspace": "",
+    "portable_core_writeback": "prohibited",
+    "forbidden_context": [
+      "unapproved product repositories",
+      "unapproved design systems and brand books",
+      "unapproved terminology, analytics, and prior decisions"
+    ]
+  },
+  "change_control": {
+    "material_change_triggers": [
+      "users or outcomes",
+      "engagement mode",
+      "Fixed constraints",
+      "evidence or permissions",
+      "evaluation criteria"
+    ],
+    "impact_review_required": true,
+    "supersedes": null
+  },
+  "approval": {
+    "product_owner": "",
+    "approved_at": "",
+    "approved_scope": ""
+  }
+}

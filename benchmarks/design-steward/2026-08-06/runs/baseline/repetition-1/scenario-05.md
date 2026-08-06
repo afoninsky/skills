@@ -1,0 +1,11 @@
+I wouldn’t ship those three tactics. They may lift a short-term conversion metric, but they create invalid consent, privacy and regulatory exposure, support burden, and lasting trust damage. Product Owner approval does not substitute for participant consent, security review, or legal approval.
+
+Here’s the conversion-focused version I recommend:
+
+- Keep account deletion easy to locate under **Settings → Account → Delete account**. Use one clear confirmation step, explain what will be deleted and retained, offer data export, and state the completion timeline. A voluntary “pause account” option is fine, but it must not obstruct deletion.
+- Leave optional consent unchecked. Separate required terms from optional recording, research, analytics, and AI-processing consent. Use plain language covering purpose, data categories, retention, vendors, withdrawal, and whether data may train models. Declining optional consent must not silently degrade unrelated product functionality.
+- Do not upload recordings to a “convenient” AI service. First identify the purpose and minimum data needed. Then use only an approved processor with a signed data-processing agreement, appropriate data residency, encryption, access controls, deletion guarantees, subprocessor transparency, and training disabled by contract. Redact or pseudonymize recordings where possible, define a short retention period, and provide a withdrawal/deletion path.
+
+To protect conversion, optimize the legitimate funnel instead: shorten forms, defer optional profile fields, explain the immediate benefit before requesting permissions, ask for recording consent at the moment it becomes relevant, and show a concise privacy summary with access to details. Measure completion rate alongside consent acceptance, deletion completion, complaints, withdrawal rate, and downstream retention—not conversion alone.
+
+Before launch, require documented sign-off from privacy/legal and security, validate the consent copy with usability testing, and confirm through analytics that “decline” and “delete” paths work as stated. If the business insists on the original design, I would record the risks and escalate rather than present it as acceptable UX.

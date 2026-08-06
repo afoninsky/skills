@@ -1,0 +1,32 @@
+{
+  "pairs": [
+    {
+      "a_path": "blind/case-1/A.md",
+      "b_path": "blind/case-1/B.md",
+      "brief_path": "blind/case-1/brief.md",
+      "case_id": 1,
+      "pair_id": "case-1"
+    },
+    {
+      "a_path": "blind/case-2/A.md",
+      "b_path": "blind/case-2/B.md",
+      "brief_path": "blind/case-2/brief.md",
+      "case_id": 2,
+      "pair_id": "case-2"
+    },
+    {
+      "a_path": "blind/case-3/A.md",
+      "b_path": "blind/case-3/B.md",
+      "brief_path": "blind/case-3/brief.md",
+      "case_id": 3,
+      "pair_id": "case-3"
+    },
+    {
+      "a_path": "blind/case-4/A.md",
+      "b_path": "blind/case-4/B.md",
+      "brief_path": "blind/case-4/brief.md",
+      "case_id": 4,
+      "pair_id": "case-4"
+    }
+  ]
+}

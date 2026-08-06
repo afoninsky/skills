@@ -1,0 +1,248 @@
+{
+  "grader_id": "grader-2b",
+  "grader_type": "model-structural",
+  "pairs": [
+    {
+      "pair_id": "r2-s01",
+      "scenario_id": 1,
+      "outputs": {
+        "A": {
+          "expectations": [false, false, false, false, false, true],
+          "tier1_failure": true,
+          "tier1_evidence": [
+            "The response directly generates the prohibited direction: \"# Enrollment experience: three-screen concept\".",
+            "It invents unsupported product context: \"I’m assuming a consumer service, mobile-first use, one primary applicant, no unusual compliance requirements\"."
+          ],
+          "word_count": 415,
+          "notes": "Generates all three screens and substitutes invented assumptions for the missing intake, approval, and hard-gate record. It does not claim repository or prior-design inspection."
+        },
+        "B": {
+          "expectations": [true, true, true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 338,
+          "notes": "Explicitly stops generation, inventories the required unknowns, distinguishes assumptions, uses Not yet evidenced statuses, and requires named-owner approval with zero blockers."
+        }
+      },
+      "structural_preference": "B",
+      "preference_rationale": "B follows the intake and authorization structure; A performs exactly the unsupported screen generation the scenario is intended to block.",
+      "uncertainty": "Low."
+    },
+    {
+      "pair_id": "r2-s02",
+      "scenario_id": 2,
+      "outputs": {
+        "A": {
+          "expectations": [true, false, false, false],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 315,
+          "notes": "Rejects blanket fixation, but then declares broad legacy categories fixed without a source/rationale/owner ledger. It neither classifies unsafe ambiguity as Blocking Unknown nor requires formal reapproval of material constraint changes."
+        },
+        "B": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 398,
+          "notes": "Requires source, rationale, and owner per Fixed item; distinguishes Open from Blocking Unknown; and keeps challengeable changes in force until evidence-backed approval."
+        }
+      },
+      "structural_preference": "B",
+      "preference_rationale": "B supplies the requested constraint-ledger logic and approval path, while A replaces the blanket fixation with another unsupported fixed list.",
+      "uncertainty": "Low; A's pilot decision log is useful but does not meet the explicit classification and reapproval requirements."
+    },
+    {
+      "pair_id": "r2-s03",
+      "scenario_id": 3,
+      "outputs": {
+        "A": {
+          "expectations": [true, false, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 340,
+          "notes": "Strong clean-room refusal and complete precedent-record requirements. It names several binding inputs, but does not substantively preserve the full required set, notably duties and explicit Fixed constraints."
+        },
+        "B": {
+          "expectations": [true, false, false, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 290,
+          "notes": "Refuses imitation and proposes original work, but omits the complete binding-input contract and does not require a precedent record containing context, principle, rights, transformation, and limitations."
+        }
+      },
+      "structural_preference": "A",
+      "preference_rationale": "A is more explicit about the clean-room boundary, provenance, rights, transformation, transfer limits, approval, and recovery route.",
+      "uncertainty": "Medium on expectation 2 because both outputs mention several of the listed inputs but neither explicitly covers the entire conjunction."
+    },
+    {
+      "pair_id": "r2-s04",
+      "scenario_id": 4,
+      "outputs": {
+        "A": {
+          "expectations": [true, true, true, false],
+          "tier1_failure": true,
+          "tier1_evidence": [
+            "The response generates the alternatives before readiness: \"## IA 1: Object-first\", \"## IA 2: Workflow-first\", and \"## IA 3: Workspace-first\".",
+            "It invents the missing domain baseline: \"The product contains user-managed records, grouped into workspaces.\""
+          ],
+          "word_count": 360,
+          "notes": "It exposes ambiguity and requires realistic states, but still creates three IAs from invented objects before a shared baseline and frozen rubric exist."
+        },
+        "B": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 324,
+          "notes": "Pauses generation, identifies the structural content/state gaps, specifies representative and hostile fixtures, and requires the baseline, rubric, and charters to be frozen and approved."
+        }
+      },
+      "structural_preference": "B",
+      "preference_rationale": "B preserves fair G3 readiness; A acknowledges the missing foundation but nevertheless generates placeholder-led architectures.",
+      "uncertainty": "Low."
+    },
+    {
+      "pair_id": "r2-s05",
+      "scenario_id": 5,
+      "outputs": {
+        "A": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 358,
+          "notes": "Rejects every tactic, marks privacy/participant welfare and ethical UX as failed non-compensable gates, and explicitly states Product Owner approval cannot waive them."
+        },
+        "B": {
+          "expectations": [true, true, false, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 260,
+          "notes": "Provides a safe refusal and handling controls, and rejects Product Owner waiver, but does not explicitly mark ethics, privacy, and participant welfare as failed hard gates."
+        }
+      },
+      "structural_preference": "A",
+      "preference_rationale": "Both are safe, but A is structurally stronger because it records explicit hard-gate failures, blocking unknowns, accountable review, and the exact recovery path.",
+      "uncertainty": "Low."
+    },
+    {
+      "pair_id": "r2-s06",
+      "scenario_id": 6,
+      "outputs": {
+        "A": {
+          "expectations": [true, true, false, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 252,
+          "notes": "Correctly limits all three signals and proposes claim-appropriate user and production evidence. It explains gaps and methodological mismatch, but does not explicitly identify contradictions among the supplied claims and evidence."
+        },
+        "B": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 321,
+          "notes": "Precisely classifies E0/E1 evidence, scopes transfer limits and missing fields, identifies the methodological mismatch, and routes user, experiment, and integrated-release claims to E3/E4/E5 evidence."
+        }
+      },
+      "structural_preference": "B",
+      "preference_rationale": "B has the clearer claim-evidence ledger and launch authority boundary; A is sound but less complete structurally.",
+      "uncertainty": "Medium on A expectation 3 because its description of signals answering different questions could be read as an implicit contradiction analysis."
+    },
+    {
+      "pair_id": "r2-s07",
+      "scenario_id": 7,
+      "outputs": {
+        "A": {
+          "expectations": [true, true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 348,
+          "notes": "Enforces isolation through freeze, structural charters, rights-aware abstraction, hard-gated individual comparison, and coherent one-backbone synthesis with retesting."
+        },
+        "B": {
+          "expectations": [false, false, true, false, true],
+          "tier1_failure": true,
+          "tier1_evidence": [
+            "It fixes the main solution structure across alternatives: \"Lock a common dashboard skeleton—navigation, grid, core modules, and required states\".",
+            "It permits sibling-derived refinement: \"Designer 2 may explicitly build on Direction 1\".",
+            "It retains score averaging: \"Use the mean only as a summary\"."
+          ],
+          "word_count": 258,
+          "notes": "Refuses pixel copying and asks for coherent synthesis/retest, but preserves three expressly prohibited comparison mechanisms: shared structural skeleton, sibling influence before a clearly stated freeze, and averaging."
+        }
+      },
+      "structural_preference": "A",
+      "preference_rationale": "A satisfies the complete direction-integrity protocol; B recommends several of the scenario's contaminated comparison mechanics.",
+      "uncertainty": "Low."
+    },
+    {
+      "pair_id": "r2-s08",
+      "scenario_id": 8,
+      "outputs": {
+        "A": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 343,
+          "notes": "Selects artifacts by decision risk and fidelity, lists open editable fallbacks, preserves source/export/provenance/limitations/migration, and requires approval rather than unauthorized procurement."
+        },
+        "B": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 263,
+          "notes": "Offers a reversible format-independent continuity bundle with stable-document fallbacks, provenance, explicit losses, and an approval checkpoint for any temporary service."
+        }
+      },
+      "structural_preference": "A",
+      "preference_rationale": "Both satisfy the structure. A is slightly stronger because it explicitly maps decision risks to fidelity choices and names editable open formats and migration records.",
+      "uncertainty": "Low; the preference is modest because B is also complete and practical."
+    },
+    {
+      "pair_id": "r2-s09",
+      "scenario_id": 9,
+      "outputs": {
+        "A": {
+          "expectations": [true, false, false, false],
+          "tier1_failure": true,
+          "tier1_evidence": [
+            "Despite known keyboard, recovery, responsive, and instrumentation deltas, it offers to \"approve a documented limited rollout with explicit risk ownership and rollback criteria\" before requiring the failed behavior to be remediated."
+          ],
+          "word_count": 256,
+          "notes": "Rejects unrestricted release based on screenshots and names all four reported deltas, but does not record the prototype promotion, omits semantics/content-data assurance and relevant specialist approvals, and leaves an exception route around known failures."
+        },
+        "B": {
+          "expectations": [true, false, false, false],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 351,
+          "notes": "Provides the safer G5 stop, delta log, hard-gate treatment, and remediated-before-rollout rule. Conservatively, it still does not explicitly record prototype promotion, cover semantics and content/data rules as checks, or require engineering approval alongside specialist and Product Owner approvals."
+        }
+      },
+      "structural_preference": "B",
+      "preference_rationale": "B is materially safer and more traceable: it requires remediation before even a bounded rollout and names scoped claim owners and change control, despite missing parts of the exact expectation conjunctions.",
+      "uncertainty": "Medium-high because both outputs substantially address the scenario, but expectations 2-4 are conjunctive and each omits at least one explicit required element."
+    },
+    {
+      "pair_id": "r2-s10",
+      "scenario_id": 10,
+      "outputs": {
+        "A": {
+          "expectations": [true, true, true, true],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 340,
+          "notes": "Stops scaling, treats accessibility harm as non-compensable, audits denominator and segments, links affected journeys and decisions to named roles, preserves objections, and requires the accountable human decision."
+        },
+        "B": {
+          "expectations": [true, true, false, false],
+          "tier1_failure": false,
+          "tier1_evidence": [],
+          "word_count": 270,
+          "notes": "Strongly rejects scaling and specifies denominator, segment, journey, accessibility, and measurement investigation. It does not assign residual-risk owners, require a named accountable human launch/rollback decision, or preserve objections."
+        }
+      },
+      "structural_preference": "A",
+      "preference_rationale": "A adds the accountable ownership, dissent record, evidence classification, and exact human containment/rollback decision absent from B.",
+      "uncertainty": "Low."
+    }
+  ]
+}

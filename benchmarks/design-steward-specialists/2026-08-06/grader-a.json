@@ -1,0 +1,90 @@
+{
+  "grader": "A",
+  "cases": [
+    {
+      "case": 1,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 3,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "A",
+      "rationale": "A turns the calm-ledger idea into a concrete visual system with exact palette roles, grid behavior, and a memorable place register tied directly to finite volunteer capacity. B is faithful and thorough, but its availability rail is closer to a conventional action column and its visual direction is less specific."
+    },
+    {
+      "case": 2,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 3,
+        "coverage": 4,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "B",
+      "rationale": "B provides the more resolved and subject-specific direction: a content-bearing checkpoint ticket, exact palette and type roles, explicit rejected alternatives, hostile states, and careful conditional language around retained selections. A is coherent and usable, but the checkpoint receipt remains a familiar progressive-disclosure summary and its recovery language assumes retention more readily."
+    },
+    {
+      "case": 3,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 4,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 4,
+        "coverage": 4,
+        "tier1_failures": []
+      },
+      "preference": "A",
+      "rationale": "A makes provenance the organizing visual principle across both reporting and tracking, with a concrete palette, responsive transformation, high-contrast treatment, and unusually honest uncertainty about persistence and correction permissions. B is strong, but its provenance spine is less fully resolved as a whole-system device and it states preservation on submission failure more categorically than the available evidence warrants."
+    },
+    {
+      "case": 4,
+      "A": {
+        "brief_fidelity": 5,
+        "traceability": 4,
+        "coherence": 4,
+        "distinctiveness": 3,
+        "coverage": 4,
+        "tier1_failures": []
+      },
+      "B": {
+        "brief_fidelity": 5,
+        "traceability": 5,
+        "coherence": 5,
+        "distinctiveness": 5,
+        "coverage": 5,
+        "tier1_failures": []
+      },
+      "preference": "B",
+      "rationale": "B converts the equipment-review brief into a concrete workbench language through the constraint spine and provisional paper-tab marker, while retaining strong comparison mechanics. Its hostile-state set, breakpoint behavior, keyboard details, conditional draft-persistence language, and explicit rejection of a generic card grid make it more distinctive and better covered than A's otherwise solid split-pane decision tray."
+    }
+  ],
+  "limitations": "This was a blind textual review of the supplied pairs only. No source briefs, implementations, rendered interfaces, provenance files, filenames revealing authorship, or external sources were inspected, so scores assess the directions' internal evidence and stated traceability rather than visual execution or production validity."
+}

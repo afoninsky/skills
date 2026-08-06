@@ -17,7 +17,15 @@ Install one skill:
 
 ```bash
 npx skills add afoninsky/skills --skill agent-work-auditor
+npx skills add afoninsky/skills --skill design-steward
 npx skills add afoninsky/skills --skill marktplaats-ad-creator
+```
+
+For Design Steward's optional visual-design and UI-audit specialists, also install:
+
+```bash
+npx skills add anthropics/skills --skill frontend-design
+npx skills add vercel-labs/agent-skills --skill web-design-guidelines
 ```
 
 Add `-g` to install globally instead of into the current project:
@@ -46,6 +54,18 @@ Requirements: Python 3.10 or newer for the bundled report generator. Other verif
 
 [Read the skill](skills/agent-work-auditor/SKILL.md)
 
+### Design Steward
+
+Runs a product-neutral, evidence-led design loop for responsive websites and web applications. It gates direction generation on an approved Design Brief, composes bounded specialist capabilities, keeps alternatives structurally independent, governs non-compensable accessibility/content/privacy/ethics/provenance checks, and maintains traceability through implementation and live learning.
+
+The package includes engagement-local record templates, a deterministic Design Brief readiness validator, and ten adversarial benchmark fixtures. It is service-independent and keeps target-product context outside the portable core.
+
+Requirements: Python 3.10 or newer for the optional Design Brief and specialist-integrity validators. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
+
+[Read the skill](skills/design-steward/SKILL.md)
+
+[Use Design Steward](docs/design-steward.md)
+
 ### Marktplaats Ad Creator
 
 Creates Dutch Marktplaats.nl listings from product images and seller details. It researches comparable listings, recommends private floor and target prices plus a leverage-oriented public asking price, drafts honest listing copy, and can prepare the listing in a browser.
@@ -65,7 +85,7 @@ Pull requests and pushes to `main` run:
 - skill metadata, link, JSON, Python syntax, symlink, private-path, and sensitive-data checks;
 - Python linting and tests on Python 3.10 and 3.14;
 - deterministic regeneration of the auditor's standalone HTML example;
-- discovery and clean installation of both skills with a pinned `skills` CLI version;
+- discovery and clean installation of every skill with a pinned `skills` CLI version;
 - full-history secret scanning with Gitleaks.
 
 Run the local checks:
@@ -74,6 +94,7 @@ Run the local checks:
 python3 scripts/verify_skills.py --repository .
 python3 -m unittest tests/test_verify_skills.py -v
 python3 skills/agent-work-auditor/scripts/test_generate_report.py
+python3 skills/design-steward/scripts/test_validate_design_brief.py
 npx --yes skills@1.5.16 add . --list
 ```
 

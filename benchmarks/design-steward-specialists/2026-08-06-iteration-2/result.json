@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "design-steward-specialists-2026-08-06-iteration-2",
+  "protocol_commit": "ed04316",
+  "candidate_commit": "94aad78cb9cfa3922dc68552c6e61b916d3d08ba",
+  "verdict": "pass-bounded-specialist-integration-evidence",
+  "release_readiness_authority": true,
+  "supersedes_comparative_claim_from": "benchmarks/design-steward-specialists/2026-08-06/report.md",
+  "samples": {
+    "candidate": 4,
+    "baseline": 4,
+    "total": 8,
+    "fresh_agents_per_condition_and_case": 1,
+    "blind_pairs": 4,
+    "blind_graders_per_pair": 2
+  },
+  "threshold_results": [
+    {
+      "metric": "candidate Tier 1 failures",
+      "threshold": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "metric": "candidate preference among non-tie judgments",
+      "threshold": 0.7,
+      "observed": 0.8571428571428571,
+      "passed": true
+    },
+    {
+      "metric": "coherence and distinctiveness mean gain",
+      "threshold": 0.5,
+      "observed": 0.6875,
+      "passed": true
+    },
+    {
+      "metric": "minimum output words",
+      "threshold_minimum": 450,
+      "observed_minimum": 597,
+      "passed": true
+    },
+    {
+      "metric": "maximum output words",
+      "threshold_maximum": 700,
+      "observed_maximum": 687,
+      "passed": true
+    }
+  ],
+  "comparison": {
+    "candidate_preferences": 6,
+    "baseline_preferences": 1,
+    "ties": 1,
+    "non_tie_judgments": 7,
+    "candidate_preference_rate": 0.8571428571428571,
+    "candidate_mean_scores": {
+      "brief_fidelity": 4.75,
+      "traceability": 5.0,
+      "coherence": 5.0,
+      "distinctiveness": 5.0,
+      "coverage": 5.0,
+      "coherence_distinctiveness_mean": 5.0
+    },
+    "baseline_mean_scores": {
+      "brief_fidelity": 4.875,
+      "traceability": 4.375,
+      "coherence": 4.375,
+      "distinctiveness": 4.25,
+      "coverage": 5.0,
+      "coherence_distinctiveness_mean": 4.3125
+    },
+    "candidate_tier1_failure_cases": [],
+    "baseline_tier1_flagged_cases": [
+      4
+    ]
+  },
+  "limitations": [
+    "The directions are textual specifications, not rendered interfaces or interactive prototypes.",
+    "The graders are model agents, not qualified human visual designers or representative users.",
+    "Four synthetic cases and two graders do not estimate population-level variance.",
+    "The exact service-side model identifier and sampling parameters were not exposed.",
+    "The result supports the bounded specialist-integration claim only; it is not usability validation, accessibility certification, runtime assurance, brand fit, or proof of product outcomes."
+  ]
+}
