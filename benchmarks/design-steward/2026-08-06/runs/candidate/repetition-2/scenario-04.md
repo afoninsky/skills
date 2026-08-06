@@ -1,8 +1,8 @@
 I can’t create three decision-ready information architectures yet. These gaps are structural, not cosmetic: the main objects and canonical terms determine the taxonomy; representative content and long labels test hierarchy; empty, error, and partial-permission states determine what users can reach and understand. Lorem ipsum would hide those risks and make the three alternatives incomparable.
 
-**Proposed G1/G3 outcome:** Iterate  
-**Required approver:** Product Owner (name not provided)  
-**Evidence level:** Not yet evidenced  
+**Proposed G1/G3 outcome:** Iterate
+**Required approver:** Product Owner (name not provided)
+**Evidence level:** Not yet evidenced
 **Hard-gate status:** content truth, accessibility, and privacy/permission behavior are not yet evidenced and therefore non-passing. No IA artifacts should be treated as validated or decision-ready.
 
 To unblock generation, freeze one shared baseline containing:

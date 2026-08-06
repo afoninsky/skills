@@ -52,4 +52,3 @@ Generate deterministic A/B pairs with the bundled script and keep the condition 
 ## Verdict rules
 
 Any failed threshold yields **Structural fail — Iterate**. If all automated thresholds pass, the verdict is **Structural pass; qualified human review required**. Full benchmark pass remains unavailable without blind qualified multidisciplinary review and any claim-appropriate representative-user evidence. A structural pass permits release for real engagement intake and brief preparation; it does not waive engagement gates or authorize product-pilot direction generation, participant contact, production change, or launch.
-

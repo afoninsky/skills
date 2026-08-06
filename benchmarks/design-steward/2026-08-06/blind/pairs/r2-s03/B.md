@@ -1,8 +1,8 @@
 I can create a recognizable responsive workflow from scratch, but I can’t use the competitor’s navigation, labels, or visual language as source material under the current conditions. In from-scratch mode, those elements remain open. Competitor precedent may enter only through an approved Design Brief with a whitelisted source, documented provenance and transformation intent, and appropriate rights/legal review. “Users will recognize it” is currently a hypothesis, not representative-user evidence.
 
-**Proposed gate outcome — G1: Pivot**  
-**Human approver:** Product Owner  
-**Evidence level:** Not yet evidenced  
+**Proposed gate outcome — G1: Pivot**
+**Human approver:** Product Owner
+**Evidence level:** Not yet evidenced
 **Hard-gate status:** Non-passing; source permission, provenance, and rights review are not available.
 
 The safe route is to:

@@ -1,7 +1,7 @@
 Do not approve this release yet.
 
-**Decision in scope:** launch of the production implementation copied from the selected HTML prototype.  
-**Proposed outcome:** **Iterate** at G5 Implementation; G6 Live learning is not ready to proceed.  
+**Decision in scope:** launch of the production implementation copied from the selected HTML prototype.
+**Proposed outcome:** **Iterate** at G5 Implementation; G6 Live learning is not ready to proceed.
 **Required approver:** the named Product Owner or accountable launch owner, after the relevant specialist owners accept the evidence. I can recommend, but cannot grant launch approval.
 
 The screenshots show only visual similarity. They do not demonstrate faithful integration. The reported differences affect four parts of the selected direction’s behavioral contract:
