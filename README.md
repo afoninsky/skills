@@ -68,9 +68,9 @@ Requirements: Python 3.10 or newer for the optional Design Brief and specialist-
 
 ### Marktplaats Ad Creator
 
-Creates Dutch Marktplaats.nl listings from product images and seller details. It researches comparable listings, recommends private floor and target prices plus a leverage-oriented public asking price, drafts honest listing copy, and can prepare the listing in a browser.
+Creates Dutch Marktplaats.nl listings from product images and seller details. It researches current comparables when pricing is needed, adapts recommendations to the seller's goal, drafts accurate listing copy, and can prepare the listing in a browser.
 
-Browser actions are guarded: bidding stays disabled, paid promotion and account changes require explicit authorization, and the skill stops at the final review screen for approval before publishing.
+The skill supports quick-sale, balanced, maximum-value, fixed-price, and seller-defined strategies. Bidding, Direct Kopen, negotiation, trade language, delivery, and paid promotion are explicit user choices rather than inherited defaults. Browser actions stop at the final review screen for approval before publishing.
 
 This is an unofficial automation aid and is not affiliated with or endorsed by Marktplaats. It does not bypass CAPTCHA, access controls, or platform limits.
 

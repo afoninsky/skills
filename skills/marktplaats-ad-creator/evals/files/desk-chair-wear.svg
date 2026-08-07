@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#f5f2ee"/>
-  <rect x="250" y="210" width="700" height="350" rx="52" fill="#292d30"/>
-  <path d="M420 350 L530 320 L645 360 L775 320" stroke="#b8b8b8" stroke-width="14" stroke-linecap="round" fill="none"/>
-  <path d="M455 430 L720 410" stroke="#777" stroke-width="10" stroke-linecap="round"/>
-  <text x="600" y="665" fill="#333" font-family="Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">Visible seat wear</text>
-  <text x="600" y="720" fill="#555" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">No brand/model label shown</text>
-</svg>
