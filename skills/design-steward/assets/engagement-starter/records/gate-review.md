@@ -8,6 +8,8 @@
 - Proposed outcome: Proceed | Iterate | Pivot | Stop
 - Human approver name and role (role alone is insufficient; use "Unassigned — Blocking Unknown" if absent):
 - Specialist claim owners:
+- Required delegation IDs and disposition status:
+- Missing sub-agent or specialist capability and affected claims: None | list
 - Material change since prior approval: none | describe
 - Impact review and Product Owner reapproval: not required | pending | recorded
 

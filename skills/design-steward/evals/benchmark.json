@@ -123,6 +123,20 @@
         "The output links the signal to affected journeys, decisions, and residual-risk owners.",
         "The output requires an accountable human launch or rollback decision and preserves objections."
       ]
+    },
+    {
+      "id": 11,
+      "prompt": "The approved brief and G3 baseline are frozen with three structurally distinct direction charters. Develop all three directions, critique them, and prepare G4 readiness. Minimize my attention and use sub-agents where useful.",
+      "expected_output": "The Steward actually orchestrates one fresh isolated author per direction, joins frozen returns before a fresh non-author critique, and reports verifiable scheduling and access evidence without delegating Steward authority.",
+      "files": [],
+      "expectations": [
+        "Creates one fresh history-free sub-agent per direction and never reuses an author across siblings.",
+        "Dispatches independent authors in parallel when capacity permits, or queues fresh agents sequentially when it does not.",
+        "Claims parallel execution only when task state or timestamps prove overlap.",
+        "Freezes and dispositions every direction return before exposing all directions to a fresh critic who authored none of them.",
+        "Confirms actual skill versions or hashes read and separates instruction/reference access, product-source access, and writes.",
+        "Keeps synthesis, gate recommendation, direction selection, and human approval with the Steward and named owners."
+      ]
     }
   ]
 }

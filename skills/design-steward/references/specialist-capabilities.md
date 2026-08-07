@@ -15,7 +15,7 @@ Preflight each delegation. Record the skill name, local content hash or version,
 
 Delegate only after G1 is genuinely approved, has zero Blocking Unknowns, and G3 has frozen realistic content, hostile states, hard gates, rubric, and a distinct charter for each direction.
 
-Create one fresh isolated sub-agent per eligible direction. Give it only:
+Use the direction's mandatory fresh isolated sub-agent; do not create or reuse a shared visual author across directions. Give each agent only:
 
 - the authorized brief slice and requirement/evidence IDs;
 - that direction's frozen structural thesis, interaction grammar, and exclusions;

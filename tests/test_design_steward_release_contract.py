@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import unittest
 from pathlib import Path
 
@@ -12,7 +13,7 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
 
         for required in (
-            'metadata: {version: "1.0.0"}',
+            'metadata: {version: "1.1.0"}',
             "## Check every gate response",
             "Blocking Unknowns",
             "Working Assumptions",
@@ -93,6 +94,66 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         self.assertIn("Claim ID and scoped claim", evidence_register)
         self.assertIn("Artifact/release", evidence_register)
         self.assertIn("Acceptance evidence IDs", contract)
+
+    def test_required_subagent_orchestration_is_explicit(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        operating_contract = DESIGN_STEWARD.joinpath(
+            "references", "operating-contract.md"
+        ).read_text(encoding="utf-8")
+        directions = DESIGN_STEWARD.joinpath(
+            "references", "directions-and-artifacts.md"
+        ).read_text(encoding="utf-8")
+        delegation = DESIGN_STEWARD.joinpath(
+            "assets", "engagement-starter", "records", "delegation-packet.md"
+        ).read_text(encoding="utf-8")
+
+        combined = skill + operating_contract + directions
+        for required in (
+            "Required sub-agent",
+            "one fresh, history-free sub-agent per approved direction",
+            "never reuse one agent for sibling directions",
+            "dispatch independent directions and research questions in parallel",
+            "run required delegations sequentially as fresh agents",
+            "fresh critic who authored none",
+            "Claim parallel execution only when",
+            "submission before the first join",
+            "used a skill only when its return confirms",
+            "Not yet evidenced",
+            "do not silently perform the supposedly independent",
+        ):
+            self.assertIn(required, combined)
+
+        for required in (
+            "Necessity class",
+            "Fresh agent/session ID",
+            "No inherited sibling-output evidence",
+            "Actual dispatch mode",
+            "Concurrency evidence",
+            "Actual skill names and versions/content hashes read",
+            "Actual product sources accessed",
+            "Files written",
+            "Safe parallel group",
+            "Join condition",
+        ):
+            self.assertIn(required, delegation)
+
+    def test_orchestration_has_a_behavioral_eval(self) -> None:
+        benchmark = json.loads(
+            DESIGN_STEWARD.joinpath("evals", "benchmark.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        orchestration = next(case for case in benchmark["evals"] if case["id"] == 11)
+        expectations = " ".join(orchestration["expectations"])
+
+        for required in (
+            "one fresh history-free sub-agent per direction",
+            "Claims parallel execution only",
+            "fresh critic who authored none",
+            "separates instruction/reference access, product-source access, and writes",
+            "Keeps synthesis, gate recommendation, direction selection, and human approval",
+        ):
+            self.assertIn(required, expectations)
 
 
 if __name__ == "__main__":

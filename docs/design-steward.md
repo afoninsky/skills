@@ -2,7 +2,7 @@
 
 Design Steward runs a product-neutral, evidence-led design engagement for responsive websites and web applications. It helps frame the work, prepare an approved Design Brief, develop and compare independent directions, govern hard gates, create an implementation contract, and plan live learning. It recommends decisions; accountable humans approve them.
 
-Current package version: **1.0.0**.
+Current package version: **1.1.0**.
 
 ## Install
 
@@ -138,9 +138,11 @@ Material changes to users, outcomes, mode, Fixed constraints, evidence, permissi
 
 ## Specialist behavior
 
-After G1 approval and G3 readiness, the Steward may give each direction to a fresh isolated `frontend-design` sub-agent. The specialist receives only that direction's authorized brief slice and may not invent users, content, brand rules, or product context. Its visual choices must trace to the brief, evidence, or explicitly Open axes.
+After G1 approval and G3 readiness, the Steward must give each approved direction to its own fresh, history-free sub-agent. Independent direction agents start from the same frozen baseline, never see sibling outputs before freeze, and run in parallel when capacity allows. If capacity is limited, the Steward queues fresh agents sequentially; it never reuses one agent for multiple directions. When visual development is in scope and the verified skill is available, each direction agent uses `frontend-design`. It receives only that direction's authorized brief slice and may not invent users, content, brand rules, or product context.
 
-At G5, the Steward may give a frozen, authorized file set to a fresh read-only `web-design-guidelines` sub-agent. Findings are E1 heuristic input tied to exact files, lines, implementation state, and a recorded guideline revision/hash. The audit is not user validation, accessibility certification, browser assurance, engineering approval, or ship approval.
+After all directions freeze, the Steward must obtain adversarial critique from at least one fresh sub-agent who authored none of them. At G5, inspectable UI source must go to a fresh read-only `web-design-guidelines` sub-agent when the verified skill is available. Findings are E1 heuristic input tied to exact files, lines, implementation state, and a recorded guideline revision/hash. The audit is not user validation, accessibility certification, browser assurance, engineering approval, or ship approval.
+
+The Steward keeps synthesis, return disposition, gate recommendations, human approvals, participant contact, and consequential writes. It can also parallelize independent read-only research questions, but does not create agents for deterministic checks or work that mutates shared state. It records planned and actual scheduling separately and claims parallel execution only when agent state or timestamps prove overlap; submission before the first join and queued work do not prove concurrency. It claims skill use only when the sub-agent confirms the skill version or content hash actually read, and reports skill/reference access separately from product-source access and writes. If required sub-agent or specialist support is unavailable, the Steward records the failed preflight, marks the affected claim **Not yet evidenced**, and proposes **Iterate** or escalation rather than pretending self-review was independent.
 
 The Steward's boundaries and hard gates, the approved brief and Fixed constraints, and reserved human authority always outrank specialist guidance.
 

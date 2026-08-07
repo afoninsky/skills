@@ -5,6 +5,17 @@
 - Decision or question:
 - Success condition:
 - Due point:
+- Necessity class: Required sub-agent | Useful parallel work | Keep with Steward
+- Fresh agent/session ID (required for sub-agent work):
+- No inherited sibling-output evidence:
+- Start dependencies:
+- Planned schedule: parallel | sequential
+- Actual dispatch mode: overlapping | queued | sequential
+- Observed dispatch, completion, and join order:
+- Concurrency evidence (agent/task state or timestamps; required before claiming parallel execution):
+- Safe parallel group:
+- Join condition:
+- Steward disposition owner:
 - Specialist role and skill name:
 - Skill version or content hash and availability:
 - Approved Design Brief version:
@@ -29,6 +40,10 @@
 ## Required return envelope
 
 - Result or options:
+- Actual skill names and versions/content hashes read: Not confirmed | list
+- Actual instruction/reference sources accessed:
+- Actual product sources accessed: None | list
+- Files written: None | list
 - Requirement and evidence trace links:
 - Assumptions, uncertainty, confidence, and limitations:
 - Alternatives considered and rejection rationale:

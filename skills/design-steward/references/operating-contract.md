@@ -101,9 +101,33 @@ The optional `frontend-design` and `web-design-guidelines` skills are bounded sp
 
 ## Delegation and returns
 
+### Orchestration rule
+
+The Steward owns orchestration, record integrity, synthesis, gate recommendations, and interaction with reserved human authorities. Do not delegate those responsibilities.
+
+Classify work before execution:
+
+| Class | Trigger | Execution |
+| --- | --- | --- |
+| Required sub-agent | Independent direction, bounded specialist inspection, or adversarial review where self-review would weaken the evidence | Use a fresh, history-free sub-agent with an isolated context. Do not substitute Steward self-work while claiming independence or specialist review. |
+| Useful parallel work | Two or more bounded read-only questions share frozen inputs, have no mutable shared state, and can be joined without ordering | Dispatch together when capacity allows; otherwise use fresh agents sequentially. |
+| Keep with Steward | Deterministic check, mutable shared record, dependent sequence, synthesis, disposition, gate recommendation, approval, participant operation, or consequential write | Execute serially under the Steward or route to the reserved human owner. |
+
+The minimum required topology is:
+
+| Lifecycle point | Fresh sub-agent requirement | Join condition |
+| --- | --- | --- |
+| G3–G4 direction development | One agent per approved direction; no agent authors more than one direction | Every direction return is frozen and dispositioned before sibling exposure |
+| Post-freeze critique | At least one critic who authored none of the directions | All direction artifacts and sameness review are frozen |
+| G5 source audit | One read-only, path-bounded agent using `web-design-guidelines` when inspectable UI source and the verified skill are available | Findings are tied to the frozen implementation state and dispositioned |
+
+Treat concurrency as a scheduling optimization, not an excuse to weaken freshness or isolation. Dispatch independent work in parallel after shared inputs freeze. When slots are limited, queue the work and create a fresh agent for each item. Record intended scheduling separately from observed execution. Call work parallel only when agent task/session state or timestamps demonstrate overlap; submission before the first join and queued dispatch do not establish concurrency. If the runtime cannot create sub-agents, or a required specialist is unavailable, record the failed preflight, mark the affected claim **Not yet evidenced**, and propose **Iterate** or escalation. Never fabricate a specialist result, reuse one agent across sibling directions, or label Steward self-review independent.
+
 Give each delegation:
 
 - stable ID, question, success condition, and due point;
+- necessity class, fresh agent/session ID, and proof that it did not inherit sibling outputs;
+- start dependencies, planned schedule, observed dispatch/completion/join order, concurrency evidence, safe parallel group, join condition, and disposition owner;
 - approved brief version and minimum authorized slice;
 - evidence and artifact IDs with provenance, confidence, recency, and access controls;
 - applicable constraints, assumptions, and risks;
@@ -114,6 +138,8 @@ Give each delegation:
 Require each return to state:
 
 - result or options;
+- actual skill names and versions or content hashes read, or **Not confirmed**;
+- actual instruction/reference and product sources accessed, plus files written or **None**;
 - requirement and evidence trace links;
 - material assumptions, uncertainty, confidence, and method limitations;
 - alternatives considered and rejection rationale;
@@ -122,7 +148,7 @@ Require each return to state:
 - source and artifact provenance;
 - recommended gate outcome.
 
-Treat a return without this envelope as a draft. Record **Accepted**, **Revision requested**, **Escalated**, or **Rejected** with rationale. Preserve dissent.
+Treat a return without this envelope as a draft. An instruction to use a skill does not prove that the agent read or applied it; require explicit return evidence before making that claim. Record **Accepted**, **Revision requested**, **Escalated**, or **Rejected** with rationale. Preserve dissent.
 
 ## Lifecycle gates
 

@@ -1,7 +1,7 @@
 ---
 name: design-steward
 description: Run product-neutral, evidence-led design stewardship for responsive websites and web applications. Use when Codex must frame or conduct an end-to-end UX engagement, prepare or validate an approved Design Brief, plan representative-user research, create independently developed design directions, choose prototyping fidelity, compare variants against a frozen rubric, govern accessibility/content/privacy/ethics gates, produce an implementation contract, or organize post-launch learning. Do not use for a quick isolated UI code tweak, pure visual polish, or an unapproved production write.
-metadata: {version: "1.0.0"}
+metadata: {version: "1.1.0"}
 ---
 
 # Design Steward
@@ -81,13 +81,26 @@ Select the least-powerful capable mechanism:
 
 - Use deterministic tools for checks and transformations.
 - Use reusable skills for established bounded workflows.
-- Use isolated sub-agents for independent reasoning or alternative directions when permitted.
+- Use fresh isolated sub-agents when independence, specialist isolation, or adversarial review is material to the decision.
 - Use services for execution, collaboration, or evidence collection when authorized.
 - Use qualified humans for judgment, authority, participant welfare, and professional claims.
 
-Create a delegation packet from the starter template before delegation. Provide only the authorized brief slice and evidence IDs. Require the return envelope defined in [operating-contract.md](references/operating-contract.md). Classify every return as **Accepted**, **Revision requested**, **Escalated**, or **Rejected**, with rationale.
+Before dispatch, classify each candidate task as **Required sub-agent**, **Useful parallel work**, or **Keep with Steward**. A sub-agent is required when an independent alternative must not inherit sibling solution choices, a bounded specialist skill must inspect frozen work, or an adversarial review would be compromised by self-review. Parallel sub-agents are useful for independent, read-only research questions with frozen inputs. Keep deterministic checks, shared-state sequencing, synthesis, gate decisions, approvals, participant contact, and consequential writes with the Steward or reserved human owner.
 
-For visual direction work, delegate each eligible direction to a fresh isolated sub-agent using `frontend-design`. For implementation review, delegate a read-only, path-bounded audit to a fresh isolated sub-agent using `web-design-guidelines`. These are optional specialists, not authorities or release gates by themselves. Follow the precedence, availability, isolation, and provenance rules in [specialist-capabilities.md](references/specialist-capabilities.md).
+Create a delegation packet from the starter template before every dispatch. Record the necessity class, fresh agent identity, isolation boundary, start dependency, join condition, authorized context, tools, and write scope. Provide only the authorized brief slice and evidence IDs. Require the return envelope defined in [operating-contract.md](references/operating-contract.md). Classify every return as **Accepted**, **Revision requested**, **Escalated**, or **Rejected**, with rationale.
+
+Record planned and actual scheduling separately. Claim parallel execution only when task/session evidence shows that agents overlapped; submission before the first join, a queued launch, or a sequential fallback is not evidence of overlap. Preserve agent task/session IDs and observed dispatch, completion, and join order in the delegation records. Claim that a sub-agent used a skill only when its return confirms the skill and version or content hash actually read. Distinguish authorized skill/reference reads from product-source access and file writes.
+
+When required sub-agent support is available and authorized:
+
+- create one fresh, history-free sub-agent per approved direction; never reuse one agent for sibling directions;
+- dispatch independent directions and research questions in parallel after their shared inputs are frozen;
+- after all directions are frozen, create at least one fresh critic who authored none of them;
+- at G5, create a fresh read-only, path-bounded UI-audit sub-agent for inspectable implementation work.
+
+If concurrency is limited, run required delegations sequentially as fresh agents. If sub-agents or a required specialist skill are unavailable, record the failed preflight and limitation; do not silently perform the supposedly independent or specialist work in the Steward context. Mark the affected claim **Not yet evidenced** and propose **Iterate** or escalation. Sub-agents advise and produce bounded artifacts; they never approve a gate, select a direction, impersonate representative users or qualified humans, or expand access and write authority.
+
+For each direction, instruct its sub-agent to use `frontend-design` when the verified skill is available and visual development is in scope. For implementation review, instruct the audit sub-agent to use `web-design-guidelines`. Follow the precedence, availability, isolation, and provenance rules in [specialist-capabilities.md](references/specialist-capabilities.md).
 
 Do not decide conflicts by vote, model confidence, or aesthetic averaging. Resolve them through evidence quality, Fixed constraints, specialist authority, the frozen rubric, and explicit human trade-off decisions.
 
@@ -98,10 +111,10 @@ Default to three structurally distinct directions. Reduce the count only before 
 In From-scratch mode, do not import a prior product pattern, design system, brand convention, or stylistic precedent unless the approved brief deliberately supplies it. Keep the full binding set named in the response checklist while leaving solution form Open.
 
 1. Freeze the approved brief, evidence baseline, realistic content and hostile states, hard gates, comparison rubric, and one distinct structural charter per direction.
-2. Develop each direction in isolation. When available and authorized, use a fresh `frontend-design` specialist sub-agent for the visual system. Do not expose sibling solution forms before its rationale and artifacts are frozen.
+2. Assign each direction to its own fresh, history-free sub-agent. Dispatch them in parallel when capacity allows; otherwise run them sequentially without reusing agents. When available and authorized, each direction agent uses `frontend-design` for the visual system. Do not expose sibling solution forms before its rationale and artifacts are frozen.
 3. Cite precedent and abstract it to a principle; record source, original context, abstracted principle, rights, transformation, and transfer limitations. Do not copy a surface.
 4. Match prototype fidelity to the decisive risk. Preserve editable source and a portable review/export for every artifact.
-5. Freeze directions, run sameness review, then obtain specialist cross-critique.
+5. Freeze directions, run sameness review, then obtain adversarial cross-critique from at least one fresh sub-agent who authored none of the directions and from any required qualified specialist.
 6. Disqualify any direction that fails a hard gate. Compare survivors against the frozen rubric and the claim-appropriate evidence.
 7. If synthesis is approved, keep one coherent backbone. Import only compatible, evidenced elements and retest the result.
 

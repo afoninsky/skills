@@ -14,9 +14,11 @@ Freeze a shared baseline before work begins:
 - evidence thresholds and uncertainty handling;
 - one distinct structural charter per direction.
 
-Give each direction the same baseline but an isolated context. Do not reveal sibling solution forms, layout, interaction, content framing, or visual choices before freeze. Route factual corrections through the Steward without leaking solutions.
+Give each direction the same baseline but an isolated context. Assign each direction to one fresh, history-free sub-agent and never reuse an author for a sibling direction. Dispatch all direction agents in parallel after the baseline and charters freeze when capacity allows; otherwise run them sequentially with fresh contexts. Do not reveal sibling solution forms, layout, interaction, content framing, or visual choices before freeze. Route factual corrections through the Steward without leaking solutions.
 
-When visual development is warranted, use one fresh `frontend-design` specialist sub-agent per direction under [specialist-capabilities.md](specialist-capabilities.md). Supply only that direction's authorized context and Open visual axes. Freeze its traced visual thesis and system before any sibling output or cross-critique is visible.
+When visual development is warranted and the verified skill is available, instruct each direction sub-agent to use `frontend-design` under [specialist-capabilities.md](specialist-capabilities.md). Supply only that direction's authorized context and Open visual axes. Freeze its traced visual thesis and system before any sibling output or cross-critique is visible.
+
+If fresh sub-agents are unavailable, do not generate several directions in one Steward context and call them independent. Record the failed preflight, mark direction independence **Not yet evidenced**, and propose **Iterate** or escalation.
 
 Make charters structurally distinct. Examples of structural differences include task-first versus object-first navigation, guided versus direct manipulation, progressive disclosure versus overview-first, or centralized versus contextual control. Color, typography, spacing, and ornament alone do not create distinct directions.
 
@@ -69,7 +71,7 @@ Before cross-critique:
 3. run a sameness review for shared layout skeletons, interaction logic, content hierarchy, and visual grammar;
 4. revise or reject directions that are merely themed variants.
 
-After freeze, obtain adversarial cross-critique from relevant specialists. Keep the original thesis visible when requesting revisions.
+After freeze, create at least one fresh critic who authored none of the directions. Give the critic all frozen directions, the shared baseline, sameness review, hard gates, and rubric; withhold mutable authoring workspaces. Obtain any additional critique required from qualified specialists. Keep each original thesis visible when requesting revisions, and route every requested change back through the Steward.
 
 Evaluate hard gates before scoring. Disqualify unresolved critical failures in accessibility, content truth, privacy or participant welfare, ethical UX or safety, or provenance. Scores and Product Owner preference cannot compensate.
 
