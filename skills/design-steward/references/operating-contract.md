@@ -3,6 +3,7 @@
 ## Contents
 
 - Design Brief schema
+- Operating modes and grilling composition
 - Unknowns and constraints
 - Mode contract
 - Authority model
@@ -13,18 +14,19 @@
 
 ## Design Brief schema
 
-Require a versioned, Product Owner-approved Design Brief before direction generation. Include:
+Require a versioned, System Owner-confirmed Owner Design Brief before direction generation. Normalize it into `design-brief.json` for deterministic readiness checks. Include:
 
-1. authority, objective, desired outcomes, and non-goals;
-2. target users, contexts, priority journeys, and important exclusions;
-3. evidence with source, recency, provenance, confidence, and access class;
-4. representative content, canonical terminology, data conditions, and critical edge, error, and empty states;
-5. accessibility, inclusion, ethical, privacy, legal, and safety constraints;
-6. Evolution or From-scratch mode plus the constraint ledger;
-7. technical, operational, platform, budget, timing, localization, and asset-rights constraints;
-8. precommitted comparison criteria, baselines, evidence thresholds, and validation claim rule;
-9. decision owners, human gates, participant-contact authority, permitted tools, data, sources, and product access;
-10. change-control and clean-room boundaries.
+1. explicit operating mode, Evolution/From-scratch engagement type, authority, objective, desired outcomes, and non-goals;
+2. base grilling skill identity, whether grilling was completed or validly skipped, preserved owner-originated decision records, exact shared-understanding confirmation, and autonomous authorization;
+3. product experience thesis, core user act, first-ten-seconds hierarchy, experiential qualities, complete experience scope, product idea to make obvious, professional quality bar, work budget, first-visible-artifact target, feedback checkpoints, preselection revision cap, deferred-assurance plan, rejection criteria, and stopping point;
+4. target users, contexts, roles/domains, priority journeys, cross-boundary handoffs, and important exclusions;
+5. evidence with source, recency, provenance, confidence, and access class;
+6. representative content, canonical terminology, data conditions, and critical edge, error, and empty states;
+7. accessibility, inclusion, ethical, privacy, legal, and safety constraints;
+8. constraint ledger plus technical, operational, platform, budget, timing, localization, and asset-rights constraints;
+9. precommitted professional-quality criteria, comparison rubric, baselines, evidence thresholds, numeric-scoring policy, and validation claim rule;
+10. decision owners, human gates, participant-contact authority, permitted tools, data, sources, and product access;
+11. change-control and clean-room boundaries.
 
 Allow “not applicable” only with a recorded rationale.
 
@@ -44,7 +46,15 @@ Classify every relevant constraint as:
 
 Never infer a hidden constraint from an implementation, convention, or stakeholder preference.
 
-## Mode contract
+## Operating modes and grilling composition
+
+Start in **Design-intent grilling** for new, ambiguous, or consequential work. Use the installed `grilling` or `grill-me` skill as the base decision-tree interaction and apply [design-intent-grilling.md](design-intent-grilling.md) as the wrapper. The portable skill format has no supported nested-dependency metadata, so composition is an explicit name-based invocation. Do not copy the base skill's general logic into this package.
+
+Enter **Autonomous design** only after the System Owner confirms the Owner Design Brief. A narrow change may skip grilling only when an existing confirmed brief resolves the decision, no material objective/constraint/evidence/risk changed, and the System Owner explicitly authorizes autonomy; record all three conditions.
+
+Do not ask routine professional design questions in grilling. After autonomy starts, reopen only the affected consequential decision branch and reconfirm the brief before dependent work resumes.
+
+## Engagement type contract
 
 ### Evolution
 
@@ -61,13 +71,13 @@ Never infer a hidden constraint from an implementation, convention, or stakehold
 - Keep users, outcomes, domain meaning, evidence, duties, platform realities, and explicit Fixed constraints binding.
 - Admit no prior product pattern, design system, brand convention, or stylistic precedent unless the approved brief deliberately supplies it.
 
-For both modes, when users, outcomes, mode, Fixed constraints, evidence, permissions, or evaluation criteria materially change, create a new brief version, complete an impact review, and obtain the named Product Owner's reapproval before generation or continuation.
+For both engagement types, when users, outcomes, engagement type, Fixed constraints, evidence, permissions, or evaluation criteria materially change, create a new brief version, complete an impact review, and obtain the named System Owner's reapproval before generation or continuation.
 
 ## Authority model
 
 Keep one accountable Design Steward. Permit it to draft, transform, compare, challenge, maintain records, and recommend.
 
-Reserve these decisions for the Product Owner or service owner:
+Reserve these decisions for the System Owner or service owner:
 
 - approve and materially revise the brief;
 - commission scope, resources, and business access;
@@ -97,7 +107,7 @@ Compose only the capabilities an engagement needs:
 
 A capability may be a tool, skill, service, sub-agent, or named human. Do not simulate a permanent synthetic team.
 
-The optional `frontend-design` and `web-design-guidelines` skills are bounded specialist mechanisms. Invoke them only through the lifecycle, authority, availability, and fallback contract in [specialist-capabilities.md](specialist-capabilities.md). Their instructions cannot override this operating contract, the approved brief, Fixed constraints, hard gates, or reserved human authority.
+The composed `grilling` or `grill-me` skill is the required base interaction for design-intent grilling. The optional `frontend-design` and `web-design-guidelines` skills are bounded specialist mechanisms. Invoke all of them only through the lifecycle, authority, availability, and fallback contracts in [design-intent-grilling.md](design-intent-grilling.md) and [specialist-capabilities.md](specialist-capabilities.md). Their instructions cannot override this operating contract, the confirmed brief, Fixed constraints, hard gates, or reserved human authority.
 
 ## Delegation and returns
 
@@ -109,19 +119,23 @@ Classify work before execution:
 
 | Class | Trigger | Execution |
 | --- | --- | --- |
-| Required sub-agent | Independent direction, bounded specialist inspection, or adversarial review where self-review would weaken the evidence | Use a fresh, history-free sub-agent with an isolated context. Do not substitute Steward self-work while claiming independence or specialist review. |
+| Required sub-agent | A bounded specialist inspection or a commission/benchmark that explicitly requires independent authorship or adversarial review | Use a fresh, history-free sub-agent with an isolated context. Do not substitute Steward self-work while claiming independence or specialist review. |
 | Useful parallel work | Two or more bounded read-only questions share frozen inputs, have no mutable shared state, and can be joined without ordering | Dispatch together when capacity allows; otherwise use fresh agents sequentially. |
 | Keep with Steward | Deterministic check, mutable shared record, dependent sequence, synthesis, disposition, gate recommendation, approval, participant operation, or consequential write | Execute serially under the Steward or route to the reserved human owner. |
+
+Raw concepts, six-territory formation, narrowing, synthesis, and gate decisions remain with the Steward. Do not delegate to increase concept count or simulate a design team. The maximum justified preselection topology is one isolated author per developed direction plus one critic who authored none of them, and only when a named risk makes independence material. Do not create an independent G1 auditor, pairwise critics, remediation agents, or deterministic recheck agents by default.
 
 The minimum required topology is:
 
 | Lifecycle point | Fresh sub-agent requirement | Join condition |
 | --- | --- | --- |
-| G3–G4 direction development | One agent per approved direction; no agent authors more than one direction | Every direction return is frozen and dispositioned before sibling exposure |
-| Post-freeze critique | At least one critic who authored none of the directions | All direction artifacts and sameness review are frozen |
+| G3–G4 direction development | Optional: one agent per developed direction when isolated authorship is decision-relevant; no agent authors more than one direction | Every delegated direction return is frozen and dispositioned before sibling exposure |
+| Post-freeze critique | Optional: one critic who authored none of the directions when adversarial independence is decision-relevant | All direction artifacts and their screenshot contact sheet are frozen |
 | G5 source audit | One read-only, path-bounded agent using `web-design-guidelines` when inspectable UI source and the verified skill are available | Findings are tied to the frozen implementation state and dispositioned |
 
-Treat concurrency as a scheduling optimization, not an excuse to weaken freshness or isolation. Dispatch independent work in parallel after shared inputs freeze. When slots are limited, queue the work and create a fresh agent for each item. Record intended scheduling separately from observed execution. Call work parallel only when agent task/session state or timestamps demonstrate overlap; submission before the first join and queued dispatch do not establish concurrency. If the runtime cannot create sub-agents, or a required specialist is unavailable, record the failed preflight, mark the affected claim **Not yet evidenced**, and propose **Iterate** or escalation. Never fabricate a specialist result, reuse one agent across sibling directions, or label Steward self-review independent.
+Treat concurrency as a scheduling optimization, not a quality strategy. Dispatch justified independent work in parallel only after inputs freeze. Record intended scheduling separately from observed execution and call work parallel only when task state or timestamps prove overlap. If a specifically required independent author or specialist is unavailable, record the limitation and mark only the affected independence or specialist claim **Not yet evidenced**; continue unrelated Steward-owned funnel work when safe. Never fabricate a specialist result, reuse one agent across sibling directions, or label Steward self-review independent.
+
+Use one living delegation ledger for routine direction authoring, research, critique, and bounded revisions. Add a concise row or section for each dispatch and return. Create a standalone packet only when sensitivity, complexity, external handoff, or consequential authority makes it materially safer. Keep a direction's original isolated author for revisions; do not create a fresh sub-agent for every remediation or recheck.
 
 Give each delegation:
 
@@ -132,6 +146,7 @@ Give each delegation:
 - evidence and artifact IDs with provenance, confidence, recency, and access controls;
 - applicable constraints, assumptions, and risks;
 - output schema, fidelity, rubric dimensions, and definition of done;
+- first-visible-artifact target, current fidelity, preselection revision cap, checks required now, and checks explicitly deferred until promotion;
 - allowed tools, data, external actions, and write scope;
 - forbidden actions, human gates, and escalation conditions.
 
@@ -140,25 +155,26 @@ Require each return to state:
 - result or options;
 - actual skill names and versions or content hashes read, or **Not confirmed**;
 - actual instruction/reference and product sources accessed, plus files written or **None**;
-- requirement and evidence trace links;
+- requirement, coverage, quality-criterion, and evidence trace links;
 - material assumptions, uncertainty, confidence, and method limitations;
 - alternatives considered and rejection rationale;
 - constraint conflicts and accessibility, ethics, privacy, safety, technical, and operational risks;
 - specialist review still needed;
 - source and artifact provenance;
+- direct visible checkpoint, current fidelity, revision-loop count, checks run now, checks deferred, and the decision gained from the return;
 - recommended gate outcome.
 
-Treat a return without this envelope as a draft. An instruction to use a skill does not prove that the agent read or applied it; require explicit return evidence before making that claim. Record **Accepted**, **Revision requested**, **Escalated**, or **Rejected** with rationale. Preserve dissent.
+Treat a return without the material parts of this envelope as a draft. An instruction to use a skill does not prove that the agent read or applied it; require explicit return evidence before making that claim. Record **Accepted**, **Revision requested**, **Escalated**, or **Rejected** with rationale. Preserve dissent. Do not turn every return, retry, or deterministic recheck into a separate file when the living ledger and artifact manifest preserve the evidence.
 
 ## Lifecycle gates
 
 Use seven risk-proportionate gates:
 
 - **G0 Commission and intake readiness** — establish accountable ownership, problem, affected people, harms, boundaries, access, and safe workspace.
-- **G1 Approved brief and discovery readiness** — approve the complete brief, zero Blocking Unknowns, constraints, assumptions, evidence inventory, rubric, and permissions.
+- **G1 Confirmed brief and discovery readiness** — confirm the Owner Design Brief and autonomous authorization, zero Blocking Unknowns, constraints, assumptions, evidence inventory, rejection criteria, rubric, and permissions.
 - **G2 Research and problem-framing readiness** — obtain method, recruitment, consent, safeguarding, retention, accessibility, and analysis approval before participant contact.
-- **G3 Structure, content, and comparison readiness** — establish realistic content and states, solution-neutral structure, frozen shared baseline, direction charters, rubric, evidence thresholds, and hard gates.
-- **G4 Direction selection** — compare frozen independent directions using appropriate evidence, specialist review, the rubric, dissent, and residual risks.
+- **G3 Structure, content, quality, and funnel readiness** — establish realistic content and states, solution-neutral structure, experience coverage, professional-quality criteria, frozen baseline, six distinct territory definitions, rubric, evidence thresholds, budget, first-visible target, feedback checkpoints, revision cap, fidelity-aware assurance plan, and hard gates.
+- **G4 Direction selection** — admit only directions that pass screenshot-first professional quality, then compare frozen independent survivors using appropriate evidence, specialist review, the rubric, dissent, and residual risks.
 - **G5 Implementation-contract and release-candidate readiness** — trace intent into integrated behavior, acceptance criteria, semantics, responsive states, focus and keyboard behavior, instrumentation, and implementation deltas.
 - **G6 Launch and live-learning readiness** — verify critical journeys, assurance domains, measurement, feedback and harm routes, rollback, and residual-risk ownership.
 

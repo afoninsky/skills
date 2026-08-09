@@ -4,8 +4,8 @@
 
 Label every material claim with the strongest supporting level:
 
-- **E0 — Assumption or generated hypothesis:** stakeholder belief, agent analysis, heuristic inspection, synthetic user, generated persona, or simulated journey.
-- **E1 — Indicative or expert input:** relevant specialist review, analogous precedent, or exploratory signal without representative context.
+- **E0 — Assumption or generated hypothesis:** stakeholder belief, agent analysis, generated direction, generated specialist or critic review, ungrounded heuristic inspection, synthetic user, generated persona, or simulated journey.
+- **E1 — Indicative or expert input:** qualified-human specialist review, inspectable established-practice audit, analogous precedent, or exploratory signal without representative context. A model adopting a specialist role does not become E1 by naming itself an expert.
 - **E2 — Contextual qualitative:** observed or reported evidence from relevant contexts with documented recruitment and limitations, but not yet representative enough for an evaluative claim.
 - **E3 — Representative-user evaluative:** task or comprehension evidence from a justified representative sample, including relevant disabled users where applicable.
 - **E4 — Quantitative or experimental:** appropriately instrumented behavior, experiment, or statistical evidence with population, denominator, segmentation, and uncertainty.
@@ -19,7 +19,8 @@ A static `web-design-guidelines` review is E1 specialist/heuristic input. Record
 
 Record a stable claim ID, linked requirement and applicable assumption IDs, claim owner, population, context, task, artifact or release, method, date, limitations, and evidence ID. Use language such as:
 
-- “E1 specialist review found…”
+- “E0 generated design review judged…”
+- “E1 qualified specialist review found…”
 - “E2 interviews suggest a hypothesis that…”
 - “E3 task evidence supports this journey for the recruited population…”
 - “E4 production analysis observed…”
@@ -36,20 +37,20 @@ Track each as Pass, Fail, or Not yet evidenced:
 4. **Ethical UX and safety:** reject deception, coercion, hidden consequences, exploitative engagement, unsafe defaults, or blocked appeal and recovery.
 5. **Provenance and AI use:** identify sources, tools, generated content, transformations, rights, limitations, and human review.
 
-Do not permit a score, preference, schedule, or Product Owner decision to convert a failure into a pass. Preserve the objection and escalate or stop.
+Do not permit a score, preference, schedule, or System Owner decision to convert a failure into a pass. Preserve the objection and escalate or stop.
 
 Record exactly one status for each applicable hard gate. Use **Fail** when supplied or collected evidence demonstrates a violation, even when approval or review is also missing. Use **Not yet evidenced** only for the separate absent or incomplete method, reviewer, artifact, or result. Neither state passes, but preserve both facts without relabeling the observed violation as missing assurance.
 
-## Design record graph
+## Design record graph and evidence diet
 
-Maintain engagement-local records with stable typed IDs and explicit links:
+Maintain engagement-local records with stable typed IDs and explicit links, but default to the smallest set that preserves authority and decisions:
 
 - engagement header and record index;
-- brief versions and requirement records;
+- confirmed Owner Design Brief, normalized brief versions, and requirement records;
 - evidence register and research records;
 - assumptions, risks, and constraints;
 - experience structures, direction charters, artifacts, and prototypes;
-- delegation packets and return envelopes;
+- one living delegation ledger with bounded return envelopes; use standalone packets only when sensitivity, complexity, or handoff risk warrants them;
 - gate reviews, decisions, dissent, and supersession;
 - implementation contract and delta log;
 - live-learning hypotheses, changes, measures, and closure.
@@ -57,6 +58,8 @@ Maintain engagement-local records with stable typed IDs and explicit links:
 Use **Draft**, **Reviewed**, **Accepted**, **Superseded**, or **Retired**. Never overwrite an accepted decision; supersede it and link both records.
 
 IDs are immutable. Link records by stable IDs, not headings or row positions. Supersession creates a new ID plus forward and backward links; it never mutates the accepted record.
+
+Do not create a separate record for status commentary, every retry, repeated successful checks, each screenshot, a hash already present in the artifact manifest, or an agent correction that does not change authority, evidence, the frozen artifact, a gate decision, or an implementation delta. Artifact count is not traceability. Preserve the decision path without burying it.
 
 ## Sensitive data boundary
 

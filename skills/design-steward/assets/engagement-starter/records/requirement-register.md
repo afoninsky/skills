@@ -3,7 +3,7 @@
 - Record ID: REQ-REGISTER-001
 - Status: Draft | Reviewed | Accepted | Superseded | Retired
 - Brief version:
-- Product Owner:
+- System Owner:
 - Updated:
 
 | Requirement ID | Statement | Source record ID | Decision owner | Acceptance rule | Evidence IDs | Assumption IDs | Constraint IDs | Supersedes |

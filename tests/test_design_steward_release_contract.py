@@ -13,23 +13,80 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
 
         for required in (
-            'metadata: {version: "1.1.0"}',
+            'metadata: {version: "3.0.0"}',
             "## Check every gate response",
             "Blocking Unknowns",
             "Working Assumptions",
             "Write **None** for an empty category",
-            "obtain the named Product Owner's reapproval before generation or continuation",
-            "information architecture, navigation, interaction, content structure, and visual language",
-            "domain meaning, evidence, duties, platform realities, and explicit Fixed constraints",
-            "original context, abstracted principle, rights, transformation, and transfer limitations",
-            "content rules, data rules",
-            "semantic structure",
-            "focus behavior, keyboard operation",
+            "obtain the named System Owner's reapproval before affected work continues",
+            "owner-originated input",
+            "preference as stakeholder input",
+            "content/data rules",
+            "semantic structure, focus, keyboard",
             "Unassigned — Blocking Unknown",
-            "record exactly one status for each applicable gate",
+            "record one status for every applicable gate",
             "one approval cannot substitute for another",
         ):
             self.assertIn(required, skill)
+
+    def test_g4_requires_professional_quality_not_process_compliance(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        quality = DESIGN_STEWARD.joinpath(
+            "references", "design-quality.md"
+        ).read_text(encoding="utf-8")
+        combined = skill + quality
+
+        for required in (
+            "professional design quality",
+            "product-specific",
+            "screenshot-first",
+            "Relabel test",
+            "Default-cluster test",
+            "Core-act test",
+            "First-ten-seconds test",
+            "review harness",
+            "Strong",
+            "E0 generated design judgment",
+            "Avoid 100-point scoring by a single model",
+        ):
+            self.assertIn(required, combined)
+
+    def test_direction_workflow_is_staged_and_budgeted(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        directions = DESIGN_STEWARD.joinpath(
+            "references", "directions-and-artifacts.md"
+        ).read_text(encoding="utf-8")
+        combined = skill + directions
+
+        for required in (
+            "12–15 raw concepts",
+            "six materially distinct territories",
+            "three developed directions",
+            "one backbone",
+            "representative frame",
+            "six-up contact sheet",
+            "Build only surviving proof",
+            "artifact, iteration, time, and delegation budget",
+            "living delegation ledger",
+            "Do not build six prototypes",
+            "Do not increase direction count",
+        ):
+            self.assertIn(required, combined)
+
+    def test_operating_plan_output_has_a_token_budget(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        rapid_loop = DESIGN_STEWARD.joinpath(
+            "references", "rapid-design-loop.md"
+        ).read_text(encoding="utf-8")
+        combined = skill + rapid_loop
+
+        for required in (
+            "at most 600 words by default",
+            "Do not recite every gate",
+            "Do not replay the complete gate or assurance catalog",
+            "exact next action",
+        ):
+            self.assertIn(required, combined)
 
     def test_gate_review_preserves_status_semantics_and_traceability(self) -> None:
         gate_review = DESIGN_STEWARD.joinpath(
@@ -38,11 +95,87 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
 
         for required in (
             "Status: Pass / Fail / Not yet evidenced",
-            "Impact review and Product Owner reapproval",
+            "Impact review and System Owner reapproval",
             "Evidence contradictions and gaps",
             "Requirement / evidence / assumption / artifact / delta trace links",
         ):
             self.assertIn(required, gate_review)
+
+    def test_design_brief_schema_enforces_outcome_quality_and_coverage(self) -> None:
+        brief = json.loads(
+            DESIGN_STEWARD.joinpath(
+                "assets", "engagement-starter", "design-brief.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(brief["schema_version"], "3.0.0")
+        self.assertEqual(brief["operating_mode"], "Design-intent grilling")
+        self.assertIn("engagement_type", brief)
+        self.assertIn("grilling", brief)
+        self.assertIn("owner_design_intent", brief)
+        self.assertIn("shared_understanding", brief)
+        self.assertIn("system_owner", brief["authority"])
+        for required in (
+            "product_experience_thesis",
+            "complete_experience_scope",
+            "product_idea_to_make_obvious",
+            "professional_quality_bar",
+            "artifact_iteration_delegation_budget",
+            "first_visible_artifact_target",
+            "max_preselection_revision_loops_per_direction",
+            "feedback_checkpoint_plan",
+            "deferred_assurance_plan",
+            "stopping_point",
+        ):
+            self.assertIn(required, brief["success_contract"])
+
+        self.assertIn("roles_and_domains", brief["users_and_contexts"])
+        self.assertIn("priority_handoffs", brief["users_and_contexts"])
+        self.assertIn(
+            "professional_quality_criteria", brief["comparison_contract"]
+        )
+        self.assertIn("numeric_scoring_policy", brief["comparison_contract"])
+
+    def test_grilling_composes_base_skill_without_copying_it(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        wrapper = DESIGN_STEWARD.joinpath(
+            "references", "design-intent-grilling.md"
+        ).read_text(encoding="utf-8")
+        owner_brief = DESIGN_STEWARD.joinpath(
+            "assets", "engagement-starter", "owner-design-brief.md"
+        ).read_text(encoding="utf-8")
+        combined = skill + wrapper + owner_brief
+
+        for required in (
+            "Design-intent grilling",
+            "Autonomous design",
+            "installed `grilling` or `grill-me` skill",
+            "does not replace or restate",
+            "Ask one neutral question",
+            "Owner's unaided response",
+            "no more than three materially distinct",
+            "Does this brief represent our shared understanding, and may Design Steward enter autonomous design mode?",
+        ):
+            self.assertIn(required, combined)
+
+    def test_owner_design_brief_contains_required_authority_and_intent(self) -> None:
+        template = DESIGN_STEWARD.joinpath(
+            "assets", "engagement-starter", "owner-design-brief.md"
+        ).read_text(encoding="utf-8")
+
+        for required in (
+            "System Owner name and role",
+            "Core user act or transformation",
+            "Intended first-ten-seconds hierarchy",
+            "Accepted trade-offs and risk tolerance",
+            "Unacceptable outcomes",
+            "Rejection criteria",
+            "Owner-originated preferences",
+            "Steward recommendations",
+            "Material disagreements and resolutions",
+            "Authorization boundaries",
+            "Consequential decision provenance",
+        ):
+            self.assertIn(required, template)
 
     def test_direction_charter_captures_mode_and_precedent_contract(self) -> None:
         charter = DESIGN_STEWARD.joinpath(
@@ -73,7 +206,7 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
             "Instrumentation and denominator/segmentation rules",
             "Engineering acceptance record ID",
             "Specialist claim-owner dispositions and evidence IDs",
-            "Product Owner G5/release decision record ID",
+            "System Owner G5/release decision record ID",
         ):
             self.assertIn(required, contract)
 
@@ -95,7 +228,7 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         self.assertIn("Artifact/release", evidence_register)
         self.assertIn("Acceptance evidence IDs", contract)
 
-    def test_required_subagent_orchestration_is_explicit(self) -> None:
+    def test_delegation_is_bounded_and_not_a_funnel_default(self) -> None:
         skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
         operating_contract = DESIGN_STEWARD.joinpath(
             "references", "operating-contract.md"
@@ -110,16 +243,12 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         combined = skill + operating_contract + directions
         for required in (
             "Required sub-agent",
-            "one fresh, history-free sub-agent per approved direction",
-            "never reuse one agent for sibling directions",
-            "dispatch independent directions and research questions in parallel",
-            "run required delegations sequentially as fresh agents",
-            "fresh critic who authored none",
-            "Claim parallel execution only when",
-            "submission before the first join",
-            "used a skill only when its return confirms",
+            "Do not delegate to increase concept count",
+            "does not require 12–15 agents, six agents, or even three agents",
+            "one fresh, history-free sub-agent per developed direction only when",
+            "no claim that their authorship was independent",
+            "fresh critic only when",
             "Not yet evidenced",
-            "do not silently perform the supposedly independent",
         ):
             self.assertIn(required, combined)
 
@@ -147,13 +276,62 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         expectations = " ".join(orchestration["expectations"])
 
         for required in (
-            "one fresh history-free sub-agent per direction",
-            "Claims parallel execution only",
-            "fresh critic who authored none",
-            "separates instruction/reference access, product-source access, and writes",
-            "Keeps synthesis, gate recommendation, direction selection, and human approval",
+            "Keeps raw concepts, six-territory formation, narrowing, and synthesis with the Steward",
+            "Does not create one agent per concept or territory",
+            "Uses isolated direction authors only when a named decision risk requires independence",
+            "Keeps gate recommendation, direction selection, and human approval with the Steward",
         ):
             self.assertIn(required, expectations)
+
+    def test_real_failure_modes_have_behavioral_evals(self) -> None:
+        benchmark = json.loads(
+            DESIGN_STEWARD.joinpath("evals", "benchmark.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        cases = {case["id"]: case for case in benchmark["evals"]}
+        self.assertTrue({12, 13, 14, 15, 16, 17, 18, 19}.issubset(cases))
+
+        expectations = " ".join(
+            expectation
+            for case_id in (12, 13, 14, 15, 16, 17, 18, 19)
+            for expectation in cases[case_id]["expectations"]
+        )
+        for required in (
+            "generic rendered work",
+            "end to end",
+            "reviewer controls and provenance chrome",
+            "living ledger",
+            "direction multiplication",
+            "first useful visible artifact within 15 active minutes of generation authorization",
+            "Defers mobile, exhaustive accessibility, browser, history, portability, migration, telemetry, and implementation checks",
+            "Does not create pairwise critics, remediation agents, or deterministic recheck agents",
+        ):
+            self.assertIn(required, expectations)
+
+    def test_rapid_design_loop_is_latency_budgeted_and_fidelity_aware(self) -> None:
+        rapid_loop = DESIGN_STEWARD.joinpath(
+            "references", "rapid-design-loop.md"
+        ).read_text(encoding="utf-8")
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        combined = skill + rapid_loop
+
+        for required in (
+            "within 15 minutes of active work",
+            "No-blocker readiness overhead",
+            "target no more than 25 active minutes from task start",
+            "before 25%",
+            "at least 50%",
+            "at most two bounded revision loops",
+            "A visible checkpoint is not an extra approval gate",
+            "Checks by fidelity",
+            "no delegation for raw concepts or territories",
+            "one isolated author per developed direction and one non-author critic only when",
+            "A check that cannot change the current promote/pivot/reject decision is premature",
+            "Do not create routine G1 auditors",
+            "once per generation wave",
+        ):
+            self.assertIn(required, combined)
 
 
 if __name__ == "__main__":

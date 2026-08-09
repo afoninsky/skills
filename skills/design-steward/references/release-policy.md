@@ -33,6 +33,7 @@ Never promote an engagement-specific pattern, product term, artifact, metric, pa
 ## Migration
 
 - Preserve accepted engagement records under the package version that created them.
+- For a pre-3.0 engagement, create and confirm a v3 Owner Design Brief, migrate `mode` to separate `operating_mode` and `engagement_type` fields, migrate `product_owner` authority fields to `system_owner`, preserve owner-original answers where available, and explicitly record uncertainty where they were not captured.
 - Migrate by creating a new record version with explicit `supersedes` links; do not rewrite accepted evidence or decisions.
 - Revalidate the Design Brief after any schema migration.
 - Repeat affected gates when a new version changes authority, constraints, evidence interpretation, hard gates, comparison logic, or artifact semantics.

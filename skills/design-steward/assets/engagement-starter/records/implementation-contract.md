@@ -4,7 +4,7 @@
 - Status: Draft | Reviewed | Accepted | Superseded | Retired
 - Selected direction and decision IDs:
 - Brief version:
-- Product Owner:
+- System Owner:
 - Engineering owner:
 
 ## Traceability
@@ -32,7 +32,7 @@
 - Requirement, evidence, assumption, artifact, and decision IDs complete:
 - Engineering acceptance record ID:
 - Specialist claim-owner dispositions and evidence IDs:
-- Product Owner G5/release decision record ID:
+- System Owner G5/release decision record ID:
 - G5 gate-review ID and hard-gate statuses:
 
 ## Source-scoped UI audit

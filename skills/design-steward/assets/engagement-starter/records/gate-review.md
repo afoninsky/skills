@@ -11,7 +11,10 @@
 - Required delegation IDs and disposition status:
 - Missing sub-agent or specialist capability and affected claims: None | list
 - Material change since prior approval: none | describe
-- Impact review and Product Owner reapproval: not required | pending | recorded
+- Operating mode and entry evidence: Design-intent grilling | Autonomous design
+- Grilling completed or validly skipped reason:
+- Owner Design Brief confirmation record:
+- Impact review and System Owner reapproval: not required | pending | recorded
 
 ## Evidence and claims
 
@@ -31,6 +34,16 @@
 ## Decision record
 
 - Rubric comparison or rationale:
+- Funnel disposition: raw concept count / six territories / three developed directions / one backbone
+- Experience-coverage result and explicit exclusions:
+- Professional-quality verdicts and screenshot evidence:
+- Generic-template counterfactual and unresolved craft findings:
+- Artifact / iteration / delegation budget actuals and variance:
+- Agent count and named reason for each delegation:
+- Time to first visible artifact and target variance:
+- Time to first comparable contact sheet and budget share:
+- Preselection budget share spent on visible creation, inspection, and revision:
+- Checks deferred by fidelity and their promotion trigger:
 - Blocking Unknowns: None | list IDs and owners
 - Working Assumptions: None | list IDs, risks, owners, evidence plans, and review/expiry
 - Evidence contradictions and gaps:

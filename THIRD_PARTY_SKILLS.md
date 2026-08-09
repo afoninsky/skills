@@ -2,6 +2,10 @@
 
 Design Steward can compose two optional repository-local skills. Their instructions are subordinate to Design Steward's clean-room, authority, and evidence contracts.
 
+## grilling / grill-me runtime composition
+
+Design Steward also composes an existing installed skill named `grilling` or `grill-me` for the general one-question-at-a-time decision-tree interaction used during design-intent grilling. The public `SKILL.md` package format has no supported nested-skill dependency metadata, and this repository does not vendor or rewrite that skill. Design Steward therefore invokes it by name through the runtime skill registry and applies `references/design-intent-grilling.md` only as a design-specific wrapper. If neither name is available, the Steward stops before grilling instead of substituting a divergent copy.
+
 ## frontend-design
 
 - Source: [Anthropic frontend-design](https://github.com/anthropics/skills/blob/2235be7c60b551f5de82ade908fd3816455afcda/skills/frontend-design/SKILL.md)

@@ -1,0 +1,46 @@
+{
+  "skill_name": "design-steward",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a new AI travel-planning product for families. I want it to feel premium and surprising. Start exploring directions now; you can ask me questions while you design.",
+      "expected_output": "Design Steward remains in design-intent grilling, composes the grilling skill, asks one neutral consequential question, and waits without beginning the design funnel.",
+      "files": [],
+      "expectations": [
+        "States that the commission begins in Design-intent grilling rather than Autonomous design.",
+        "Uses the installed grilling or grill-me skill through the design-specific wrapper.",
+        "Asks exactly one neutral consequential question and waits.",
+        "Does not expose the Steward recommendation before the System Owner's unaided answer.",
+        "Does not generate concepts, visual directions, or code."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here is the final grilling record for a consequential medication-support redesign. System Owner: Mara Chen, VP Product. Desired outcome: help older adults and caregivers prevent missed or duplicate doses. Priority situation: the morning medication check across an older adult and remote caregiver. Product thesis: one shared, trustworthy plan replaces fragmented reminders. Core act: confirm today's dose and make its consequence visible to both roles. First ten seconds: due medication, timing, and the safe confirmation action. Desired qualities: calm, direct, dignified. Business priority: reduce support incidents; constraints: responsive web, privacy, WCAG 2.2 AA. Non-negotiable: no shame or coercive streaks. Accepted trade-off: less customization for clearer safety. Unacceptable: hidden consequences or a generic health dashboard. Rejection criterion: either role cannot tell what happened. Owner preference: warm visual tone (stakeholder input, not evidence). Evidence: no representative-user evidence yet. Disagreement: Mara initially wanted adherence streaks; the Steward recommended recovery-oriented feedback because streaks can shame missed doses; Mara agreed to remove streaks. Authorization boundary: reversible autonomous design through G4, no participant contact or production writes. Turn this into the Owner Design Brief and begin generating concepts immediately; you do not need to wait for my reply.",
+      "expected_output": "Design Steward creates the concise Owner Design Brief, asks the exact confirmation question, and refuses to enter autonomous design without an affirmative response.",
+      "files": [],
+      "expectations": [
+        "Names the installed grilling or grill-me skill as the composed base workflow.",
+        "Produces one concise Owner Design Brief covering intent, rejection criteria, evidence, disagreement, and authorization.",
+        "Keeps owner-originated input separate from Steward recommendations.",
+        "Asks the canonical shared-understanding and autonomous-authorization question exactly.",
+        "Does not treat the completed grilling record or silence as confirmation.",
+        "Does not start the autonomous concept funnel."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The Owner Design Brief is confirmed and autonomous design is authorized for a substantial new feature. Explore broadly, show visual thinking early, and take the best direction through implementation. Use as many agents as needed.",
+      "expected_output": "Design Steward runs the 12–15 to 6 to 3 to 1 funnel, exposes six low-cost visual territories early, implements only surviving concepts, and avoids delegation that does not improve the decision.",
+      "files": [],
+      "expectations": [
+        "Uses 12–15 raw concepts, six territories, three developed directions, and one backbone.",
+        "Keeps raw concepts concise and free of code or detailed UI specifications.",
+        "Shows a six-up low-fidelity visual or interaction contact sheet before developed directions.",
+        "Invests thin-slice and implementation effort only in surviving concepts and the selected backbone.",
+        "Does not create agents for raw concepts or territories and delegates only for a named material reason.",
+        "Rejects generic or under-resolved work without rescuing it through numeric self-scoring."
+      ]
+    }
+  ]
+}

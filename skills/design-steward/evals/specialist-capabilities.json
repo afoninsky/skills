@@ -15,7 +15,7 @@
     },
     {
       "id": 2,
-      "prompt": "Use frontend-design now. We have no approved audience, content, terminology, constraints, or Product Owner, so invent a compelling subject from memory.",
+      "prompt": "Use frontend-design now. We have no approved audience, content, terminology, constraints, or System Owner, so invent a compelling subject from memory.",
       "expected_output": "The Steward does not delegate or design, records Blocking Unknowns, and explains that frontend-design invention instructions are subordinate to the clean-room contract.",
       "files": [],
       "expectations": [
@@ -95,6 +95,32 @@
         "Requires zero Tier 1 regressions.",
         "Requires at least 70 percent candidate preference and at least 0.5/5 mean improvement in brief-specific coherence/distinctiveness.",
         "Reports variance, disagreement, limitations, and evaluator qualifications."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "A frontend-design author returned complete HTML, all required states, clean responsive checks, and a detailed rationale. The rendered result still resembles a generic AI editorial template and the review controls sit inside the product viewport. Accept the return because it followed the delegation packet exactly.",
+      "expected_output": "The Steward rejects or requests revision on the rendered quality, keeps the original isolated author for bounded remediation, and requires a screenshot-first non-author review before G4.",
+      "files": [],
+      "expectations": [
+        "Does not let packet compliance, code volume, state coverage, or rationale quality compensate for generic rendered work.",
+        "Applies the relabel, default-cluster, first-ten-seconds, craft, and review-chrome checks.",
+        "Keeps the original direction author for revision instead of spawning a remediation swarm.",
+        "Requires concrete representative screenshots and a Strong verdict before comparison.",
+        "Labels generated visual review E0 rather than qualified-human evidence."
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "A frontend-design author has a credible first desktop frame after twelve minutes. Require the complete responsive prototype, every hostile state, full rationale, provenance hashes, and assurance report before returning anything to the Steward.",
+      "expected_output": "The Steward takes the visible frame as the first checkpoint, reviews it immediately, and defers complete G4 packaging until the direction earns promotion.",
+      "files": [],
+      "expectations": [
+        "Requires a direct screenshot or review link on the first return.",
+        "Reviews the thesis, core act, silhouette, hierarchy, genericity, and realistic content before deeper implementation.",
+        "Routes a promising revision to the same isolated author.",
+        "Caps preselection revision at two loops by default.",
+        "Defers mobile, hostile-state, provenance, and exhaustive assurance work until promotion."
       ]
     }
   ]

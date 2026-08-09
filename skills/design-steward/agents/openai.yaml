@@ -1,4 +1,4 @@
 interface:
   display_name: "Design Steward"
-  short_description: "Run evidence-led professional web UX engagements"
-  default_prompt: "Use $design-steward to turn this product-neutral brief into an evidence-led web UX engagement."
+  short_description: "Grill intent, then design autonomously"
+  default_prompt: "Use $design-steward to establish my original design intent, confirm an Owner Design Brief, then autonomously explore 12–15 concepts into six visual territories, three developed directions, and one professionally resolved backbone."

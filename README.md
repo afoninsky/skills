@@ -21,7 +21,7 @@ npx skills add afoninsky/skills --skill design-steward
 npx skills add afoninsky/skills --skill marktplaats-ad-creator
 ```
 
-For Design Steward's optional visual-design and UI-audit specialists, also install:
+Design Steward's design-intent mode composes an installed skill named `grilling` or `grill-me`. The portable skill format has no nested dependency metadata, so expose that existing skill through the runtime's skill registry. For optional visual-design and UI-audit specialists, also install:
 
 ```bash
 npx skills add anthropics/skills --skill frontend-design
@@ -56,9 +56,9 @@ Requirements: Python 3.10 or newer for the bundled report generator. Other verif
 
 ### Design Steward
 
-Runs a product-neutral, evidence-led design loop for responsive websites and web applications. It gates direction generation on an approved Design Brief, composes bounded specialist capabilities, keeps alternatives structurally independent, governs non-compensable accessibility/content/privacy/ethics/provenance checks, and maintains traceability through implementation and live learning.
+Runs a product-neutral, evidence-led design loop for responsive websites and web applications. It composes design-intent grilling to preserve the System Owner's original judgment, requires a confirmed Owner Design Brief before autonomy, and then applies a 12–15 concept → 6 territory → 3 direction → 1 backbone funnel with early visual exposure, principal-level product/interaction/visual judgment, screenshot-first quality checks, and proportional implementation investment.
 
-The package includes engagement-local record templates, a deterministic Design Brief readiness validator, and ten adversarial benchmark fixtures. It is service-independent and keeps target-product context outside the portable core.
+The package includes an Owner Design Brief template, engagement-local records, a deterministic generation-readiness validator, and twenty-five adversarial benchmark fixtures. It rejects generic self-certification, scope collapse, review-chrome contamination, process blowout, feedback starvation, premature assurance, audit swarms, owner priming, unconfirmed autonomy, funnel overbuilding, and avoidable delegation. It is service-independent and keeps target-product context outside the portable core.
 
 Requirements: Python 3.10 or newer for the optional Design Brief and specialist-integrity validators. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
 

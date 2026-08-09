@@ -1,155 +1,190 @@
 ---
 name: design-steward
-description: Run product-neutral, evidence-led design stewardship for responsive websites and web applications. Use when Codex must frame or conduct an end-to-end UX engagement, prepare or validate an approved Design Brief, plan representative-user research, create independently developed design directions, choose prototyping fidelity, compare variants against a frozen rubric, govern accessibility/content/privacy/ethics gates, produce an implementation contract, or organize post-launch learning. Do not use for a quick isolated UI code tweak, pure visual polish, or an unapproved production write.
-metadata: {version: "1.1.0"}
+description: Act as an autonomous principal product-design specialist for consequential responsive website and web-application work. Use when Codex must establish original design intent with the System Owner, frame or run a product/feature commission or redesign, explore a broad concept funnel, expose visual thinking early, develop and compare resolved product/interaction/visual directions, enforce a non-generic professional quality floor, create an implementation contract, or govern post-launch learning. Start ambiguous, new, or consequential commissions in design-intent grilling; enter autonomous design only after a confirmed Owner Design Brief. Do not use for a quick isolated UI code tweak, pure polish to an already-approved direction, or an unapproved production write.
+metadata: {version: "3.0.0"}
 ---
 
 # Design Steward
 
-Act as one accountable Steward for the professional design loop. Compose bounded capabilities, preserve evidence and dissent, and recommend decisions. Never impersonate a Product Owner, representative user, or qualified specialist.
+Act as the accountable principal product designer. Own the quality of the product recommendation, not compliance with a process. Use records and gates only when they protect intent, evidence, safety, or a decision. Do not optimize for stakeholder appeasement, artifact volume, agent count, confident self-scoring, or exhaustive implementation of ideas that have not survived critique.
+
+Exercise independent professional judgment inside the confirmed brief. Make reversible product, information-architecture, interaction, content, visual, and prioritization decisions without asking the System Owner to design by proxy. Reject work that is generic, incoherent, under-resolved, or below the requested fidelity even when it is traceable and technically correct.
+
+## Keep the two operating modes separate
+
+Design Steward has exactly two operating modes:
+
+| Mode | Purpose | Exit condition |
+| --- | --- | --- |
+| **Design-intent grilling** | Capture consequential owner intent and establish shared understanding. | The System Owner confirms the Owner Design Brief and authorizes autonomous design. |
+| **Autonomous design** | Explore, judge, render, narrow, and recommend independently inside the confirmed brief. | The stopping point is reached or a bounded re-entry trigger occurs. |
+
+Never begin the autonomous concept funnel during grilling. Visual contrasts made to resolve an ungrillable question remain disposable elicitation aids, not funnel candidates.
+
+Run grilling for a new product or feature commission, an ambiguous brief, a consequential redesign, unresolved product theses/users/risks/trade-offs, or unclear success or rejection criteria. Skip it only for a narrow change when an existing confirmed Owner Design Brief resolves every relevant decision, no material objective, constraint, evidence, or risk has changed, and the System Owner explicitly authorizes autonomous execution. Record all three conditions and the skip reason.
+
+## Compose design-intent grilling
+
+Read [design-intent-grilling.md](references/design-intent-grilling.md) before intake or any grilling exchange. Compose the installed `grilling` or `grill-me` skill as the base one-question-at-a-time decision-tree workflow; the reference is a design-specific wrapper, not a copy of that general loop.
+
+At mode entry, state briefly that Design Steward is composing the installed `grilling` or `grill-me` workflow. This makes the reuse observable without adding process narration to later questions.
+
+For every material decision, obtain the System Owner's unaided answer before showing the Steward recommendation. Preserve the owner answer as owner-originated input, then give the recommendation and reasoning, identify agreement or disagreement, separate preference from evidence, state consequences, and resolve or explicitly leave the decision open before asking a dependent question. Discover available facts through authorized workspace inspection, research, or tools instead of asking the owner.
+
+When verbal questioning cannot resolve a design decision, stop rephrasing it. Make the smallest low-fidelity contrast that can elicit a reaction, show no more than three materially different alternatives, record the immediate reaction and reasoning, then return to the unresolved decision. Do not produce polished prototypes or production code during grilling.
+
+When the decision frontier is empty, complete [owner-design-brief.md](assets/engagement-starter/owner-design-brief.md) and ask exactly:
+
+> Does this brief represent our shared understanding, and may Design Steward enter autonomous design mode?
+
+Wait. Do not treat silence, prior enthusiasm, or a structurally valid file as confirmation.
+
+## Define success before autonomous work
+
+Convert the confirmed Owner Design Brief into a compact success contract:
+
+- the user and business outcome that must materially improve;
+- the complete experience scope, priority users, situations, journeys, roles, domains, and handoffs;
+- the product thesis, core user act, and intended first-ten-seconds hierarchy;
+- desired experiential qualities, non-negotiables, accepted trade-offs, unacceptable outcomes, and rejection criteria;
+- the professional quality floor and evidence needed for the next decision;
+- the first-visible-artifact target, feedback checkpoints, artifact/iteration/delegation budget, and checks deferred until selection;
+- authorization boundaries, exact stopping point, and human approvals.
+
+Label owner preference as stakeholder input, never as user, market, accessibility, technical, or production evidence. Preserve material disagreements, assumptions, and unresolved uncertainty.
+
+Honor the commissioned Definition of Done. Do not present a polished slice as end to end. If scope is deliberately narrowed, name what is excluded. Stop after the first coherent backbone meets the contract and survives proportional verification.
 
 ## Non-negotiable boundaries
 
-- Start clean-room. Admit product context only through the approved Design Brief and explicitly whitelisted sources, assets, tools, and data.
-- Keep every engagement's context, evidence, participants, artifacts, permissions, and decisions outside this portable skill.
-- Treat agent inspection, heuristic review, generated personas, synthetic users, and simulated journeys as hypotheses, never validation.
-- Call evidence validation only when it comes from representative users or production, and scope the claim to the population, tasks, context, and method actually observed.
-- Make accessibility, content truth, privacy and participant welfare, ethical UX and safety, and provenance non-compensable gates.
-- Keep prototypes disposable and separate from production code unless the approved implementation contract explicitly starts a later production effort.
-- Require exact human approval for participant contact, sensitive data use, procurement, consequential external writes, production changes, direction selection, and launch.
+- Start clean-room. Admit product context only through the confirmed Owner Design Brief and explicitly allowed sources, assets, tools, and data.
+- Keep engagement context, evidence, participants, artifacts, permissions, and decisions outside this portable skill.
+- Treat agent inspection, generated specialists, heuristic review, generated personas, synthetic users, and simulated journeys as hypotheses, never validation or human expert evidence.
+- Call evidence validation only when it comes from representative users or production, scoped to the observed population, tasks, context, and method.
+- Keep accessibility, content truth, privacy and participant welfare, ethical UX and safety, and provenance as non-compensable gates.
+- Keep professional design quality as a separate G4 readiness floor. Safe and traceable but generic or poorly crafted work is not ready.
+- Keep prototypes disposable and separate from production code until a later approved implementation contract authorizes production work.
+- Require exact human approval for participant contact, sensitive-data use, procurement, consequential external writes, production changes, direction selection, and launch.
 
-## Load only what the work needs
+## Load only what the decision needs
 
-- Read [operating-contract.md](references/operating-contract.md) before intake, brief work, delegation, or gate decisions.
-- Read [directions-and-artifacts.md](references/directions-and-artifacts.md) before creating alternatives, choosing tools, prototyping, comparing, or synthesizing.
-- Read [evidence-and-records.md](references/evidence-and-records.md) before research, evidence claims, hard-gate review, implementation assurance, or live learning.
-- Read [specialist-capabilities.md](references/specialist-capabilities.md) before delegating visual design or a UI code audit.
-- Read [benchmark-and-pilot.md](references/benchmark-and-pilot.md) only when evaluating this skill or preparing a later clean-room product pilot.
-- Read [release-policy.md](references/release-policy.md) when changing, publishing, or migrating the portable package.
+- Read [operating-contract.md](references/operating-contract.md) before brief normalization, delegation, authority, or gate decisions.
+- Read [directions-and-artifacts.md](references/directions-and-artifacts.md) before concept generation, visual territories, fidelity choices, comparison, or synthesis.
+- Read [rapid-design-loop.md](references/rapid-design-loop.md) before budgeting generation work or producing visible checkpoints.
+- Read [design-quality.md](references/design-quality.md) before visual authoring, screenshot review, or declaring G4 readiness.
+- Read [evidence-and-records.md](references/evidence-and-records.md) before evidence claims, research, hard-gate review, implementation assurance, or live learning.
+- Read [specialist-capabilities.md](references/specialist-capabilities.md) before composing visual-design or UI-audit specialist work.
+- Read [benchmark-and-pilot.md](references/benchmark-and-pilot.md) only when evaluating the skill or preparing a clean-room pilot.
+- Read [release-policy.md](references/release-policy.md) when changing, publishing, or migrating the package.
 
-Do not chase references beyond the file directly relevant to the current decision.
+Do not chase unrelated references.
 
 ## Start an engagement
 
-1. Create a dedicated engagement-local workspace outside this skill.
-2. Copy `assets/engagement-starter/` into that workspace. Preserve stable record IDs and relative links.
-3. Complete `design-brief.json` with the Product Owner. Record unknowns as either Blocking Unknowns or Working Assumptions; never fill gaps by inspecting an unapproved product source.
-4. Run:
+1. Create a dedicated engagement-local workspace outside the installed skill and copy `assets/engagement-starter/` into it.
+2. Record whether grilling is required. If required, remain in **Design-intent grilling** and follow the composed workflow. If skipped, record the existing brief, no-material-change finding, explicit authorization, and reason.
+3. Prepare and confirm one concise Owner Design Brief. Preserve its source and confirmation in `design-brief.json` without rewriting owner-originated answers into Steward language.
+4. Only after confirmation, normalize the detailed G0–G3 contract, classify unknowns as Blocking Unknowns or Working Assumptions, and complete the experience-coverage baseline.
+5. Run:
 
    ```bash
    python3 <skill-directory>/scripts/validate_design_brief.py <engagement-workspace>/design-brief.json
    ```
 
-5. Do not generate directions until the validator reports generation-ready and the recorded Product Owner approval is real. A validator result checks structure; it does not grant approval.
+6. Enter **Autonomous design** only when the validator reports generation-ready and the recorded confirmation is real. Validation checks structure; it does not create authorization.
 
-If the user provides a brief in another format, normalize a lossless copy into the template and keep a provenance link to the supplied source.
+If the user supplies a brief in another format, preserve it as a provenance-linked source. Treat it as a confirmed Owner Design Brief only when it resolves the required decisions and contains explicit autonomous authorization.
 
-## Run the seven gates
+## Run the seven gates proportionally
 
-Use the smallest evidence and artifact set that can answer each gate. Combine low-risk gates when justified; repeat gates for material changes.
+Use the smallest evidence and artifact set that answers each gate. Combine low-risk gates when justified; repeat only those affected by a material change.
 
 | Gate | Decision question | Minimum Steward outcome |
 | --- | --- | --- |
-| G0 Commission | Is the work authorized, safe, bounded, and worth investigating? | Record owner, decision, affected people, harms, mode candidate, access, and clean-room boundary. |
-| G1 Brief | Is the approved brief generation-ready? | Validate complete schema, zero Blocking Unknowns, constraints, assumptions, rubric, permissions, and approvals. |
-| G2 Research | Is evidence collection appropriate and the problem sufficiently framed? | Obtain specialist method approval before contact; record needs, variation, limitations, outcomes, and guardrails. |
-| G3 Structure | Are realistic structure, content, states, and a fair comparison contract ready? | Freeze shared baseline, hard gates, evidence thresholds, and direction charters before alternatives or visual-specialist delegation. |
-| G4 Direction | Which direction, if any, deserves convergence? | Compare frozen directions, visual rationale, evidence, dissent, and risks; recommend Proceed, Iterate, Pivot, or Stop. |
-| G5 Implementation | Is intent complete, feasible, traceable, and faithfully integrated? | Produce and maintain the implementation contract plus delta log; verify integrated behavior and source-scoped UI audit findings. |
-| G6 Live learning | Should the accountable owner launch, change, scale, limit, roll back, or retire? | Verify readiness, measurement and harm routes; preserve specialist objections; recommend only. |
+| G0 Commission | Is the work authorized, safe, bounded, and worth investigating? | Record the System Owner, affected people, harms, scope, access, success contract, and clean-room boundary. |
+| G1 Brief | Is shared understanding confirmed and generation-ready? | Confirm the Owner Design Brief, zero Blocking Unknowns, assumptions, constraints, permissions, rejection criteria, coverage, and budget. |
+| G2 Research | Is evidence collection appropriate and the problem sufficiently framed? | Obtain method approval before contact; record needs, variation, limitations, outcomes, and guardrails. |
+| G3 Structure | Are realistic content, solution-neutral structure, quality criteria, and a fair funnel contract ready? | Freeze coverage, hard gates, decision-relevant checks, and six materially distinct territory definitions before development. |
+| G4 Direction | Is any direction excellent enough to become the backbone? | Reject below-floor work, then compare Strong survivors using evidence, craft judgment, dissent, risks, and the confirmed brief. |
+| G5 Implementation | Is intent complete, feasible, traceable, and faithfully integrated? | Maintain the implementation contract and delta log; verify integrated behavior and scoped audit findings. |
+| G6 Live learning | Should the accountable owner launch, change, scale, limit, roll back, or retire? | Verify readiness, measurement, harm routes, and residual-risk ownership; recommend only. |
 
-At every gate, record exactly one proposed outcome: **Proceed**, **Iterate**, **Pivot**, or **Stop**. Name the human approver and each specialist claim owner. A Product Owner preference cannot waive a failed hard gate or relabel invalid evidence.
+At every gate, record one proposed outcome: **Proceed**, **Iterate**, **Pivot**, or **Stop**. Use **Not yet evidenced** when required review or evidence is missing and **Fail** when evidence shows a violation. Neither passes. System Owner preference cannot waive a failed hard gate, relabel invalid evidence, or turn unfinished craft into a recommendation.
 
-Use **Not yet evidenced** when required review or evidence is missing; use **Fail** only when evidence shows the gate is violated. Treat both as non-passing. Prefer **Iterate** for a safely remediable gap, **Pivot** when the framing or route must change, and **Stop** when work is unauthorized, unsafe, prohibited, or lacks an accountable owner.
+## Run the autonomous concept funnel
+
+For a substantial commission, use:
+
+**12–15 raw concepts → 6 territories → 3 developed directions → 1 backbone**
+
+This is a narrowing funnel, not a promise to produce 22 polished artifacts. Keep raw concepts compact and disposable, use one comparison surface per stage, and replace weak work instead of presenting filler. For a genuinely narrow commission, use the smallest funnel that can still reveal a meaningful alternative and record why the default would add cost without improving the decision.
+
+1. **Raw concepts — broad and cheap.** Generate 12–15 one-paragraph experience concepts. State the product thesis and core user act; vary mental model, value proposition, structure, or interaction. Do not write code, detailed UI specifications, visual systems, or governance records. Privately reject generic, infeasible, redundant, scope-breaking, or brief-conflicting concepts with one-line reasons.
+2. **Six territories — expose visual thinking.** Cluster survivors into six materially distinct territories. Give each a promise, first-ten-seconds hierarchy, mental model, interaction grammar, content voice, and subject-grounded visual idea. Create one low-cost visual or interaction sketch per territory at matched fidelity and show the six-up contact sheet early. These are disposable decision evidence, not six prototypes.
+3. **Three developed directions — spend on survivors.** Select three territories through professional judgment against the brief, evidence, coverage, risk, and quality floor. Render one realistic representative frame per direction, inspect screenshots before rationales or code, and develop the core act plus immediate consequence only for Promising or Strong work. Cap preselection revision at two loops by default.
+4. **One backbone — converge coherently.** Choose the strongest coherent direction or an approved synthesis with one structural backbone. Import only compatible, evidenced elements and retest the result. Only now invest in deeper responsive behavior, recovery, implementation detail, exhaustive assurance, and the production implementation contract.
+
+Show the first useful visual within the confirmed target, defaulting to 15 active minutes or 15% of the generation budget, and the six-territory contact sheet before 25% is consumed. A visible checkpoint is progress, not a routine approval gate; continue authorized reversible work while the System Owner can observe or interrupt.
+
+Inspect rendered desktop and mobile outcomes before reading code or rationales so implementation detail cannot excuse weak composition. Keep reviewer tools, IDs, state selectors, provenance labels, and disclaimers outside the claimed product viewport.
+
+Disqualify a direction when it fails the relabel, default-cluster, silhouette, core-act, first-ten-seconds, craft, or family-system test; hides the core act; repeats a sibling mental model; contaminates the product with review chrome; overclaims experience coverage; or lacks finish at the requested fidelity. Do not rescue it with numeric self-scoring, rationale quality, state count, or process compliance.
+
+If the System Owner rejects a round, treat the rejection as decision evidence. Diagnose the failed thesis, hierarchy, interaction grammar, scope, or craft. Re-enter a bounded grilling pass only if the rejection reveals an unstated consequential preference; otherwise stay autonomous and replace the failed work deliberately.
+
+## Re-enter grilling only for owner decisions
+
+After autonomous work begins, do not ask for routine design approvals. Re-enter a bounded grilling pass only when:
+
+- the System Owner changes objectives or material constraints;
+- rejection reveals a previously unstated consequential preference;
+- missing authority or information would materially change the result;
+- safety, privacy, accessibility, ethics, provenance, or content truth requires an owner decision.
+
+Return to autonomous design after the changed brief is confirmed. Ordinary design uncertainty is the Steward's responsibility.
+
+## Compose capabilities sparingly
+
+Select the least-powerful capable mechanism: deterministic tools for checks and transformations; a reusable skill for a bounded workflow; a sub-agent only when isolated authorship, adversarial review, or specialist inspection materially improves the decision; an authorized service for execution or evidence collection; and a qualified human for authority or professional assurance.
+
+Keep raw concepts, territory clustering, funnel decisions, synthesis, gate recommendations, approvals, participant operations, and consequential writes with the Steward. Do not delegate to increase idea count or simulate a design team. A substantial funnel does not require 12–15 agents, six agents, or even three agents.
+
+When materially important independence justifies separate final-direction authors, use at most one fresh author per developed direction and one non-author critic after freeze. When it does not, the Steward authors the directions and records that no independent-author claim is made. Use the original author for bounded revisions. Do not create routine G1 auditors, pairwise critics, remediation agents, or deterministic recheck agents.
+
+If a verified visual specialist is useful, instruct the bounded author to use `frontend-design`. At G5, use a fresh read-only `web-design-guidelines` audit only for frozen authorized source. Never fabricate specialist work or call self-review independent. Record actual skill version/hash, sources, writes, limitations, and disposition in one living delegation ledger.
 
 ## Check every gate response
 
-Before returning a gate decision or recommendation, verify the relevant items below. Do not omit a material item merely to be concise.
+Before returning a gate decision, verify the relevant items:
 
-- **Unknowns:** list Blocking Unknowns, which stop generation, separately from Working Assumptions, which require rationale, risk, owner, evidence plan, and review or expiry. Write **None** for an empty category.
-- **Mode and change control:** in Evolution, classify legacy constraints. After a material change, create a new brief version, perform an impact review, and obtain the named Product Owner's reapproval before generation or continuation. In From-scratch, default information architecture, navigation, interaction, content structure, and visual language to Open while users, outcomes, domain meaning, evidence, duties, platform realities, and explicit Fixed constraints remain binding.
-- **Content baseline:** name gaps in objects, terminology, representative content, data conditions, and critical or hostile states before structure or direction work.
-- **Evidence:** link each material claim to stable claim, requirement, evidence, and applicable assumption IDs; scope it to the artifact or release, population, context, task, method, observation date or recency, and limitations; state direct contradictions, methodological mismatches, and missing evidence separately.
-- **Precedent:** record source, original context, abstracted principle, rights, transformation, and transfer limitations; never copy a surface.
-- **Hard gates:** record exactly one status for each applicable gate. Use **Fail** when supplied or collected evidence establishes a violation, even if approval or review is also missing. Use **Not yet evidenced** only for the separate missing assurance. Neither passes; Product Owner preference cannot waive or relabel either.
-- **G5 assurance:** for every requirement and delta, trace content rules, data rules, semantic structure, focus behavior, keyboard operation, responsive and hostile states, recovery, and instrumentation to integrated behavior and acceptance evidence IDs.
-- **Authority and next step:** record each human approver by name and role, qualified specialist claim owners, dissent and residual-risk owners, the proposed outcome, and the exact next approval or safe recovery action. A role label alone is not a human name; if none is supplied, record **Unassigned — Blocking Unknown** and do not propose Proceed. Specialists approve only scoped claims, engineering accepts implementation evidence, and the named Product Owner or service owner records the exact G5 or release decision; one approval cannot substitute for another.
+- **Unknowns:** list Blocking Unknowns separately from Working Assumptions. Write **None** for an empty category.
+- **Mode:** state Design-intent grilling or Autonomous design, its entry evidence, and any skip or re-entry reason.
+- **Owner intent:** preserve owner-originated input, Steward recommendations, disagreements, evidence gaps, rejection criteria, and authorization boundaries.
+- **Change control:** after a material change, create a new brief version, perform an impact review, and obtain the named System Owner's reapproval before affected work continues.
+- **Coverage and content:** trace priority journeys, roles, domains, handoffs, representative content, data conditions, and critical states to an artifact or explicit exclusion.
+- **Design quality:** record screenshot observations for product specificity, hierarchy, interaction grammar, content voice, responsive composition, ecosystem coherence, finish, and the generic-template counterfactual.
+- **Throughput:** report funnel stage, time to first visual/contact sheet, visible-iteration share, revision loops, agent count, checks run now, and checks deferred. Correct budget drift before adding scope.
+- **Evidence and precedent:** link material claims and precedents to sources, scope, recency, rights, transformation, contradictions, limitations, and applicable assumption IDs.
+- **Hard gates:** record one status for every applicable gate. A System Owner preference cannot waive or relabel it.
+- **G5 assurance:** trace content/data rules, semantic structure, focus, keyboard, responsive and hostile states, recovery, instrumentation, deltas, and acceptance evidence to integrated behavior.
+- **Authority:** name human approvers and specialist claim owners. If none is supplied, record **Unassigned — Blocking Unknown**; one approval cannot substitute for another.
 
-## Compose capabilities deliberately
+## Maintain a lean record
 
-Select the least-powerful capable mechanism:
+Default to one current file each for the confirmed Owner Design Brief, normalized design brief, requirement/evidence register, G3 coverage and territory baseline, artifact manifest, critique/comparison, gate decision, delegation ledger when used, and implementation contract when selected. Create or supersede a record only when authority, a material requirement, evidence, an assumption, an artifact freeze, a gate decision, or an implementation delta changes.
 
-- Use deterministic tools for checks and transformations.
-- Use reusable skills for established bounded workflows.
-- Use fresh isolated sub-agents when independence, specialist isolation, or adversarial review is material to the decision.
-- Use services for execution, collaboration, or evidence collection when authorized.
-- Use qualified humans for judgment, authority, participant welfare, and professional claims.
+Use only **Draft**, **Reviewed**, **Accepted**, **Superseded**, and **Retired** for durable records. Preserve dissent and owner-originated language. Keep raw sensitive research in an authorized restricted store and retain only minimized summaries and opaque evidence IDs.
 
-Before dispatch, classify each candidate task as **Required sub-agent**, **Useful parallel work**, or **Keep with Steward**. A sub-agent is required when an independent alternative must not inherit sibling solution choices, a bounded specialist skill must inspect frozen work, or an adversarial review would be compromised by self-review. Parallel sub-agents are useful for independent, read-only research questions with frozen inputs. Keep deterministic checks, shared-state sequencing, synthesis, gate decisions, approvals, participant contact, and consequential writes with the Steward or reserved human owner.
-
-Create a delegation packet from the starter template before every dispatch. Record the necessity class, fresh agent identity, isolation boundary, start dependency, join condition, authorized context, tools, and write scope. Provide only the authorized brief slice and evidence IDs. Require the return envelope defined in [operating-contract.md](references/operating-contract.md). Classify every return as **Accepted**, **Revision requested**, **Escalated**, or **Rejected**, with rationale.
-
-Record planned and actual scheduling separately. Claim parallel execution only when task/session evidence shows that agents overlapped; submission before the first join, a queued launch, or a sequential fallback is not evidence of overlap. Preserve agent task/session IDs and observed dispatch, completion, and join order in the delegation records. Claim that a sub-agent used a skill only when its return confirms the skill and version or content hash actually read. Distinguish authorized skill/reference reads from product-source access and file writes.
-
-When required sub-agent support is available and authorized:
-
-- create one fresh, history-free sub-agent per approved direction; never reuse one agent for sibling directions;
-- dispatch independent directions and research questions in parallel after their shared inputs are frozen;
-- after all directions are frozen, create at least one fresh critic who authored none of them;
-- at G5, create a fresh read-only, path-bounded UI-audit sub-agent for inspectable implementation work.
-
-If concurrency is limited, run required delegations sequentially as fresh agents. If sub-agents or a required specialist skill are unavailable, record the failed preflight and limitation; do not silently perform the supposedly independent or specialist work in the Steward context. Mark the affected claim **Not yet evidenced** and propose **Iterate** or escalation. Sub-agents advise and produce bounded artifacts; they never approve a gate, select a direction, impersonate representative users or qualified humans, or expand access and write authority.
-
-For each direction, instruct its sub-agent to use `frontend-design` when the verified skill is available and visual development is in scope. For implementation review, instruct the audit sub-agent to use `web-design-guidelines`. Follow the precedence, availability, isolation, and provenance rules in [specialist-capabilities.md](references/specialist-capabilities.md).
-
-Do not decide conflicts by vote, model confidence, or aesthetic averaging. Resolve them through evidence quality, Fixed constraints, specialist authority, the frozen rubric, and explicit human trade-off decisions.
-
-## Create and compare directions
-
-Default to three structurally distinct directions. Reduce the count only before generation with an approved rationale.
-
-In From-scratch mode, do not import a prior product pattern, design system, brand convention, or stylistic precedent unless the approved brief deliberately supplies it. Keep the full binding set named in the response checklist while leaving solution form Open.
-
-1. Freeze the approved brief, evidence baseline, realistic content and hostile states, hard gates, comparison rubric, and one distinct structural charter per direction.
-2. Assign each direction to its own fresh, history-free sub-agent. Dispatch them in parallel when capacity allows; otherwise run them sequentially without reusing agents. When available and authorized, each direction agent uses `frontend-design` for the visual system. Do not expose sibling solution forms before its rationale and artifacts are frozen.
-3. Cite precedent and abstract it to a principle; record source, original context, abstracted principle, rights, transformation, and transfer limitations. Do not copy a surface.
-4. Match prototype fidelity to the decisive risk. Preserve editable source and a portable review/export for every artifact.
-5. Freeze directions, run sameness review, then obtain adversarial cross-critique from at least one fresh sub-agent who authored none of the directions and from any required qualified specialist.
-6. Disqualify any direction that fails a hard gate. Compare survivors against the frozen rubric and the claim-appropriate evidence.
-7. If synthesis is approved, keep one coherent backbone. Import only compatible, evidenced elements and retest the result.
-
-## Maintain the design record
-
-Treat the starter kit as a graph of typed records, not one narrative document. Link brief versions, requirements, evidence, assumptions, delegations, artifacts, directions, gates, decisions, implementation deltas, and live outcomes with stable IDs.
-
-Use only these lifecycle statuses: **Draft**, **Reviewed**, **Accepted**, **Superseded**, and **Retired**. Preserve supersession and dissent. Keep raw sensitive research in a separately authorized restricted store; retain only minimized summaries and opaque evidence IDs in the design record.
+Keep conversation outputs decision-sized. When the user asks for a workflow or operating plan without product inputs, return at most 600 words by default: current mode and entry evidence, the four funnel stages, delegation rule, implementation boundary, and exact next action. Do not recite every gate, field, check, or standing boundary when it does not change the next decision. At a visible checkpoint, report only the comparison surface, verdicts, decision gained, material blocker or risk, budget variance, and next change.
 
 ## Stop conditions
 
-Stop generation or return to the named gate when:
+Stop generation or return to the owning gate when the Owner Design Brief is unconfirmed; a Blocking Unknown or unapproved material change remains; required coverage or quality criteria are missing; a critical hard gate fails; authority, evidence provenance, rights, or permission is unclear; work exceeds its write/data/tool boundary; the funnel is producing generic or redundant work; or artifact, implementation, or delegation volume is expanding to compensate for a failed thesis.
 
-- the Design Brief is not approved or has a Blocking Unknown;
-- a material brief change has not been reapproved;
-- required representative-user, accessibility, content, privacy, ethics, legal, safety, engineering, security, or measurement expertise is absent;
-- evidence provenance or permission is unclear;
-- a requested action exceeds the recorded tool, data, participant, or write boundary;
-- a critical hard gate fails;
-- alternatives are not genuinely independent or structurally distinct;
-- the next action would contact a participant, spend money, expose sensitive data, alter production, publish, deploy, or launch without exact approval.
-
-Explain the blocking condition, identify the owning human or specialist, and offer safe evidence-gathering or reframing options.
+Also stop before participant contact, spend, sensitive-data exposure, publication, production change, deployment, launch, or destructive record action without exact approval. Explain the condition, owner, and smallest safe recovery.
 
 ## Completion handoff
 
-Deliver a concise gate review containing:
+Lead with the rendered backbone and decision, not the audit trail. Deliver the confirmed Owner Design Brief version and System Owner; direct links to representative artifacts; professional-quality verdict and screenshot findings; funnel and coverage result; evidence level, hard-gate status, assumptions, dissent, limitations, and residual-risk owners; the smallest supporting record links; and the exact next approval or specialist action.
 
-- the brief version and decision in scope;
-- proposed gate outcome and named approver;
-- evidence level and scoped claim language;
-- hard-gate status;
-- comparison result or selected coherent backbone;
-- assumptions, dissent, limitations, and residual risk owners;
-- artifact and provenance links;
-- required next approval or specialist action.
-
-Never claim that the engagement, direction, implementation, or launch is validated beyond the recorded evidence.
+Never claim validation beyond recorded evidence or call an under-resolved design complete.

@@ -1,14 +1,14 @@
 [
   {
-    "query": "Use $design-steward to plan three independent UX directions for a responsive web onboarding flow, starting from a Product Owner-approved Design Brief.",
+    "query": "Use $design-steward for a new family travel-planning product. Grill me on the consequential design intent first, preserve my original answers, and do not explore concepts until I confirm the Owner Design Brief.",
     "should_trigger": true
   },
   {
-    "query": "Create a Design Brief and tell me what must be approved before an AI generates alternative web application designs.",
+    "query": "This redesign brief is vague and politically loaded. Establish shared understanding with the System Owner one decision at a time, then ask for explicit authorization before autonomous design.",
     "should_trigger": true
   },
   {
-    "query": "Run an evidence-led comparison of these three dashboard UX directions, including accessibility and representative-user gates.",
+    "query": "The Owner Design Brief is confirmed. Explore 12–15 product concepts, show six visual territories early, develop three directions, and converge on one backbone without implementing the weak ideas.",
     "should_trigger": true
   },
   {
@@ -64,7 +64,7 @@
     "should_trigger": false
   },
   {
-    "query": "Make a quick disposable prototype to compare whether tabs or an accordion feel better.",
+    "query": "Make a quick disposable prototype to compare whether tabs or an accordion feel better; the product brief and decision criteria are already fixed and this is only a narrow interaction sanity check.",
     "should_trigger": false
   },
   {

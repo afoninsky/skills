@@ -11,7 +11,13 @@ from pathlib import Path
 from typing import Any
 
 ALLOWED_CONSTRAINTS = {"Fixed", "Challengeable", "Open", "Blocking Unknown"}
-ALLOWED_MODES = {"Evolution", "From-scratch"}
+ALLOWED_OPERATING_MODES = {"Design-intent grilling", "Autonomous design"}
+ALLOWED_ENGAGEMENT_TYPES = {"Evolution", "From-scratch"}
+ALLOWED_GRILLING_STATUSES = {"Required", "Completed", "Skipped"}
+CONFIRMATION_QUESTION = (
+    "Does this brief represent our shared understanding, and may Design Steward "
+    "enter autonomous design mode?"
+)
 REQUIRED_HARD_GATES = {
     "accessibility",
     "content truth",
@@ -27,9 +33,14 @@ REQUIRED_TOP_LEVEL = {
     "brief_id",
     "version",
     "status",
-    "mode",
+    "operating_mode",
+    "engagement_type",
     "authority",
+    "grilling",
+    "owner_design_intent",
+    "shared_understanding",
     "objectives",
+    "success_contract",
     "users_and_contexts",
     "evidence",
     "evidence_gap_rationale",
@@ -51,12 +62,24 @@ NON_EMPTY_STRINGS = (
     "schema_version",
     "brief_id",
     "version",
-    "mode",
-    "authority.product_owner",
+    "operating_mode",
+    "engagement_type",
+    "authority.system_owner",
     "authority.commissioned_decision",
+    "grilling.base_skill",
+    "grilling.required_or_skip_reason",
+    "owner_design_intent.commission_and_desired_outcome",
+    "owner_design_intent.product_thesis",
+    "owner_design_intent.core_user_act",
+    "owner_design_intent.first_ten_seconds_hierarchy",
+    "success_contract.product_experience_thesis",
+    "success_contract.product_idea_to_make_obvious",
+    "success_contract.first_visible_artifact_target",
+    "success_contract.stopping_point",
     "accessibility_ethics_privacy_legal_safety.accessibility_standard",
     "comparison_contract.validation_claim_rule",
     "comparison_contract.tie_and_uncertainty_handling",
+    "comparison_contract.numeric_scoring_policy",
     "governance.participant_contact_authority",
     "governance.consequential_write_authority",
     "permissions.product_access",
@@ -65,7 +88,10 @@ NON_EMPTY_STRINGS = (
 )
 
 APPROVAL_STRINGS = (
-    "approval.product_owner",
+    "shared_understanding.confirmed_by",
+    "shared_understanding.confirmed_at",
+    "shared_understanding.authorized_scope",
+    "approval.system_owner",
     "approval.approved_at",
     "approval.approved_scope",
 )
@@ -73,15 +99,35 @@ APPROVAL_STRINGS = (
 NON_EMPTY_LISTS = (
     "objectives.desired_outcomes",
     "objectives.non_goals",
+    "owner_design_intent.priority_users_roles_and_situations",
+    "owner_design_intent.desired_experiential_qualities",
+    "owner_design_intent.business_priorities_and_constraints",
+    "owner_design_intent.non_negotiables",
+    "owner_design_intent.accepted_trade_offs",
+    "owner_design_intent.unacceptable_outcomes",
+    "owner_design_intent.rejection_criteria",
+    "owner_design_intent.owner_originated_preferences",
+    "owner_design_intent.steward_recommendations",
+    "owner_design_intent.material_disagreements_and_resolutions",
+    "owner_design_intent.evidence_assumptions_and_unresolved_uncertainty",
+    "owner_design_intent.authorization_boundaries",
+    "success_contract.complete_experience_scope",
+    "success_contract.professional_quality_bar",
+    "success_contract.artifact_iteration_delegation_budget",
+    "success_contract.feedback_checkpoint_plan",
+    "success_contract.deferred_assurance_plan",
     "users_and_contexts.target_users",
     "users_and_contexts.contexts",
+    "users_and_contexts.roles_and_domains",
     "users_and_contexts.priority_journeys",
+    "users_and_contexts.priority_handoffs",
     "representative_content.canonical_terminology",
     "representative_content.content_samples",
     "representative_content.data_conditions",
     "representative_content.critical_states",
     "constraint_ledger",
     "comparison_contract.rubric",
+    "comparison_contract.professional_quality_criteria",
     "comparison_contract.evidence_thresholds",
     "comparison_contract.hard_gates",
     "governance.human_gates",
@@ -145,15 +191,25 @@ def validate_brief(data: Any, allow_draft: bool = False) -> list[str]:
     for field in sorted(REQUIRED_TOP_LEVEL - data.keys()):
         errors.append(f"missing required field: {field}")
 
+    if data.get("schema_version") != "3.0.0":
+        errors.append("schema_version must be '3.0.0'")
     if data.get("record_type") != "design-brief":
         errors.append("record_type must be 'design-brief'")
-    if data.get("mode") not in ALLOWED_MODES:
-        errors.append("mode must be 'Evolution' or 'From-scratch'")
+    if data.get("operating_mode") not in ALLOWED_OPERATING_MODES:
+        errors.append(
+            "operating_mode must be 'Design-intent grilling' or 'Autonomous design'"
+        )
+    if data.get("engagement_type") not in ALLOWED_ENGAGEMENT_TYPES:
+        errors.append("engagement_type must be 'Evolution' or 'From-scratch'")
+    if not allow_draft and data.get("operating_mode") != "Autonomous design":
+        errors.append(
+            "operating_mode must be 'Autonomous design' before direction generation"
+        )
 
-    if not allow_draft and data.get("status") != "Approved":
-        errors.append("status must be 'Approved' before direction generation")
-    elif allow_draft and data.get("status") not in {"Draft", "Approved", "Superseded"}:
-        errors.append("status must be Draft, Approved, or Superseded")
+    if not allow_draft and data.get("status") != "Accepted":
+        errors.append("status must be 'Accepted' before direction generation")
+    elif allow_draft and data.get("status") not in {"Draft", "Accepted", "Superseded"}:
+        errors.append("status must be Draft, Accepted, or Superseded")
 
     for path in NON_EMPTY_STRINGS:
         value = get_path(data, path)
@@ -170,6 +226,82 @@ def validate_brief(data: Any, allow_draft: bool = False) -> list[str]:
         value = get_path(data, path)
         if not isinstance(value, list) or not value:
             errors.append(f"{path} must be a non-empty array")
+
+    grilling = data.get("grilling")
+    if not isinstance(grilling, dict):
+        errors.append("grilling must be an object")
+    else:
+        grilling_status = grilling.get("status")
+        if grilling_status not in ALLOWED_GRILLING_STATUSES:
+            errors.append("grilling.status must be Required, Completed, or Skipped")
+        if not allow_draft and grilling_status not in {"Completed", "Skipped"}:
+            errors.append(
+                "grilling.status must be Completed or Skipped before direction generation"
+            )
+        if grilling_status == "Completed":
+            skill_identity = grilling.get("base_skill_version_or_hash")
+            if not isinstance(skill_identity, str) or not skill_identity.strip():
+                errors.append(
+                    "grilling.base_skill_version_or_hash must be recorded when grilling is Completed"
+                )
+            decisions = grilling.get("decision_records")
+            if not allow_draft and (not isinstance(decisions, list) or not decisions):
+                errors.append(
+                    "grilling.decision_records must be non-empty when grilling is Completed"
+                )
+            elif isinstance(decisions, list):
+                require_record_fields(
+                    decisions,
+                    "grilling.decision_records",
+                    (
+                        "id",
+                        "question",
+                        "owner_original_response",
+                        "input_class",
+                        "steward_recommendation",
+                        "agreement_disagreement_evidence_gaps_and_consequences",
+                        "resolution",
+                    ),
+                    errors,
+                )
+        if grilling_status == "Skipped":
+            existing_brief = grilling.get("existing_confirmed_owner_design_brief")
+            if not isinstance(existing_brief, str) or not existing_brief.strip():
+                errors.append(
+                    "grilling.existing_confirmed_owner_design_brief is required when grilling is Skipped"
+                )
+            if grilling.get("no_material_change_confirmed") is not True:
+                errors.append(
+                    "grilling.no_material_change_confirmed must be true when grilling is Skipped"
+                )
+            if grilling.get("owner_explicit_autonomous_authorization") is not True:
+                errors.append(
+                    "grilling.owner_explicit_autonomous_authorization must be true when grilling is Skipped"
+                )
+
+    shared_understanding = data.get("shared_understanding")
+    if not isinstance(shared_understanding, dict):
+        errors.append("shared_understanding must be an object")
+    else:
+        if shared_understanding.get("confirmation_question") != CONFIRMATION_QUESTION:
+            errors.append("shared_understanding.confirmation_question must use the canonical wording")
+        if not allow_draft and shared_understanding.get("confirmed") is not True:
+            errors.append(
+                "shared_understanding.confirmed must be true before direction generation"
+            )
+
+    preselection_revision_cap = get_path(
+        data, "success_contract.max_preselection_revision_loops_per_direction"
+    )
+    if (
+        not isinstance(preselection_revision_cap, int)
+        or isinstance(preselection_revision_cap, bool)
+        or not 1 <= preselection_revision_cap <= 3
+    ):
+        errors.append(
+            "success_contract.max_preselection_revision_loops_per_direction "
+            "must be an integer from 1 to 3"
+        )
 
     evidence = data.get("evidence")
     evidence_gap = data.get("evidence_gap_rationale")
@@ -245,8 +377,9 @@ def validate_brief(data: Any, allow_draft: bool = False) -> list[str]:
         if missing_gates:
             errors.append("comparison_contract.hard_gates is missing: " + ", ".join(sorted(missing_gates)))
 
-    approval_owner = get_path(data, "approval.product_owner")
-    authority_owner = get_path(data, "authority.product_owner")
+    approval_owner = get_path(data, "approval.system_owner")
+    authority_owner = get_path(data, "authority.system_owner")
+    confirmation_owner = get_path(data, "shared_understanding.confirmed_by")
     if (
         isinstance(approval_owner, str)
         and isinstance(authority_owner, str)
@@ -254,7 +387,17 @@ def validate_brief(data: Any, allow_draft: bool = False) -> list[str]:
         and authority_owner.strip()
         and approval_owner.strip() != authority_owner.strip()
     ):
-        errors.append("approval.product_owner must match authority.product_owner")
+        errors.append("approval.system_owner must match authority.system_owner")
+    if (
+        isinstance(confirmation_owner, str)
+        and isinstance(authority_owner, str)
+        and confirmation_owner.strip()
+        and authority_owner.strip()
+        and confirmation_owner.strip() != authority_owner.strip()
+    ):
+        errors.append(
+            "shared_understanding.confirmed_by must match authority.system_owner"
+        )
 
     if contains_placeholder(data):
         errors.append("brief contains a TBD, TODO, or [replace ...] placeholder")
@@ -301,9 +444,14 @@ def main() -> int:
         for error in errors:
             print(f"- {error}", file=sys.stderr)
     elif args.allow_draft:
-        print("Design Brief draft structure is valid; Product Owner approval is still required.")
+        print(
+            "Design Brief draft structure is valid; System Owner confirmation is still required."
+        )
     else:
-        print("Design Brief is structurally generation-ready; recorded approval must still be verified.")
+        print(
+            "Design Brief is structurally generation-ready; recorded System Owner confirmation "
+            "must still be verified."
+        )
     return 1 if errors else 0
 
 

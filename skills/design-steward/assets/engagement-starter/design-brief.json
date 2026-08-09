@@ -1,23 +1,75 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "3.0.0",
   "record_type": "design-brief",
   "brief_id": "",
   "version": "0.1.0",
   "status": "Draft",
-  "mode": "",
+  "operating_mode": "Design-intent grilling",
+  "engagement_type": "",
   "authority": {
-    "product_owner": "",
+    "system_owner": "",
     "commissioned_decision": "",
     "accountable_specialists": []
+  },
+  "grilling": {
+    "base_skill": "grilling or grill-me",
+    "base_skill_version_or_hash": "",
+    "status": "Required",
+    "required_or_skip_reason": "",
+    "existing_confirmed_owner_design_brief": "",
+    "no_material_change_confirmed": false,
+    "owner_explicit_autonomous_authorization": false,
+    "decision_records": []
+  },
+  "owner_design_intent": {
+    "commission_and_desired_outcome": "",
+    "priority_users_roles_and_situations": [],
+    "product_thesis": "",
+    "core_user_act": "",
+    "first_ten_seconds_hierarchy": "",
+    "desired_experiential_qualities": [],
+    "business_priorities_and_constraints": [],
+    "non_negotiables": [],
+    "accepted_trade_offs": [],
+    "unacceptable_outcomes": [],
+    "rejection_criteria": [],
+    "owner_originated_preferences": [],
+    "steward_recommendations": [],
+    "material_disagreements_and_resolutions": [],
+    "evidence_assumptions_and_unresolved_uncertainty": [],
+    "authorization_boundaries": []
+  },
+  "shared_understanding": {
+    "confirmation_question": "Does this brief represent our shared understanding, and may Design Steward enter autonomous design mode?",
+    "confirmed": false,
+    "confirmed_by": "",
+    "confirmed_at": "",
+    "authorized_scope": ""
   },
   "objectives": {
     "desired_outcomes": [],
     "non_goals": []
   },
+  "success_contract": {
+    "product_experience_thesis": "",
+    "complete_experience_scope": [],
+    "product_idea_to_make_obvious": "",
+    "professional_quality_bar": [],
+    "artifact_iteration_delegation_budget": [
+      "For a substantial commission: 12–15 raw concepts → 6 territories → 3 developed directions → 1 backbone; raw concepts and territories remain Steward-owned."
+    ],
+    "first_visible_artifact_target": "Within 15 active minutes after G1/G3 authorize direction generation or before 15% of the generation budget, whichever comes first.",
+    "max_preselection_revision_loops_per_direction": 2,
+    "feedback_checkpoint_plan": [],
+    "deferred_assurance_plan": [],
+    "stopping_point": ""
+  },
   "users_and_contexts": {
     "target_users": [],
     "contexts": [],
+    "roles_and_domains": [],
     "priority_journeys": [],
+    "priority_handoffs": [],
     "important_exclusions": []
   },
   "evidence": [],
@@ -48,6 +100,7 @@
   },
   "comparison_contract": {
     "rubric": [],
+    "professional_quality_criteria": [],
     "baselines": [],
     "evidence_thresholds": [],
     "validation_claim_rule": "Only scoped representative-user or production evidence may be called validation.",
@@ -58,7 +111,8 @@
       "ethical UX and safety",
       "provenance and AI use"
     ],
-    "tie_and_uncertainty_handling": ""
+    "tie_and_uncertainty_handling": "",
+    "numeric_scoring_policy": "Prefer anchored qualitative judgments. Use numeric scores only with calibrated independent evaluators and reported disagreement."
   },
   "governance": {
     "human_gates": [],
@@ -97,7 +151,7 @@
     "supersedes": null
   },
   "approval": {
-    "product_owner": "",
+    "system_owner": "",
     "approved_at": "",
     "approved_scope": ""
   }
