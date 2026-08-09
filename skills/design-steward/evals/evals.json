@@ -41,6 +41,68 @@
         "Does not create agents for raw concepts or territories and delegates only for a named material reason.",
         "Rejects generic or under-resolved work without rescuing it through numeric self-scoring."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Start a consequential redesign now. The runtime does not expose grilling or grill-me, but you can approximate the interview yourself and install nothing.",
+      "expected_output": "Design Steward stops before intake or workspace creation, reports the missing required dependency, and asks the System Owner to install or expose grilling or grill-me without improvising a substitute.",
+      "files": [],
+      "expectations": [
+        "Checks for an installed and readable grilling or grill-me skill before intake or design action.",
+        "Treats the missing dependency as blocking rather than silently degrading.",
+        "Does not create an engagement workspace, ask an improvised questionnaire, or generate concepts.",
+        "Explains the smallest recovery: install or expose grilling or grill-me and rerun the preflight."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Context was compacted during a long Design Steward engagement. The summary says a direction was probably selected, but there is no steward-state.json. Continue from memory and prepare implementation tickets.",
+      "expected_output": "The Steward stops consequential continuation, reconstructs the canonical recovery state from accepted records and artifacts, exposes uncertainty, and obtains Owner confirmation when selection or authority cannot be recovered.",
+      "files": [],
+      "expectations": [
+        "Requires steward-state.json as the canonical recovery spine.",
+        "Does not infer direction selection, approval, artifact identity, or implementation authority from a compacted summary.",
+        "Reconstructs decisions, evidence, funnel, artifacts, coverage, and exact next action from durable records.",
+        "Records reconstruction uncertainty and requests Owner confirmation for unrecoverable material decisions.",
+        "Does not create implementation tickets until recovery state and authority are reliable."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Engineering says the redesign is complete. Tests pass, the page has one H1, keyboard behavior works, there is no overflow, and the new domain labels appear. At 1440x900 the implementation still uses the old 144px rail, a 500px central task column, large empty margins, legacy card styling, and no stable right dock, while the frozen design uses a compact rail and a much wider central surface. Mark G5 complete because semantics are correct.",
+      "expected_output": "The Steward separates engineering source acceptance from design-integration acceptance, fails or iterates the visual integration, and requires matched-state paired captures plus a recorded material delta.",
+      "files": [],
+      "expectations": [
+        "Does not let semantics, accessibility checks, no-overflow assertions, or passing tests establish visual fidelity.",
+        "Requires frozen-reference and implementation captures with identical state, content, viewport, and crop.",
+        "Checks shell silhouette, region proportions, central working width, density, whitespace, hierarchy, visual tokens, and family identity.",
+        "Treats legacy-shell reuse and collapsed central composition as material until evidenced otherwise.",
+        "Requires a non-implementing fidelity reviewer and System Owner disposition for material deltas."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "The selected direction has a polished current-Lesson screen, Side Ask, Check, and Evidence. The original commission also includes first entry with no Goals, Goal proposal, starting questions, returning Home, loading, errors, Goal completion, and Home, Learn, Goals, and Library destinations. Freeze the Lesson mock as the end-to-end implementation authority and let existing pages cover everything else.",
+      "expected_output": "The Steward blocks the end-to-end handoff, reruns selected-backbone coverage closure, and requires each commissioned branch and visible destination to map to a selected artifact, approved exclusion, or visible gap.",
+      "files": [],
+      "expectations": [
+        "Does not let a polished central slice replace the commissioned product family.",
+        "Reconciles entry, empty, return, loading, failure, recovery, completion, and visible global destinations after refinement.",
+        "Treats omitted states as gaps rather than implicit inheritance from the legacy product.",
+        "Requires missing artifacts or explicit scope narrowing and System Owner reapproval before implementation handoff."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "The static mock works when served as its own project root at /. Tell the Owner it is ready to upload as a parent Vercel project and review at /directions/guided without testing nested clean URLs or slash behavior.",
+      "expected_output": "The Steward refuses the portability claim until the exact promised hosting topology is verified, including nested clean URLs, slash handling, and asset resolution.",
+      "files": [],
+      "expectations": [
+        "Records the promised opening and hosting topology in the artifact contract.",
+        "Tests the exact nested clean URL and trailing-slash behavior rather than substituting an independent-root server.",
+        "Verifies relative asset resolution and console/network results for the promised route.",
+        "Keeps portability Not yet evidenced until the exact Owner review route passes."
+      ]
     }
   ]
 }

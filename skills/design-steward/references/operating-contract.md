@@ -48,7 +48,9 @@ Never infer a hidden constraint from an implementation, convention, or stakehold
 
 ## Operating modes and grilling composition
 
-Start in **Design-intent grilling** for new, ambiguous, or consequential work. Use the installed `grilling` or `grill-me` skill as the base decision-tree interaction and apply [design-intent-grilling.md](design-intent-grilling.md) as the wrapper. The portable skill format has no supported nested-dependency metadata, so composition is an explicit name-based invocation. Do not copy the base skill's general logic into this package.
+Resolve and read an installed `grilling` or `grill-me` skill before intake or workspace creation. After the preflight passes, create the engagement workspace and record the resolved name, version or content hash, verification time, and `Available` status in `steward-state.json`, the Owner Design Brief, and `design-brief.json` before the first intake question. If neither skill is exposed and readable, stop before intake; the missing dependency is a Blocking Unknown, not permission to improvise the base workflow.
+
+Start in **Design-intent grilling** for new, ambiguous, or consequential work. Use the resolved skill as the base decision-tree interaction and apply [design-intent-grilling.md](design-intent-grilling.md) as the wrapper. The portable skill format has no supported nested-dependency metadata, so composition is an explicit name-based invocation. Do not copy the base skill's general logic into this package.
 
 Enter **Autonomous design** only after the System Owner confirms the Owner Design Brief. A narrow change may skip grilling only when an existing confirmed brief resolves the decision, no material objective/constraint/evidence/risk changed, and the System Owner explicitly authorizes autonomy; record all three conditions.
 
@@ -185,3 +187,9 @@ At each gate propose **Proceed**, **Iterate**, **Pivot**, or **Stop**. Artifacts
 Allow autonomous read-only analysis, approved deterministic checks, record maintenance, and option drafting inside the authorized workspace.
 
 Require exact human approval before participant operations, sensitive-data joins or exposure, procurement, product instrumentation, replay, experiments, feature flags, external publication, production changes, deployment, launch, rollback, or destructive record changes. Record the action, exact target, approver, time, scope, and rollback path before execution.
+
+## Recovery-state contract
+
+Maintain `steward-state.json` as the canonical current recovery spine from engagement creation through handoff. Every material decision, evidence disposition, constraint change, artifact verdict, approval, gate result, implementation delta, and exact next action must appear there even when a detailed immutable record also exists.
+
+On context compaction, session transfer, or resumed work, read the state file completely before relying on a conversation summary. Reconcile it with changes newer than its timestamp and stop consequential work when authority, artifact identity, or the next action cannot be recovered confidently. Generate the owner roadmap only from this file so the visual history cannot drift into a second manually maintained narrative.

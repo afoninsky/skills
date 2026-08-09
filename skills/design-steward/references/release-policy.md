@@ -3,7 +3,8 @@
 ## Compatibility
 
 - Target agents that support the public `SKILL.md` format and relative bundled resources.
-- Require Python 3.10 or newer only for `scripts/validate_design_brief.py`; the written workflow and templates remain usable without Python when checked manually.
+- Require an installed and readable `grilling` or `grill-me` skill before Design Steward intake.
+- Require Python 3.10 or newer for `scripts/validate_design_brief.py` and `scripts/generate_engagement_roadmap.py`; the written workflow and templates remain inspectable without Python.
 - Keep the portable core independent of any design, research, analytics, repository, browser, or collaboration service.
 - Treat named services as replaceable examples selected per approved engagement.
 
@@ -34,6 +35,7 @@ Never promote an engagement-specific pattern, product term, artifact, metric, pa
 
 - Preserve accepted engagement records under the package version that created them.
 - For a pre-3.0 engagement, create and confirm a v3 Owner Design Brief, migrate `mode` to separate `operating_mode` and `engagement_type` fields, migrate `product_owner` authority fields to `system_owner`, preserve owner-original answers where available, and explicitly record uncertainty where they were not captured.
+- For a pre-4.0 engagement, preserve accepted records, create `steward-state.json` from current authority, decisions, evidence, funnel, artifacts, coverage, and exact next action, record a verified grilling dependency, migrate the Design Brief to schema 4.0.0, run an impact review and validator, and obtain System Owner confirmation when any material decision or authority boundary cannot be recovered.
 - Migrate by creating a new record version with explicit `supersedes` links; do not rewrite accepted evidence or decisions.
 - Revalidate the Design Brief after any schema migration.
 - Repeat affected gates when a new version changes authority, constraints, evidence interpretation, hard gates, comparison logic, or artifact semantics.

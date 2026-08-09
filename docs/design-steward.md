@@ -2,11 +2,11 @@
 
 Design Steward is an autonomous principal product designer for responsive websites and web applications. It first establishes original intent with the System Owner, then explores broadly, exposes visual thinking early, narrows through professional judgment, rejects generic work, and invests implementation effort only in concepts that survive.
 
-Current package version: **3.0.0**.
+Current package version: **4.0.0**.
 
-Version 3.0 adds a hard two-mode contract and changes the Design Brief schema. New, ambiguous, and consequential commissions begin in **Design-intent grilling**. Design Steward composes an installed `grilling` or `grill-me` skill, preserves the System Owner's unaided responses before giving recommendations, and produces a confirmed Owner Design Brief. It enters **Autonomous design** only after the System Owner confirms shared understanding and authorization. Substantial autonomous work now defaults to **12–15 raw concepts → 6 territories → 3 developed directions → 1 backbone**, with no default agent-per-concept, agent-per-territory, or agent-per-direction requirement.
+Version 4.0 makes the composed `grilling` or `grill-me` skill a verified runtime dependency, introduces required `steward-state.json` recovery state, generates an owner-facing single-page roadmap from that state, and strengthens G5 with matched-state visual fidelity, selected-backbone coverage closure, non-implementing review, and separate engineering-source, design-integration, and preview/deployed acceptance claims.
 
-Version 2.x records remain governed by the version that created them. To migrate active work, preserve accepted records, create a v3 Owner Design Brief and normalized `design-brief.json` that supersede them, run an impact review and validator, obtain System Owner confirmation, and repeat only affected G1–G4 decisions.
+Earlier records remain governed by the package version that created them. To migrate active work, preserve accepted records, create `steward-state.json` from the current decision path, record the resolved grilling dependency, migrate and revalidate the v4 Design Brief, obtain System Owner confirmation for any unrecoverable material decision, and repeat only affected gates.
 
 ## Install
 
@@ -20,7 +20,7 @@ npx --yes skills@1.5.16 add afoninsky/skills \
   --yes
 ```
 
-Design-intent grilling composes a separately installed skill named `grilling` or `grill-me`. The public `SKILL.md` format does not provide portable nested-skill dependency metadata, so Design Steward invokes it by name at runtime rather than vendoring a copy. If neither skill is exposed by the runtime, Design Steward stops before grilling instead of inventing a divergent decision-tree workflow.
+Design-intent grilling composes a separately installed skill named `grilling` or `grill-me`. Before intake or workspace creation, Design Steward resolves the skill through the runtime registry and reads it completely. After that preflight passes, it creates the engagement workspace and records the dependency name and version/content hash before the first intake question. If neither skill is exposed and readable, Design Steward stops before intake instead of inventing a divergent decision-tree workflow.
 
 Optional visual-design and UI-audit specialists can be installed in the same project:
 
@@ -44,7 +44,7 @@ Verify the optional specialists against the evaluated revisions:
 python3 <skill-directory>/scripts/verify_specialists.py <project-root>
 ```
 
-The portable core has no required MCP, browser, design framework, paid service, or runtime dependency. Python 3.10 or newer is needed only for the Design Brief and specialist-integrity validators. A renderer is strongly preferred for screenshot-first review.
+The portable core has no required MCP, browser, design framework, paid service, or proprietary runtime. It does require an installed and readable `grilling` or `grill-me` skill. Python 3.10 or newer is needed for Design Brief validation, specialist-integrity checks, and roadmap generation. A renderer is strongly preferred for screenshot-first review.
 
 ## Start in the correct operating mode
 
@@ -98,6 +98,8 @@ cp -R .agents/skills/design-steward/assets/engagement-starter \
 
 Keep product context, approvals, evidence, and artifacts in that engagement workspace. The installed package remains immutable reference material.
 
+The starter includes `steward-state.json`. Resolve it immediately after the grilling dependency preflight. It is the engagement recovery spine: every material decision, evidence disposition, artifact verdict, approval, gate result, implementation delta, and exact next action must appear there. After context compaction or a session handoff, read it completely before relying on conversation history.
+
 After the Owner Design Brief is confirmed, normalize the detailed readiness contract into `design-brief.json` and run:
 
 ```bash
@@ -105,8 +107,9 @@ python3 .agents/skills/design-steward/scripts/validate_design_brief.py \
   ./design-steward-engagement/design-brief.json
 ```
 
-The v3 validator requires:
+The v4 validator requires:
 
+- a verified and available `grilling` or `grill-me` dependency;
 - operating mode `Autonomous design` and Evolution/From-scratch engagement type;
 - completed composed grilling, or all three valid skip conditions;
 - preserved owner-original decision records when grilling was completed;
@@ -115,6 +118,18 @@ The v3 validator requires:
 - matching System Owner authority, confirmation, and approval records.
 
 A successful result checks structure. Verify that confirmation is real before autonomous work.
+
+## Generate the owner roadmap
+
+At engagement completion, and whenever the System Owner asks to see the path taken, generate a self-contained roadmap from the canonical state:
+
+```bash
+python3 .agents/skills/design-steward/scripts/generate_engagement_roadmap.py \
+  ./design-steward-engagement/steward-state.json \
+  --output ./design-steward-engagement/steward-roadmap.html
+```
+
+The page opens with an infographic G0–G6 timeline. Every gate is labeled **Completed**, **In progress**, **Blocked**, or **Not done**, then shows its decision/result, evidence, outputs, and remaining closure condition. Supporting sections cover research and materials, material decisions and approvals, the concept funnel, mocks, selected direction, coverage, implementation fidelity, unresolved risks, and the exact next action. Regenerate it after later material decisions; do not maintain it separately from `steward-state.json`.
 
 ## Autonomous concept funnel
 

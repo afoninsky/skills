@@ -56,9 +56,9 @@ Requirements: Python 3.10 or newer for the bundled report generator. Other verif
 
 ### Design Steward
 
-Runs a product-neutral, evidence-led design loop for responsive websites and web applications. It composes design-intent grilling to preserve the System Owner's original judgment, requires a confirmed Owner Design Brief before autonomy, and then applies a 12–15 concept → 6 territory → 3 direction → 1 backbone funnel with early visual exposure, principal-level product/interaction/visual judgment, screenshot-first quality checks, and proportional implementation investment.
+Runs a product-neutral, evidence-led design loop for responsive websites and web applications. It verifies and composes design-intent grilling, preserves every material decision in a compaction-safe recovery state, and generates an owner-facing roadmap of research, concepts, mocks, selection, and implementation fidelity. After a confirmed Owner Design Brief, it applies a 12–15 concept → 6 territory → 3 direction → 1 backbone funnel with early visual exposure, principal-level judgment, matched-state quality checks, and proportional implementation investment.
 
-The package includes an Owner Design Brief template, engagement-local records, a deterministic generation-readiness validator, and twenty-five adversarial benchmark fixtures. It rejects generic self-certification, scope collapse, review-chrome contamination, process blowout, feedback starvation, premature assurance, audit swarms, owner priming, unconfirmed autonomy, funnel overbuilding, and avoidable delegation. It is service-independent and keeps target-product context outside the portable core.
+The package includes an Owner Design Brief template, engagement-local records, a deterministic generation-readiness validator, and thirty adversarial benchmark fixtures. It rejects generic self-certification, scope collapse, review-chrome contamination, process blowout, feedback starvation, premature assurance, audit swarms, owner priming, unconfirmed autonomy, funnel overbuilding, and avoidable delegation. It is service-independent and keeps target-product context outside the portable core.
 
 Requirements: Python 3.10 or newer for the optional Design Brief and specialist-integrity validators. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
 

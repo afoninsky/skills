@@ -36,6 +36,7 @@ REQUIRED_TOP_LEVEL = {
     "operating_mode",
     "engagement_type",
     "authority",
+    "dependency_preflight",
     "grilling",
     "owner_design_intent",
     "shared_understanding",
@@ -66,6 +67,7 @@ NON_EMPTY_STRINGS = (
     "engagement_type",
     "authority.system_owner",
     "authority.commissioned_decision",
+    "dependency_preflight.required_skill",
     "grilling.base_skill",
     "grilling.required_or_skip_reason",
     "owner_design_intent.commission_and_desired_outcome",
@@ -191,8 +193,8 @@ def validate_brief(data: Any, allow_draft: bool = False) -> list[str]:
     for field in sorted(REQUIRED_TOP_LEVEL - data.keys()):
         errors.append(f"missing required field: {field}")
 
-    if data.get("schema_version") != "3.0.0":
-        errors.append("schema_version must be '3.0.0'")
+    if data.get("schema_version") != "4.0.0":
+        errors.append("schema_version must be '4.0.0'")
     if data.get("record_type") != "design-brief":
         errors.append("record_type must be 'design-brief'")
     if data.get("operating_mode") not in ALLOWED_OPERATING_MODES:
@@ -215,6 +217,25 @@ def validate_brief(data: Any, allow_draft: bool = False) -> list[str]:
         value = get_path(data, path)
         if not isinstance(value, str) or not value.strip():
             errors.append(f"{path} must be a non-empty string")
+
+    dependency = data.get("dependency_preflight")
+    if not isinstance(dependency, dict):
+        errors.append("dependency_preflight must be an object")
+    elif not allow_draft:
+        if dependency.get("resolved_skill") not in {"grilling", "grill-me"}:
+            errors.append(
+                "dependency_preflight.resolved_skill must be 'grilling' or 'grill-me'"
+            )
+        for field in ("version_or_content_hash", "verified_at"):
+            value = dependency.get(field)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(
+                    f"dependency_preflight.{field} must be a non-empty string"
+                )
+        if dependency.get("status") != "Available":
+            errors.append(
+                "dependency_preflight.status must be 'Available' before intake or direction generation"
+            )
 
     if not allow_draft:
         for path in APPROVAL_STRINGS:

@@ -3,6 +3,8 @@
 - Engagement ID:
 - Design Steward package version and commit:
 - Current Design Brief ID and version:
+- Canonical recovery state: `steward-state.json`
+- Generated owner roadmap: `steward-roadmap.html` | Not generated
 - Operating mode: Design-intent grilling | Autonomous design
 - Engagement type: Evolution | From-scratch
 - System Owner:
@@ -14,6 +16,7 @@
 
 | Record ID | Type | Status | Version | Supersedes | Related IDs | Owner | Path |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| STATE-001 | Canonical recovery state | Draft | 1.0.0 | — | — | Design Steward | `steward-state.json` |
 | OWNER-BRIEF-001 | Owner Design Brief | Draft | 0.1.0 | — | — | System Owner | `owner-design-brief.md` |
 | BRIEF-001 | Normalized Design Brief | Draft | 0.1.0 | — | OWNER-BRIEF-001 | System Owner | `design-brief.json` |
 | REQ-REGISTER-001 | Requirement register | Draft | 0.1.0 | — | BRIEF-001 | System Owner | `records/requirement-register.md` |

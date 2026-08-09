@@ -1,5 +1,5 @@
 {
-  "schema_version": "3.0.0",
+  "schema_version": "4.0.0",
   "record_type": "design-brief",
   "brief_id": "",
   "version": "0.1.0",
@@ -10,6 +10,13 @@
     "system_owner": "",
     "commissioned_decision": "",
     "accountable_specialists": []
+  },
+  "dependency_preflight": {
+    "required_skill": "grilling or grill-me",
+    "resolved_skill": "",
+    "version_or_content_hash": "",
+    "verified_at": "",
+    "status": "Unavailable"
   },
   "grilling": {
     "base_skill": "grilling or grill-me",

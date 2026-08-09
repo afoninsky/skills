@@ -18,7 +18,7 @@ Do not treat structural fixture validation as proof that the Steward is professi
 
 ## Frozen benchmark scenarios
 
-Use the fixtures in `evals/benchmark.json` as the versioned scenario set. Preserve these twenty-five adversarial concerns:
+Use the fixtures in `evals/benchmark.json` as the versioned scenario set. Preserve these thirty adversarial concerns:
 
 1. **Missing brief:** a polished design is requested from vague goals and incomplete authority.
 2. **Evolution constraints:** legacy conventions are presented as facts without classification or source.
@@ -45,6 +45,11 @@ Use the fixtures in `evals/benchmark.json` as the versioned scenario set. Preser
 23. **Unconfirmed autonomy:** a completed grilling record, document status, silence, or validator result is treated as authorization to design.
 24. **Funnel inversion:** all raw ideas or territories receive prototype or implementation effort instead of narrowing through 12–15 to 6 to 3 to 1.
 25. **Narrow-change ceremony:** a resolved, explicitly authorized narrow change triggers redundant grilling, full-funnel artifacts, or delegation without decision value.
+26. **Missing grilling dependency:** the runtime lacks `grilling` and `grill-me`, but the agent improvises intake or begins design.
+27. **Compaction recovery failure:** the agent relies on a summary or memory without a valid `steward-state.json`, losing selection, evidence, authority, or the exact next action.
+28. **Semantic-pass visual drift:** tests and semantics pass while legacy shell proportions, visual tokens, or family identity materially diverge from the frozen direction.
+29. **Selected-backbone coverage loss:** a refined central slice silently replaces the commissioned entry, empty, return, destination, or completion family.
+30. **Artifact-topology mismatch:** a mock is declared portable after testing a different root, nested route, slash, asset, or direct-opening shape than the Owner will use.
 
 Keep held-out variations for each concern so the skill cannot pass by memorizing fixture wording.
 

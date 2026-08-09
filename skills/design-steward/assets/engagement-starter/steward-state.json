@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "design-steward-state",
+  "engagement": {
+    "id": "[replace with engagement ID]",
+    "title": "[replace with commission title]",
+    "package_version": "4.0.0",
+    "package_commit": "[replace with immutable commit or content hash]",
+    "workspace": "[replace with engagement workspace]",
+    "system_owner": "[replace with human name and role]",
+    "created_at": "[replace with ISO-8601 time]",
+    "last_updated_at": "[replace with ISO-8601 time]"
+  },
+  "dependency_preflight": {
+    "required_skill": "grilling or grill-me",
+    "resolved_skill": "",
+    "version_or_content_hash": "",
+    "verified_at": "",
+    "status": "Unavailable",
+    "notes": "Resolve before intake or design action."
+  },
+  "resume": {
+    "current_mode": "Design-intent grilling",
+    "current_gate": "G0 Commission",
+    "current_stage": "Dependency preflight",
+    "latest_summary": "The engagement has not started.",
+    "last_completed_checkpoint": "None",
+    "exact_next_action": "Resolve and read the required grilling or grill-me skill.",
+    "stopping_point": "[replace with commissioned stopping point]",
+    "read_first": [],
+    "restored_at": "",
+    "restored_by": ""
+  },
+  "authority": {
+    "owner_design_brief_id_and_version": "",
+    "authorization_boundary": "No autonomous design is authorized.",
+    "approvals": []
+  },
+  "decisions": [],
+  "constraints": {
+    "fixed": [],
+    "challengeable": [],
+    "open": []
+  },
+  "working_assumptions": [],
+  "blocking_unknowns": [],
+  "research_and_materials": [],
+  "funnel": {
+    "raw_concepts": [],
+    "territories": [],
+    "developed_directions": [],
+    "selected_backbone": {
+      "direction_id": "",
+      "title": "",
+      "status": "Not selected",
+      "owner_approval_id": "",
+      "summary": "",
+      "imported_elements": [],
+      "rejected_alternatives": []
+    }
+  },
+  "artifacts": [],
+  "coverage": [],
+  "implementation": {
+    "contract_id": "",
+    "engineering_source_acceptance": "Not started",
+    "design_integration_acceptance": "Not started",
+    "preview_or_deployed_fidelity": "Not started",
+    "fidelity_pairs": [],
+    "deltas": [],
+    "fidelity_reviewer": {
+      "name_and_role": "",
+      "independent_of_implementation": false,
+      "evidence_id": ""
+    }
+  },
+  "checks": {
+    "completed": [],
+    "deferred": []
+  },
+  "risks": [],
+  "roadmap": [
+    {
+      "order": 1,
+      "gate": "G0",
+      "stage": "Commission",
+      "status": "in_progress",
+      "decision_or_result": "The commission cannot begin until the required grilling dependency and decision authority are verified.",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [
+        "Resolve grilling or grill-me",
+        "Confirm decision owner and stopping point"
+      ],
+      "links": []
+    },
+    {
+      "order": 2,
+      "gate": "G1",
+      "stage": "Intent",
+      "status": "pending",
+      "decision_or_result": "",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [],
+      "links": []
+    },
+    {
+      "order": 3,
+      "gate": "G2",
+      "stage": "Research",
+      "status": "pending",
+      "decision_or_result": "",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [],
+      "links": []
+    },
+    {
+      "order": 4,
+      "gate": "G3",
+      "stage": "Structure",
+      "status": "pending",
+      "decision_or_result": "",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [],
+      "links": []
+    },
+    {
+      "order": 5,
+      "gate": "G4",
+      "stage": "Direction",
+      "status": "pending",
+      "decision_or_result": "",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [],
+      "links": []
+    },
+    {
+      "order": 6,
+      "gate": "G5",
+      "stage": "Implementation",
+      "status": "pending",
+      "decision_or_result": "",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [],
+      "links": []
+    },
+    {
+      "order": 7,
+      "gate": "G6",
+      "stage": "Live learning",
+      "status": "pending",
+      "decision_or_result": "",
+      "evidence_ids": [],
+      "artifact_ids": [],
+      "open_items": [],
+      "links": []
+    }
+  ]
+}

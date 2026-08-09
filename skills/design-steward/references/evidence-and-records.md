@@ -45,6 +45,7 @@ Record exactly one status for each applicable hard gate. Use **Fail** when suppl
 
 Maintain engagement-local records with stable typed IDs and explicit links, but default to the smallest set that preserves authority and decisions:
 
+- one required `steward-state.json` recovery spine containing every material decision and exact resumption state;
 - engagement header and record index;
 - confirmed Owner Design Brief, normalized brief versions, and requirement records;
 - evidence register and research records;
@@ -60,6 +61,8 @@ Use **Draft**, **Reviewed**, **Accepted**, **Superseded**, or **Retired**. Never
 IDs are immutable. Link records by stable IDs, not headings or row positions. Supersession creates a new ID plus forward and backward links; it never mutates the accepted record.
 
 Do not create a separate record for status commentary, every retry, repeated successful checks, each screenshot, a hash already present in the artifact manifest, or an agent correction that does not change authority, evidence, the frozen artifact, a gate decision, or an implementation delta. Artifact count is not traceability. Preserve the decision path without burying it.
+
+The state file is current and append-aware rather than immutable: update current fields, preserve superseded decisions through links and statuses, and point to accepted detailed records. No other record may be the sole location of a decision required to resume. Regenerate `steward-roadmap.html` from the state file at completion or on Owner request; never edit the generated roadmap as evidence.
 
 ## Sensitive data boundary
 

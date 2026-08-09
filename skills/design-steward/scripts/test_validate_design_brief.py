@@ -39,6 +39,13 @@ def ready_brief() -> dict[str, object]:
         "commissioned_decision": "Select a direction for an approved priority journey.",
         "accountable_specialists": ["Research owner", "Accessibility owner"],
     }
+    brief["dependency_preflight"] = {
+        "required_skill": "grilling or grill-me",
+        "resolved_skill": "grilling",
+        "version_or_content_hash": "sha256:example",
+        "verified_at": "2030-01-01T00:00:00Z",
+        "status": "Available",
+    }
     brief["grilling"] = {
         "base_skill": "grilling",
         "base_skill_version_or_hash": "sha256:example",
@@ -214,6 +221,26 @@ class ValidateDesignBriefTests(unittest.TestCase):
             errors,
         )
 
+    def test_missing_grilling_dependency_stops_readiness(self) -> None:
+        brief = ready_brief()
+        brief["dependency_preflight"] = {
+            "required_skill": "grilling or grill-me",
+            "resolved_skill": "",
+            "version_or_content_hash": "",
+            "verified_at": "",
+            "status": "Unavailable",
+        }
+        errors = VALIDATOR.validate_brief(brief)
+
+        self.assertIn(
+            "dependency_preflight.resolved_skill must be 'grilling' or 'grill-me'",
+            errors,
+        )
+        self.assertIn(
+            "dependency_preflight.status must be 'Available' before intake or direction generation",
+            errors,
+        )
+
     def test_completed_grilling_preserves_original_owner_input(self) -> None:
         brief = ready_brief()
         del brief["grilling"]["decision_records"][0]["owner_original_response"]
@@ -304,7 +331,7 @@ class ValidateDesignBriefTests(unittest.TestCase):
         brief = ready_brief()
         brief["schema_version"] = "2.0.0"
         errors = VALIDATOR.validate_brief(brief)
-        self.assertIn("schema_version must be '3.0.0'", errors)
+        self.assertIn("schema_version must be '4.0.0'", errors)
 
     def test_cli_emits_json(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

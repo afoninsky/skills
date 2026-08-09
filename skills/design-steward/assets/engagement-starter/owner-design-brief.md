@@ -5,6 +5,7 @@
 - Operating mode: Design-intent grilling | Autonomous design
 - Engagement type: Evolution | From-scratch
 - System Owner name and role:
+- Grilling dependency preflight: resolved skill name, version/content hash, verification time, and availability status
 - Base grilling skill name and version/content hash:
 - Grilling status: Required | Completed | Skipped
 - Grilling skip reason and three-condition evidence: Not applicable | existing confirmed brief; no material change; explicit autonomous authorization

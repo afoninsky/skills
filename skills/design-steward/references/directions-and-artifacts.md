@@ -146,3 +146,7 @@ Do not average, vote, collage, or include one element from each direction for re
 ## Prototype boundary
 
 Mark prototype code as disposable design evidence. Keep it outside production modules and credentials. Do not silently promote it into production. End design handoff with an implementation contract that describes intended behavior, semantics, content and data rules, responsive states, accessibility intent, instrumentation, acceptance criteria, known limitations, and the visual/interaction qualities production must preserve.
+
+Before handoff, freeze an executable state-fixture and artifact contract. Name each in-scope entry, empty, return, loading, failure, recovery, completion, and visible-destination state; representative content and data precondition; reference artifact and capture; required viewports; composition constraints; and accepted hosting or opening topology. Missing coverage remains a visible gap rather than an implied inheritance from the current product.
+
+When an artifact is promised for direct opening or deployment, test the exact promised shapes: independent root, nested clean URL, trailing-slash behavior, relative asset resolution, and direct-file mode when claimed. Passing a different local-server topology does not verify the Owner's review route.

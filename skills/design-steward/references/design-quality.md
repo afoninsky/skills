@@ -83,6 +83,29 @@ For each direction, record concrete observations—not adjectives—for:
 
 At the requested fidelity, obvious placeholder styling, raw native controls without intentional integration, accidental overflow, arbitrary type jumps, inconsistent spacing, unexplained empty space, decorative lines, and state drawers over the product are quality failures.
 
+## Selected-backbone coverage closure
+
+After every refinement, synthesis, or narrowed artifact, rerun the commissioned coverage matrix before freezing or handing off the backbone. Include the first entry, empty and returning conditions, the core act and consequence, loading and failure, recovery, completion, and every visible global destination. Map each row to a selected artifact, an explicit exclusion approved by the System Owner, or an open gap.
+
+Do not let a refined central task, Lesson, canvas, or workflow silently replace the commissioned product family. If the selected artifact resolves only a slice, preserve the larger coverage authority and block implementation handoff until the missing family states are designed or the scope is explicitly narrowed and reapproved.
+
+## G5 implementation fidelity review
+
+Engineering source acceptance, design-integration acceptance, and preview or deployed fidelity are separate claims. Source tests and semantic audits can establish the first; they cannot establish the other two.
+
+For design-integration acceptance:
+
+1. Freeze a state-fixture manifest covering every in-scope entry branch, account or data condition, decisive state, visible destination, and responsive viewport.
+2. Capture the frozen artifact and implementation with identical state, realistic content, viewport, crop, and relevant browser conditions.
+3. Inspect paired captures before reading implementation rationale or source.
+4. Record concrete observations for shell silhouette; navigation, central surface, and side-dock proportions; central working width; density; whitespace; attention order; typography; semantic color and visual tokens; interaction chrome; and family identity.
+5. Run a non-implementing fidelity review for consequential work. A general interface-guideline audit is complementary heuristic input, not a fidelity verdict.
+6. Classify every observed difference as conforming expression, material design delta, defect, or `Not yet evidenced`. A material delta requires the recorded System Owner disposition before acceptance.
+
+Treat legacy-shell reuse, materially different page proportions, missing destinations or branches, a collapsed central work area, dominant old visual tokens, or a family-system mismatch as material until paired evidence demonstrates otherwise. Passing semantics, focus, accessibility checks, no-overflow assertions, route tests, or console checks cannot compensate.
+
+For preview or deployed fidelity, repeat the decisive paired states against the authorized production-like target using representative account/data branches. When authentication, fixtures, access, or deployment authorization is missing, retain `Not yet evidenced`; do not infer the target from source acceptance.
+
 ## Counterfactual tests
 
 Run all tests before G4 readiness:

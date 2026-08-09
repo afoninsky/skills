@@ -13,7 +13,8 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
 
         for required in (
-            'metadata: {version: "3.0.0"}',
+            'metadata: {version: "4.0.0"}',
+            "## Preflight the required grilling skill",
             "## Check every gate response",
             "Blocking Unknowns",
             "Working Assumptions",
@@ -107,10 +108,14 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
                 "assets", "engagement-starter", "design-brief.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(brief["schema_version"], "3.0.0")
+        self.assertEqual(brief["schema_version"], "4.0.0")
         self.assertEqual(brief["operating_mode"], "Design-intent grilling")
         self.assertIn("engagement_type", brief)
         self.assertIn("grilling", brief)
+        self.assertIn("dependency_preflight", brief)
+        self.assertEqual(
+            brief["dependency_preflight"]["required_skill"], "grilling or grill-me"
+        )
         self.assertIn("owner_design_intent", brief)
         self.assertIn("shared_understanding", brief)
         self.assertIn("system_owner", brief["authority"])
@@ -207,8 +212,85 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
             "Engineering acceptance record ID",
             "Specialist claim-owner dispositions and evidence IDs",
             "System Owner G5/release decision record ID",
+            "State-fixture and coverage manifest",
+            "Matched implementation fidelity",
+            "Engineering source acceptance",
+            "Design-integration acceptance",
+            "Preview or deployed fidelity",
+            "Non-implementing fidelity reviewer",
         ):
             self.assertIn(required, contract)
+
+    def test_recovery_state_is_required_and_roadmap_ready(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        state_reference = DESIGN_STEWARD.joinpath(
+            "references", "state-and-roadmap.md"
+        ).read_text(encoding="utf-8")
+        state = json.loads(
+            DESIGN_STEWARD.joinpath(
+                "assets", "engagement-starter", "steward-state.json"
+            ).read_text(encoding="utf-8")
+        )
+        combined = skill + state_reference
+
+        for required in (
+            "canonical recovery spine",
+            "read it completely first",
+            "exact next action",
+            "every material decision",
+            "generate_engagement_roadmap.py",
+            "single-page roadmap",
+        ):
+            self.assertIn(required, combined)
+
+        self.assertEqual(state["schema_version"], "1.0.0")
+        self.assertEqual(state["record_type"], "design-steward-state")
+        for required in (
+            "dependency_preflight",
+            "resume",
+            "decisions",
+            "research_and_materials",
+            "funnel",
+            "artifacts",
+            "coverage",
+            "implementation",
+            "roadmap",
+        ):
+            self.assertIn(required, state)
+
+        self.assertEqual(
+            [item["gate"] for item in state["roadmap"]],
+            ["G0", "G1", "G2", "G3", "G4", "G5", "G6"],
+        )
+        for item in state["roadmap"]:
+            for required in (
+                "status",
+                "decision_or_result",
+                "evidence_ids",
+                "artifact_ids",
+                "open_items",
+            ):
+                self.assertIn(required, item)
+
+    def test_g5_fidelity_rejects_semantic_only_acceptance(self) -> None:
+        skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
+        quality = DESIGN_STEWARD.joinpath(
+            "references", "design-quality.md"
+        ).read_text(encoding="utf-8")
+        combined = skill + quality
+
+        for required in (
+            "paired captures",
+            "identical state",
+            "central working width",
+            "legacy-shell reuse",
+            "Engineering source acceptance",
+            "design-integration acceptance",
+            "preview or deployed fidelity",
+            "non-implementing fidelity review",
+            "A source-only pass cannot establish design integration",
+        ):
+            self.assertIn(required, combined)
 
     def test_record_graph_has_atomic_requirement_and_evidence_links(self) -> None:
         requirement_register = DESIGN_STEWARD.joinpath(
@@ -306,6 +388,29 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
             "first useful visible artifact within 15 active minutes of generation authorization",
             "Defers mobile, exhaustive accessibility, browser, history, portability, migration, telemetry, and implementation checks",
             "Does not create pairwise critics, remediation agents, or deterministic recheck agents",
+        ):
+            self.assertIn(required, expectations)
+
+    def test_recovery_dependency_and_fidelity_failures_have_behavioral_evals(self) -> None:
+        benchmark = json.loads(
+            DESIGN_STEWARD.joinpath("evals", "benchmark.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        cases = {case["id"]: case for case in benchmark["evals"]}
+        self.assertTrue({26, 27, 28, 29, 30}.issubset(cases))
+
+        expectations = " ".join(
+            expectation
+            for case_id in (26, 27, 28, 29, 30)
+            for expectation in cases[case_id]["expectations"]
+        )
+        for required in (
+            "installed and readable grilling or grill-me skill",
+            "canonical recovery spine",
+            "central working width",
+            "visible global destinations",
+            "exact nested clean URL",
         ):
             self.assertIn(required, expectations)
 

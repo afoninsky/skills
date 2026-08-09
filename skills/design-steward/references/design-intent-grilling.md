@@ -9,7 +9,7 @@ The public `SKILL.md` package format does not provide portable nested-skill call
 1. Discover an installed skill named `grilling` or `grill-me` through the runtime's skill registry.
 2. Read and follow that skill as the base interaction loop.
 3. Apply this reference as the design-specific scope, provenance, visual-elicitation, and transition wrapper.
-4. Record the resolved base skill name and version or content hash in the Owner Design Brief.
+4. Record the resolved base skill name, version or content hash, verification time, and availability in `steward-state.json`, the Owner Design Brief, and `design-brief.json` before asking the first question.
 
 In the first user-facing grilling response, name the resolved base skill once. Do not repeat this status on every turn.
 
