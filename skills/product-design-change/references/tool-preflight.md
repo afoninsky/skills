@@ -1,5 +1,7 @@
 # Capability preflight for protected changes
 
+Before recommending setup or changing a tool, read the relevant sections of the suite's canonical tool selection baseline from the sibling `product-design/references/tool-selection-baseline.md` skill resource. It explains why the free-first defaults were chosen and what an alternative must prove. If that resource is unavailable, stop any toolchain-change proposal and request installation of the complete `product-design` suite; do not recreate the comparison from memory.
+
 Record applicable capabilities in `design/toolchain.json` using the suite status vocabulary.
 
 | Status | Meaning | Action |

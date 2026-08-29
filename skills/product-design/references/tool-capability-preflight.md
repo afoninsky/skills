@@ -1,8 +1,12 @@
 # Tool capability preflight
 
+Use [tool selection baseline](tool-selection-baseline.md) before choosing a default, proposing setup, accepting an equivalent, or replacing a tool. It records the phase fit, evidence role, selection rationale, limitations, rejected alternatives, and representative comparison required for a substitution. Do not reconstruct that decision from brand familiarity or current tool availability.
+
 ## Principle
 
 Depend on capabilities, not brands. Prefer the approved mature free tool, but accept an established project alternative only when it produces equivalent durable evidence.
+
+An existing alternative is equivalent only after a safe probe shows it satisfies the active capability and evidence claims. A new replacement also needs the baseline's capacity, maturity, portability, non-replaceability, pilot, migration, and rollback comparison. Missing MCP access alone does not justify replacing the underlying canonical or deterministic tool.
 
 Never silently lose structured design context, framework rendering, deterministic comparison, accessibility evidence, physical-device evidence, or real-user evidence.
 
@@ -27,6 +31,18 @@ Direction, contract, prototype, implementation, change, and accept-freeze requir
 For execution, `checked_at` certifies that every applicable capability status was actually probed. Use a timezone-aware ISO-8601 timestamp no older than four hours and no more than five minutes ahead of the current clock. Do not update the timestamp without re-running the selected probes. Re-probe earlier when phase, platform, claim, target/build identity, environment, access, version, or observed status changes.
 
 Use `shared-web-wrapper` when one web UI is packaged in a native shell; the validator then requires both web and native runtime/accessibility layers. Use `web` plus `native-mobile` for genuinely independent implementations.
+
+## Request capabilities just in time
+
+Bind every capability request to the current phase and current evidence claim.
+
+- A missing capability for the current worker can block now.
+- A capability used only by a likely successor is a forecast, not a current blocker, and must not appear in the exact next action.
+- Re-probe at the transition; do not carry a forecast forward as proof that the tool is still needed or missing.
+- Ask for a capability first and name the approved default or an equivalent. Avoid forcing a brand when an established project tool produces the same durable evidence.
+- Make the ask actionable: state what the user must install, connect, open, or provide; what read/write access is required; and the minimal verification probe that will prove readiness.
+
+For example, a read-only native review may need the repository or installable build, a real simulator/device runtime, and the current review's accessibility/flow evidence path. A later protected change may require additional deterministic regression tooling. Do not require the later tool before the review unless the current review question itself depends on the repeatable evidence it produces; when it does, explain that current-stage relationship explicitly.
 
 ## Approved capability map
 
@@ -67,7 +83,10 @@ Report:
 3. **What work can still be done**
 4. **What evidence/claim remains unavailable**
 5. **Setup steps**
-6. **Choice required** — set up now, or confirm the precisely bounded degraded mode
+6. **Specific user action** — the exact install/connect/open/provide action needed now
+7. **Choice required** — set up now, provide an equivalent, or confirm the precisely bounded degraded mode
+
+List likely later-stage capabilities separately as a forecast. They do not belong in the current exact next action and cannot block the current worker.
 
 Do not continue until the choice is explicit.
 

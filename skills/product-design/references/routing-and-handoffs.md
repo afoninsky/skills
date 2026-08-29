@@ -46,6 +46,8 @@ contract:accept-freeze → stop after recording the approved identity; any later
 review release/research/learning packet → stop at Gate F for the owner decision
 ```
 
+An explicitly authorized disposable evaluation or sandbox may enter `prototype` directly as an atomic autonomous exploration and finish with `gate: null`, no recommended successor, and no accepted artifact mutation. This is not a shortcut into implementation. Any later adoption starts a fresh normal route with the required brief, direction, contract, review, and owner gates.
+
 A worker may run alone when its prerequisites already exist. Gate D acceptance cannot be reused as Gate E approval unless the user subsequently makes the separate, explicit Gate E decision naming the reviewed candidate and matrix. After accept-freeze records Gate E, the router may select any worker whose prerequisites and authority fit the next request, but that selection is a new route rather than a successor inside the baseline-mutating envelope. Gate F is review-owned and has no preselected successor. A transition outside this list requires a recorded reroute reason and must not bypass an owner gate.
 
 ## Routing envelope
@@ -111,6 +113,10 @@ A gate prevents advancement. After explicit approval, create a new envelope with
 
 - Aesthetic language, brand fit, hierarchy grammar, visual references, and distinct options → direction.
 - Interaction behavior, layout feasibility, state transitions, or a representative proof → prototype.
+
+### Autonomous isolated exploration
+
+Route directly to an atomic prototype only when the user explicitly asks for an isolated evaluation, sandbox, throwaway concept, or disposable prototype; authorizes the agent to choose reversible assumptions and visual direction; and does not authorize production or acceptance. The routing envelope records `design-artifacts-only`, the synthetic or uncertain facts, the exact target matrix, and `owner_gate: null`. If those conditions are absent, use the normal earliest-prerequisite route.
 
 ### Implementation or change
 

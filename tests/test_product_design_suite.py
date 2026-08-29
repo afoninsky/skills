@@ -45,7 +45,7 @@ class ProductDesignSuiteTests(unittest.TestCase):
             evals = json.loads(evals_path.read_text(encoding="utf-8"))
             self.assertEqual(evals["skill_name"], name)
             self.assertGreaterEqual(len(evals["evals"]), 2)
-            self.assertLessEqual(len(evals["evals"]), 3)
+            self.assertLessEqual(len(evals["evals"]), 4)
 
     def test_router_and_worker_trigger_boundaries_are_explicit(self) -> None:
         router_triggers = json.loads(
@@ -136,6 +136,40 @@ class ProductDesignSuiteTests(unittest.TestCase):
             "Microsoft Clarity",
         ):
             self.assertIn(tool, combined, tool)
+
+    def test_tool_selection_baseline_explains_and_governs_replacements(self) -> None:
+        baseline_path = (
+            SKILLS_ROOT
+            / "product-design"
+            / "references"
+            / "tool-selection-baseline.md"
+        )
+        self.assertTrue(baseline_path.is_file())
+        baseline = baseline_path.read_text(encoding="utf-8")
+        substitution_template = (
+            SKILLS_ROOT
+            / "product-design"
+            / "assets"
+            / "tool-substitution-record.md"
+        )
+        self.assertTrue(substitution_template.is_file())
+        for required in (
+            "Sustainable capacity",
+            "Maturity",
+            "Portability",
+            "Non-replaceability by a strong model",
+            "Phase map",
+            "MCP policy",
+            "Comparison baseline for replacements",
+            "Previously assessed alternatives",
+            "Migration and rollback",
+            "design/decisions/tool-substitutions/",
+            "tool-substitution-record.md",
+        ):
+            self.assertIn(required, baseline)
+
+        for worker in WORKERS:
+            self.assertIn("tool selection baseline", skill_text(worker).lower(), worker)
 
     def test_strict_baseline_authority_is_consistent(self) -> None:
         router = skill_text("product-design")

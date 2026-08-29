@@ -1,5 +1,7 @@
 # Capability preflight
 
+Before recommending setup or changing a tool, read the relevant sections of the suite's canonical tool selection baseline from the sibling `product-design/references/tool-selection-baseline.md` skill resource. It explains why the free-first defaults were chosen and what an alternative must prove. If that resource is unavailable, stop any toolchain-change proposal and request installation of the complete `product-design` suite; do not recreate the comparison from memory.
+
 Preflight only capabilities relevant to this invocation. The absence of an irrelevant tool is not degradation; the absence of a tool needed for a promised artifact or evidence class is.
 
 ## Requirement and status

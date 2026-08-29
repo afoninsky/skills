@@ -30,9 +30,27 @@
       "files": [],
       "expectations": [
         "Missing mobile runtime capability is explicit.",
+        "The response names the stage-specific tools or access needed (including Maestro and an iOS runtime in this scenario), explains the evidence each enables, and directly asks the user to install, connect, or provide an equivalent.",
         "The response asks for setup or confirmation of a bounded degraded mode.",
         "Any confirmed reduced work remains read-only review or is rerouted to contract planning or an isolated prototype; it is not source-only production implementation.",
-        "No review finding is implemented before a valid change route and human gate."
+        "No review finding is implemented before a valid change route and human gate.",
+        "The response does not demand implementation-stage dependencies that are irrelevant to the current read-only review stage."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Create a complete responsive website from scratch for Side B, a two-room listening salon in Amsterdam where people reserve a 90-minute private vinyl session. Deliver a runnable vanilla HTML/CSS/JavaScript site. The homepage must explain the concept, show the two rooms and clear pricing, and include a real booking interaction that lets a visitor choose a room, date, time, and party size before seeing a confirmation. Design for 375px mobile and 1440px desktop, make the primary path keyboard accessible, honor reduced-motion preferences, and use no remote runtime dependencies. Choose the content and visual direction yourself. It should feel commissioned for this place rather than assembled from generic landing-page sections. Do not stop for questions or approval: this is an isolated evaluation prototype, so make reasonable reversible assumptions and finish the working site.",
+      "expected_output": "A self-contained, runnable, visually distinctive booking website whose design and interaction are complete enough for direct qualitative review, without production claims or approval gates.",
+      "files": [],
+      "expectations": [
+        "The output contains a directly runnable site with substantive HTML, CSS, and JavaScript rather than only design documents or a plan.",
+        "The booking interaction supports room, date, time, and party-size selection and produces a confirmation that reflects the chosen values.",
+        "The site clearly communicates the 90-minute experience, both room choices, pricing, and Amsterdam location context.",
+        "The implementation includes responsive behavior for both 375px mobile and 1440px desktop without hiding core booking functionality.",
+        "The primary booking path is keyboard operable, has visible focus treatment and programmatic labels, and honors prefers-reduced-motion.",
+        "The site uses no remote runtime dependencies or external image requests and remains useful when opened locally.",
+        "The visual system is specific to an intimate vinyl listening salon and avoids a generic centered-hero, interchangeable card-grid, fake-social-proof landing-page composition.",
+        "The run completes the isolated prototype without requesting a human gate, installing dependencies, or claiming production acceptance."
       ]
     }
   ]

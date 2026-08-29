@@ -57,6 +57,8 @@ Publish the capability table before substituting source review for runtime evide
 
 Use exactly: `available`, `missing-blocking`, `missing-degradable`, `unknown`, `not-applicable`.
 
+Keep capability requests stage-local. Ask now only for tools, target access, and evidence needed to answer this review question. Forecast implementation/change dependencies separately and do not make them prerequisites for review. If a tool such as Maestro is required now for repeatable mobile-flow evidence, say that it serves the current review claim; do not describe it as later-stage evidence while requiring it in the current exact next action.
+
 - Real runtime observation is a hard gate for visual/UX acceptance.
 - Platform-appropriate accessibility automation/inspection plus a named manual/assistive-technology plan is a hard gate for accessibility acceptance.
 - Representative-user evidence is a hard gate only for usability, comprehension, preference, or validation claims. It is `not-applicable` for a clearly labeled heuristic/system audit.

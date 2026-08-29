@@ -1,5 +1,7 @@
 # Capability preflight for review
 
+Before recommending setup or changing a tool, read the relevant sections of the suite's canonical tool selection baseline from the sibling `product-design/references/tool-selection-baseline.md` skill resource. It explains why the free-first defaults were chosen and what an alternative must prove. If that resource is unavailable, stop any toolchain-change proposal and request installation of the complete `product-design` suite; do not recreate the comparison from memory.
+
 Run this before accepting substitutions. The reviewer must disclose whether it can inspect the real target and support each requested conclusion.
 
 ## Canonical statuses
@@ -13,6 +15,12 @@ Run this before accepting substitutions. The reviewer must disclose whether it c
 Do not invent additional statuses. Configuration without a successful probe is `unknown`.
 
 Capability status and evidence disposition are separate. Label every gate or conclusion that lacks sufficient evidence exactly `Not evidenced` while retaining the capability's canonical status.
+
+## Keep the request stage-local
+
+Build the capability table from the current review question and its conclusions. A likely later change or implementation may need additional tooling, but that future need is a forecast until the router selects that worker. It must not block review or appear in the current exact next action.
+
+When a tool spans stages, state why it is needed now. For example, Maestro or an equivalent may be a current review requirement when repeatable native-flow evidence is part of the review; it is not a current requirement merely because a later protected change will need regression evidence. This distinction must be visible in the user-facing request.
 
 ## Discover and verify
 
@@ -58,6 +66,8 @@ Before running a partial review, state:
 4. setup or access steps from [tool-setup.md](tool-setup.md);
 5. verification probe after setup;
 6. one specific choice: set up, grant read access, provide equivalent evidence, or confirm the named partial review.
+
+The exact next action asks only for the current review's missing capability. Put later-stage requirements under a separate forecast heading without installation instructions unless the user explicitly asks to prepare the later stage too.
 
 Do not ask about irrelevant tools. If an underlying deterministic capability is available, an absent MCP is normally `not-applicable` rather than degradation.
 

@@ -141,6 +141,17 @@ Gate B compares every direction on the same representative matrix. Gate C exerci
 
 The suite knows the approved free-first tool stack, but depends on capabilities rather than brands. It reuses an established project alternative when that alternative produces equivalent durable evidence.
 
+The canonical rationale and comparison record is [tool-selection-baseline.md](../skills/product-design/references/tool-selection-baseline.md). Read it when setting up a new product, proposing a dependency, accepting a project-specific equivalent, or replacing a recommended tool. It records:
+
+- where each tool belongs in the web/mobile pipeline;
+- what non-replaceable evidence it contributes;
+- why it passed the maturity, free-capacity, portability, and functionality filters;
+- important limits and when not to add it;
+- previously assessed alternatives;
+- the representative pilot, migration, rollback, and owner decision required for replacement.
+
+The baseline is dated because prices, quotas, product ownership, security, and feature maturity change. Before setup or substitution, the agent revalidates the applicable official sources. It does not silently switch tools because a new product advertises AI generation or an MCP interface.
+
 ### Core and conditional tools
 
 | Capability | Approved default | Typical use |
@@ -161,6 +172,12 @@ The suite knows the approved free-first tool stack, but depends on capabilities 
 | Live agent access | Penpot, Maestro, Storybook, Playwright, or Chrome DevTools MCP | optional scoped interaction only |
 
 MCP servers are adapters. Losing one must not lose the design: exports, token source, stories/previews, test flows, screenshots, and approvals remain in Git.
+
+### Replacing a tool
+
+For a durable engagement, record the proposal under `design/decisions/tool-substitutions/`. Compare the candidate against the current tool's role rather than its marketing checklist: sustainable capacity across all maintained projects, maturity, required platform/function coverage, deterministic evidence, portability/exit, security/privacy, migration loss, and rollback. Run both tools on the same representative web or mobile slice before changing a canonical source, evidence engine, CI check, external review/distribution service, participant-research service, or analytics dependency.
+
+An optional MCP adapter can use a shorter comparison, but removing or changing it must leave the canonical Git artifacts and authorization boundaries intact. Existing established project tools should remain when they already satisfy the activated capability; conformity alone is not a migration reason.
 
 ### Preflight statuses
 

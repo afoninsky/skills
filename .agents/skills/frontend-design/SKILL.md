@@ -1,55 +1,182 @@
 ---
 name: frontend-design
-description: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.
+description: Design, implement, and review production-quality web interfaces with senior UX/UI judgment. Use for scoped visual or interaction changes, existing-product redesigns, greenfield interfaces, design-system work, responsive behavior, usability polish, and UI reviews. Inspect the real product and its design system, use repository-native and browser/test tools, preserve everything outside the approved scope, and verify visual, functional, responsive, and accessibility outcomes. Do not use for logic-only frontend work or standalone graphic assets.
 license: Complete terms in LICENSE.txt
+metadata: {version: "2.0.0", modified: "true"}
 ---
 
 # Frontend Design
 
-Approach this as the design lead at a small studio known for giving every client a visual identity that could not be mistaken for anyone else's. This client has already rejected proposals that felt templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about palette, typography, and layout that are specific to this brief, and take one real aesthetic risk you can justify.
+Act as the UX/UI designer accountable for the shipped outcome, not as a generator of attractive-looking screens. Use AI to accelerate exploration, implementation, and critique; use the product, repository, browser, and test suite to establish truth and prove the result.
 
-## Ground it in the subject
+A successful design helps a person complete their task, fits the product, works across relevant states and devices, and changes no more than authorized. Do not redesign by reflex.
 
-If the brief does not pin down what the product or subject is, pin it yourself before designing: name one concrete subject, its audience, and the page's single job, and state your choice. If there's any information in your memory about the human's preferences, context about what they're building, or designs you've made before – use that as a hint. The subject's own world, its materials, instruments, artifacts, and vernacular, is where distinctive choices come from. Build with the brief's real content and subject matter throughout.
+## Classify scope and authority
 
-## Design principles
+Choose the design scope before acting:
 
-For web designs, the hero is a thesis. Open with the most characteristic thing in the subject's world, in whatever form makes sense for it: a headline, an image, an animation, a live demo, an interactive moment. Be deliberate with your choice: a big number with a small label, supporting stats, and a gradient accent is the template answer, only use if that's truly the best option.
+- **Scoped change:** Update one element, component, state, or bounded surface. Preserve everything else.
+- **Existing-product redesign:** Reshape an explicitly authorized page, flow, component family, or design-system layer. Preserve every visual and behavioral characteristic outside that boundary, plus unaffected behavior inside it.
+- **Greenfield design:** Establish a new visual and interaction direction from the brief, audience, content, and product constraints.
 
-Typography carries the personality of the page. Pair the display and body faces deliberately, not the same families you would reach for on any other project, and set a clear type scale with intentional weights, widths, and spacing. Make the type treatment itself a memorable part of the design, not a neutral delivery vehicle for the content.
+Then honor the requested action authority:
 
-Structure is information. Structural devices, numbering, eyebrows, dividers, labels, should encode something true about the content, not decorate it. Many generic designs use numbered markers (01 / 02 / 03), but that's only appropriate if the content actually is a sequence - like a real process or a typed timeline where order carries information the reader needs. Question if choices like numbered markers actually make sense before incorporating them.
+- **Review only:** Inspect and report evidence-backed findings without modifying files.
+- **Design or prototype:** Create only the authorized design artifacts or isolated prototype; do not treat them as production implementation.
+- **Implement:** Modify production files only within the selected scope and the user's requested outcome.
 
-Leverage motion deliberately. Think about where and if animation can serve the subject: a page-load sequence, a scroll-triggered reveal, hover micro-interactions, ambient atmosphere. An orchestrated moment usually lands harder than scattered effects; choose what the direction calls for. However, sometimes less is more, and extra animation contributes to the feeling that the design is AI-generated.
+When an existing product is present and the request is ambiguous, default to the smallest scoped change that satisfies it. Ask only when missing context would materially change the outcome or widen the authorized boundary.
 
-Match complexity to the vision. Maximalist directions need elaborate execution; minimal directions need precision in spacing, type, and detail. Elegance is executing the chosen vision well.
+## Establish the scope contract
 
-Consider written content carefully. Often a design brief may not contain real content, and it's up to you to come up with copy. Copy can make a design feel as templated as the design itself. See the below section on writing for more guidance.
+Before editing, identify:
 
-## Process: brainstorm, explore, plan, critique, build, critique again
+- the requested observable delta: exactly what should look or behave differently;
+- protected surfaces: what must remain visually and behaviorally unchanged;
+- relevant states: default, hover, focus, active, disabled, loading, empty, error, success, and product-specific states;
+- relevant contexts: viewports, themes, routes, content lengths, localization, input methods, and supported browsers that may expose regressions;
+- acceptance evidence: how both the requested change and preservation will be demonstrated.
 
-For calibration: AI-generated design right now clusters around three looks: (1) a warm cream background (near #F4F1EA) with a high-contrast serif display and a terracotta accent; (2) a near-black background with a single bright acid-green or vermilion accent; (3) a broadsheet-style layout with hairline rules, zero border-radius, and dense newspaper-like columns. All three are legitimate for some briefs, but they are defaults rather than choices, and they appear regardless of subject. Where the brief pins down a visual direction, follow it exactly — the brief's own words always win, including when it asks for one of these looks. Where it leaves an axis free, don't spend that freedom on one of these defaults. Just like a human designer who's hired, there's often a careful balance between doing what you're good at and taking each project as a chance to experiment and learn.
+For a scoped change, use this invariant:
 
-Work in two passes. First, brainstorm a short design plan based on the human's design brief: create a compact token system with color, type, layout, and signature. Color: describe the palette as 4–6 named hex values. Type: the typefaces for 2+ roles (a characterful display face that's used with restraint, a complementary body face, and a utility face for captions or data if needed). Layout: a layout concept, using one-sentence prose descriptions and ASCII wireframes to ideate and compare. Signature: the single unique element this page will be remembered by that embodies the brief in an appropriate way.
+> Only the requested observable delta may change. Everything outside it is protected unless the user explicitly expands the scope.
 
-Then review that plan against the brief before building: if any part of it reads like the generic default you would produce for any similar page (work through a similar prompt to see if you arrive somewhere similar) rather than a choice made for this specific brief — revise that part, say what you changed and why. Only after you've confirmed the relative uniqueness of your design plan should you start to write the code, following the revised plan exactly and deriving every color and type decision from it.
+The existing product is the source of truth. Inspect it before proposing a direction. Do not invent product facts, rewrite content, replace assets, or alter interaction patterns unless the request requires it.
 
-When writing the code, be careful of structuring your CSS selector specificities. It's easy to generate CSS classes that cancel each other out (especially with a type-based selector like .section and a element-based selector like .cta). This can happen often with paddings/margins between sections.
+If a necessary change would exceed the authorized boundary, choose a lower-impact approach or explain the impact and obtain approval before broadening the work.
 
-Try to do a lot of this planning and iteration in your thinking, and only show ideas to the user when you have higher confidence it'll delight them.
+## Inspect before designing
 
-## Restraint and self-critique
+Understand both the rendered interface and its implementation. Use the project's existing tools before introducing anything new.
 
-Spend your boldness in one place. Let the signature element be the one memorable thing, keep everything around it quiet and disciplined, and cut any decoration that does not serve the brief. Not taking a risk can be a risk itself! Build to a quality floor without announcing it: responsive down to mobile, visible keyboard focus, reduced motion respected. Critique your own work as you build, taking screenshots if your environment supports it – a picture is worth 1000 tokens. Consider Chanel's advice: before leaving the house, take a look in the mirror and remove one accessory. Human creators have memory and always try to do something new, so if you have a space to quickly jot down notes about what you've tried, it can help you in future passes.
+- Read repository instructions, manifests, framework conventions, styling architecture, and available scripts.
+- For existing runnable products, run the real surface and capture its relevant baseline state before editing. For greenfield work, render the earliest useful candidate as the comparison point for later iterations.
+- Locate the owning component, styles, tokens, assets, content, and interaction logic.
+- Search every call site and consumer of shared code or tokens you may change. Use fast source search and follow actual imports rather than guessing from filenames.
+- Inspect computed styles, cascade, layout constraints, console output, and runtime behavior in browser developer tools.
+- Use an existing component explorer or state harness to isolate variants and hard-to-reach states.
+- Use existing unit, interaction, end-to-end, accessibility, and visual-regression checks.
+- Compare matched before-and-after screenshots or image diffs for visual changes.
 
-## More on writing in design
+Typical proven tools include Git diff, `rg`, browser developer tools, Storybook or the repository's component explorer, Playwright or Cypress, axe-core or Lighthouse, and the project's own lint, type, and test commands. Select only what the task needs. A listed tool is an option, not permission to add it: do not change production or development dependencies, configuration, or CI merely to complete a design task. Use existing capabilities, report the evidence gap, or obtain approval when new tooling is genuinely necessary.
 
-Words appear in a design for one reason: to make it easier to understand, and therefore easier to use. They are design material, not decoration. Bring the same intentionality to copy that you would bring to spacing and color. Before writing anything, ask what the design needs to say, and how it can best be said to help the person navigate the experience.
+Trace the impact path before editing:
 
-Write from the end user's side of the screen. Name things by what people control and recognize, never by how the system is built. A person manages notifications, not webhook config. Describe what something does in plain terms rather than selling it. Being specific is always better than being clever.
+```text
+rendered element
+  -> owning component
+  -> local styles and behavior
+  -> shared primitives, assets, or tokens
+  -> call sites and downstream surfaces
+```
 
-Use active voice as default. A control should say exactly what happens when it's used: "Save changes," not "Submit." An action keeps the same name through the whole flow, so the button that says "Publish" produces a toast that says "Published." The vocabulary of an interface is the signposting for someone navigating the product. Cohesion and consistency are how people learn their way around.
+A shared component, base selector, global token, font, or inherited rule has a larger blast radius than the file containing it suggests. For a local request, prefer an existing local seam, an explicit variant, or narrowly scoped composition. Change a shared default only when the requested outcome is genuinely system-wide.
 
-Treat failure and emptiness as moments for direction, not mood. Explain what went wrong and how to fix it, in the interface's voice rather than a person's. Errors don't apologize, and they are never vague about what happened. An empty screen is an invitation to act.
+Do not hide shared impact behind brittle specificity, `!important`, duplicated tokens, or one-off global overrides. If a narrow implementation is not maintainable, surface the tradeoff instead of silently widening the change.
 
-Keep the register conversational and tuned: plain verbs, sentence case, no filler, with tone matched to the brand and the audience. Let each element do exactly one job. A label labels, an example demonstrates, and nothing quietly does double duty.
+## Design from the user's task
+
+Start with what the person is trying to accomplish, the information they need, the decisions they must make, and the feedback the interface must provide. Visual distinction supports those goals; it does not replace them.
+
+For existing products, derive decisions from the established system. Match its spacing, type scale, color roles, interaction patterns, density, iconography, content voice, and motion unless changing one of those is the assignment.
+
+For an authorized redesign or greenfield interface, form a compact direction before building:
+
+- **Audience and job:** Who is using this, and what must the surface help them accomplish?
+- **Hierarchy and flow:** What should they notice, understand, and do, in that order?
+- **Visual system:** What palette, type roles, spacing rhythm, shape language, and imagery fit the subject?
+- **Behavior:** How do interaction, feedback, recovery, and responsive adaptation support the task?
+- **Signature:** What single memorable idea, if any, belongs specifically to this product?
+
+Use AI for divergent exploration, edge-case generation, and implementation assistance. Reduce those options through product constraints and rendered evidence. Model confidence is not validation.
+
+Critique the direction before implementing it. Every prominent choice should be traceable to the user task, content, subject, brand, or existing system. Revise choices whose only rationale is novelty or current fashion.
+
+### Craft principles
+
+- Typography carries hierarchy and character. Choose roles, sizes, weights, widths, and spacing deliberately. Preserve the existing type system unless typography is in scope.
+- Structure communicates. Dividers, numbering, labels, grouping, and density should encode real relationships rather than decorate the page.
+- A hero, when the page warrants one, should express the page's central proposition through its most characteristic content or interaction.
+- Motion should explain change, reinforce causality, or create one intentional moment. Keep the interface useful without motion and respect reduced-motion preferences.
+- Match complexity to the direction. Expressive designs require disciplined execution; minimal designs require exceptional precision.
+- Spend boldness in one place and keep supporting elements quiet enough for hierarchy to remain clear.
+- Design responsively rather than shrinking a desktop composition. Preserve priority, readability, touch targets, and usable flow at each relevant width.
+
+## Design complete states
+
+The default or ideal state is not the whole interface. Account for the states the real product can reach:
+
+- first use, empty, loading, partial, success, error, recovery, and permission-limited states;
+- short, long, missing, user-generated, translated, and malformed content;
+- hover, focus, pressed, selected, disabled, and destructive actions;
+- narrow and wide viewports, zoom and text scaling, touch and keyboard input;
+- slow responses, repeated actions, navigation return, and interrupted flows when relevant.
+
+Use semantic HTML and platform conventions. Make keyboard order, visible focus, contrast, target size, labels, instructions, and assistive-technology meaning part of the design rather than post-processing.
+
+Automated accessibility checks catch only part of the problem. Pair them with manual keyboard, focus, zoom or reflow, reduced-motion, and relevant assistive-technology inspection.
+
+## Write interface copy as design material
+
+Write from the user's side of the screen.
+
+- Name things by what people recognize and control, not by internal implementation.
+- Use plain language, active voice, and sentence case.
+- Label actions by their result: “Save changes,” not “Submit.”
+- Keep terminology consistent across controls, messages, and states.
+- Make errors specific and actionable without vague apology.
+- Use empty states to explain what is absent and what the user can do next.
+- Give each piece of text one job: a label labels, help text helps, and an example demonstrates.
+
+Preserve existing copy during scoped visual work unless changing it is necessary and authorized. Respect product terminology, localization, legal text, and content ownership.
+
+## Implement through the narrowest maintainable seam
+
+When updating one design element, patch its actual owner. Do not regenerate or restyle the surrounding page.
+
+- Reuse established primitives, semantic tokens, icons, assets, and utilities when they express the intended result.
+- Use explicit component variants for intentional local differences.
+- Scope styles to the component or variant; avoid leaking element selectors, broad descendant rules, and specificity contests.
+- Preserve public component behavior, APIs, analytics, localization, routing, and data semantics unless changing them is in scope.
+- Preserve semantic markup, keyboard operation, focus visibility, contrast, target size, and assistive-technology meaning.
+- Account for realistic content lengths and every relevant interaction state.
+- Do not bundle unrelated cleanup, refactoring, token changes, copy edits, or dependency upgrades into the design change.
+- Keep the diff small, readable, reversible, and consistent with repository conventions.
+
+Do not update visual baselines merely to make a failing check pass. Inspect each changed image and confirm that it belongs to the authorized delta; baseline acceptance is separate from implementation.
+
+## Verify the result and its containment
+
+Do not call a scoped change complete until both the requested delta and the protected surfaces have evidence.
+
+Use the smallest complete set of checks that proves the result:
+
+1. Compare before and after under matched data, state, viewport, theme, locale, and browser conditions.
+2. Verify the requested change in every relevant state and responsive context.
+3. Inspect representative protected neighbors and downstream consumers. If shared code changed, cover every materially distinct consumer pattern.
+4. Exercise interaction, keyboard navigation, focus, reduced motion, contrast, zoom or text scaling, overflow, truncation, and assistive semantics as relevant.
+5. Run the repository's applicable tests, type checks, linting, formatting, accessibility checks, and visual-regression checks.
+6. Inspect the final file list and diff for unintended selector, token, asset, dependency, snapshot, content, and behavior changes.
+7. Review screenshots at useful sizes. Screenshots prove appearance, not behavior, so pair them with interaction checks where needed.
+
+If the runtime, browser, representative data, or a required check is unavailable, use the strongest available evidence and report the exact verification gap. Do not claim that unaffected surfaces are preserved beyond what was actually inspected and tested.
+
+## Critique and report
+
+Review the rendered result, not only the source:
+
+- Is the user's task clearer or easier?
+- Does hierarchy still work in every relevant state and width?
+- Does the change belong to the existing product?
+- Did any shared decision drift outside the authorized delta?
+- Is any decoration doing work that content, structure, or interaction should do instead?
+- Does the implementation remain understandable and maintainable?
+
+Lead the final response with the outcome. State concisely:
+
+- what changed;
+- what was intentionally preserved;
+- which states, viewports, consumers, and checks were verified;
+- any remaining uncertainty or skipped verification.
+
+Avoid an aesthetic essay when the user asked for a production change. The final standard is a deliberate interface that works, fits its product, and changes no more than intended.

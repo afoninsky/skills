@@ -1,9 +1,9 @@
 ---
 name: product-design
-description: Sole automatic entrypoint and router for unqualified UI/UX and digital-product design work across responsive web, native iOS and Android, React Native, Flutter, and shared web/mobile wrappers. Trigger for new or redesigned sites and apps; UX research and structure; visual direction; wireframes, mocks, and prototypes; approved design-to-code work; design systems and semantic tokens; controlled changes to accepted UI; read-only or review-and-fix audits; periodic improvements; and acceptance or freezing of named UI candidates and visual baselines. Preserve the original request, inspect accepted state, preflight applicable capabilities, and route the earliest missing prerequisite or gated series. Use this before narrower styling, prototyping, implementation, or audit helpers unless the user explicitly names one. Do not use for standalone graphic or image assets, or non-visual code and architecture.
+description: Sole automatic entrypoint and router for unqualified UI/UX and digital-product design work across responsive web, native iOS and Android, React Native, Flutter, and shared web/mobile wrappers. Trigger for new or redesigned sites and apps; UX research and structure; visual direction; wireframes, mocks, autonomous isolated evaluation prototypes, and other prototypes; approved design-to-code work; design systems and semantic tokens; controlled changes to accepted UI; read-only or review-and-fix audits; periodic improvements; and acceptance or freezing of named UI candidates and visual baselines. Preserve the original request, inspect accepted state, preflight applicable capabilities, and route the earliest missing prerequisite or gated series. Use this before narrower styling, prototyping, implementation, or audit helpers unless the user explicitly names one. Do not use for standalone graphic or image assets, or non-visual code and architecture.
 license: MIT
 compatibility: Requires the selected product-design worker skills for routed execution. Works without MCP servers; Git and real browser or app-runtime evidence become required at acceptance and protected-change gates.
-metadata: {version: "1.0.0"}
+metadata: {version: "1.1.0"}
 ---
 
 # Product Design
@@ -23,6 +23,8 @@ Before routing, read completely:
 
 Load [platform detection](references/platform-detection.md) only when a repository or target platform exists.
 
+Read [tool selection baseline](references/tool-selection-baseline.md) completely when initializing a toolchain, proposing setup, accepting an existing alternative, or changing a tool. For an unchanged verified toolchain, load only the applicable phase/tool sections. This baseline explains why each default was selected and defines the comparison and approval evidence required to replace it.
+
 ## Preserve the request
 
 Keep the user's original prompt and explicit constraints unchanged in working context. Compute its UTF-8 SHA-256 and put it in `original_prompt_sha256`; every worker returns that digest in `input_hashes.original_prompt`. Add a routing envelope; do not replace the request with a paraphrase.
@@ -38,6 +40,7 @@ Use read-only inspection first:
 - distinguish asserted goldens from screenshots that are merely captured;
 - identify accepted, candidate, archived, and superseded artifacts;
 - classify the request's mutation authority: `read-only`, `design-artifacts-only`, `production-bounded`, or explicit `accept-freeze`.
+- distinguish durable/acceptance-bound work from an explicitly disposable autonomous exploration. The latter exists only when the user asks for an isolated evaluation, sandbox, throwaway concept, or prototype; authorizes reasonable assumptions and self-selection of content/direction; and excludes production writes and acceptance claims.
 
 If no repository exists, route using the user's product context and initialize project artifacts only when useful and authorized.
 
@@ -53,6 +56,8 @@ Never silently continue when an applicable tool or evidence capability is absent
 - Do not install a package, connect an account, expose an MCP server, add analytics, or modify CI without authorization.
 - An optional tool that is not selected for this route is `not-applicable`, not a hidden failure.
 
+When selecting or substituting a tool, apply the admission and replacement tests in the tool selection baseline. Do not introduce a new brand because it has an MCP, AI-generation feature, or attractive demo. Record a durable substitution decision for canonical-source, runtime/evidence, distribution, participant-research, analytics, CI, or production-dependency changes.
+
 Record the result in `design/toolchain.json` for a durable engagement, excluding credentials and secrets.
 
 Before executing a worker, set `toolchain.profile.phase`, `platforms`, and evidence `claims` to the selected route, then run:
@@ -62,6 +67,8 @@ python3 <product-design-skill-directory>/scripts/validate_toolchain.py design/to
 ```
 
 Execution requires a validator pass. Set `checked_at` only after every applicable status has been probed: it must be a timezone-aware ISO-8601 time no older than four hours and no more than five minutes in the future. Rebuild and revalidate the profile before every worker transition or whenever platform, claim, scope, target/build identity, access, tool state, or degraded-mode authority changes; those changes require a fresh probe even inside four hours. Do not refresh the timestamp alone, remove a required capability, or empty the platform set to make validation pass; narrow the routed work explicitly and keep the unavailable gate `Not evidenced`.
+
+Preflight is just in time. Only capabilities required by the current worker and its current claims can block or become the user's exact next action. Forecast tools likely needed by later workers in a separate `needed later` note, but do not ask the user to install, connect, or provide them until that transition is selected and freshly probed. When a current capability is missing, name the capability, the selected tool or acceptable equivalent, the evidence it enables, and the specific install/connect/provide action required from the user. Never leave a missing capability implicit.
 
 Use only the validator's canonical profile values:
 
@@ -79,6 +86,7 @@ Route by objective and repository readiness:
 
 | Condition | Worker |
 |---|---|
+| The user explicitly requests an isolated evaluation, sandbox, throwaway concept, or disposable prototype; authorizes reversible assumptions and self-selected content/direction; and excludes production or acceptance claims | `product-design-prototype` in autonomous-exploration mode |
 | Users, jobs, flow, content, states, or platform requirements are unresolved | `product-design-discovery` |
 | An approved brief exists and visual grammar/direction is unresolved | `product-design-direction` |
 | A direction is selected but rules, tokens, components, source map, or accepted identity are absent | `product-design-contract` |
@@ -88,6 +96,8 @@ Route by objective and repository readiness:
 | The user asks to inspect, audit, diagnose, periodically assess, or review a candidate | `product-design-review` |
 | A named reviewed candidate is explicitly approved as the new baseline | `product-design-contract` in `accept-freeze` mode |
 | A release, rollout, periodic-learning, or research action needs an evidence-backed owner decision | `product-design-review`, stopping at Gate F |
+
+The autonomous-exploration row is a narrow exception to the normal prerequisite chain. The prompt must still define an observable objective, deliverable, target class, and enough product context to make reversible assumptions useful. The prototype worker records those assumptions, self-selects one direction after a small internal comparison, builds and verifies the isolated artifact, and finishes with `gate: null`. It does not create an accepted brief, direction, contract, production candidate, or baseline. If the user later wants to adopt or ship it, start a fresh normal route and establish the missing durable prerequisites and owner gates.
 
 For a broad request, plan the whole likely route but launch only the earliest prerequisite. New, multi-surface, or high-impact production work requires a representative prototype and Gate C before implementation. Direct implementation is allowed only for an immutable, named, explicitly bounded reviewed slice that already covers its required states, adaptations, and component mapping. Record `implementation_entry_basis` plus its human approval ID in the implementation envelope. Never skip a human gate merely because the prompt names the final output.
 
@@ -111,6 +121,7 @@ Pass the worker:
 - the routing envelope;
 - only relevant accepted project artifacts;
 - capability-preflight results;
+- whether the route is normal evidence work or explicitly authorized autonomous exploration;
 - the current human gate and stopping condition.
 
 Announce the route concisely, for example: `product-design → change → review; stop at candidate acceptance`.
@@ -148,7 +159,7 @@ When advancing, create a new envelope whose first route item is the accepted suc
 
 ## Non-negotiable rules
 
-- A human selects visual direction and approves every accepted baseline.
+- A human selects visual direction for durable or acceptance-bound work and approves every accepted baseline. In explicitly authorized autonomous exploration, the agent may self-select a reversible direction only because the artifact cannot become accepted or production state through that route.
 - A named candidate review stops at Gate D for accept/reject/revise. Gate D acceptance does not authorize baseline mutation: the router next stops at Gate E for explicit approval of the exact named reviewed candidate and matrix, then contract `accept-freeze` records that identity.
 - `product-design-review` owns release and research/learning evidence packets. It stops at Gate F for the owner's release/hold or research/learning decision and never deploys, instruments, recruits, or contacts participants by itself.
 - Implementation and change workers never update approved screenshots or accepted-reference hashes.
@@ -164,7 +175,7 @@ At each router boundary report:
 
 1. **Route** — current worker and likely series.
 2. **Why** — evidence that made this the earliest prerequisite.
-3. **Tool status** — applicable available and missing capabilities.
+3. **Tool status** — applicable available and missing capabilities needed now; forecast later-stage needs separately without making them current blockers.
 4. **Authority and scope** — allowed writes and protected artifacts.
 5. **Gate** — exact stopping condition or decision required.
 6. **Next action** — one concrete continuation.

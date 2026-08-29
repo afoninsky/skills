@@ -66,6 +66,8 @@ The suite keeps accepted design decisions in versioned contracts, source maps, f
 
 Tool dependencies are capability-based. Git, Penpot, CSS variables or DTCG/Style Dictionary, framework workbenches, Playwright, Maestro, accessibility tools, preview/distribution services, and user-evidence tools are selected only when the phase and platform need them. Missing applicable capabilities are never hidden: the skill explains the loss, provides current official setup steps, and stops for setup or explicit confirmation of a limited degraded route. Missing hard runtime or accessibility evidence stops implementation and change before production writes; confirmed reduced work moves to read-only review, contract planning, or an isolated prototype with its own valid preflight. Missing evidence still cannot pass its gate.
 
+The suite includes a dated [tool-selection baseline](skills/product-design/references/tool-selection-baseline.md) describing where each recommendation belongs, why it passed the maturity/free-capacity/functionality filters, its limits and alternatives, and the representative comparison and rollback proof required before replacement.
+
 Executable preflight records use a non-empty representative platform set for direction, contract, prototype, implementation, protected change, and acceptance. `checked_at` certifies that every applicable status was actually probed within the previous four hours and is no more than five minutes ahead of the current clock; changing phase, platform, claim, target, build, access, or tool state requires an earlier re-probe.
 
 [Read the entrypoint](skills/product-design/SKILL.md)

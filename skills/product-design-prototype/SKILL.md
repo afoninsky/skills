@@ -1,6 +1,6 @@
 ---
 name: product-design-prototype
-description: Internal prototyping worker in the Product Design suite. Invoke only when product-design selects it with a routing envelope, the user explicitly names $product-design-prototype, or advanced automation supplies equivalent accepted design inputs and authority; for every other raw UI/UX request, use product-design. Build an isolated disposable web or mobile wireframe, mock, interaction proof, state demonstration, or representative slice that answers one design question. Do not choose art direction, ship production components, alter an accepted design or baseline, or perform a read-only audit.
+description: Internal prototyping worker in the Product Design suite. Invoke only when product-design selects it with a routing envelope, the user explicitly names $product-design-prototype, or advanced automation supplies equivalent accepted design inputs and authority; for every other raw UI/UX request, use product-design. Build an isolated disposable web or mobile wireframe, mock, interaction proof, state demonstration, representative slice, or explicitly authorized autonomous evaluation concept that answers a design question. Outside autonomous exploration, do not choose art direction. Never ship production components, alter an accepted design or baseline, or perform a read-only audit.
 compatibility: Requires versioned isolated artifacts plus a working renderer/runtime and capture path appropriate to the question. Playwright, Maestro, native previews/tests, workbenches, Penpot, preview hosting, and tester distribution are selected conditionally; no single framework, SaaS, or MCP server is mandatory.
 ---
 
@@ -13,7 +13,8 @@ Build the least expensive real artifact that answers one design question. A prot
 1. Read [tool preflight](references/tool-preflight.md) completely and run it before creating source or connecting a remote tool.
 2. Read [prototype method](references/prototype-method.md) before choosing fidelity or scope.
 3. Read [platform adapters and verification](references/platform-adapters-and-verification.md), then load only the row relevant to the detected architecture/target.
-4. Use the templates in `assets/`; keep prototype source and dependencies isolated.
+4. Read [autonomous exploration quality](references/autonomous-exploration.md) only when the router explicitly authorizes an isolated self-directed evaluation/sandbox.
+5. Use the templates in `assets/`; keep prototype source and dependencies isolated.
 
 When routed, preserve the unchanged original prompt and obey the routing envelope. When invoked directly, establish a request ID, accepted artifact hashes, scope, mutation authority, target matrix, design question, and stop condition equivalent to Gate C when this is a representative slice.
 
@@ -21,13 +22,21 @@ The target matrix is non-empty and includes at least one representative configur
 
 ## Preconditions and authority
 
-- Read `design/project-design.json` when present. Require an accepted brief for behavior/structure questions, a selected direction for visual-fidelity questions, and the current design contract when demonstrating a contracted system. Use only the prerequisites needed for the question; never invent a missing approval.
+- Read `design/project-design.json` when present. In normal evidence mode, require an accepted brief for behavior/structure questions, a selected direction for visual-fidelity questions, and the current design contract when demonstrating a contracted system. Use only the prerequisites needed for the question; never invent a missing approval.
+- Autonomous exploration is the only exception: require a router envelope that explicitly records a disposable evaluation/sandbox, `design-artifacts-only` authority, owner permission to make reversible assumptions and self-select a direction, no accepted inputs, no production writes, and no acceptance claim. Treat the prompt as a constraint source, not as an accepted brief or direction.
 - Inspect repository architecture and platform sharing before selecting a prototype medium. A web-wrapper mobile app may have one UI source plus packaged-shell checks, not a second native UI prototype.
 - Define one decision question and observable success/failure before building. If the question is “which aesthetic?”, route to `product-design-direction`. If the request is “ship this,” route the approved result to `product-design-implementation` later.
 - Permit writes only to isolated prototype artifacts, fixtures, and verification output. Do not edit production components, accepted contracts/references, or baselines.
 - Adding a dependency, publishing a preview, distributing a build, connecting an account, or contacting testers requires explicit authorization.
 
 ## Workflow
+
+### 0. Select the operating mode
+
+- **Evidence prototype:** follow accepted UX/direction/contract inputs and answer the named decision; normal owner gates apply.
+- **Autonomous exploration:** derive a compact assumption ledger and internally compare a few structural/visual theses using the autonomous-exploration reference. Select one because the owner explicitly delegated that reversible choice. Build and verify the finished isolated artifact without asking for approval, then finish with `gate: null` and no successor.
+
+Never let autonomous exploration write production source, imply human selection, or become an accepted candidate by momentum.
 
 ### 1. Choose the lowest useful fidelity
 
@@ -83,6 +92,8 @@ For a representative slice, present the runnable prototype, matched renders, ver
 
 An atomic prototype answering a narrow question may finish without a pipeline gate, but must still state the answered decision and evidence boundary. A router-controlled pipeline advances only after its named human gate.
 
+An autonomous exploration also finishes without a gate after the artifact and its quality evidence are complete. Report assumptions, synthetic facts, tested targets/states, and remaining limitations; do not ask the owner to approve it or recommend direct implementation.
+
 ## Default outputs
 
 - `design/prototypes/<prototype-id>/prototype-plan.md`
@@ -105,6 +116,7 @@ Adapt an existing project convention without importing prototype code into produ
 - Accessibility/adaptive risks and untested targets are explicit.
 - Captures are prototype evidence, not approved visual baselines.
 - Missing runtime, accessibility, participant, or physical-device evidence leaves the affected gate `Not evidenced` and cannot be promoted to a pass.
+- For autonomous exploration, the full-page composition has been inspected for pacing, dead space, repetitive section silhouettes, typography collisions, and product-specific physical/content cues—not only overflow and first-screen polish.
 
 ## Handoff
 
