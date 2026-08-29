@@ -4,7 +4,7 @@
     "should_trigger": false
   },
   {
-    "query": "Use $product-design-direction directly with this accepted brief to create matched direction evidence and stop at Gate B.",
+    "query": "Use $product-design-direction directly with this accepted brief to create matched direction evidence and ask me to select because I have not delegated that choice.",
     "should_trigger": true
   },
   {

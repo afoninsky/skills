@@ -45,4 +45,4 @@ Use the five canonical capability statuses and link each probe. Label every unsu
 
 ## Limitations and exact next action
 
-State unavailable configurations, manual checks, and claims labeled `Not evidenced`. If preflight stopped the worker, record that no production mutation occurred and name the router-owned setup or reduced non-production reroute. A completed candidate still requires independent review, Gate D disposition, separate Gate E approval, and contract accept-freeze before any baseline identity changes.
+State unavailable configurations, manual checks, and unsupported claims. If a missing capability stopped a production edit, record that no mutation occurred and name the smallest setup, equivalent-evidence, or reduced-scope path. A completed candidate changes no baseline until the exact reviewed identity is explicitly human-approved and recorded by contract accept-freeze.

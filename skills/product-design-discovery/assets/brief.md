@@ -1,6 +1,6 @@
 # Product design brief
 
-Status: Draft | Candidate for Gate A | Accepted
+Status: Draft | Working | Accepted | Superseded
 Version:
 Owner:
 Accepted on:
@@ -10,7 +10,7 @@ Supersedes:
 
 - Observable outcome:
 - Core act:
-- First ten seconds:
+- Critical early comprehension:
 - Rejection criterion:
 
 ## People and priority situations
@@ -56,12 +56,12 @@ Supersedes:
 
 ## Authority
 
-- Permitted next phase after approval:
+- Permitted next work under the request:
 - Production mutation authority:
 - Baseline acceptance: Not granted by this brief
 
-## Gate A decision
+## Open decision, if any
 
 - Candidate artifact/hash:
-- Owner decision: Pending | Approved | Amend
+- Decision: None | Continue | Amend | Stop
 - Notes:

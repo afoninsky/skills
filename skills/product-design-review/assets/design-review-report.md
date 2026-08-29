@@ -9,9 +9,9 @@
 - Included surfaces/states/targets:
 - Exclusions:
 
-## Capability preflight
+## Evidence capabilities
 
-Use the five canonical capability statuses. Label every unsupported gate or conclusion `Not evidenced`.
+Record only capabilities that affect this review and state which conclusions are unsupported.
 
 ## Executive finding
 
@@ -61,22 +61,22 @@ Include only when in scope: decision question, consent/data boundary, population
 
 Name the smallest owner decision or independently authorized change brief. Review does not implement or accept it.
 
-## Owner decision packet
+## Decision packet
 
 Use only the applicable block.
 
-### Gate D — candidate disposition
+### Candidate disposition
 
 - Named immutable candidate and reviewed matrix:
-- Decision requested: Accept for Gate E consideration | Revise | Reject
-- Material deltas and `Not evidenced` limitations:
-- Note: Gate D acceptance is not Gate E baseline approval.
+- Decision requested: Accept | Revise | Reject | Approve as accepted baseline
+- Material deltas and evidence limitations:
+- Note: candidate acceptance changes no baseline unless the human explicitly identifies the reviewed candidate and authorizes it as the accepted identity.
 
-### Gate F — release or research/learning decision
+### Release or research/learning decision
 
 - Named release/rollout or research/learning action:
 - Population/release/platform matrix and exclusions:
 - Decision requested: Release | Hold | Approve action | Revise action | Reject action
 - Applicable accessibility/device/user/safety/privacy/operational evidence:
-- Blocking evidence gaps:
-- Note: review does not execute the decision and recommends no successor before the owner decides.
+- Evidence gaps and consequence:
+- Note: review may recommend but does not execute the decision.

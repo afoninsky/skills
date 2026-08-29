@@ -1,6 +1,6 @@
 # Direction comparison
 
-Status: Candidate for Gate B | Selected
+Status: Draft | Decision-ready | Working direction selected | Superseded
 Accepted brief/hash:
 Comparison manifest/contact sheet:
 
@@ -20,7 +20,7 @@ Comparison manifest/contact sheet:
 
 ## Quality review
 
-Record first-ten-seconds, silhouette, relabel/default-cluster, core-act, craft, family/system, content, accessibility, and adaptive findings with evidence paths.
+Record task-comprehension, hierarchy, product-specificity, core-act, craft, family/system, content, accessibility, and adaptive findings with evidence paths.
 
 ## Recommendation
 
@@ -29,9 +29,9 @@ Record first-ten-seconds, silhouette, relabel/default-cluster, core-act, craft, 
 - Accepted tradeoff:
 - Why alternatives lose:
 
-## Gate B owner decision
+## Direction decision
 
-- Decision: Pending | Select | Refine | Reject all
+- Decision: Pending | Agent-selected under delegated judgment | Owner-selected | Refine | Reject all
 - Named candidate and source/render hash:
 - Owner notes:
 - Date:

@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Design Discovery"
-  short_description: "Define evidence-backed UX before styling"
-  default_prompt: "Use $product-design-discovery to establish the users, priority journeys, content, states, and web/mobile constraints, then stop for approval before visual direction."
+  short_description: "Ground users, flows, and content"
+  default_prompt: "Use $product-design-discovery to define the smallest trustworthy users, jobs, journeys, content, states, and platform constraints needed for this decision. Inspect existing evidence first, research unfamiliar audience or domain questions from credible primary and authoritative sources, preserve settled decisions, and pause only for a material unknown."

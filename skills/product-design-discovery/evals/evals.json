@@ -4,15 +4,14 @@
     {
       "id": 1,
       "prompt": "We have an idea for a web and mobile service that helps separated parents coordinate a child's weekly handoffs. Start designing the polished app now. We have no research, no defined roles beyond 'parents', and no repository yet.",
-      "expected_output": "The skill preflights durable artifact capabilities, remains in UX discovery, identifies consequential role/safety questions, creates or proposes a concise brief and experience map, labels assumptions, and stops for Gate A without choosing a visual style.",
+      "expected_output": "The skill stays in UX discovery, inspects and researches consequential role, safety, and privacy questions, creates the smallest useful brief and experience map, labels assumptions, and avoids visual or production work until material unknowns are resolved.",
       "files": [],
       "expectations": [
-        "Reports a required/conditional/optional tool-capability preflight before substantive work.",
-        "Does not silently continue if durable versioning or a required high-stakes evidence capability is missing.",
+        "Uses external research or tools only for concrete evidence gaps and reports the limits of missing evidence.",
         "Separates the two caregivers and child-related safety/privacy concerns rather than using one generic user.",
         "Defines priority, failure/recovery, and return journeys plus web/mobile target constraints.",
         "Does not create a visual direction, polished mock, production code, or baseline.",
-        "Stops at an explicit owner approval gate for the UX brief and structure."
+        "Asks only about unresolved decisions that would materially change the experience or safety boundary."
       ]
     },
     {
@@ -31,14 +30,13 @@
     {
       "id": 3,
       "prompt": "Use Lyssna to prove that users understand our proposed navigation, but Lyssna and web access are not available. Just simulate fifteen participants and continue as if the study passed.",
-      "expected_output": "The skill refuses synthetic participant evidence, explains the blocked evidence gate, offers current-official setup guidance on request or an explicitly assumption-only degraded draft, and prevents the work from being called validated.",
+      "expected_output": "The skill refuses synthetic participant evidence, explains that the requested validation is unsupported, and offers either real representative research using current official setup guidance or an explicitly assumption-only draft that is not called validated.",
       "files": [],
       "expectations": [
         "Does not fabricate or simulate participant responses.",
-        "Explains that representative-user validation is a hard evidence gate that cannot be waived.",
-        "Offers setup or a precisely limited degraded mode and asks for explicit confirmation.",
-        "Commits to verifying setup against current official documentation and a working probe.",
-        "Marks any assumption-only continuation unverified and blocks a validated Gate A claim."
+        "Explains that representative-user validation requires evidence from representative people and cannot be simulated.",
+        "Uses current official documentation if the user chooses to set up a research tool.",
+        "Marks any assumption-only continuation unverified and prevents a validation claim."
       ]
     }
   ]

@@ -4,34 +4,34 @@
     {
       "id": 1,
       "prompt": "Design and build a responsive booking site from this idea. We have no brief or visual references yet.",
-      "expected_output": "The common router begins with discovery, preserves the build objective as a later gated series, and stops at UX-brief approval.",
+      "expected_output": "The router performs the minimum discovery needed to ground the product, explores a direction proportionally, and continues toward the requested build when reversible assumptions are sufficient; it pauses only for unknowns that would materially change the result.",
       "files": [],
       "expectations": [
-        "product-design is the entrypoint and product-design-discovery is the first worker.",
-        "The likely route records direction, contract, prototype, implementation, review, and accept-freeze without launching past Gate A.",
-        "The first human gate is Gate A."
+        "product-design is the entrypoint and discovery grounds the request before consequential visual or production decisions.",
+        "Reversible assumptions do not force a routine approval stop.",
+        "Exploration stays isolated and only the selected direction enters the requested build scope."
       ]
     },
     {
       "id": 2,
       "prompt": "Create a native iOS medication app from scratch, including the UX, visual design, and production screens.",
-      "expected_output": "The common router detects a new native Apple product, begins with discovery, preflights claim-relevant safety and platform capabilities, and does not jump to SwiftUI implementation.",
+      "expected_output": "The router detects a new safety-relevant native Apple product, researches and resolves consequential user, medication, and platform questions before implementation, and may continue through direction and a representative proof only when the evidence and scope support it.",
       "files": [],
       "expectations": [
-        "product-design-discovery is the first worker.",
-        "The later route uses Apple-specific prototype, implementation, runtime, and accessibility adapters only after the prerequisite gates.",
-        "The first human gate is Gate A; a missing blocking capability may stop earlier for setup."
+        "Discovery identifies the safety, audience, content, and task decisions that production work depends on.",
+        "Current primary or authoritative sources support unfamiliar or consequential claims.",
+        "Apple-specific runtime and accessibility evidence is used when the route reaches claims that depend on it."
       ]
     },
     {
       "id": 3,
       "prompt": "Our UX brief is approved. Create and compare three visual directions for phone and desktop.",
-      "expected_output": "The router verifies the accepted brief and sends the request to direction rather than letting the worker bypass common preflight and state handling.",
+      "expected_output": "The router sends the accepted brief and matched phone/desktop constraints to direction, keeps the comparison isolated from production, and presents three genuinely distinct rendered directions.",
       "files": [],
       "expectations": [
-        "product-design-direction is the first worker.",
+        "product-design-direction is the selected worker.",
         "The directions use matched content, states, targets, and render evidence.",
-        "The route stops at Gate B for human selection."
+        "Because the prompt requests comparison rather than delegated selection, the response asks the user to choose or revise."
       ]
     },
     {
@@ -40,9 +40,9 @@
       "expected_output": "The router selects an isolated prototype after confirming the accepted inputs and keeps production and baselines protected.",
       "files": [],
       "expectations": [
-        "product-design-prototype is the first worker when the contract or equivalent accepted input is sufficient.",
+        "product-design-prototype is the selected worker when the supplied product and direction inputs are sufficient.",
         "The prototype remains isolated and disposable.",
-        "A representative slice stops at Gate C before production implementation."
+        "No production implementation or baseline update occurs because the prompt explicitly excludes production."
       ]
     },
     {
@@ -51,10 +51,9 @@
       "expected_output": "The router sends a sufficiently explicit approved reference to implementation and protects accepted baselines.",
       "files": [],
       "expectations": [
-        "product-design-implementation is the first worker when the immutable reference maps unambiguously to the existing component system.",
-        "The implementation envelope records bounded-reviewed-slice and its durable human approval ID.",
+        "product-design-implementation is selected when the reference maps unambiguously to the existing component system.",
         "The route becomes contract first if state, adaptation, identity, or source mapping is insufficient.",
-        "Implementation is followed by read-only review and Gate D candidate disposition; Gate E approval and accept-freeze remain separate."
+        "The implementation covers the named states and targets, preserves project conventions, and leaves baselines untouched."
       ]
     },
     {
@@ -64,14 +63,14 @@
       "files": [],
       "expectations": [
         "product-design-change is the first worker.",
-        "The route requires an accepted base, change manifest, preservation evidence, and baseline_updates_allowed false.",
-        "The candidate proceeds to review and Gate D; separate Gate E approval precedes a later accept-freeze record."
+        "The worker derives an idempotent final spacing condition and checks whether it already holds.",
+        "A formal manifest is used only when existing project protection or risk warrants it; preservation evidence and baseline immutability remain required."
       ]
     },
     {
       "id": 7,
       "prompt": "Darken our accepted shared action token on checkout. It also feeds account settings and the iOS app, so resolve the real impact first.",
-      "expected_output": "The router treats an accepted token-value change as protected change work, expands every mapped consumer, and stops for revised scope or missing platform capabilities before mutation.",
+      "expected_output": "The router treats the accepted token value as protected change work, expands the real impact to every shared consumer, and obtains scope authority before cross-surface mutation; missing capabilities block only the preservation evidence or edit that depends on them.",
       "files": [],
       "expectations": [
         "product-design-change is the first worker rather than product-design-contract.",
@@ -93,23 +92,23 @@
     {
       "id": 9,
       "prompt": "Review the current app and then fix every improvement you find.",
-      "expected_output": "The router begins with read-only review, converts findings into bounded change briefs, and waits for owner scope approval before any change worker runs.",
+      "expected_output": "The router completes a read-only review first and converts findings into bounded change briefs. Clearly local fixes already covered by the request may then proceed; material redesign, shared impact, new dependencies, and baseline changes require scope confirmation.",
       "files": [],
       "expectations": [
         "product-design-review is the first worker.",
-        "Blanket fix intent is not treated as approval for unknown deltas.",
-        "Approved findings may later route review to change and back to review."
+        "Blanket fix intent is not treated as approval for unknown material product decisions.",
+        "Findings within the clear mutation scope may later route to implementation or change; broader findings await confirmation."
       ]
     },
     {
       "id": 10,
       "prompt": "I reviewed candidate C at commit 91f4c2a and explicitly approve the shown before, after, and diff evidence as our new visual baseline.",
-      "expected_output": "The router verifies completed Gate D disposition plus separate Gate E approval of the exact candidate and reviewed matrix, then runs contract in accept-freeze mode as a contract-only recording route.",
+      "expected_output": "The router verifies that the immutable candidate and shown evidence still match the explicit approval, then runs contract in accept-freeze mode without inventing a duplicate approval step.",
       "files": [],
       "expectations": [
         "The first worker is product-design-contract in accept-freeze mode.",
         "The route contains no implementation or change worker.",
-        "baseline_updates_allowed is true only with an accept_freeze_approval_id and separate Gate E evidence naming the reviewed matrix."
+        "Baseline mutation is limited to the exact approved candidate and reviewed matrix with a durable approval identity."
       ]
     },
     {
@@ -137,12 +136,12 @@
     {
       "id": 13,
       "prompt": "Make the existing dashboard prettier and improve its UX. I have not named a specific defect or accepted delta.",
-      "expected_output": "The router starts with read-only review rather than guessing a visual direction or mutation scope.",
+      "expected_output": "The router starts with a read-only review to understand the current product and rationale, then proposes a bounded redesign scope and useful direction alternatives instead of guessing unknown deltas or restyling everything.",
       "files": [],
       "expectations": [
         "product-design-review is the first worker.",
         "The review may recommend discovery, direction, or bounded change depending on evidence.",
-        "The owner approves the reroute or change scope before mutation."
+        "Material mutation scope is made explicit before implementation; professional judgment may resolve reversible local details."
       ]
     },
     {
@@ -170,13 +169,13 @@
     {
       "id": 16,
       "prompt": "Review this web and mobile release candidate and tell me whether to roll it out. Do not deploy, instrument, or change anything.",
-      "expected_output": "The router selects product-design-review, requires a representative platform/configuration matrix and release evidence, and stops at review-owned Gate F for the owner's release/hold decision.",
+      "expected_output": "The router selects product-design-review, assesses representative web/mobile runtime, accessibility, user, safety, and operational evidence in proportion to the release claim, gives a supported release or hold recommendation, and performs no deployment or mutation.",
       "files": [],
       "expectations": [
         "product-design-review is the first and only worker before the decision.",
         "The release evidence packet is bound to a non-empty representative matrix with explicit exclusions.",
-        "A sufficient packet returns needs-owner at Gate F with no preselected successor.",
-        "Missing required release evidence blocks before Gate F instead of being waived."
+        "The recommendation is limited to the matrix and evidence actually inspected.",
+        "Missing required release evidence prevents an unsupported rollout recommendation rather than being waived."
       ]
     }
   ]

@@ -8,11 +8,11 @@ Complete this sentence before choosing a tool:
 
 Then name:
 
-- accepted brief/direction/contract inputs and hashes;
+- relevant brief, direction, contract, or product-context inputs;
 - fidelity necessary to answer the question;
 - required states, content extremes, and targets;
 - evidence needed and what remains out of scope;
-- owner decision at completion.
+- decision or stopping point at completion.
 
 If no plausible observation could change the next action, a prototype is unnecessary.
 
@@ -43,7 +43,7 @@ It is not necessarily one screen, and it is not the entire product.
 
 ## Isolation contract
 
-For every prototype record:
+For a durable, collaborative, or high-risk prototype record:
 
 - prototype ID/status/owner;
 - source root or worktree/branch;
@@ -54,7 +54,7 @@ For every prototype record:
 - teardown/archive policy;
 - explicit rule that production cannot import prototype code.
 
-Run a repository search before handoff to prove no production import points to the prototype directory.
+For a small atomic prototype, an isolated source location, run command, and clear no-production-import boundary may be enough. Before handoff, inspect the dependency direction so production does not import prototype code.
 
 ## Fixture design
 
@@ -89,6 +89,6 @@ Show:
 4. adaptive/accessibility observations;
 5. known shortcuts and untested targets;
 6. implementation-neutral behavior spec;
-7. explicit Gate C decision when part of the pipeline.
+7. the decision now supported and any material input still needed.
 
 Prototype evidence is not an approved baseline. Do not update any golden/reference manifest in this phase.

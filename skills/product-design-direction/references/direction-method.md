@@ -25,7 +25,7 @@ Do not begin with style adjectives alone. “Calm, modern, blue” cannot govern
 
 ## Distinctness test
 
-Two candidates are distinct only when their silhouettes or information grouping remain recognizably different in grayscale and when labels are replaced with generic text. Require meaningful divergence across at least three dimensions, including hierarchy/composition.
+Candidates are distinct when they test materially different structural or visual hypotheses that remain meaningfully different beyond branding and palette. Grayscale, silhouette, or relabeling checks can help reveal false alternatives, but are diagnostic tools rather than universal pass/fail rules.
 
 Common false alternatives:
 
@@ -37,13 +37,13 @@ Common false alternatives:
 
 ## Proportional funnel
 
-1. Write four to six one-paragraph territories for a normal small product.
+1. Sketch enough terse territories to expose the meaningful design space.
 2. Remove duplicates, generic defaults, accessibility conflicts, and candidates that contradict fixed constraints.
-3. Select two or three finalists that maximize decision-relevant contrast.
-4. Render a representative thin slice for each with matched inputs.
-5. Refine each finalist enough to expose craft and system behavior, not merely a mood board.
+3. Select only the finalists that clarify a real tradeoff.
+4. Render comparable representative slices with matched inputs.
+5. Refine finalists enough to expose craft and system behavior, not merely a mood board.
 
-A bounded local style decision can use two finalists. A consequential identity may use more territories. Never force a large funnel when it will not improve the owner's decision.
+The number of options follows uncertainty and consequence. Never force a funnel or finalist count that will not improve the decision.
 
 ## Reference research
 
@@ -59,7 +59,7 @@ Build a vocabulary of principles—hierarchy, density, type contrast, interactio
 
 ## Candidate isolation
 
-Use stable IDs such as `DIR-001-A`. Keep each source, assets, render manifest, and charter together. Rejected directions remain recoverable in an archive after selection. Never merge candidate source trees before a human choice; otherwise later iterations inherit untraceable fragments.
+Keep each candidate's source, assets, renders, and concise rationale together. Use stable IDs and an archive when the work is durable or collaborative. Keep candidates separate until one working direction is selected so later iterations do not inherit untraceable fragments.
 
 ## Comparison packet
 
@@ -77,6 +77,6 @@ Then show a contact sheet before long rationale. Screenshot-first review reduces
 
 ## Selection discipline
 
-Recommend one, explain the tradeoff, and ask for an unaided owner decision. Record selection only when the owner names a candidate or a uniquely identified rendered revision. If the owner requests a hybrid, create and render it as a new candidate with provenance; do not treat a verbal combination as selected.
+Recommend one and explain the tradeoff. When the user delegates design judgment, select the strongest working direction; otherwise ask for a decision only when the alternatives represent a material choice. If a hybrid is requested, render it as a coherent new candidate rather than assuming incompatible parts will combine.
 
-Direction selection fixes visual intent. It does not freeze tokens, authorize production files, accept a prototype, or create baseline goldens.
+Selecting a working direction guides later design. It does not by itself authorize production outside the requested mutation scope, accept a prototype, or create baseline goldens.

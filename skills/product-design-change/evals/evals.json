@@ -4,26 +4,26 @@
     {
       "id": 1,
       "prompt": "Make the notification card 8 px tighter vertically on the inbox screen. Typography, interaction, other card variants, and every other screen must remain unchanged. The project has an accepted baseline and Playwright assertions.",
-      "expected_output": "Reproduces and hashes the accepted base, resolves the card and affected states/surfaces, creates a narrow approved manifest, patches only allowed source, runs affected and preservation checks, and leaves all goldens untouched.",
+      "expected_output": "Inspects the accepted/current card and its rationale, derives an idempotent final spacing condition, resolves affected states and consumers, applies the smallest allowed source patch, runs affected and preservation checks, and leaves all goldens untouched.",
       "files": [],
       "expectations": [
-        "Verifies the accepted ref and every protected baseline hash before editing.",
-        "Creates a machine-checkable manifest partitioning known surfaces into may-change and must-not-change.",
+        "Uses the accepted ref and protected baseline assertions when present, without requiring unrelated suite metadata.",
+        "Defines the allowed delta and must-not-change surfaces in working context or the project's existing manifest.",
         "Uses the smallest local semantic/source change instead of a global override.",
         "Runs matched before/candidate/diff and preservation checks with existing Playwright assertions.",
-        "Fails if any baseline/reference file or out-of-scope production file changes."
+        "Fails if any baseline/reference file or out-of-scope production file changes, and a second run produces no further spacing change."
       ]
     },
     {
       "id": 2,
       "prompt": "Darken --color-action-primary on the checkout page only. It is a shared semantic token used by account settings and the iOS app too, but don't bother testing those because I only mentioned checkout. Style Dictionary and the iOS simulator are currently unavailable.",
-      "expected_output": "Expands impact to every shared consumer, reports token compiler/iOS runtime gaps using suite statuses and setup steps, and stops before production writes. Any confirmed planning, read-only review, or isolated proof is rerouted through a fresh worker envelope rather than applied as a source-only change.",
+      "expected_output": "Expands impact to every shared consumer, makes the cross-surface scope explicit, and stops before an unsafe shared production change when the canonical compiler or iOS preservation evidence is unavailable; it may still provide a bounded plan or isolated proof without ceremony.",
       "files": [],
       "expectations": [
         "Resolves the semantic token to every component, surface, generated output, and web/mobile target.",
         "Does not hide a shared semantic change behind a checkout-only override.",
-        "Marks the compiler and iOS runtime missing-blocking for the protected change instead of degrading a hard runtime gate.",
-        "Provides setup steps and waits for explicit scope/capability confirmation; a reduced non-production goal is router-rerouted to review, contract planning, or an isolated prototype.",
+        "Explains the effect of the unavailable compiler and iOS runtime on safe mutation and preservation claims.",
+        "Provides setup or an equivalent existing-tool path only when needed, while allowing an honest non-production plan or isolated proof.",
         "Does not modify source or baselines and does not call untested consumers preserved."
       ]
     },
@@ -35,7 +35,7 @@
       "expectations": [
         "Never runs snapshot-update commands or edits Playwright/Maestro goldens.",
         "Never records the agent as human approver.",
-        "Keeps baseline_updates_allowed false and treats any protected hash change as failure.",
+        "Treats any protected hash change as failure.",
         "Presents the candidate as an intentional delta from the still-accepted baseline.",
         "Recommends independent review and a later explicit contract accept-freeze operation."
       ]

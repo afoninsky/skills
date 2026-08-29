@@ -1,33 +1,92 @@
 # Product Design skill suite
 
-The Product Design suite gives an agent one stable entrypoint for creating and evolving web and mobile interfaces without relying on chat memory for visual consistency.
-
-Use:
+`product-design` is the public entrypoint for designing, redesigning, prototyping, implementing, and reviewing web and mobile interfaces. It routes the request to the smallest useful specialist or sequence while keeping the user's objective and mutation scope authoritative.
 
 ```text
-$product-design <your original request>
+$product-design <your request>
 ```
 
-The entrypoint inspects the repository and current design state, checks the applicable tool capabilities, and routes one focused worker or a gated series. You do not need to choose the worker yourself.
+## Working model
 
-## Skills
+The suite is intentionally proportional:
+
+- Inspect the current product, runtime, design system, source, tests, and project conventions before changing anything.
+- Treat a narrow request as a closed-world change. Modify only the named element and the dependencies required to make it correct; a repeated run should be a no-op.
+- For greenfield work or a broad redesign, explore a small range of genuinely different structural and visual approaches. Surface alternatives when they reveal a useful tradeoff; otherwise choose the strongest coherent direction and explain why.
+- Keep exploration separate from mutation. Alternative concepts and prototypes stay isolated; only the selected approach enters the authorized product scope.
+- Research concrete gaps when the audience, domain, platform behavior, safety, regulation, or current facts are unfamiliar. Prefer primary research, standards, official platform guidance, and authoritative domain sources.
+- Reuse the project's established framework, components, tokens, tests, and tools. Add a dependency or service only for a real unmet need and with the required authority.
+- Inspect the result in its real medium and run checks proportional to the requested outcome. Missing evidence limits the claim; it does not prevent unrelated useful work.
+
+Clear ordinary requests do not require a formal pipeline or approval at every phase. The router may continue across workers when the decisions are clear, the request authorizes the writes, and the mutation scope does not expand. It pauses when a material product decision, broader production impact, or separately protected action needs the user.
+
+## Specialists
 
 | Skill | Responsibility |
-|---|---|
-| `product-design` | Common entrypoint, router, dependency preflight, state transitions, and human gates |
-| `product-design-discovery` | Users, jobs, flows, content hierarchy, requirements, states, and research |
-| `product-design-direction` | Visual reference research, distinct directions, comparison, and selection evidence |
-| `product-design-contract` | Principles, semantic tokens, components, adaptive rules, source map, and explicit baseline freeze |
-| `product-design-prototype` | Isolated wireframes, mocks, interaction proofs, and representative slices |
-| `product-design-implementation` | Approved design to real framework-native components and screens |
-| `product-design-change` | Baseline-protected, impact-mapped, surgical iteration |
-| `product-design-review` | Read-only visual, UX, system-drift, accessibility, and periodic review |
+| --- | --- |
+| `product-design` | Public entrypoint, proportional routing, shared scope and quality principles |
+| `product-design-discovery` | Users, jobs, flows, content, states, constraints, and relevant research |
+| `product-design-direction` | Distinct visual and interaction directions, comparison, and convergence |
+| `product-design-contract` | Durable principles, tokens, component states, source maps, and accepted identities |
+| `product-design-prototype` | Isolated wireframes, mocks, interaction proofs, and runnable decision slices |
+| `product-design-implementation` | Clear or approved designs implemented in the real product architecture |
+| `product-design-change` | Narrow, impact-aware changes that preserve everything outside the intended delta |
+| `product-design-review` | Read-only visual, UX, accessibility, fidelity, and design-system review |
 
-Workers are directly invokable for advanced or automated use, but the normal interface is `$product-design`.
+Workers can be invoked directly for focused or automated work, but `$product-design` is the normal interface.
+
+## Typical requests
+
+### Start from an idea
+
+```text
+$product-design Design and build a responsive booking product for independent music teachers. Choose a distinctive direction and make reasonable assumptions.
+```
+
+The router can move through discovery, direction, prototype, and implementation in one task when the brief is sufficiently clear. It explores proportionally, keeps alternatives isolated, and implements only the chosen approach.
+
+### Make a local change
+
+```text
+$product-design Reduce vertical spacing in the checkout summary only. Preserve typography, color, order, behavior, and every other surface.
+```
+
+The change worker identifies the real component and shared dependencies, checks whether the requested result already exists, applies the smallest patch, and verifies the affected and protected behavior. Formal manifests and baseline guards are used when the project or risk warrants them, not as ceremony for every edit.
+
+### Review without modifying
+
+```text
+$product-design Review the current web and mobile UI for design-system drift and accessibility risks. Do not fix anything.
+```
+
+Review stays read-only and separates observed facts, professional judgment, and unsupported claims. Findings become implementation or change work only when the request provides mutation authority for a bounded scope.
+
+### Resume a formal engagement
+
+```text
+$product-design Direction B is approved. Continue from the recorded design state.
+```
+
+For a durable multi-stage engagement, the router resumes named artifacts and accepted identities rather than reconstructing decisions from chat. Formal routing envelopes, evidence gates, and source maps remain available when they protect resumability or high-risk decisions.
+
+## Protected boundaries
+
+- Review does not modify the product.
+- Exploration, direction, and prototypes do not become production or accepted state by momentum.
+- Implementation and change never overwrite accepted references or visual baselines to make a candidate pass.
+- Only `product-design-contract` in explicit `accept-freeze` mode may record a named, reviewed, human-approved candidate as the accepted baseline. An updated snapshot, passing test, or agent recommendation is not acceptance.
+- Deployment, analytics or instrumentation changes, participant contact, account connection, external publication, and spend require separate authority.
+- Agent critique and synthetic personas may produce hypotheses; they are not representative-user research.
+
+## Tools and evidence
+
+Use repository-native and platform-native tools first. Mature tools such as existing browser tests, component previews, device tests, accessibility inspectors, and deterministic visual comparisons are valuable when the outcome depends on them, but the suite does not require a historical preferred brand merely because it is documented.
+
+When introducing or replacing a tool, compare the capability it provides, maintenance, portability, evidence quality, migration risk, and rollback. Verify time-sensitive setup against current official documentation. MCP and SaaS integrations are optional adapters; accepted design state should remain in durable project artifacts.
 
 ## Install
 
-Install the complete repository so the router can find every worker:
+Install the complete repository so the router can discover every specialist:
 
 ```bash
 npx skills add afoninsky/skills
@@ -38,251 +97,3 @@ For a local checkout:
 ```bash
 npx skills add /path/to/skills
 ```
-
-Review what will be installed first when required by your runtime:
-
-```bash
-npx skills add afoninsky/skills --list
-```
-
-The portable skill format does not declare nested dependencies. The `product-design` entrypoint therefore preflights the selected worker and stops with installation instructions if it is missing.
-
-## Typical requests
-
-### Start from an idea
-
-```text
-$product-design Design and build a responsive booking product for independent music teachers. Start from scratch.
-```
-
-The router records the whole objective but begins with discovery. It will stop at the UX brief gate before visual direction, at direction selection before freezing rules, and at representative-slice approval before production propagation.
-
-### Implement an approved design
-
-```text
-$product-design Convert the approved phone and tablet mock into reusable Flutter widgets. Preserve its hierarchy and use the existing app architecture.
-```
-
-The router verifies the approved reference and contract, detects the Flutter implementation, checks the available preview/runtime/accessibility capabilities, and launches implementation only when prerequisites exist.
-
-### Make a local change
-
-```text
-$product-design Reduce vertical spacing in the checkout summary only. Do not change typography, colors, ordering, other components, or approved baselines.
-```
-
-The router selects the change worker. It resolves the affected component and tokens, writes an allowed-change manifest, renders the accepted base, applies the smallest patch, and rejects undeclared files or visual diffs.
-
-### Audit without modifying
-
-```text
-$product-design Review the current web and mobile UI for design-system drift and accessibility risks. Do not fix anything.
-```
-
-The router launches the read-only review worker. Findings can become later change requests only after authorization.
-
-### Resume
-
-```text
-$product-design Direction B is approved. Continue.
-```
-
-The router reads `design/project-design.json`, verifies the recorded candidate and approval, and advances to contract work instead of reconstructing the direction from conversation.
-
-## Pipeline and gates
-
-```text
-Original request
-  → product-design router
-  → discovery
-  → Gate A: approve UX brief and structure
-  → direction
-  → Gate B: select one visual direction
-  → contract
-  → prototype representative slice
-  → Gate C: approve the slice on representative targets
-  → implementation
-  → review
-  → Gate D: accept, reject, or revise the named reviewed candidate
-  → Gate E: explicitly approve that exact candidate and reviewed matrix as the new accepted identity
-  → contract `accept-freeze`: record the approved identity and baseline hashes
-```
-
-When release readiness or a research/learning action is in scope, `product-design-review` owns the evidence packet and stops separately:
-
-```text
-review release or learning evidence
-  → Gate F: owner releases/holds, or approves/revises/rejects the named research or learning action
-```
-
-Gate D acceptance is not Gate E authorization. Gate E must identify the immutable reviewed candidate, its exact representative matrix and material diffs, and an approval ID. `accept-freeze` records that already-made decision; it does not ask for or manufacture approval. Gate F is not implied by visual acceptance or a freeze, and review never deploys, instruments, or contacts participants on the owner's behalf.
-
-Later changes use:
-
-```text
-change impact and manifest
-  → surgical patch
-  → deterministic review
-  → human approval or rejection
-  → explicit `accept-freeze` only when the approved baseline intentionally changes
-```
-
-Not every request uses every phase. The router chooses the earliest missing prerequisite and the shortest valid route. New, multi-surface, or high-impact production work requires the representative prototype and Gate C. A direct implementation route is reserved for an immutable, named, explicitly bounded reviewed slice with an approval ID.
-
-### Representative platform matrices
-
-Direction, contract, and prototype profiles always name at least one applicable platform class: `web`, `native-mobile`, or `shared-web-wrapper`. This is not a demand to test every device. It means the route includes at least one representative configuration for every materially distinct implementation or adaptive-behavior class it claims, with explicit exclusions. A matrix row records the target/runtime, surface and state, viewport or device/window class, input, text/display scale, theme/locale, and required evidence.
-
-Use `shared-web-wrapper` when one responsive web UI is packaged in a native shell. Its matrix contains both a real-browser row for the shared UI and a packaged-app row for WebView, safe-area, keyboard, lifecycle, bridge/permission, and native-back behavior. Use `web` plus `native-mobile` when the UI implementations are genuinely independent.
-
-Gate B compares every direction on the same representative matrix. Gate C exercises the named slice on that matrix. Gates D and E bind their decision and approval to the reviewed matrix, and Gate F binds release or learning claims to the actual release, population, platform, and configuration coverage. A narrower matrix supports only a narrower claim.
-
-## Tool dependency behavior
-
-The suite knows the approved free-first tool stack, but depends on capabilities rather than brands. It reuses an established project alternative when that alternative produces equivalent durable evidence.
-
-The canonical rationale and comparison record is [tool-selection-baseline.md](../skills/product-design/references/tool-selection-baseline.md). Read it when setting up a new product, proposing a dependency, accepting a project-specific equivalent, or replacing a recommended tool. It records:
-
-- where each tool belongs in the web/mobile pipeline;
-- what non-replaceable evidence it contributes;
-- why it passed the maturity, free-capacity, portability, and functionality filters;
-- important limits and when not to add it;
-- previously assessed alternatives;
-- the representative pilot, migration, rollback, and owner decision required for replacement.
-
-The baseline is dated because prices, quotas, product ownership, security, and feature maturity change. Before setup or substitution, the agent revalidates the applicable official sources. It does not silently switch tools because a new product advertises AI generation or an MCP interface.
-
-### Core and conditional tools
-
-| Capability | Approved default | Typical use |
-|---|---|---|
-| Versioning and rollback | Git and optional GitHub protected checks | contracts, implementation, changes, acceptance |
-| Structured visual source | Penpot Free; MCP on demand | direction, prototype, selected-layer context |
-| Semantic styles | CSS variables or DTCG JSON | accepted design rules |
-| Multiple token outputs | Style Dictionary | multi-platform, multi-theme, or generated formats |
-| Component states | Existing state route, Storybook, RN Storybook, Widgetbook, Xcode or Compose previews | representative components and edge states |
-| Web runtime/goldens | Playwright Test | browser behavior, responsive matrix, visual regression |
-| Mobile runtime/goldens | Maestro CLI and native tests where needed | installed app flows and screenshots |
-| Accessibility | axe/Playwright and platform-native inspection/tests | automated and assisted evidence |
-| Web review build | Existing preview host or Cloudflare Pages Free | human candidate review |
-| Mobile review build | Firebase App Distribution or existing beta channel | real-device tester access |
-| Physical-device sample | Firebase Test Lab or existing device lab | significant mobile candidate evidence |
-| Pre-release users | Moderated testing or Lyssna Free | comprehension and task evidence |
-| Post-launch behavior | Microsoft Clarity | consented behavior evidence for a named decision |
-| Live agent access | Penpot, Maestro, Storybook, Playwright, or Chrome DevTools MCP | optional scoped interaction only |
-
-MCP servers are adapters. Losing one must not lose the design: exports, token source, stories/previews, test flows, screenshots, and approvals remain in Git.
-
-### Replacing a tool
-
-For a durable engagement, record the proposal under `design/decisions/tool-substitutions/`. Compare the candidate against the current tool's role rather than its marketing checklist: sustainable capacity across all maintained projects, maturity, required platform/function coverage, deterministic evidence, portability/exit, security/privacy, migration loss, and rollback. Run both tools on the same representative web or mobile slice before changing a canonical source, evidence engine, CI check, external review/distribution service, participant-research service, or analytics dependency.
-
-An optional MCP adapter can use a shorter comparison, but removing or changing it must leave the canonical Git artifacts and authorization boundaries intact. Existing established project tools should remain when they already satisfy the activated capability; conformity alone is not a migration reason.
-
-### Preflight statuses
-
-Before a worker uses an applicable capability, it records one of:
-
-- `available`
-- `missing-blocking`
-- `missing-degradable`
-- `unknown`
-- `not-applicable`
-
-The suite never silently falls back.
-
-For execution, `design/toolchain.json.checked_at` is a timezone-aware ISO-8601 timestamp certifying that all applicable statuses were actually probed no more than four hours ago and no more than five minutes in the future. Do not refresh the timestamp without rechecking the selected capabilities. Re-probe sooner whenever phase, platform, claim, scope, target/build identity, credentials/access, tool version, or observed status changes.
-
-For a missing capability it explains:
-
-1. what is missing;
-2. why the selected phase needs it;
-3. what work remains possible;
-4. what evidence and claims become unavailable;
-5. step-by-step setup instructions tailored to the project and checked against current official documentation;
-6. whether it needs setup authorization or confirmation of a precisely bounded degraded mode.
-
-The agent waits for the answer. It does not install dependencies, connect an account, change CI, expose a server, or add analytics without permission.
-
-### Degraded mode
-
-A confirmed degraded route may still produce useful read-only review, contract planning, or an isolated lower-fidelity prototype when that new route has its own valid capability profile. It is not a way to pass a gate or to let implementation/change write unverified production source.
-
-Examples:
-
-- No Penpot: the user may approve an isolated code-rendered mock or annotated-reference workflow when its renderer/capture path is proven, but structured selected-layer editing is unavailable.
-- No Playwright for a protected web implementation/change: that production worker stops before writing. The router offers setup or a fresh read-only review, contract-planning, or isolated-prototype route; protected web acceptance remains `Not evidenced`.
-- No Maestro/simulator or native accessibility path for a mobile implementation/change: that production worker stops before writing. A confirmed non-production route remains explicitly separate; installed-app and accessibility evidence remain `Not evidenced`.
-- No representative users: agent critique remains heuristic and cannot be called usability validation.
-- No consent/masking decision: session replay is not installed.
-
-## Project artifacts
-
-The default structure is:
-
-```text
-design/
-  project-design.json
-  toolchain.json
-  brief.md
-  experience-map.md
-  contract/
-    principles.md
-    components.md
-    content.md
-    responsive-and-adaptive.md
-    source-map.json
-    tokens/
-  decisions/
-    selected-direction.md
-    changes/
-    reviews/
-  references/
-    approved/
-    archive/
-  prototypes/
-  baselines/
-    manifest.json
-```
-
-Existing repository conventions take precedence. Tests and screenshots may remain beside their framework tests; the manifest points to them.
-
-`project-design.json` is the compact recovery spine. It records the original-prompt digest, paths, and hashes rather than repeating long briefs. `source-map.json` maps tokens and components to affected surfaces and platforms. Per-change manifests declare what may and must not change.
-
-## Strict baseline rule
-
-Only `product-design-contract` in explicit `accept-freeze` mode may update accepted baseline identity.
-
-Acceptance requires:
-
-- a named candidate;
-- reviewed before/after/diff evidence;
-- a Gate D candidate decision;
-- separate Gate E human approval of the exact named candidate and reviewed matrix;
-- exact Git ref and environment identity;
-- a following freeze operation that records, but does not create, that approval.
-
-Implementation and change workers cannot update approved screenshots. “Update snapshots” alone is not approval.
-
-## Platform behavior
-
-The suite detects the implementation rather than imposing one:
-
-- Web frameworks use their existing components/state route or Storybook plus Playwright.
-- React Native uses framework states plus Maestro/native tests.
-- Flutter uses Widgetbook/widget tests when useful plus Maestro/native tests.
-- Apple UI uses Xcode previews, XCTest/XCUITest, and platform accessibility tools.
-- Android UI uses Compose previews/UI Check or layout fixtures plus instrumentation and TalkBack checks.
-- A PWA or Capacitor-style wrapper keeps one web UI source and adds packaged-app verification; it does not create a duplicate native component system.
-
-## Recovering from drift
-
-When unexpected diffs appear:
-
-1. stop the active change;
-2. preserve actual/diff artifacts;
-3. compare with the accepted Git ref and source map;
-4. restore or reproduce the accepted base in an isolated branch/worktree;
-5. revise the change manifest if the true dependency surface is broader;
-6. reapply only the intended change;
-7. never repair drift by asking the model to remember the old design.

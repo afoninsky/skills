@@ -1,6 +1,6 @@
 # Experience map
 
-Status: Draft | Candidate for Gate A | Accepted
+Status: Draft | Working | Accepted | Superseded
 Related brief:
 
 ## Entry triggers

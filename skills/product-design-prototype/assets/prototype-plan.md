@@ -1,7 +1,7 @@
 # Prototype plan
 
 Prototype ID:
-Status: Draft | Runnable | Candidate for Gate C | Approved | Rejected | Archived
+Status: Draft | Runnable | Decision-ready | Adopted as design evidence | Rejected | Archived
 Related request:
 
 ## Decision question
@@ -36,14 +36,14 @@ Related request:
 - Run command:
 - Archive/teardown plan:
 
-## Capability preflight
+## Needed capabilities and evidence limits
 
-- Toolchain record:
-- Degraded capabilities/confirmation IDs:
-- Hard evidence blockers:
+- Existing tools used:
+- Missing or substituted capabilities:
+- Claims or targets not evidenced:
 
 ## Decision authority
 
 - Permitted writes:
 - Publication/distribution authority:
-- Gate C owner:
+- Material decision owner, if needed:

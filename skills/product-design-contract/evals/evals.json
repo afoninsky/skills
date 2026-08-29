@@ -4,26 +4,26 @@
     {
       "id": 1,
       "prompt": "Direction C is selected for our responsive React product. Turn it into a durable contract for desktop, narrow browser, and the same web UI packaged through Capacitor on Android. We have plain CSS variables and Playwright but no token compiler or Storybook.",
-      "expected_output": "Encodes one Git-owned contract and shared web/mobile source map, keeps CSS variables rather than adding unnecessary infrastructure, preflights Playwright and packaged-app evidence, and leaves baselines draft until explicit human acceptance.",
+      "expected_output": "Encodes one repository-owned contract and shared web/mobile source map, keeps the established CSS-variable authority rather than adding unnecessary infrastructure, uses existing browser and packaged-app evidence where relevant, and leaves baselines untouched until explicit human acceptance.",
       "files": [],
       "expectations": [
         "Detects one web UI source plus an additional packaged Android verification target rather than creating a native component system.",
         "Uses existing CSS variables and does not add Style Dictionary or Storybook without a demonstrated need and approval.",
         "Creates principles, component states, adaptive rules, and a token-to-component-to-surface source map.",
-        "Preflights relevant runtime and accessibility capabilities and reports any unavailable evidence before continuing.",
+        "Uses relevant runtime and accessibility capabilities proportionally and reports unavailable evidence without blocking unrelated contract work.",
         "Does not create or update an accepted baseline without explicit candidate acceptance."
       ]
     },
     {
       "id": 2,
       "prompt": "Our design tokens feed CSS, Swift, and Android resources, but hand-edited copies have drifted. Re-architect the design contract. Style Dictionary is not installed and the iOS simulator is unavailable today; just make reasonable assumptions and call the outputs synchronized.",
-      "expected_output": "Inventories current authorities, identifies DTCG/compiler and iOS runtime as relevant missing capabilities, provides setup paths, and stops or requests explicit planning-only degradation approval without claiming synchronization or platform evidence.",
+      "expected_output": "Inventories current authorities and rationale, proposes one canonical multi-output contract, identifies the compiler and iOS runtime as necessary to prove synchronization, and does not claim synchronized outputs until deterministic generation and platform evidence exist.",
       "files": [],
       "expectations": [
         "Inventories every current token authority and generated output before proposing a canonical source.",
         "Treats a deterministic multi-output compiler as conditional and material for the requested synchronization.",
-        "Reports the missing compiler and iOS runtime with impact and step-by-step recovery instructions.",
-        "Offers only a planning/audit degraded mode requiring explicit confirmation and labels output verification Not evidenced.",
+        "Reports the missing compiler and iOS runtime with their exact impact and gives current official recovery guidance only when setup is selected.",
+        "May complete a contract plan or safe authority cleanup while labeling output synchronization unverified.",
         "Does not claim generated outputs are synchronized or freeze them."
       ]
     },
@@ -36,7 +36,7 @@
         "Does not treat an agent reviewer, passing tests, or a snapshot-update request as human acceptance.",
         "Does not write any approved reference, golden, baseline manifest, or hash.",
         "Asks for a named immutable candidate and matched observed diffs.",
-        "Keeps unavailable hard-gate evidence explicitly Not evidenced.",
+        "Keeps unsupported evidence claims explicit.",
         "Recommends review followed by an explicit accept-freeze operation."
       ]
     }

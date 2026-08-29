@@ -1,158 +1,94 @@
 # Routing and handoffs
 
+Use this protocol for a durable multi-worker engagement, automation that needs machine-readable state, resuming across context loss, or an accepted-baseline transition. Ordinary atomic requests need only a concise working scope and handoff.
+
 ## Routing model
 
-Treat routing as a state transition, not keyword matching. Consider:
+Route by the unresolved decision:
 
-- requested outcome;
-- repository readiness;
-- accepted artifact identity;
-- design uncertainty;
-- mutation authority;
-- scope and affected surfaces;
-- target platforms and shared implementation;
-- applicable capability evidence;
-- next human gate.
+- users, jobs, flows, content, or consequential domain knowledge → discovery;
+- visual or interaction grammar → direction;
+- durable tokens, components, source ownership, or accepted identity → contract;
+- an isolated proof of a design question → prototype;
+- a clear new product surface → implementation;
+- a bounded delta to existing or accepted UI → change;
+- quality, fidelity, accessibility, drift, or release evidence → review.
 
-The original prompt always accompanies the routing envelope. The envelope carries its UTF-8 SHA-256, and every handoff repeats that digest so compaction or resume cannot silently replace the request.
+Choose the smallest route that can deliver the requested outcome. The user's request supplies authority for its stated exploration and mutation scope. Continue through a sequence when decisions are clear, tools are adequate, and writes stay within that scope. Pause only for a material unknown, scope expansion, consequential external action, or protected acceptance decision.
 
-## Modes
-
-- **Atomic:** one bounded worker, such as discovery research, read-only review, or a protected local change.
-- **Pipeline:** an ordered series for a broad objective, executed only as far as the next gate.
-- **Resume:** continue from accepted hashes and `exact_next_action`.
-- **Reroute:** new instruction changes the sequence; record what it supersedes.
-
-## Entry-point precedence
-
-A raw end-user UI/UX request belongs to `product-design` unless the user explicitly names a worker or the invocation includes a valid router-issued routing envelope. Worker-domain words such as “audit,” “prototype,” “implement,” “tokens,” or “change spacing” do not bypass the router. The router may choose an atomic one-worker route, but it still owns preflight, accepted-state inspection, authority, gates, and handoff validation.
-
-## Allowed transitions
-
-Normal transitions are:
+Workers may be used atomically or in combinations such as:
 
 ```text
-discovery → direction | prototype
-direction → contract
-contract → prototype | implementation | review | change
-prototype → review | implementation
-implementation → review
-change → review
-review → change | contract
-reviewed candidate → stop at Gate D for owner accept/reject/revise
-Gate D acceptance → router stops at Gate E for explicit approval of the exact candidate and reviewed matrix
-Gate E approval → contract:accept-freeze
-contract:accept-freeze → stop after recording the approved identity; any later work starts in a fresh router envelope
-review release/research/learning packet → stop at Gate F for the owner decision
+discovery → direction → prototype → implementation → review
+direction → contract → implementation
+review → bounded change → review
+reviewed candidate → contract:accept-freeze
 ```
 
-An explicitly authorized disposable evaluation or sandbox may enter `prototype` directly as an atomic autonomous exploration and finish with `gate: null`, no recommended successor, and no accepted artifact mutation. This is not a shortcut into implementation. Any later adoption starts a fresh normal route with the required brief, direction, contract, review, and owner gates.
+These are useful paths, not mandatory pipelines. Skip resolved phases and do not create a worker handoff solely because a phase exists.
 
-A worker may run alone when its prerequisites already exist. Gate D acceptance cannot be reused as Gate E approval unless the user subsequently makes the separate, explicit Gate E decision naming the reviewed candidate and matrix. After accept-freeze records Gate E, the router may select any worker whose prerequisites and authority fit the next request, but that selection is a new route rather than a successor inside the baseline-mutating envelope. Gate F is review-owned and has no preselected successor. A transition outside this list requires a recorded reroute reason and must not bypass an owner gate.
+## Preserve identity proportionally
 
-## Routing envelope
+For simple work, keep the objective, intended delta, must-preserve list, assumptions, and exact next action in working context.
 
-Use [the routing-envelope template](../assets/routing-envelope.json). Required concepts:
+Use a durable routing record when compaction, automation, multiple agents, protected artifacts, or resumability makes identity important. In the project's existing format, include only relevant fields:
 
-- stable request ID;
-- ordered remaining route and reason; the first item is always the current worker;
-- current phase and mode;
-- requested scope and mutation authority;
-- original-prompt digest plus accepted input IDs, paths, and SHA-256 hashes;
-- fixed constraints, assumptions, and unknowns;
-- applicable platforms;
-- capability-preflight record and any explicit degradation confirmation IDs;
-- writes allowed and protected paths;
-- stop condition and owner gate;
-- implementation entry basis and approval ID when implementation is current;
-- baseline updates fixed to false except explicit `accept-freeze`.
+- request or decision ID;
+- original objective and, when useful, its digest;
+- exploration and mutation scope;
+- accepted inputs or comparison state;
+- fixed constraints, assumptions, and material unknowns;
+- affected targets and shared ownership;
+- allowed writes and protected artifacts;
+- evidence needed for the next claim;
+- current worker and exact stopping condition.
 
-## Worker handoff
+Do not create envelope, toolchain, or project-state files for a routine request merely to satisfy this suite.
 
-Use [the worker-handoff template](../assets/worker-handoff.json). Every worker reports:
+## Handoffs
 
-- `complete`, `needs-owner`, `blocked`, or `failed`;
-- exact input identity;
-- artifacts created or changed;
-- production mutations;
-- evidence and missing evidence;
-- tool degradation accepted for this run;
-- baseline-change status;
-- current gate;
-- recommended next worker;
-- exact next action.
+A useful handoff states:
 
-The router independently validates the recommendation. A worker does not authorize its successor.
+- outcome and status;
+- artifacts or production files changed;
+- explored alternatives not committed;
+- evidence run and missing evidence;
+- scope preservation and baseline status;
+- assumptions and limitations;
+- next decision or action.
 
-Before launch, validate and bind the envelope to its fresh capability record:
+The router validates that a successor does not broaden authority, hide missing evidence, or mutate a protected baseline.
+
+Formal projects already using the suite's legacy A–F envelope schema may adapt the legacy [routing-envelope](../assets/routing-envelope.json) and [worker-handoff](../assets/worker-handoff.json) assets and use the bundled route and toolchain validators. Those assets intentionally default to Gate A and a `design/toolchain.json` record for compatibility; do not copy those defaults into a new proportional engagement. The schema records some decisions in separate envelopes and applies stricter execution preflight than ordinary routing; a single clear user instruction may still supply multiple explicit decisions without a duplicate conversation turn. The validators preserve compatibility for those projects and do not prove design quality:
 
 ```text
-python3 <product-design-skill-directory>/scripts/validate_route.py <routing-envelope-path> --toolchain <toolchain-path> --for-execution
+python3 <product-design-skill-directory>/scripts/validate_route.py <routing-envelope> --toolchain <toolchain> --for-execution
+python3 <product-design-skill-directory>/scripts/validate_route.py <routing-envelope> --toolchain <toolchain> --handoff <worker-handoff>
 ```
-
-This execution mode runs the capability validator as well as the phase/platform/gate binding checks. After the worker returns, validate envelope and handoff together with `--handoff <worker-handoff-path>`; the next worker must receive a newly probed profile and execution-bound envelope. Enforce:
-
-- `input_hashes.original_prompt` and every accepted input hash match the envelope;
-- review is read-only, production mutations have bounded authority, and non-production workers report none;
-- a handoff gate is null or A–F, matches `owner_gate`, and uses `needs-owner`;
-- blocked or failed work recommends no successor;
-- a recommendation is a known allowed transition and matches the declared next route item;
-- every degraded capability names a confirmation ID authorized by the envelope;
-- baseline mutation occurs only in a completed contract `accept-freeze` handoff.
-
-A gate prevents advancement. After explicit approval, create a new envelope with the approved successor as its first route item, bind the approval ID, rebuild capability preflight, and validate again. Gate E is a router boundary: once the owner approves the exact Gate D-reviewed identity, the new envelope contains only contract `accept-freeze`. Gate F remains at review with `recommended_next_worker: null` until the owner decides.
 
 ## Ambiguous requests
 
-### Discovery or review
+- **Discovery or review:** unresolved product definition routes to discovery; assessment of an existing experience routes to review.
+- **Direction or prototype:** visual/interaction language routes to direction; feasibility or behavior proof routes to prototype.
+- **Implementation or change:** a clear new surface routes to implementation; modifying current or accepted behavior/design routes to change.
+- **Review and fix:** review first. Apply only findings already covered by a clear mutation scope; confirm material redesign, shared impact, dependencies, or baseline changes.
+- **Vague improvement:** inspect the current product and rationale before mutation, then form bounded findings and useful direction alternatives.
+- **Shared dependency:** expand analysis and verification to real consumers. Ask before mutation when that expands the user's scope.
+- **Approved design to code:** implement directly when the design and states are clear enough; use direction, contract, or prototype only for material unresolved decisions.
+- **Autonomous design:** a broad or greenfield request may delegate reversible design choices. Explore proportionally, select a working direction, and implement only within the named scope.
 
-- Users, jobs, product flow, information architecture, content needs, and required states → discovery.
-- Quality, consistency, fidelity, accessibility, or performance of an existing candidate/runtime → review.
+## Protected acceptance
 
-### Direction or prototype
+Implementation and change never update accepted references or baselines. Snapshot regeneration, passing tests, agent judgment, and implied enthusiasm are not acceptance.
 
-- Aesthetic language, brand fit, hierarchy grammar, visual references, and distinct options → direction.
-- Interaction behavior, layout feasibility, state transitions, or a representative proof → prototype.
-
-### Autonomous isolated exploration
-
-Route directly to an atomic prototype only when the user explicitly asks for an isolated evaluation, sandbox, throwaway concept, or disposable prototype; authorizes the agent to choose reversible assumptions and visual direction; and does not authorize production or acceptance. The routing envelope records `design-artifacts-only`, the synthetic or uncertain facts, the exact target matrix, and `owner_gate: null`. If those conditions are absent, use the normal earliest-prerequisite route.
-
-### Implementation or change
-
-- New approved component/surface following the existing contract → implementation.
-- Any edit that may alter an accepted component, token, surface, behavior, or golden → change.
-
-### Review and fix
-
-Run review first. If findings are local and mutation authority is explicit, route each approved finding through change. If a finding reopens visual direction, content hierarchy, navigation, or shared system rules, stop for the relevant gate.
-
-### Existing product with a vague improvement request
-
-“Make it prettier,” “improve the UX,” or “fix the design” starts with read-only review. Treat blanket fix intent as mutation authority in principle, not approval for unknown deltas. Produce bounded change briefs and obtain owner confirmation before change. Reopen discovery or direction only when findings show foundational decisions are unresolved.
-
-### Shared token or component
-
-Changing the value or behavior of an accepted shared token or component routes to change and expands to every mapped consumer. Replacing or consolidating the source of truth without an intended visual or behavioral delta routes to contract re-architecture.
-
-### Approved design to code
-
-An approved mock may route directly to implementation only when it is immutable and named, covers required states and target adaptations, can be mapped unambiguously to the existing component system, and has a recorded `bounded-reviewed-slice` approval ID. If those rules or mappings are missing, route to contract first. New, multi-surface, or high-impact work goes through a representative prototype and Gate C; the later implementation envelope records `gate-c-approved` and its approval ID.
-
-### Visual baseline requests
-
-Any request to regenerate, update, accept, or freeze screenshots or goldens routes through `product-design`. Without a completed Gate D candidate decision, route to review. Gate D acceptance then stops at Gate E for separate explicit approval of the exact candidate, reviewed matrix, and observed diffs. Only that Gate E approval routes to contract accept-freeze. Passing CI, an agent preference, or a snapshot-update request is not acceptance.
-
-### Update snapshots
-
-Updating files is not acceptance. Route to `accept-freeze` only after Gate D and when the human then explicitly approves the named candidate, reviewed matrix, diffs, and limitations at Gate E.
+Route to `product-design-contract` accept-freeze only when the human explicitly identifies the reviewed candidate and authorizes that identity and covered conditions as the accepted baseline. A single clear instruction may both dispose the reviewed candidate and authorize its freeze; do not force a duplicate approval turn. Deployment, instrumentation, participant contact, external publication, and spend remain separate decisions.
 
 ## Failure and recovery
 
-On missing worker, tool failure, invalid handoff, or interrupted work:
+When a worker, target, or necessary capability is unavailable:
 
-1. preserve existing accepted state;
-2. mark the active route `blocked` or `failed` without changing the accepted artifact hashes;
-3. record the exact error/evidence;
-4. give one recovery action;
-5. do not launch a later worker.
+1. preserve current accepted and user-owned state;
+2. state which artifact, edit, evidence, or claim is affected;
+3. complete unrelated safe work when useful;
+4. offer the smallest existing-tool, supplied-evidence, setup, or reduced-scope path;
+5. resume from the recorded next action rather than restarting resolved design work.

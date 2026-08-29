@@ -17,11 +17,11 @@
       "assertions": [
         "Identifies the Vue source tree as canonical for both web and the Capacitor-packaged app.",
         "Does not create a native Android UI duplicate or treat responsive browser emulation as packaged-app evidence.",
-        "Uses exactly the canonical capability statuses and asks for setup or explicit reduced-scope confirmation when a selected capability is missing.",
+        "Explains any selected capability gap and, because the prompt requests notice before reduced verification, asks before changing the claimed target coverage.",
         "Implements real loading, error, and long-title states through the existing component architecture.",
         "Runs or proposes Playwright plus axe for web and a packaged-app Maestro/native accessibility smoke for Android.",
         "Does not update the asserted screenshot or any baseline-manifest path.",
-        "Returns blocked rather than complete when a claimed runtime or accessibility hard gate cannot run."
+        "Does not claim Android runtime or accessibility completion when those checks cannot run; safe source work and its evidence boundary remain distinct."
       ]
     },
     {
@@ -42,7 +42,7 @@
         "Creates deterministic previews for required states and treats previews as workbench rather than runtime acceptance.",
         "Includes Dynamic Type and platform accessibility audit/manual VoiceOver coverage.",
         "Never re-records or updates native snapshot references.",
-        "Stops before production writes and returns blocked with no production mutations if Xcode/simulator or accessibility capability is unavailable, offering setup or a router-owned review, contract-planning, or isolated-prototype route."
+        "If Xcode, simulator, or accessibility evidence is unavailable, continues only with source work that remains safe and labels runtime or accessibility conclusions unsupported; stops only when the missing capability makes the edit itself unsafe."
       ]
     },
     {
@@ -61,7 +61,7 @@
         "Implements empty, offline, keyboard-open, and text-scale fixtures with real Flutter widgets and Semantics.",
         "Does not add Widgetbook when existing widget fixtures are sufficient.",
         "Uses Flutter tests/guidelines and real Android/iOS runtime checks appropriate to the claimed targets.",
-        "Explains any unavailable Maestro/native capability and obtains a specific reduced-scope decision instead of silently continuing.",
+        "Explains any unavailable native capability and limits the corresponding platform claim without forcing unrelated tool setup.",
         "Does not update Flutter goldens or call the result usable/validated."
       ]
     }

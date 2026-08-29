@@ -1,69 +1,44 @@
 # Autonomous exploration quality
 
-Use this only for an explicitly authorized disposable evaluation, sandbox, throwaway concept, or self-directed prototype. The purpose is to produce a strong artifact without converting reversible model choices into accepted product decisions.
+Use this for a greenfield, broad-redesign, sandbox, or concept prototype in which the user delegates reversible product and visual decisions. The goal is a strong isolated artifact, not an accepted product identity.
 
-## Start from product truth
+## Ground the concept
 
-Before styling, write a compact assumption ledger:
+Write a compact assumption ledger covering the audience and situation, core task, supplied constraints, safely inferred or synthetic facts, target conditions, and important failure costs. Use real-shaped content. Mark consequential invented facts so they cannot be mistaken for live product truth.
 
-- who arrives and in what situation;
-- the core act and the first-ten-seconds understanding;
-- operational facts that shape the experience: price, duration, capacity, location, schedule, permissions, failure costs, and content extremes;
-- which facts are supplied, safely inferred, or synthetic;
-- target sizes, inputs, states, and runtime constraints;
-- what would make the result feel interchangeable with an unrelated product.
+Identify what should make the experience recognizably fit this product, audience, and context even without a logo or decorative motif. Product specificity should come from hierarchy, content, interaction, behavior, and visual expression working together.
 
-Use real-shaped content. A design feels generated when slogans and decorative motifs do all the work while product decisions remain vague.
+## Explore before converging
 
-## Compare theses before committing
+Sketch a few materially distinct structural and visual theses in working context. Vary the mental model, information order, composition, interaction grammar, typography and density, imagery or material language, and state treatment where those choices matter.
 
-Sketch three terse structural/visual theses in working context. Each should state:
+Compare them against the same goals and constraints. Reject options that are generic, redundant, infeasible, inaccessible, or dependent on decoration to hide weak product thinking. Select the strongest coherent thesis and briefly retain the useful tradeoff behind any discarded alternative. Do not produce options merely to satisfy a count.
 
-1. the page or screen silhouette and information order;
-2. the typography/density logic;
-3. the color, material, imagery, or illustration logic;
-4. one signature interaction or state treatment;
-5. why those choices express the product truths.
+## Build a coherent artifact
 
-They must differ in hierarchy and composition, not just palette. Reject any thesis whose major choices could be transplanted into an unrelated product without consequence. Also reject the counter-default: an oversized serif, cream/black editorial palette, brutalist poster, grain texture, or CSS showpiece is not automatically authored simply because it avoids a purple SaaS gradient.
+- Give each major area a clear information or interaction purpose.
+- Make the core task and decision-relevant information understandable at an appropriate point in the journey; do not impose a universal fold or layout rule.
+- Use one visual and interaction grammar across shell, content, controls, system states, and confirmation.
+- Vary rhythm, density, and composition intentionally rather than repeating a template.
+- Use typography, imagery, motion, and atmosphere in service of the product and content.
+- Prefer local, editable, and provenance-clear assets. Do not add remote dependencies solely for polish.
 
-Select one thesis by fit with the prompt's users, task, content, and target—not by trend familiarity. Record the discarded alternatives in one line each so the selection remains intentional without turning the run into a full Gate B exercise.
+## Make the critical path believable
 
-## Build a coherent system
+Model the smallest state machine needed to test the core task. Include applicable prerequisites, validation, unavailable or disabled conditions, one meaningful recovery path, confirmation, and a way to revise. Keep displayed constraints and resulting behavior consistent.
 
-- Give every major section one information job and one product-specific cue. Sensory or spatial products need enough physical atmosphere; abstract artwork cannot carry that responsibility alone.
-- Vary section silhouette, density, and rhythm with purpose. Repetition can establish a system, but repeated card grids or large empty bands often reveal an unexamined template.
-- Use one visual grammar across shell, content, controls, errors, confirmation, and footer. A decorative hero followed by generic form controls is two products.
-- Make typography earn its scale. Check line breaks, reading order, long content, and the full-page density at every representative target.
-- Prefer code-native or locally owned assets when they fit the brief. Do not add remote dependencies merely to create polish.
-- Keep brand and operational details plausible. Mark synthetic addresses, availability, testimonials, metrics, or policies as fictional when a user could mistake them for live facts.
-
-## Complete the interaction, not only the happy path
-
-Model the smallest state machine that makes the core act believable:
-
-- prerequisites and disabled states;
-- validation and one realistic recovery path;
-- capacity, duration, schedule, price, or permission rules that agree with displayed content;
-- unavailable and selected states;
-- confirmation that reflects the exact choices;
-- a way to revise without needlessly discarding state.
-
-Check cross-field integrity. A 90-minute booking cannot end after closing time; a selected party cannot exceed room capacity; a reduced-motion preference must cover scripted scrolling and timers as well as CSS animation.
+Test critical boundaries and failure modes in proportion to their user impact and likelihood. Do not extrapolate a single example into a universal checklist or build production-grade rules unrelated to the prototype question.
 
 ## Render-first quality loop
 
-Use a real renderer and inspect screenshots before reading rationale.
+Use a real renderer or runtime and inspect the whole relevant experience before reading the implementation rationale.
 
-1. Capture the first viewport and full page at every named representative target.
-2. Capture the core act, confirmation, and one failure/recovery state.
-3. Inspect hierarchy, alignment, density, dead space, repeated silhouettes, physical/product cues, focus, clipping, and content extremes.
-4. Exercise the primary path with keyboard and the relevant pointer/touch model.
-5. Check console/runtime errors, horizontal overflow, network/runtime dependencies, reduced motion, semantics, and state integrity.
-6. Fix material issues and repeat the affected captures. Stop after the first clean, coherent solution unless another pass has a concrete quality target.
-
-Do not use elapsed time as a design-quality score. Extra work is justified when it improves the rendered artifact or its evidence, not when it only adds ceremony.
+1. Capture representative targets and the states needed to judge the question.
+2. Inspect hierarchy, alignment, rhythm, density, product specificity, content extremes, focus, clipping, and adaptation.
+3. Exercise the primary path with the relevant input methods and check semantics, reduced motion, and runtime errors when applicable.
+4. Fix material issues and repeat affected evidence.
+5. Stop at the first coherent solution that satisfies the request; continue only for a concrete unresolved quality target.
 
 ## Completion boundary
 
-Return the runnable isolated artifact, concise run instructions, assumption ledger, target/state evidence, and limitations. Use `gate: null`, `recommended_next_worker: null`, and no accepted artifact identity. If the owner wants to adopt the exploration, the router starts a fresh durable route instead of promoting this artifact in place.
+Return the runnable isolated artifact, run instructions, assumptions, tested targets and states, evidence, and limitations. Do not promote it into production or accepted baselines without a separate implementation or acceptance decision.

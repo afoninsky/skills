@@ -1,4 +1,6 @@
-# Evidence and human gates
+# Evidence and optional human gates
+
+Use evidence in proportion to the decision. Formal gates are useful for durable, high-impact, regulated, collaborative, release, or accepted-baseline work; they are not mandatory pauses for ordinary clear requests. The user's explicit request may already authorize the stated exploration and mutation scope.
 
 ## Evidence labels
 
@@ -17,24 +19,24 @@ Higher labels do not automatically invalidate lower evidence, and quantity does 
 
 | Gate | Human decision | Minimum supporting evidence |
 |---|---|---|
-| A — UX brief | Approve user, task, structure, content hierarchy, states, platforms | grounded brief; unresolved assumptions visible |
-| B — direction | Select one visual backbone | matched renders and comparison; agent may recommend only |
+| A — UX brief | Confirm user, task, structure, content hierarchy, states, platforms when a material decision remains | grounded brief; unresolved assumptions visible |
+| B — direction | Select one visual backbone when selection was not delegated | matched renders and comparison; agent may select a working direction when the user delegated judgment |
 | C — representative slice | Approve contract expression on representative targets | real renders/prototype states; accessibility risks visible |
-| D — candidate decision | Accept for the next acceptance step, reject, or request bounded revision | real runtime, deterministic checks, review report, representative matrix |
-| E — acceptance authorization | Explicitly approve the exact named reviewed candidate and matrix as the new accepted identity | Gate D disposition, reviewed diffs, exact ref/hash, baseline environment, approval ID |
+| D — candidate decision | Accept, reject, or request bounded revision | real runtime, deterministic checks, review report, representative matrix |
+| E — baseline authorization | Explicitly approve the exact named reviewed candidate and covered conditions as the accepted identity | reviewed diffs, exact identity, baseline environment, approval record |
 | F — release/learning | Release/hold, or approve/revise/reject a named research or learning action | review-owned packet with applicable accessibility, device, user, safety, privacy, and operational evidence |
 
-Missing tools may leave a gate `Not evidenced`. A user may authorize further exploratory work but cannot waive missing evidence into `Pass`.
+Missing evidence limits the decision it supports. A user may authorize further exploratory work but cannot turn absent evidence into a pass.
 
-Gate D acceptance is not Gate E approval. After Gate D, the router presents the immutable candidate, reviewed matrix, material diffs, and limitations again for a separate explicit Gate E decision. Only then does `product-design-contract` in `accept-freeze` mode record the already-approved identity and baseline hashes; the recording operation is not another human gate.
+Candidate acceptance does not imply baseline authority unless the user explicitly says the named reviewed candidate should become the accepted identity. One clear instruction may contain both decisions when it identifies the candidate and evidence; do not force a duplicate confirmation turn. Only then does `product-design-contract` in `accept-freeze` mode record the approved identity.
 
-`product-design-review` owns the evidence packet for Gate F and stops with `needs-owner`. The owner makes the release/hold or research/learning decision. Missing required evidence blocks before Gate F rather than asking the owner to guess, and the reviewer never deploys, instruments, recruits, or contacts participants.
+In a formal engagement, `product-design-review` owns the Gate F evidence packet. The reviewer may recommend release, hold, or further research, but the accountable human makes and executes the consequential decision. Missing evidence prevents an unsupported recommendation, and review never deploys, instruments, recruits, or contacts participants.
 
-For Gates B–F, a representative platform matrix is non-empty whenever the product has a platform target. Include at least one configuration for every materially distinct implementation/adaptation class and name exclusions. Approval language is limited to that matrix; it never means “all platforms” by implication.
+For consequential Gates B–F, use representative configurations for every materially distinct implementation or adaptation class included in the claim, with explicit exclusions. Approval language is limited to what was actually reviewed; it never means “all platforms” by implication.
 
 ## Separate decisions
 
-Do not collapse these into one approval:
+Do not infer one of these decisions from another:
 
 - selecting visual direction;
 - approving a prototype;
@@ -43,6 +45,8 @@ Do not collapse these into one approval:
 - accepting new baselines;
 - releasing/deploying;
 - instrumenting analytics or contacting participants.
+
+A single instruction may authorize more than one only when it clearly identifies each decision and its scope.
 
 ## Baseline acceptance
 

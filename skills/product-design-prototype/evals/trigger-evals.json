@@ -4,7 +4,7 @@
     "should_trigger": false
   },
   {
-    "query": "Use $product-design-prototype directly to build this one isolated representative slice and stop at Gate C.",
+    "query": "Use $product-design-prototype directly to build this one isolated representative slice, report what it proves, and do not touch production.",
     "should_trigger": true
   },
   {

@@ -1,6 +1,6 @@
 # Selected direction
 
-Status: Accepted at Gate B
+Status: Working direction | Human-selected direction | Superseded
 Owner:
 Decision date:
 Accepted brief/hash:
@@ -29,4 +29,4 @@ Accepted brief/hash:
 
 ## Authority boundary
 
-Selection authorizes contract encoding. It does not authorize production implementation or baseline changes.
+Selection guides later design. Production implementation still follows the user's authorized mutation scope, and selection never authorizes baseline changes.

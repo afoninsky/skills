@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Design"
-  short_description: "Route stable web and mobile UI/UX work"
-  default_prompt: "Use $product-design as the sole entrypoint for this UI/UX request. Preserve my prompt, inspect accepted state, preflight required capabilities, route the earliest valid worker, and stop at each human gate."
+  short_description: "Design and evolve production UI/UX"
+  default_prompt: "Use $product-design for this UI/UX request. Inspect the existing product, route proportionally, explore creatively when the scope is broad, keep production changes narrow and idempotent, reuse established tools, research relevant unknowns, and verify the real result. Preserve accepted baselines unless I explicitly approve the exact reviewed candidate and its observed diffs as the new accepted baseline."

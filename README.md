@@ -52,7 +52,7 @@ npx skills add afoninsky/skills --list
 
 ### Product Design suite
 
-Use `$product-design` as the common entrypoint for UI/UX work across responsive web, iOS, Android, React Native, Flutter, and shared web/mobile wrappers. It preserves the original request, inspects current project state, checks applicable tool capabilities, and routes the earliest missing prerequisite through one or more focused workers:
+Use `$product-design` as the common entrypoint for UI/UX work across responsive web, iOS, Android, React Native, Flutter, and shared web/mobile wrappers. It inspects the existing product and routes the smallest useful worker or sequence:
 
 - `product-design-discovery`
 - `product-design-direction`
@@ -62,13 +62,13 @@ Use `$product-design` as the common entrypoint for UI/UX work across responsive 
 - `product-design-change`
 - `product-design-review`
 
-The suite keeps accepted design decisions in versioned contracts, source maps, framework-native component states, and deterministic browser/app-runtime baselines. A change worker cannot update approved screenshots. Gate D disposes a reviewed candidate, Gate E separately authorizes the exact named candidate and matrix as the new accepted identity, and only the following contract `accept-freeze` records that identity. Review also owns release and research/learning evidence packets and stops for the owner's Gate F decision.
+The suite treats a narrow request as a closed-world, idempotent change and gives greenfield or broad redesign work proportionate creative freedom. Exploration stays isolated; only the selected approach enters the authorized production scope. Existing behavior, visual consistency, shared-component impact, and project conventions are inspected before replacement.
 
-Tool dependencies are capability-based. Git, Penpot, CSS variables or DTCG/Style Dictionary, framework workbenches, Playwright, Maestro, accessibility tools, preview/distribution services, and user-evidence tools are selected only when the phase and platform need them. Missing applicable capabilities are never hidden: the skill explains the loss, provides current official setup steps, and stops for setup or explicit confirmation of a limited degraded route. Missing hard runtime or accessibility evidence stops implementation and change before production writes; confirmed reduced work moves to read-only review, contract planning, or an isolated prototype with its own valid preflight. Missing evidence still cannot pass its gate.
+Research is triggered by a concrete unfamiliar audience, domain, platform, safety, regulatory, or current-fact gap and prioritizes primary research, standards, official platform guidance, and authoritative sources. Synthetic personas remain hypotheses rather than user evidence.
 
-The suite includes a dated [tool-selection baseline](skills/product-design/references/tool-selection-baseline.md) describing where each recommendation belongs, why it passed the maturity/free-capacity/functionality filters, its limits and alternatives, and the representative comparison and rollback proof required before replacement.
+Tool choice is capability-based and existing-project-first: reuse the repository's mature tools, choose a maintained package when needed, and build custom infrastructure only for a concrete unmet requirement. Missing evidence limits the corresponding claim or edit instead of blocking unrelated useful work.
 
-Executable preflight records use a non-empty representative platform set for direction, contract, prototype, implementation, protected change, and acceptance. `checked_at` certifies that every applicable status was actually probed within the previous four hours and is no more than five minutes ahead of the current clock; changing phase, platform, claim, target, build, access, or tool state requires an earlier re-probe.
+Review is read-only. Implementation and change never overwrite accepted screenshots or baselines to make a candidate pass. Only contract `accept-freeze` may record an exact reviewed candidate that a human explicitly approved as the accepted identity.
 
 [Read the entrypoint](skills/product-design/SKILL.md)
 

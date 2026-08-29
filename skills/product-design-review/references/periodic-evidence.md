@@ -54,4 +54,4 @@ If these are unresolved, do not access or instrument. Request authorized, saniti
 
 Turn evidence into ranked change briefs, each with decision question, observed facts, uncertainty, affected surfaces, smallest proposed scope, success/failure signals, and a verification/research plan. Review remains read-only.
 
-When the requested outcome is a release/rollout or a named research/learning action, assemble the decision packet and stop at Gate F. The owner releases/holds or approves/revises/rejects the action. Leave the next worker unset until that decision. If claim-required evidence or privacy/authority is missing, stop blocked before Gate F and request setup, access, equivalent evidence, or a narrower question.
+When the requested outcome is a release, rollout, or named research/learning action, assemble a decision packet and give the strongest recommendation the evidence supports. The accountable owner releases, holds, or authorizes the action; review never executes it. If required evidence, privacy, or authority is missing, withhold the unsupported recommendation and request only the smallest setup, access, equivalent evidence, or narrower question needed.

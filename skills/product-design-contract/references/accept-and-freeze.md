@@ -1,10 +1,10 @@
 # Human acceptance and freeze protocol
 
-Accept-freeze is the only operation in the suite that may change approved references or visual baselines. Gate D first disposes the reviewed candidate. Gate E then explicitly approves the exact named candidate and reviewed matrix as the new accepted identity. Accept-freeze records that Gate E decision; it does not manufacture or replace it.
+Accept-freeze is the only operation in the suite that may change approved references or visual baselines. It records a human decision that explicitly approves an exact reviewed candidate and covered conditions as the new accepted identity; it does not manufacture or infer that decision.
 
 ## Qualifying instruction
 
-A qualifying Gate E instruction follows Gate D, identifies the reviewed candidate and exact matrix, and intentionally authorizes its observed changes as the accepted identity. Examples:
+A qualifying instruction identifies the reviewed candidate and covered matrix or conditions, and intentionally authorizes its observed changes as the accepted identity. It may follow an earlier review decision or state both candidate disposition and baseline authorization clearly in one instruction. Examples:
 
 - “I reviewed candidate CHG-014 at commit `<ref>` and accept these diffs; freeze it.”
 - “Direction B, build 37, is approved as the new phone and tablet baseline.”
@@ -21,13 +21,13 @@ If identity or scope is ambiguous, stop and ask one precise confirmation questio
 ## Pre-freeze checklist
 
 1. Resolve the reviewed candidate to an immutable Git ref or content hashes.
-2. Verify the Gate D disposition and separate Gate E approval ID name that identity and reviewed matrix.
+2. Verify the review evidence and human approval identity name that candidate and covered matrix. The approval may come from one clear combined instruction or separate recorded decisions.
 3. Confirm the working tree/candidate has not changed since human review.
 4. Inventory every proposed baseline/reference mutation.
 5. Compare matched content, state, target, viewport/device, theme, locale, and crop.
 6. Ensure asserted goldens name their real assertion source. A screenshot-writing call is not an assertion.
 7. Show material visual, behavioral, accessibility, and target-coverage deltas.
-8. Keep unavailable hard-gate evidence labeled `Not evidenced`; visual acceptance alone does not imply release readiness or Gate F.
+8. Keep unavailable evidence explicit; visual acceptance alone does not imply accessibility, usability, safety, or release readiness.
 9. Confirm no rejected or archived direction is being revived implicitly.
 
 ## Freeze transaction
@@ -35,12 +35,12 @@ If identity or scope is ambiguous, stop and ask one precise confirmation questio
 Treat the update as one reviewable transaction:
 
 - update only the approved golden/reference files;
-- update baseline manifest identities and SHA-256 hashes;
-- update contract manifest hashes only if the accepted contract itself changed;
-- write the human approval record with candidate/ref, scope, accepted deltas, known limitations, and timestamp;
-- update compact project state to the accepted ref and exact next action;
-- run the bundled validator in `freeze` mode;
+- update the repository's existing baseline manifest or integrity record when it has one;
+- record the human approval identity, candidate/ref, scope, accepted deltas, and known limitations in the repository's established acceptance record, or a minimal adjacent record when no convention exists;
+- run the repository's native golden, snapshot, or baseline-integrity checks;
 - review the final diff and report every baseline/reference path changed.
+
+When the project already uses the suite's formal contract schema, also update its SHA-256 identities, approval record, and compact project state, then run the bundled validator in `freeze` mode with the exact approval ID. These formal-schema writes are part of the disclosed acceptance metadata; do not introduce them into an ordinary repository merely to use this suite.
 
 If validation fails or the candidate moves, stop. Do not leave manifests saying `accepted` while hashes or files disagree.
 

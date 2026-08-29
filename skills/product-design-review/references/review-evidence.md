@@ -47,11 +47,11 @@ Inspect code and execution. A snapshot directory, hash, filename containing “g
 
 Use these as professional heuristics, never automated acceptance:
 
-- **First ten seconds:** can the intended user locate and understand the core act?
+- **Task comprehension:** can the intended user locate and understand the core act at the point the journey requires it?
 - **Silhouette:** are main regions, proportions, and reading path coherent before details?
 - **Core act:** does visual weight serve the primary task rather than brand chrome?
 - **Relabel:** would the interface still look specific if product names were replaced?
-- **Default cluster:** does it collapse into common model defaults—generic cards, pills, gradients, centered heroes, excessive rounded containers?
+- **Product specificity:** do the hierarchy, content, interaction, and visual language fit this product, or could the design be transplanted unchanged?
 - **Craft:** are spacing rhythm, typography, alignment, wrapping, control states, and transitions resolved?
 - **Family/system:** do related surfaces/components share grammar unless a variant is explicitly justified?
 
@@ -87,8 +87,8 @@ Avoid “accessible,” “compliant,” “usable,” “validated,” “pixel
 
 ## Decision boundaries
 
-- Gate D is the owner's accept/reject/revise disposition of the named reviewed candidate and representative matrix.
-- Gate E is a later, separate router request for explicit approval of that exact identity as the accepted baseline; review does not perform it.
-- Gate F is the owner's release/hold or research/learning decision from a review-owned evidence packet. Review does not execute the decision.
+Review may recommend accept, reject, revise, release, hold, or further research when the evidence supports that recommendation. The accountable human makes consequential acceptance, baseline, release, instrumentation, and participant decisions.
 
-If the required matrix or claim evidence is incomplete, label it `Not evidenced` and block before the corresponding gate rather than implying “all platforms” or asking the owner to waive evidence.
+For a formal suite engagement, Gates D–F may record those decisions durably. Outside that protocol, do not invent gate ceremony. In every mode, review remains read-only and only `product-design-contract` accept-freeze may record an explicitly approved baseline.
+
+If evidence is incomplete, limit the conclusion to what was observed rather than implying “all platforms,” full accessibility, validation, or no regressions.

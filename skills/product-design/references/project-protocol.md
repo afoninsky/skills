@@ -1,92 +1,69 @@
 # Project design protocol
 
-## Default layout
+Use durable project-design records only when they improve continuity, collaboration, impact analysis, or protection. Existing repository conventions take precedence. Do not initialize a `design/` hierarchy for a small atomic request that is already clear in source, tests, and the user prompt.
 
-Adapt to an existing repository rather than duplicating established files. When no equivalent exists, use:
+## Proportional records
+
+A long-running or accepted-design engagement may benefit from:
 
 ```text
 design/
   project-design.json
-  toolchain.json
   brief.md
   experience-map.md
   contract/
-    principles.md
-    components.md
-    content.md
-    responsive-and-adaptive.md
-    source-map.json
-    tokens/
   decisions/
-    selected-direction.md
-    changes/
-    reviews/
-  references/
-    approved/
-    archive/
   prototypes/
-    README.md
+  references/
   baselines/
-    manifest.json
 ```
 
-Tests and goldens may remain in framework-native locations. The baseline manifest points to them.
+Create only the artifacts the work actually needs. Tests, fixtures, previews, and goldens should stay in their framework-native locations unless the project already centralizes them.
 
 ## Recovery spine
 
-Use [the project state template](../assets/project-design.json). Keep it concise and referential:
+For resumable work, a compact `project-design.json` may link to:
 
-- current phase and mode;
-- original-prompt SHA-256 and objective summary;
-- accepted artifact paths and hashes;
-- selected direction and superseded decisions;
-- target platforms and source-sharing model;
-- active request/change/review;
-- capability preflight record;
-- approvals;
-- exact next action and blockers.
+- current objective and scope;
+- accepted or selected artifact identities;
+- target platforms and shared implementation ownership;
+- active candidate, change, or review;
+- material approvals and protected paths;
+- assumptions, blockers, and exact next action.
 
-Read it first when resuming. Never overwrite accepted hashes while creating a candidate.
+Reference durable files rather than copying long prose. Update existing entries in place and avoid parallel records. If the same request and state recur, the record should remain unchanged.
 
-## Design source map
+## Source and impact map
 
-Map:
+Create a lightweight source map only when shared tokens, components, generated outputs, surfaces, or platforms make impact difficult to infer reliably. Map enough to answer:
 
-- tokens to generated outputs;
-- components to source files, state fixtures, and token dependencies;
-- surfaces/routes/screens to components and baseline states;
-- shared implementations across web/mobile;
-- intentional themes, brands, or platform variants.
+```text
+design decision → canonical source → consumers → representative evidence
+```
 
-This is an impact graph, not a complete AST. Keep it only as detailed as needed to protect shared decisions.
+Do not attempt to mirror the entire code graph. Existing imports, tests, stories, or documentation may already provide sufficient mapping.
 
 ## Artifact states
 
-- **Exploration:** disposable and isolated; cannot drive production automatically.
-- **Candidate:** under review; does not replace accepted identity.
-- **Accepted:** named human approval plus immutable path/hash/ref.
-- **Archived:** retained for provenance but excluded from active context.
-- **Superseded:** replaced by a named later decision; cannot silently re-enter.
+- **Exploration:** isolated and reversible; not production authority.
+- **Candidate:** implemented or rendered for review; not accepted identity.
+- **Accepted:** explicitly named and human-approved with durable identity.
+- **Archived or superseded:** retained only when provenance or rollback matters.
+
+Do not infer acceptance from filenames, chat enthusiasm, recency, green tests, or agent recommendation.
 
 ## Baselines
 
-The manifest distinguishes:
+A baseline record distinguishes active deterministic goldens, explicitly approved references, capture-only evidence, and unknown or stale artifacts. Store the target/state/environment identity needed to reproduce each protected item.
 
-- approved visual goldens with deterministic assertion commands;
-- approved structured references;
-- review captures that are not assertions;
-- environment identity such as OS, browser/runtime, viewport/device, fonts, locale, theme, scale, and data fixture.
-
-Only `product-design-contract` in explicit `accept-freeze` mode may change accepted baseline identity. Candidate image generation remains outside approved baseline paths whenever practical.
-
-The approval sequence is durable state: Gate D records the candidate disposition, Gate E separately records explicit approval of the exact immutable candidate and reviewed representative matrix, and accept-freeze records that approved identity in contract/baseline manifests. A later Gate F release or research/learning decision is a review-owned packet and remains separate from visual baseline acceptance.
+Only `product-design-contract` accept-freeze may change accepted baseline identity, and only for the exact reviewed candidate the human approved. Candidate captures should remain outside protected paths. A later change derives a new candidate; it does not overwrite the accepted comparison state.
 
 ## Existing repositories
 
-Before initializing:
+Before adding or replacing records:
 
-1. locate existing design docs and tests;
-2. identify canonical and duplicate authorities;
-3. preserve repository conventions;
-4. create mapping files rather than moving large artifact sets without approval;
-5. record unresolved conflicts as blockers or contract-rearchitecture findings.
+1. inspect current design docs, source authority, tests, visual evidence, history, and ownership;
+2. understand why duplicated or unusual behavior exists;
+3. extend established conventions where they are coherent;
+4. introduce mapping rather than moving large artifact sets;
+5. make migrations reversible and verify no intended behavior or visual identity was lost.

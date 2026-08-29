@@ -32,7 +32,7 @@ Use plain product language:
 - **Job:** progress the person is trying to make.
 - **Outcome:** observable result, not a feature list.
 - **Core act:** the action the product must make unusually clear and trustworthy.
-- **First ten seconds:** what must be understood and actionable immediately.
+- **Early comprehension:** what must become clear, and at what point in the journey, for the task to proceed safely.
 - **Rejection criterion:** visible condition proving the design failed.
 
 Separate roles when their information, permissions, consequences, or mental models differ. Model the handoff between roles rather than merging them into a generic “user.”
@@ -65,7 +65,7 @@ Content is part of the design contract. Placeholder prose can conceal hierarchy 
 
 Use these as critique questions, not automatic scores:
 
-- Can a person identify the core act in ten seconds?
+- Can a person identify the core act soon enough for this task and context?
 - Does the structure still work if brand labels are replaced with generic terms?
 - Does each role understand what happened and what happens next?
 - Is recovery as clear as success?
@@ -73,15 +73,15 @@ Use these as critique questions, not automatic scores:
 - Can the same task survive small screens, large text, keyboard/touch input, localization, and assistive technology?
 - Which assumption would most change the flow if false?
 
-## Gate A packet
+## Decision-ready handoff
 
-Show only what the owner needs to decide:
+Show only what the next design decision needs:
 
 1. one-paragraph brief;
 2. priority journey and surface/state coverage;
 3. fixed/challengeable/open decisions;
 4. top evidence and material limitations;
 5. blocking unknowns and working assumptions;
-6. explicit approval question naming the candidate artifact/version.
+6. any material question that still needs the owner, or the smallest useful next design phase when none does.
 
-Approval confirms UX structure and scope. It does not select visual style, authorize production writes, or approve a visual baseline.
+The user's original request may already authorize continuation. Ask for approval only when an unresolved decision would materially change scope, behavior, safety, evidence, or production work. Discovery never selects visual style, mutates production, or approves a visual baseline.

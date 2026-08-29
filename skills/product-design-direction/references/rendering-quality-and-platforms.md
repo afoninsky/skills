@@ -18,7 +18,7 @@ Use one manifest for the contact sheet. Do not compare a polished desktop succes
 
 Load only the applicable row:
 
-| Architecture | Candidate medium | Required direction checks |
+| Architecture | Possible candidate medium | Relevant direction checks |
 | --- | --- | --- |
 | Responsive web | Penpot or disposable HTML/CSS in a real browser | small/large reflow, zoom risk, keyboard/pointer/touch hierarchy, long copy |
 | React Native | RN preview/Storybook or structured design frames | phone/tablet, platform conventions, safe areas, keyboard, font scale |
@@ -27,7 +27,7 @@ Load only the applicable row:
 | Compose/Views | Compose preview/layout fixture or structured design frames | window classes, font/display scale, insets, native control/gesture expectations |
 | PWA/web wrapper | one responsive web direction plus shell captures | WebView/safe-area/keyboard/native-back implications; do not invent a second UI source |
 
-At Gate B these may be design renders rather than production runtime, but they must be actual pixels at the named targets. Record which platform behaviors remain prototype risks.
+These may be design renders rather than production runtime, but any visual comparison claim needs actual pixels at the named targets. Record which platform behaviors remain prototype risks.
 
 The matrix is representative rather than exhaustive: one or more rows must cover every materially distinct implementation/adaptation class named by the route, while explicit exclusions bound the claim. All finalists use the same rows. A shared web wrapper has one design source but separate browser and shell rows; those rows do not imply separate visual directions.
 
@@ -35,10 +35,10 @@ The matrix is representative rather than exhaustive: one or more rows must cover
 
 Use qualitative evidence, not a composite score:
 
-- **First ten seconds:** is the core act and current state immediately legible?
+- **Task comprehension:** are the core act and current state legible when the journey requires them?
 - **Silhouette:** does the composition have a purposeful recognizable shape at thumbnail scale?
 - **Relabel:** after replacing product words, does the design still have a coherent product-specific grammar rather than a template?
-- **Default cluster:** is it distinguishable from framework defaults and fashionable generic patterns for a reason?
+- **Product specificity:** do the hierarchy, content, interaction, and visual language fit this product rather than an interchangeable template?
 - **Core-act emphasis:** does visual hierarchy favor the actual job rather than branding or chrome?
 - **Craft:** are spacing, type, alignment, optical balance, state transitions, and details resolved consistently?
 - **Family/system:** can related states and surfaces plausibly belong to this backbone without one-off styling?

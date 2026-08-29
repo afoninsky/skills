@@ -9,12 +9,12 @@ A useful intent says what a user will observe and what remains fixed. Examples:
 
 “Polish the card” or “make it modern” is unresolved direction, not a protected change.
 
-## Accepted-base reproduction
+## Comparison-state reproduction
 
 Before editing:
 
-1. resolve the accepted Git ref;
-2. verify baseline manifest and entry hashes;
+1. identify the trustworthy current or accepted comparison state;
+2. when protected baselines exist, verify their manifest and entry hashes;
 3. identify environment, viewport/device, theme, locale, data fixture, fonts, and runtime configuration;
 4. run the asserted baseline path or explain why the base is not reproducible;
 5. capture the exact affected states;
@@ -24,7 +24,7 @@ Do not rewrite or update a failed baseline to make reproduction succeed.
 
 ## Impact resolution
 
-Start from the smallest known selector—annotated crop, selected design layer, component name, route/screen, or source symbol. Resolve against `source-map.json` and actual imports.
+Start from the smallest known selector—annotated crop, selected design layer, component name, route/screen, or source symbol. Resolve against actual imports and, when present, the project's source map.
 
 ### Local source edit
 
@@ -48,7 +48,7 @@ Edit the actual shared UI source once. Verify in its normal web runtime and add 
 
 ## Scope escalation triggers
 
-Stop for a revised manifest or earlier design phase when work would:
+Stop for revised scope, an updated existing manifest, or an earlier design phase when work would:
 
 - change navigation, information architecture, product behavior, or fixed content hierarchy;
 - alter a design principle, semantic meaning, shared token, shared component, or intentional variant not named by the request;
@@ -72,6 +72,6 @@ If the scope guard fails:
 3. determine whether they belong to this worker or pre-existing user work;
 4. restore only worker-owned accidental changes with a recoverable, targeted edit;
 5. rerun the guard;
-6. propose manifest expansion only when product impact genuinely requires it.
+6. propose scope or manifest expansion only when product impact genuinely requires it.
 
 Never use a broad destructive reset to clean a shared working tree.

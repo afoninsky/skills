@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Design Prototype"
-  short_description: "Prototype one design question safely"
-  default_prompt: "Use $product-design-prototype to build an isolated, evidence-backed prototype at the lowest useful fidelity and stop before production implementation."
+  short_description: "Test a design question in isolation"
+  default_prompt: "Use $product-design-prototype to build the smallest isolated runnable artifact that answers this design question. Reuse established project tools where suitable, use realistic states and content, verify the relevant interaction and target conditions, explain what the evidence proves, and do not modify production or accepted baselines."

@@ -45,7 +45,7 @@ Detect the actual rendering architecture before loading one adapter. Prefer an e
 
 For each check record target/configuration, fixture, command/tool/version, expected result, actual result, artifact path, evidence label, and limitation.
 
-Minimum Gate C packet for a representative slice:
+Useful evidence for a representative slice:
 
 - runnable real render/runtime tied to a ref/hash;
 - a non-empty platform matrix with at least one configuration per materially distinct implementation/adaptation class and explicit exclusions;
@@ -54,6 +54,6 @@ Minimum Gate C packet for a representative slice:
 - relevant large-text/localization/adaptive evidence;
 - applicable semantics/accessibility risk result and manual plan;
 - no production imports from prototype source;
-- missing physical-device or representative-user evidence explicitly labeled when not required at Gate C.
+- missing physical-device or representative-user evidence explicitly labeled when it limits a claim.
 
 An MCP session can accelerate inspection, but CLI tests, preview source, screenshots, and recorded results are the durable evidence.

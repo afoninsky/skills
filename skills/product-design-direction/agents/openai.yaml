@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Design Direction"
-  short_description: "Compare distinct visual backbones"
-  default_prompt: "Use $product-design-direction to create matched, isolated visual directions from my accepted UX brief, recommend one, and stop for my selection."
+  short_description: "Explore and converge on direction"
+  default_prompt: "Use $product-design-direction to explore a proportional set of distinct, product-specific visual and interaction directions under matched goals, content, states, and targets. Keep options isolated from production, use relevant research and real renders, surface meaningful tradeoffs, and recommend or choose the strongest coherent direction when that choice is delegated."

@@ -18,8 +18,8 @@ Fixture set/hash:
 - Production mutations:
 - Baseline mutations:
 
-## Gate C decision
+## Decision result
 
 - Candidate identity:
-- Owner decision: Pending | Approved | Amend | Reject
+- Outcome: Question answered | Needs revision | Rejected | Needs owner decision
 - Notes:

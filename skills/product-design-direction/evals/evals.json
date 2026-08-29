@@ -4,43 +4,41 @@
     {
       "id": 1,
       "prompt": "The UX brief for a responsive community-tool library is approved. Create three visual directions. Keep the same real content: search, one overdue borrowed tool, an empty recommendations state, and an error recovering a reservation. Show phone and desktop. You may recommend one, but I have not delegated selection.",
-      "expected_output": "The skill preflights isolation and rendering, creates two or three structurally distinct candidates with matched content/states/targets and contact-sheet evidence, recommends without selecting, and stops at Gate B without production or baseline writes.",
+      "expected_output": "The skill creates three structurally distinct isolated candidates with matched content, states, targets, and rendered comparison evidence, recommends one without selecting it because selection was not delegated, and leaves production and baselines untouched.",
       "files": [],
       "expectations": [
-        "Uses the exact capability status vocabulary and records or proposes design/toolchain.json evidence.",
         "Requires an accepted brief and isolates each candidate from production and other candidates.",
         "Directions differ in hierarchy/composition and at least two other grammar dimensions, not only palette.",
         "Uses identical content, states, phone/desktop sizes, and capture rules for comparison.",
         "Shows rendered evidence/contact-sheet requirements rather than text-only mood descriptions.",
-        "Separates recommendation from owner selection and stops at Gate B.",
+        "Separates recommendation from owner selection and asks for the material decision.",
         "Does not change production files, canonical tokens, approved references, or baselines."
       ]
     },
     {
       "id": 2,
       "prompt": "Make a premium direction for our SwiftUI medication check. The accepted brief says calm, direct, dignified; the due dose and safe confirmation must be clear in ten seconds; shame, hidden consequences, and tiny type are prohibited. The Penpot MCP is unavailable, so quietly make up what it would have shown and continue.",
-      "expected_output": "The skill reports Penpot as an optional/degradable structured-source capability rather than fabricating access, proves another render path before continuing, asks confirmation for the named fallback, preserves safety/accessibility constraints, and cannot pass Gate B without actual matched renders.",
+      "expected_output": "The skill treats Penpot as optional, never fabricates its context, uses an available repository-native SwiftUI render path when it can answer the question, and preserves the safety and accessibility constraints without adding a tool ceremony.",
       "files": [],
       "expectations": [
         "Does not pretend Penpot or selected-layer context is available.",
-        "Marks the capability missing-degradable when an equivalent isolated Xcode/annotated fallback is possible and asks for confirmation.",
-        "Treats actual render/capture as a hard Gate B requirement.",
+        "Uses an isolated Xcode or supplied annotated fallback when it can provide the needed evidence.",
+        "Does not make visual claims without actual render or supplied visual evidence.",
         "Uses calm/direct/dignified as a coherent hierarchy and interaction grammar rather than style adjectives alone.",
         "Surfaces Dynamic Type, contrast, state consequence, and non-shaming feedback risks.",
-        "Does not select or implement the direction."
+        "May select a working direction because the prompt delegates making one, but does not implement production UI or accept a baseline."
       ]
     },
     {
       "id": 3,
       "prompt": "Direction A is the same dashboard with blue cards, B has purple cards and rounder corners, and C adds an illustration. Put them in a comparison document and mark B selected because you think it looks best. We do not have a browser, simulator, design editor, or screenshots.",
-      "expected_output": "The skill rejects the candidates as non-distinct and the text-only comparison as insufficient, reports render/capture missing-blocking, provides setup-or-recovery choices, and refuses to self-select or record Gate B acceptance.",
+      "expected_output": "The skill rejects the candidates as non-distinct and the text-only comparison as insufficient, explains that visual judgment is not evidenced without a render or supplied images, and refuses to record B as selected merely from palette-level variants.",
       "files": [],
       "expectations": [
         "Identifies palette/radius/illustration variants as one structural direction rather than three.",
-        "Marks visual render/export and capture as missing-blocking.",
-        "Provides current-official setup guidance only after checking environment and live docs or asks for supplied rendered evidence.",
+        "Names the missing render evidence and offers a suitable existing tool, setup, or supplied-image path only if needed.",
         "Does not claim matched visual evidence exists.",
-        "Does not select B or write a selection record without explicit owner choice."
+        "Does not select B or write a selection record from unsupported comparison evidence."
       ]
     }
   ]

@@ -1,181 +1,97 @@
 ---
 name: product-design
-description: Sole automatic entrypoint and router for unqualified UI/UX and digital-product design work across responsive web, native iOS and Android, React Native, Flutter, and shared web/mobile wrappers. Trigger for new or redesigned sites and apps; UX research and structure; visual direction; wireframes, mocks, autonomous isolated evaluation prototypes, and other prototypes; approved design-to-code work; design systems and semantic tokens; controlled changes to accepted UI; read-only or review-and-fix audits; periodic improvements; and acceptance or freezing of named UI candidates and visual baselines. Preserve the original request, inspect accepted state, preflight applicable capabilities, and route the earliest missing prerequisite or gated series. Use this before narrower styling, prototyping, implementation, or audit helpers unless the user explicitly names one. Do not use for standalone graphic or image assets, or non-visual code and architecture.
+description: Design, redesign, prototype, implement, or review production-quality UI/UX for web and mobile products. Use for product flows, visual direction, design systems, responsive interfaces, design-to-code work, and scoped UI improvements. Route focused work to the product-design-* workers. Do not use for standalone graphics or non-visual code architecture.
 license: MIT
-compatibility: Requires the selected product-design worker skills for routed execution. Works without MCP servers; Git and real browser or app-runtime evidence become required at acceptance and protected-change gates.
-metadata: {version: "1.1.0"}
+compatibility: Works with repository-native design and development tools. Browser, app-runtime, accessibility, research, and visual-comparison capabilities are required only when the requested outcome depends on their evidence.
+metadata: {version: "1.2.0"}
 ---
 
 # Product Design
 
-Be the single public entrypoint for the product-design suite. The user supplies the objective; you select and coordinate the specialist work.
+Work like an experienced product designer who can research, explore, prototype, implement, and review. Produce an experience that is useful, coherent, accessible, distinctive for its product, and robust in the real target environment.
 
-Do not become a monolithic designer. Preserve authority, route focused workers, validate their handoffs, and stop at human gates.
+Use this skill as the public entrypoint. Select the smallest applicable worker or worker sequence, keep the user's actual request as the authority, and do not add process that does not improve the result or protect a real decision.
 
-## Read the operating protocol
+## Core principles
 
-Before routing, read completely:
+### Bound the work before changing it
 
-1. [Routing and handoffs](references/routing-and-handoffs.md)
-2. [Tool capability preflight](references/tool-capability-preflight.md)
-3. [Project design protocol](references/project-protocol.md)
-4. [Evidence and human gates](references/evidence-and-gates.md)
+Distinguish **exploration scope** from **mutation scope**.
 
-Load [platform detection](references/platform-detection.md) only when a repository or target platform exists.
+- A narrow request is a closed-world change: modify the named element and only the dependencies necessary to make that change correct. Do not restyle adjacent surfaces, clean up unrelated code, or broaden the product decision.
+- A new design or broad redesign permits creative interpretation within the named product, audience, surfaces, and constraints. Explore materially different approaches when that can improve the outcome; do not treat palette swaps as alternatives.
+- The user's current request can authorize its stated scope. Do not invent approval ceremonies. Ask only when impact analysis reveals a material decision or production change outside that scope.
+- Keep exploratory artifacts isolated. Exploring an alternative does not authorize production writes, baseline replacement, deployment, participant contact, analytics changes, or spend.
 
-Read [tool selection baseline](references/tool-selection-baseline.md) completely when initializing a toolchain, proposing setup, accepting an existing alternative, or changing a tool. For an unchanged verified toolchain, load only the applicable phase/tool sections. This baseline explains why each default was selected and defines the comparison and approval evidence required to replace it.
+Record the intended delta and the important things that must not change. Re-running a completed bounded request should produce no further design or code changes.
 
-## Preserve the request
+### Understand before replacing
 
-Keep the user's original prompt and explicit constraints unchanged in working context. Compute its UTF-8 SHA-256 and put it in `original_prompt_sha256`; every worker returns that digest in `input_hashes.original_prompt`. Add a routing envelope; do not replace the request with a paraphrase.
+Inspect the current product, runtime, source, design system, content, tests, and project instructions before proposing changes. Identify the existing hierarchy, interaction model, component and token ownership, platform adaptations, and accepted references.
 
-For multi-turn work, persist the prompt digest, a concise objective, approvals, artifact paths and hashes, active route, and exact next action in `design/project-design.json`. Do not persist sensitive raw prompt content. On resume, hash the preserved prompt again and stop if identity cannot be reconciled.
+Treat existing behavior as intentional until evidence shows otherwise. Understand why a pattern exists and who depends on it before replacing it with a newer convention. Preserve visual consistency, behavior, accessibility, and project architecture unless the request requires a specific change. When a shared component or token expands the real impact, make that impact visible before editing.
 
-## Discover before routing
+### Use judgment and evidence proportionally
 
-Use read-only inspection first:
+Apply established interaction, information-architecture, content, responsive, platform, and accessibility practices. Use professional judgment for reversible local decisions; do not turn taste into a universal rule.
 
-- find an existing project design state, brief, design system, tokens, components, references, prototypes, tests, and visual baselines;
-- inspect repository instructions, framework, package manager, app boundaries, and web/mobile source sharing;
-- distinguish asserted goldens from screenshots that are merely captured;
-- identify accepted, candidate, archived, and superseded artifacts;
-- classify the request's mutation authority: `read-only`, `design-artifacts-only`, `production-bounded`, or explicit `accept-freeze`.
-- distinguish durable/acceptance-bound work from an explicitly disposable autonomous exploration. The latter exists only when the user asks for an isolated evaluation, sandbox, throwaway concept, or prototype; authorizes reasonable assumptions and self-selection of content/direction; and excludes production writes and acceptance claims.
+Research a concrete knowledge gap when the design depends on unfamiliar users, domain behavior, safety, culture, regulation, platform conventions, or current facts. Prefer primary research, standards bodies, official platform guidance, and authoritative domain sources. Use secondary sources for synthesis, not as the sole support for consequential claims. Record what a source supports, its date when relevant, and any limitation or inference. Synthetic personas and agent critique may generate hypotheses but are not user research.
 
-If no repository exists, route using the user's product context and initialize project artifacts only when useful and authorized.
+Use real product content or realistic edge cases. Consider the core task, information hierarchy, navigation, loading/empty/error/success and recovery states, long or localized content, permissions, destructive actions, keyboard/touch/pointer input, text scaling, reduced motion, and responsive or adaptive behavior when applicable.
 
-## Run capability preflight
+Treat examples, heuristics, and checklists as prompts for judgment, not literal or exhaustive requirements. Select only what materially applies to this product, audience, risk, and scope.
 
-Derive capabilities from the selected phase and platforms. Check each applicable capability as `available`, `missing-blocking`, `missing-degradable`, `unknown`, or `not-applicable`.
+### Explore broadly; commit deliberately
 
-Never silently continue when an applicable tool or evidence capability is absent.
+For greenfield work and broad redesigns, generate a small, proportional range of distinct structural and visual theses before converging. Compare them against the same product goals, content, states, and target conditions. Surface alternatives when they expose a meaningful tradeoff; otherwise choose the strongest coherent direction and explain the decision briefly.
 
-- For `missing-blocking`, stop. Explain the lost evidence, provide step-by-step setup instructions tailored to the environment and verified against current official documentation, and ask whether to perform or await setup.
-- For `missing-degradable`, explain the exact limitation and claims that will remain `Not evidenced`. Offer setup or a specifically bounded degraded route, then wait for confirmation. If the current worker cannot honestly execute that reduced scope, create a new envelope for read-only review, contract planning, or an isolated prototype instead of continuing it in place.
-- Missing applicable runtime or accessibility hard gates stop `product-design-implementation` and `product-design-change` before production writes. Never re-label a source-only production patch as degraded implementation.
-- Do not install a package, connect an account, expose an MCP server, add analytics, or modify CI without authorization.
-- An optional tool that is not selected for this route is `not-applicable`, not a hidden failure.
+Prefer product-specific hierarchy, interaction, typography, composition, content, and imagery over fashionable default templates. AI generation can accelerate ideation and asset creation, but editable structure, deterministic behavior, provenance, and human usability remain the standard.
 
-When selecting or substituting a tool, apply the admission and replacement tests in the tool selection baseline. Do not introduce a new brand because it has an MCP, AI-generation feature, or attractive demo. Record a durable substitution decision for canonical-source, runtime/evidence, distribution, participant-research, analytics, CI, or production-dependency changes.
+Commit only the selected approach and only within the authorized mutation scope. If alternatives imply different product behavior, information architecture, or cross-surface impact, pause for that decision before implementation.
 
-Record the result in `design/toolchain.json` for a durable engagement, excluding credentials and secrets.
+### Prefer proven tools and native conventions
 
-Before executing a worker, set `toolchain.profile.phase`, `platforms`, and evidence `claims` to the selected route, then run:
+Reuse the project's framework, design system, components, tokens, fixtures, tests, and established toolchain. Prefer platform-native controls and mature maintained libraries over custom infrastructure. Add a dependency, service, design tool, or bespoke abstraction only when it solves a concrete need that existing capabilities cannot, and obtain authorization when it changes production dependencies or external state.
 
-```text
-python3 <product-design-skill-directory>/scripts/validate_toolchain.py design/toolchain.json --for-execution
-```
+Inspect output in the real medium: browser, app runtime, design canvas, or rendered artifact. Do not confuse source correctness, generated screenshots, or rationale with visual and interaction evidence. Missing evidence limits the claim; it does not automatically block unrelated useful work.
 
-Execution requires a validator pass. Set `checked_at` only after every applicable status has been probed: it must be a timezone-aware ISO-8601 time no older than four hours and no more than five minutes in the future. Rebuild and revalidate the profile before every worker transition or whenever platform, claim, scope, target/build identity, access, tool state, or degraded-mode authority changes; those changes require a fresh probe even inside four hours. Do not refresh the timestamp alone, remove a required capability, or empty the platform set to make validation pass; narrow the routed work explicitly and keep the unavailable gate `Not evidenced`.
+## Route the work
 
-Preflight is just in time. Only capabilities required by the current worker and its current claims can block or become the user's exact next action. Forecast tools likely needed by later workers in a separate `needed later` note, but do not ask the user to install, connect, or provide them until that transition is selected and freshly probed. When a current capability is missing, name the capability, the selected tool or acceptable equivalent, the evidence it enables, and the specific install/connect/provide action required from the user. Never leave a missing capability implicit.
+Choose by the decision the user needs, not by keywords:
 
-Use only the validator's canonical profile values:
+| Need | Worker |
+| --- | --- |
+| Clarify users, jobs, flows, content, states, or an unfamiliar domain | `product-design-discovery` |
+| Explore or resolve visual and interaction direction | `product-design-direction` |
+| Define or repair durable design-system rules, tokens, component states, or accepted identities | `product-design-contract` |
+| Answer a design question with an isolated runnable artifact | `product-design-prototype` |
+| Build a clear or approved new, previously unimplemented surface in the real product | `product-design-implementation` |
+| Modify or redesign an existing or accepted UI while protecting everything outside the authorized delta | `product-design-change` |
+| Inspect quality, usability, accessibility, fidelity, or system drift | `product-design-review` |
 
-- phase: `discovery`, `direction`, `contract`, `prototype`, `implementation`, `change`, `review`, or `accept-freeze`;
-- platform: `web`, `native-mobile`, or `shared-web-wrapper` (combine web and native mobile for independent implementations);
-- claim, when requested: `visual-acceptance`, `accessibility-acceptance`, `release`, `physical-device`, or `representative-user`.
+Use the earliest unresolved worker, but continue through later workers when the request already authorizes the work, the necessary decisions are clear, and doing so does not widen mutation scope. A review remains read-only; review findings become implementation or change work only under explicit mutation authority.
 
-Claims describe conclusions this run must support. Omit a claim only when the routed work explicitly excludes that conclusion, not because its evidence tool is missing.
+Before handing work to a selected worker, confirm that skill is available. If it is missing, stop and provide the suite installation command instead of silently impersonating the worker.
 
-For direction, contract, prototype, implementation, change, and accept-freeze, `platforms` is non-empty and represents every materially distinct implementation/adaptation class in scope. The detailed target matrix needs at least one representative configuration per class, not every device. `shared-web-wrapper` means one shared web UI with both browser and packaged-shell rows; independent web and native implementations use both `web` and `native-mobile`. Candidate decisions at Gates D–F are limited to the matrix actually reviewed.
+After direction, route a new surface to implementation and an existing-surface redesign to change. The latter preserves current behavior and makes the wider impact of the redesign explicit.
 
-## Select the earliest missing prerequisite
+For an existing formal product-design engagement, resume its accepted artifacts and use [project protocol](references/project-protocol.md). Read [routing and handoffs](references/routing-and-handoffs.md) only for multi-worker automation, resumable pipelines, or accepted-baseline transitions. Read [evidence and gates](references/evidence-and-gates.md) only when a human acceptance, release, research, or baseline decision needs durable evidence. Use [platform detection](references/platform-detection.md) for repository or multi-platform work.
 
-Route by objective and repository readiness:
+When selecting or replacing tools, use [tool capability preflight](references/tool-capability-preflight.md) and [tool selection baseline](references/tool-selection-baseline.md) proportionally. An established project equivalent is preferred when it provides the needed result. Do not require or install the suite's historical defaults merely because they are listed.
 
-| Condition | Worker |
-|---|---|
-| The user explicitly requests an isolated evaluation, sandbox, throwaway concept, or disposable prototype; authorizes reversible assumptions and self-selected content/direction; and excludes production or acceptance claims | `product-design-prototype` in autonomous-exploration mode |
-| Users, jobs, flow, content, states, or platform requirements are unresolved | `product-design-discovery` |
-| An approved brief exists and visual grammar/direction is unresolved | `product-design-direction` |
-| A direction is selected but rules, tokens, components, source map, or accepted identity are absent | `product-design-contract` |
-| A mock, interaction proof, or representative slice is requested before production | `product-design-prototype` |
-| Approved design inputs exist and a new surface/component must be built in the real framework; Gate C is approved or the request is an explicitly bounded reviewed slice | `product-design-implementation` |
-| An accepted surface, component, token, or baseline may change | `product-design-change` |
-| The user asks to inspect, audit, diagnose, periodically assess, or review a candidate | `product-design-review` |
-| A named reviewed candidate is explicitly approved as the new baseline | `product-design-contract` in `accept-freeze` mode |
-| A release, rollout, periodic-learning, or research action needs an evidence-backed owner decision | `product-design-review`, stopping at Gate F |
+## Protected decisions
 
-The autonomous-exploration row is a narrow exception to the normal prerequisite chain. The prompt must still define an observable objective, deliverable, target class, and enough product context to make reversible assumptions useful. The prototype worker records those assumptions, self-selects one direction after a small internal comparison, builds and verifies the isolated artifact, and finishes with `gate: null`. It does not create an accepted brief, direction, contract, production candidate, or baseline. If the user later wants to adopt or ship it, start a fresh normal route and establish the missing durable prerequisites and owner gates.
+- Review does not mutate the product unless a separate, bounded implementation or change phase is authorized.
+- Implementation and change never overwrite accepted references or visual baselines to make a candidate pass.
+- Only `product-design-contract` in explicit `accept-freeze` mode may record a named, reviewed, human-approved candidate as the accepted baseline.
+- Direction, prototype, and agent recommendation are evidence, not human acceptance or representative-user validation.
+- Deployment, instrumentation, participant contact, account connection, external publication, and spend require their own authority.
 
-For a broad request, plan the whole likely route but launch only the earliest prerequisite. New, multi-surface, or high-impact production work requires a representative prototype and Gate C before implementation. Direct implementation is allowed only for an immutable, named, explicitly bounded reviewed slice that already covers its required states, adaptations, and component mapping. Record `implementation_entry_basis` plus its human approval ID in the implementation envelope. Never skip a human gate merely because the prompt names the final output.
+## Definition of done
 
-## Launch workers
-
-Preflight the selected worker through the runtime's skill registry. The normal installation contains:
-
-- `product-design-discovery`
-- `product-design-direction`
-- `product-design-contract`
-- `product-design-prototype`
-- `product-design-implementation`
-- `product-design-change`
-- `product-design-review`
-
-If a selected worker is unavailable, name it, explain why it is required, provide suite-installation steps appropriate to the runtime, and stop. Do not imitate the missing worker with generic advice.
-
-Pass the worker:
-
-- the unchanged original prompt;
-- the routing envelope;
-- only relevant accepted project artifacts;
-- capability-preflight results;
-- whether the route is normal evidence work or explicitly authorized autonomous exploration;
-- the current human gate and stopping condition.
-
-Announce the route concisely, for example: `product-design → change → review; stop at candidate acceptance`.
-
-## Validate handoffs
-
-Require every worker to return the handoff fields defined in [Routing and handoffs](references/routing-and-handoffs.md). Validate:
-
-- inputs match accepted hashes;
-- mutations match authority and declared scope;
-- required evidence exists;
-- baselines did not change outside explicit `accept-freeze` mode;
-- missing capabilities remain visible;
-- the recommended next worker is a valid transition.
-
-Before launch, bind the envelope to the same fresh profile and re-run the capability validator through the route validator:
-
-```text
-python3 <product-design-skill-directory>/scripts/validate_route.py <routing-envelope-path> --toolchain design/toolchain.json --for-execution
-```
-
-After execution, run the route validator again with `--handoff <worker-handoff-path>` (without `--for-execution`; the next worker receives a new fresh preflight). Workers may recommend the next phase; only this router advances it.
-
-## Continue or stop
-
-Continue to the next worker in the same task only when:
-
-- the transition is valid;
-- no human gate intervenes;
-- the capability preflight covers the next worker;
-- authority already covers its writes;
-- continuing does not broaden scope.
-
-When advancing, create a new envelope whose first route item is the accepted successor and revalidate its toolchain profile. Do not reuse a stale envelope or let the worker invoke its successor. Otherwise update the exact next action and ask for the named decision. On resume, read project state first and reconcile the new prompt as continuation, reroute, or explicit supersession.
-
-## Non-negotiable rules
-
-- A human selects visual direction for durable or acceptance-bound work and approves every accepted baseline. In explicitly authorized autonomous exploration, the agent may self-select a reversible direction only because the artifact cannot become accepted or production state through that route.
-- A named candidate review stops at Gate D for accept/reject/revise. Gate D acceptance does not authorize baseline mutation: the router next stops at Gate E for explicit approval of the exact named reviewed candidate and matrix, then contract `accept-freeze` records that identity.
-- `product-design-review` owns release and research/learning evidence packets. It stops at Gate F for the owner's release/hold or research/learning decision and never deploys, instruments, recruits, or contacts participants by itself.
-- Implementation and change workers never update approved screenshots or accepted-reference hashes.
-- A missing runtime, visual-comparison, accessibility, physical-device, or user-evidence capability cannot be converted into a pass by user waiver. Confirmed reduced work continues only through a valid non-production route; implementation/change stop when their runtime or accessibility hard gates are missing.
-- MCP servers are replaceable adapters. Git artifacts, exports, tests, flows, and screenshots remain canonical.
-- Use the smallest tool set and the smallest route that can answer the request.
-- Do not restart discovery or direction for a bounded accepted-design change.
-- Do not implement findings during a read-only review unless the router subsequently authorizes a change route.
-
-## Response contract
-
-At each router boundary report:
-
-1. **Route** — current worker and likely series.
-2. **Why** — evidence that made this the earliest prerequisite.
-3. **Tool status** — applicable available and missing capabilities needed now; forecast later-stage needs separately without making them current blockers.
-4. **Authority and scope** — allowed writes and protected artifacts.
-5. **Gate** — exact stopping condition or decision required.
-6. **Next action** — one concrete continuation.
+- The requested outcome is complete at the agreed fidelity and only the intended surfaces, states, files, components, and tokens changed.
+- Existing behavior, conventions, accepted design decisions, and out-of-scope surfaces are preserved or any necessary deviation is explicit.
+- The result forms one coherent product-specific system and covers the relevant responsive/adaptive, interaction, content, error, recovery, and accessibility conditions.
+- The real output was inspected and the smallest relevant functional, visual, responsive, and accessibility checks passed.
+- Research, assumptions, professional judgment, and user evidence are distinguished; unsupported claims and untested conditions are named.
+- The handoff states what changed, what was explored but not committed, what evidence was run, remaining limitations, and any decision still needed.

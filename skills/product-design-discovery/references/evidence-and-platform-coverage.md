@@ -26,7 +26,7 @@ Every evidence record needs an ID, claim/finding, level, source or artifact path
 - Do not use generated personas, synthetic interviews, generic critique services, or a model's taste as representative-user evidence.
 - Contacting people, ordering panel responses, spending credits, recording sessions, or accessing sensitive data requires explicit authority.
 
-## Universal target matrix
+## Representative target considerations
 
 Choose only relevant rows, then state exclusions:
 
@@ -43,7 +43,7 @@ Detect architecture before describing screens. A PWA or Capacitor-style wrapper 
 
 ## Coverage closure
 
-Before Gate A, map each commissioned role, journey branch, state, destination, and target to one of:
+Before calling the discovery question complete, map each material role, journey branch, state, destination, and target to one of:
 
 - covered by a named brief/experience-map section;
 - intentionally excluded with owner-visible rationale;

@@ -1,131 +1,33 @@
-# Capability preflight
+# Contract capability preflight
 
-Before recommending setup or changing a tool, read the relevant sections of the suite's canonical tool selection baseline from the sibling `product-design/references/tool-selection-baseline.md` skill resource. It explains why the free-first defaults were chosen and what an alternative must prove. If that resource is unavailable, stop any toolchain-change proposal and request installation of the complete `product-design` suite; do not recreate the comparison from memory.
+Use this reference when contract work depends on uncertain tooling. Ordinary contract editing needs only access to the existing design authority and a way to inspect the affected output.
 
-Preflight only capabilities relevant to this invocation. The absence of an irrelevant tool is not degradation; the absence of a tool needed for a promised artifact or evidence class is.
+## Select capabilities from the mode
 
-## Requirement and status
+- **Encode:** inspect the current design sources and write the authorized contract artifacts.
+- **Re-architect:** trace every affected authority and deterministically compare outputs when the change claims no visual or behavioral delta.
+- **Accept-freeze:** require versioned candidate identity, reviewed evidence, protected-file hashes, and the exact human approval.
 
-Requirement (`required`, `conditional`, or `optional`) explains when the capability matters. Status uses the suite's exact vocabulary:
+Token compilation matters only when the repository already generates outputs or the requested contract genuinely needs multiple themes, platforms, aliases, or formats. Component workbenches, design editors, browser tests, native tests, and accessibility tools matter only for the states and claims they support.
 
-| Status | Meaning | Action |
-| --- | --- | --- |
-| `available` | A safe probe proved the tool, configuration, and needed target | Continue |
-| `missing-blocking` | The phase cannot produce required identity or evidence | Stop; provide setup steps; ask whether to perform or await setup |
-| `missing-degradable` | Useful reduced work can continue, but fidelity or evidence is lost | Explain impact; offer setup or a bounded degraded mode; wait for confirmation |
-| `unknown` | Presence or correctness was not verified | Probe safely or treat as missing |
-| `not-applicable` | Capability is not selected for this phase/platform | Do not install or warn |
+## Check proportionally
 
-User confirmation can authorize reduced contract planning. It cannot turn missing evidence into a pass. Persist durable results in `design/toolchain.json` with tool/version/evidence, degradation, and `confirmation_id`; never store credentials. Set `checked_at` only after all applicable probes run: execution requires a timezone-aware ISO-8601 value no older than four hours and no more than five minutes in the future, with an earlier re-probe when phase, platform, claim, target/build, access, version, or status changes.
+1. Inspect existing token sources, generated outputs, build scripts, previews, tests, accepted references, and platform ownership.
+2. Reuse the repository's canonical tools. Do not add Style Dictionary, Storybook, Penpot, or another named tool merely because it appears in examples.
+3. Probe only selected capabilities with read-only version, list, validation, or representative render commands.
+4. If a capability is missing, continue with contract work that does not depend on it and label unverified output or synchronization honestly.
+5. Stop before a mutation when missing deterministic generation, runtime comparison, version identity, or approval would make that specific operation unsafe.
 
-## Representative platform matrix
+For projects already using the formal suite record, preserve the statuses `available`, `missing-blocking`, `missing-degradable`, `unknown`, and `not-applicable`. Do not introduce `design/toolchain.json` or refresh timestamps for an ordinary contract request.
 
-Contract and accept-freeze profiles use a non-empty platform set whenever targets exist. The detailed matrix contains at least one configuration per materially distinct implementation/adaptation class, not every device: name runtime/device or viewport/window class, state/fixture, input, text/display scale, theme/locale, and evidence or explicit exclusion. For `shared-web-wrapper`, record the shared browser UI and packaged native shell separately. Planning may mark rows unverified; Gate E and accept-freeze are limited to the exact reviewed rows and cannot infer unlisted coverage.
+## Setup and validation
 
-## Capability classification
+When setup is necessary, prefer the project's package manager and current official documentation. State the dependency, files and generated outputs affected, migration and rollback, then obtain authorization before installing or connecting anything.
 
-| Capability | Requirement | When it applies | Probe |
-| --- | --- | --- | --- |
-| Repository filesystem + Python 3.10+ | Required | Every authoritative contract operation | Read project; `python3 --version`; run validator help |
-| Git | Required | Accepted identity, rollback, or freeze; strongly preferred for drafts | `git rev-parse --show-toplevel`; `git status --short`; resolve accepted ref |
-| CSS variables | Conditional | Simple web contract with an existing CSS source | Inspect actual imports/root/theme scopes and rendered values |
-| DTCG + Style Dictionary | Conditional | Multiple outputs/themes/platforms or an established compiler | Locate canonical token JSON/config; run existing validation/build; inspect clean generated diff |
-| Penpot + official MCP | Optional adapter | Exact selected frame/layer/component/token context is needed and Penpot is the source | Verify authenticated project/file read and selected object; keep exports in Git |
-| Framework workbench/preview | Conditional | Reusable components require executable states | Run an existing story/preview/fixture and render the named state |
-| Playwright | Conditional | Web/PWA/wrapped-web runtime or web goldens | Run configured project and one representative screenshot assertion |
-| Maestro/native tests | Conditional | iOS/Android/RN/Flutter/packaged app target | List a usable simulator/device; validate and run one named flow |
-| Accessibility tools | Conditional hard-gate evidence | Contract claims semantics/a11y readiness | Run axe for web or the relevant native audit/semantics checks; retain manual plan |
-| Cloudflare Pages | Optional | A reviewer needs a remote web candidate | Verify project/build/preview access; local runtime remains canonical |
-| Firebase App Distribution/Test Lab | Optional | Physical-device or remote tester evidence is required | Verify authenticated project, target app, quota, and exact matrix |
-
-MCP presence alone is not a successful probe. Test the needed resource and operation. Treat MCP as a replaceable live adapter; exports, tests, manifests, and hashes in Git remain authoritative.
-
-## Missing-capability response
-
-Before continuing, report:
+The bundled validator is required only when the project adopts its schema or performs formal accept-freeze:
 
 ```text
-Capability: <name>
-Requirement: required | conditional | optional
-Status: available | missing-blocking | missing-degradable | unknown | not-applicable
-Impact: <specific artifact/check/evidence that cannot be produced>
-Safe degraded mode: <exact reduced scope, or “none”>
-Evidence status if degraded: Not evidenced
-Confirmation ID: <record only after explicit approval>
+python3 <product-design-contract-skill-directory>/scripts/validate_design_contract.py --help
 ```
 
-Then provide setup steps appropriate to the repository. Do not install dependencies, create accounts, enable analytics, spend money, expose ports, or mutate CI without authorization.
-
-### Git
-
-1. Install Git from the operating-system package source or official Git distribution.
-2. Verify with `git --version`.
-3. Initialize only if the user wants this directory to become a repository: `git init`.
-4. Establish an accepted commit/ref before freeze; do not use an unresolved dirty tree as baseline identity.
-
-### Python validator
-
-1. Install Python 3.10 or newer from the platform package manager or official Python distribution.
-2. Verify with `python3 --version`.
-3. Run `python3 scripts/validate_design_contract.py --help` from this skill package.
-
-### Style Dictionary
-
-1. Confirm multi-output/theme generation is actually needed.
-2. Prefer the project's package manager and pin Style Dictionary as a development dependency after approval.
-3. Define one checked-in DTCG source and explicit generated outputs.
-4. Run the configured build twice and verify the second run is clean.
-
-Do not add it for a single-output site where committed CSS variables are sufficient.
-
-### Penpot MCP
-
-1. Use a supported Penpot release and an existing Free/self-hosted workspace.
-2. Configure the official Penpot MCP using Penpot's current client instructions.
-3. Authenticate with the minimum project access needed.
-4. Verify exact file/page/frame or selected-layer read before relying on it.
-5. Export the approved reference/project to the repository after a gate; never expose an unauthenticated local MCP port.
-
-If Penpot is unavailable, an approved export plus explicit human confirmation of its identity may be a safe reduced input. Selection metadata and live structured-source checks remain `Not evidenced`.
-
-### Playwright and web accessibility
-
-1. Prefer the repository's existing package manager and Playwright configuration.
-2. With approval, add the pinned development dependencies `@playwright/test` and, when accessibility automation is needed, `@axe-core/playwright`.
-3. Install the configured browsers and OS dependencies using Playwright's documented command.
-4. Verify with the repository's smallest existing screenshot assertion and accessibility test.
-
-Browser-control or Playwright MCP may assist exploration but does not replace checked-in assertions.
-
-### Maestro and native tools
-
-1. Install Maestro CLI using the current official Maestro instructions and verify `maestro --version`.
-2. Install/start the platform SDK, emulator, or simulator required by the project.
-3. Verify a usable target (`maestro test` on a smoke flow; `adb devices` for Android; Xcode simulator tooling for Apple).
-4. Keep YAML flows and asserted screenshots in Git. Use Maestro MCP only for live inspection.
-5. Pair device flows with platform semantics/accessibility tests and manual assistive-technology checks.
-
-Maestro's normal Apple path is simulator evidence. Use the project's native/XCTest and physical-device route when physical iOS evidence is required.
-
-### Framework workbench
-
-Use an existing Storybook, React Native Storybook, Widgetbook, Xcode Preview, Compose Preview, or ordinary fixture route. If none exists, first ask whether the component/state reuse and review value justifies a new development dependency. A deterministic fixture can be the lower-cost alternative.
-
-## Degradation boundaries
-
-- A draft may continue without a live design MCP when an identified approved export exists and the user accepts the limitation.
-- A planning-only contract audit may continue without runtime tools when the user accepts that states and baselines remain unverified. It produces contract proposals only, never production source or accepted identity.
-- Accept-freeze may not continue without the runtime/hash/assertion capabilities needed for the declared target matrix.
-- Missing accessibility tooling never becomes “passed”; it stays `Not evidenced` and blocks any accessibility or release-readiness claim.
-
-## Official setup sources
-
-Verify commands against current official documentation for the detected environment before presenting or running them:
-
-- Git and GitHub rulesets: <https://git-scm.com/downloads>, <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
-- Penpot MCP: <https://help.penpot.app/mcp/>
-- Style Dictionary: <https://www.styledictionary.org/getting-started/installation/>
-- Storybook and Widgetbook: <https://storybook.js.org/docs/get-started/install>, <https://docs.widgetbook.io/>
-- Playwright and axe: <https://playwright.dev/docs/intro>, <https://playwright.dev/docs/accessibility-testing>
-- Maestro: <https://docs.maestro.dev/getting-started/installing-maestro>
-- Apple, Android, and Flutter accessibility: <https://developer.apple.com/documentation/accessibility/accessibility-testing>, <https://developer.android.com/guide/topics/ui/accessibility/testing>, <https://docs.flutter.dev/ui/accessibility-and-internationalization/accessibility>
+A validator pass proves structure and identity, not visual quality, accessibility, usability, or human acceptance.
