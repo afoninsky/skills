@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "REQ-TEACHRELAY-PILOT",
+  "worker": "product-design-review",
+  "status": "blocked",
+  "input_hashes": {
+    "original_prompt": "286d12ef4bf6021d24d41ec0db7fba6ae0e9ed7dbf8e860d1f45d2c79a567532",
+    "teachrelay_target": "ac38cab0c6c01db42a216d72e7fd99f411502f88702225c216f39ea548460f2e"
+  },
+  "artifacts_created_or_changed": [],
+  "production_mutations": [],
+  "evidence": [
+    "Git target identity and clean status",
+    "Repository architecture and visual producer inventory",
+    "Playwright browser launch and test-list probes"
+  ],
+  "missing_evidence": [
+    "Not evidenced: packaged Android runtime rendering and shell behavior",
+    "Not evidenced: accepted cross-product design-contract identity",
+    "Not evidenced: current deterministic preservation for the selected Home acceptance path"
+  ],
+  "degraded_capabilities": [],
+  "baseline_changed": false,
+  "gate": null,
+  "recommended_next_worker": null,
+  "exact_next_action": "Set up Python 3.10+ and the Android/Maestro runtime, or explicitly confirm the bounded source-only current-state inventory before review continues."
+}

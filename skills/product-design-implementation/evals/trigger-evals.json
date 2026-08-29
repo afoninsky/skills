@@ -1,0 +1,14 @@
+[
+  {
+    "query": "Convert this approved mock into reusable Vue components with loading, error, and long-content states.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use $product-design-implementation directly to implement this immutable approved reference in the existing Vue architecture.",
+    "should_trigger": true
+  },
+  {
+    "query": "The product-design router selected product-design-implementation. Execute the attached valid routing envelope with bounded production-write authority and return the suite handoff.",
+    "should_trigger": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "REQ-...",
+  "worker": "product-design-implementation",
+  "status": "complete",
+  "input_hashes": {"original_prompt": "9d574b68cbd30a5efc344ffdcbd74a787c9ce9873056495fd1db2c53e750ccf2"},
+  "artifacts_created_or_changed": [],
+  "production_mutations": [],
+  "evidence": [],
+  "missing_evidence": [],
+  "degraded_capabilities": [],
+  "baseline_changed": false,
+  "gate": null,
+  "recommended_next_worker": "product-design-review",
+  "exact_next_action": "Review the named candidate against the accepted contract without updating baselines."
+}

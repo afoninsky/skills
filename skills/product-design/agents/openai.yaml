@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Design"
+  short_description: "Route stable web and mobile UI/UX work"
+  default_prompt: "Use $product-design as the sole entrypoint for this UI/UX request. Preserve my prompt, inspect accepted state, preflight required capabilities, route the earliest valid worker, and stop at each human gate."

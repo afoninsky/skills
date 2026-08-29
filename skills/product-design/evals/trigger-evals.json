@@ -1,0 +1,82 @@
+[
+  {
+    "query": "Design and build a responsive booking site from this idea. We have no brief or visual references yet.",
+    "should_trigger": true
+  },
+  {
+    "query": "Create a native iOS medication app from scratch, including the UX, visual design, and production screens.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our UX brief is approved. Create and compare three visual directions for phone and desktop.",
+    "should_trigger": true
+  },
+  {
+    "query": "The product structure and direction are approved. Make a clickable account-recovery mock before we touch production.",
+    "should_trigger": true
+  },
+  {
+    "query": "Convert this approved Figma mock into reusable Vue components while preserving every accepted state.",
+    "should_trigger": true
+  },
+  {
+    "query": "Tighten the accepted checkout card by 8 px only and prove that every other screen stayed unchanged.",
+    "should_trigger": true
+  },
+  {
+    "query": "Darken our shared action token on checkout. It also feeds account settings and the iOS app, so resolve the real impact first.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit the existing web and mobile UI for visual inconsistency and accessibility gaps. Do not modify anything.",
+    "should_trigger": true
+  },
+  {
+    "query": "Review the current app and then fix the improvements I approve from your findings.",
+    "should_trigger": true
+  },
+  {
+    "query": "I reviewed candidate C at commit 91f4c2a and explicitly approve the shown diffs as our new visual baseline.",
+    "should_trigger": true
+  },
+  {
+    "query": "Visual CI failed after the card redesign. Work out whether these screenshots should be accepted instead of blindly regenerating them.",
+    "should_trigger": true
+  },
+  {
+    "query": "Re-architect our fragmented CSS, Swift, and Android token authorities without intentionally changing the product appearance.",
+    "should_trigger": true
+  },
+  {
+    "query": "Make the existing dashboard prettier and improve its UX, but inspect the current product before deciding what to change.",
+    "should_trigger": true
+  },
+  {
+    "query": "Continue the product-design process from the direction I approved yesterday.",
+    "should_trigger": true
+  },
+  {
+    "query": "Generate a standalone watercolor illustration of a fox with a transparent background.",
+    "should_trigger": false
+  },
+  {
+    "query": "Design a deep module interface for the billing domain without changing any UI.",
+    "should_trigger": false
+  },
+  {
+    "query": "Diagnose why this database migration deadlocks under concurrent writes.",
+    "should_trigger": false
+  },
+  {
+    "query": "Refactor the REST API client and retry policy; the user interface is explicitly out of scope.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a standalone SVG logo mark for my bakery. I do not need a website or app interface.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use $product-design-implementation directly with the valid automation envelope attached; do not run the common router.",
+    "should_trigger": false
+  }
+]

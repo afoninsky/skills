@@ -42,20 +42,37 @@ jobs:
           scripts
           tests
           skills/agent-work-auditor/scripts
-          skills/design-steward/scripts
+          skills/product-design/scripts
+          skills/product-design-contract/scripts
+          skills/product-design-change/scripts
+          skills/product-design-implementation/scripts
+          skills/product-design-review/scripts
+          deprecated/design-steward/scripts
           benchmarks/design-steward/2026-08-06/scripts
           benchmarks/design-steward/2026-08-06-iteration-2/scripts
           benchmarks/design-steward-specialists/2026-08-06-iteration-2/scripts
       - name: Run repository verifier tests
         run: python -m unittest tests/test_verify_skills.py -v
-      - name: Verify Design Steward specialist integration
+      - name: Verify Product Design suite contract
+        run: python -m unittest tests/test_product_design_suite.py -v
+      - name: Verify Product Design router validators
+        run: |
+          python skills/product-design/scripts/test_validate_route.py
+          python skills/product-design/scripts/test_validate_toolchain.py
+      - name: Verify Product Design contracts and evidence guards
+        run: |
+          python skills/product-design-contract/scripts/test_validate_design_contract.py
+          python skills/product-design-change/scripts/test_change_guard.py
+          python skills/product-design-implementation/scripts/test_check_protected_paths.py
+          python skills/product-design-review/scripts/test_classify_visual_evidence.py
+      - name: Verify deprecated Design Steward specialist integration
         run: python -m unittest tests/test_design_steward_specialists.py -v
-      - name: Verify Design Steward release contract
+      - name: Verify deprecated Design Steward archive contract
         run: python -m unittest tests/test_design_steward_release_contract.py -v
       - name: Run auditor renderer tests
         run: python skills/agent-work-auditor/scripts/test_generate_report.py
-      - name: Run Design Brief validator tests
-        run: python skills/design-steward/scripts/test_validate_design_brief.py
+      - name: Run deprecated Design Brief validator tests
+        run: python deprecated/design-steward/scripts/test_validate_design_brief.py
       - name: Reproduce frozen benchmark aggregates
         run: |
           python benchmarks/design-steward/2026-08-06/scripts/build_blind_pairs.py
@@ -97,41 +114,45 @@ jobs:
         run: |
           npx --yes skills@1.5.16 add . --list | tee skills-list.txt
           grep -F "agent-work-auditor" skills-list.txt
-          grep -F "design-steward" skills-list.txt
           grep -F "marktplaats-ad-creator" skills-list.txt
-          npx --yes skills@1.5.16 list --json | tee installed-skills.json
-          grep -F '"name": "frontend-design"' installed-skills.json
-          grep -F '"name": "web-design-guidelines"' installed-skills.json
+          grep -F "product-design" skills-list.txt
+          grep -F "product-design-discovery" skills-list.txt
+          grep -F "product-design-direction" skills-list.txt
+          grep -F "product-design-contract" skills-list.txt
+          grep -F "product-design-prototype" skills-list.txt
+          grep -F "product-design-implementation" skills-list.txt
+          grep -F "product-design-change" skills-list.txt
+          grep -F "product-design-review" skills-list.txt
+          ! grep -F "design-steward" skills-list.txt
       - name: Verify clean Codex installation
         run: |
           install_root="$(mktemp -d)"
           cd "$install_root"
           npx --yes skills@1.5.16 add "$GITHUB_WORKSPACE" \
             --skill agent-work-auditor \
-            --skill design-steward \
             --skill marktplaats-ad-creator \
-            --agent codex \
-            --copy \
-            --yes
-          npx --yes skills@1.5.16 add anthropics/skills \
-            --skill frontend-design \
-            --agent codex \
-            --copy \
-            --yes
-          npx --yes skills@1.5.16 add vercel-labs/agent-skills \
-            --skill web-design-guidelines \
+            --skill product-design \
+            --skill product-design-discovery \
+            --skill product-design-direction \
+            --skill product-design-contract \
+            --skill product-design-prototype \
+            --skill product-design-implementation \
+            --skill product-design-change \
+            --skill product-design-review \
             --agent codex \
             --copy \
             --yes
           test -f .agents/skills/agent-work-auditor/SKILL.md
-          test -f .agents/skills/design-steward/SKILL.md
-          test -f .agents/skills/design-steward/references/specialist-capabilities.md
           test -f .agents/skills/marktplaats-ad-creator/SKILL.md
-          test -f .agents/skills/frontend-design/SKILL.md
-          test -f .agents/skills/frontend-design/LICENSE.txt
-          test -f .agents/skills/web-design-guidelines/SKILL.md
-          python "$GITHUB_WORKSPACE/skills/design-steward/scripts/verify_specialists.py" \
-            "$install_root"
+          test -f .agents/skills/product-design/SKILL.md
+          test -f .agents/skills/product-design-discovery/SKILL.md
+          test -f .agents/skills/product-design-direction/SKILL.md
+          test -f .agents/skills/product-design-contract/SKILL.md
+          test -f .agents/skills/product-design-prototype/SKILL.md
+          test -f .agents/skills/product-design-implementation/SKILL.md
+          test -f .agents/skills/product-design-change/SKILL.md
+          test -f .agents/skills/product-design-review/SKILL.md
+          test ! -e .agents/skills/design-steward
 
   secrets:
     name: Secret scan

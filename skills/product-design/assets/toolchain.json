@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": null,
+  "profile": {
+    "phase": "unselected",
+    "platforms": [],
+    "claims": []
+  },
+  "environment": {
+    "operating_system": null,
+    "architecture": null,
+    "package_manager": null
+  },
+  "capabilities": [
+    {
+      "id": "versioning-and-rollback",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": "Git",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "prototype_id": "PROTO-000",
+  "source_ref": null,
+  "source_hash": null,
+  "renderer": null,
+  "renderer_version": null,
+  "fixture_set_id": "FIXTURE-000",
+  "captures": [
+    {
+      "surface": "representative-slice",
+      "state": "default",
+      "target": "phone",
+      "configuration": {
+        "width_px": 390,
+        "height_px": 844,
+        "scale": 1,
+        "orientation": "portrait",
+        "theme": "default",
+        "locale": "default",
+        "text_scale": 1
+      },
+      "path": "design/prototypes/PROTO-000/renders/representative-slice-default-phone.png",
+      "sha256": null,
+      "evidence_label": "E2"
+    }
+  ],
+  "limitations": [],
+  "approved_baseline": false
+}

@@ -1,0 +1,12 @@
+{
+  "name": "web-drift-fixture",
+  "private": true,
+  "scripts": {
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.0",
+    "@playwright/test": "1.61.0"
+  }
+}
+

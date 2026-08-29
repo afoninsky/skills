@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": null,
+  "profile": {"phase": "discovery", "platforms": [], "claims": []},
+  "environment": {
+    "operating_system": null,
+    "architecture": null,
+    "package_manager": null
+  },
+  "capabilities": [
+    {
+      "id": "project-artifact-access",
+      "requirement": "required",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "versioning-and-rollback",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": "Git",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "current-primary-source-research",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "existing-runtime-observation",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "representative-participant-research",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "structured-flow-source",
+      "requirement": "optional",
+      "status": "unknown",
+      "selected_tool": "Penpot Free",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    }
+  ]
+}

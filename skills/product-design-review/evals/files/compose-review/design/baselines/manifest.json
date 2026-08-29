@@ -1,0 +1,11 @@
+{
+  "accepted_ref": "candidate-release-14",
+  "entries": [
+    {
+      "surface": "account-default",
+      "path": ".maestro/account-screen.png",
+      "claimed_as": "mobile golden"
+    }
+  ]
+}
+

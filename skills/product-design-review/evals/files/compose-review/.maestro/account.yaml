@@ -1,0 +1,6 @@
+appId: dev.example.account
+---
+- launchApp
+- assertVisible: Delete account
+- takeScreenshot: account-screen.png
+

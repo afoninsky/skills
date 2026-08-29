@@ -1,0 +1,10 @@
+{
+  "accepted_ref": "accepted-checkout-v2",
+  "entries": [
+    {
+      "surface": "checkout-summary-default",
+      "path": "Tests/CheckoutUISnapshotTests/ReferenceImages/checkout-summary-default.png"
+    }
+  ]
+}
+

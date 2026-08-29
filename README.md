@@ -17,16 +17,24 @@ Install one skill:
 
 ```bash
 npx skills add afoninsky/skills --skill agent-work-auditor
-npx skills add afoninsky/skills --skill design-steward
 npx skills add afoninsky/skills --skill marktplaats-ad-creator
 ```
 
-Design Steward's design-intent mode composes an installed skill named `grilling` or `grill-me`. The portable skill format has no nested dependency metadata, so expose that existing skill through the runtime's skill registry. For optional visual-design and UI-audit specialists, also install:
+`product-design` is a router over seven focused worker skills. Install the suite together for normal use:
 
 ```bash
-npx skills add anthropics/skills --skill frontend-design
-npx skills add vercel-labs/agent-skills --skill web-design-guidelines
+npx skills add afoninsky/skills \
+  --skill product-design \
+  --skill product-design-discovery \
+  --skill product-design-direction \
+  --skill product-design-contract \
+  --skill product-design-prototype \
+  --skill product-design-implementation \
+  --skill product-design-change \
+  --skill product-design-review
 ```
+
+Installing an individual worker is supported only for explicit advanced or automated use. A router with a missing selected worker stops and provides suite-installation instructions instead of impersonating it.
 
 Add `-g` to install globally instead of into the current project:
 
@@ -42,6 +50,28 @@ npx skills add afoninsky/skills --list
 
 ## Skills
 
+### Product Design suite
+
+Use `$product-design` as the common entrypoint for UI/UX work across responsive web, iOS, Android, React Native, Flutter, and shared web/mobile wrappers. It preserves the original request, inspects current project state, checks applicable tool capabilities, and routes the earliest missing prerequisite through one or more focused workers:
+
+- `product-design-discovery`
+- `product-design-direction`
+- `product-design-contract`
+- `product-design-prototype`
+- `product-design-implementation`
+- `product-design-change`
+- `product-design-review`
+
+The suite keeps accepted design decisions in versioned contracts, source maps, framework-native component states, and deterministic browser/app-runtime baselines. A change worker cannot update approved screenshots. Gate D disposes a reviewed candidate, Gate E separately authorizes the exact named candidate and matrix as the new accepted identity, and only the following contract `accept-freeze` records that identity. Review also owns release and research/learning evidence packets and stops for the owner's Gate F decision.
+
+Tool dependencies are capability-based. Git, Penpot, CSS variables or DTCG/Style Dictionary, framework workbenches, Playwright, Maestro, accessibility tools, preview/distribution services, and user-evidence tools are selected only when the phase and platform need them. Missing applicable capabilities are never hidden: the skill explains the loss, provides current official setup steps, and stops for setup or explicit confirmation of a limited degraded route. Missing hard runtime or accessibility evidence stops implementation and change before production writes; confirmed reduced work moves to read-only review, contract planning, or an isolated prototype with its own valid preflight. Missing evidence still cannot pass its gate.
+
+Executable preflight records use a non-empty representative platform set for direction, contract, prototype, implementation, protected change, and acceptance. `checked_at` certifies that every applicable status was actually probed within the previous four hours and is no more than five minutes ahead of the current clock; changing phase, platform, claim, target, build, access, or tool state requires an earlier re-probe.
+
+[Read the entrypoint](skills/product-design/SKILL.md)
+
+[Use the Product Design suite](docs/product-design.md)
+
 ### Agent Work Auditor
 
 An evidence-first audit of completed agent work. It checks requirement fidelity, completion and causal claims, test validity, regressions, process integrity, privacy and security risk, and delivery readiness.
@@ -53,18 +83,6 @@ The workflow was created from the testing and agent-workflow lessons described i
 Requirements: Python 3.10 or newer for the bundled report generator. Other verification tools depend on the work being audited.
 
 [Read the skill](skills/agent-work-auditor/SKILL.md)
-
-### Design Steward
-
-Runs a product-neutral, evidence-led design loop for responsive websites and web applications. It verifies and composes design-intent grilling, preserves every material decision in a compaction-safe recovery state, and generates an owner-facing roadmap of research, concepts, mocks, selection, and implementation fidelity. After a confirmed Owner Design Brief, it applies a 12–15 concept → 6 territory → 3 direction → 1 backbone funnel with early visual exposure, principal-level judgment, matched-state quality checks, and proportional implementation investment.
-
-The package includes an Owner Design Brief template, engagement-local records, a deterministic generation-readiness validator, and thirty adversarial benchmark fixtures. It rejects generic self-certification, scope collapse, review-chrome contamination, process blowout, feedback starvation, premature assurance, audit swarms, owner priming, unconfirmed autonomy, funnel overbuilding, and avoidable delegation. It is service-independent and keeps target-product context outside the portable core.
-
-Requirements: Python 3.10 or newer for the optional Design Brief and specialist-integrity validators. Representative-user research, specialist assurance, and product access depend on the separately approved engagement.
-
-[Read the skill](skills/design-steward/SKILL.md)
-
-[Use Design Steward](docs/design-steward.md)
 
 ### Marktplaats Ad Creator
 
@@ -93,8 +111,14 @@ Run the local checks:
 ```bash
 python3 scripts/verify_skills.py --repository .
 python3 -m unittest tests/test_verify_skills.py -v
+python3 -m unittest tests/test_product_design_suite.py -v
+python3 skills/product-design/scripts/test_validate_route.py
+python3 skills/product-design/scripts/test_validate_toolchain.py
+python3 skills/product-design-contract/scripts/test_validate_design_contract.py
+python3 skills/product-design-change/scripts/test_change_guard.py
+python3 skills/product-design-implementation/scripts/test_check_protected_paths.py
+python3 skills/product-design-review/scripts/test_classify_visual_evidence.py
 python3 skills/agent-work-auditor/scripts/test_generate_report.py
-python3 skills/design-steward/scripts/test_validate_design_brief.py
 npx --yes skills@1.5.16 add . --list
 ```
 

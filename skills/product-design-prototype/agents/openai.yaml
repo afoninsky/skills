@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Design Prototype"
+  short_description: "Prototype one design question safely"
+  default_prompt: "Use $product-design-prototype to build an isolated, evidence-backed prototype at the lowest useful fidelity and stop before production implementation."

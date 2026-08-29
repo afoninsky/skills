@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": null,
+  "profile": {"phase": "prototype", "platforms": [], "claims": []},
+  "environment": {
+    "operating_system": null,
+    "architecture": null,
+    "package_manager": null
+  },
+  "capabilities": [
+    {
+      "id": "versioned-prototype-isolation",
+      "requirement": "required",
+      "status": "unknown",
+      "selected_tool": "Git",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "target-render-and-capture",
+      "requirement": "required",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "repeatable-critical-interaction",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "structured-design-source",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": "Penpot Free",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "component-state-workbench",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "accessibility-inspection",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "remote-review-or-tester-delivery",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "physical-device-evidence",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "representative-participant-evidence",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    }
+  ]
+}

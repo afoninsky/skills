@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "REQ-ILLEGAL-FREEZE",
+  "original_prompt_sha256": "286d12ef4bf6021d24d41ec0db7fba6ae0e9ed7dbf8e860d1f45d2c79a567532",
+  "route": [
+    "product-design-review",
+    "product-design-contract"
+  ],
+  "route_reason": "Negative fixture: a review pipeline attempts to update baselines.",
+  "mode": "pipeline",
+  "current_phase": "review",
+  "requested_scope": "negative fixture",
+  "mutation_authority": "read-only",
+  "accepted_inputs": [],
+  "fixed_constraints": [],
+  "working_assumptions": [],
+  "blocking_unknowns": [],
+  "platforms": [
+    "shared-web-wrapper"
+  ],
+  "toolchain_record": "fixtures/route/toolchain-blocked.json",
+  "degradation_confirmation_ids": [],
+  "writes_allowed": [],
+  "protected_paths": [
+    "design/baselines/**"
+  ],
+  "stop_condition": "Reject illegal baseline authority.",
+  "owner_gate": null,
+  "implementation_entry_basis": null,
+  "implementation_entry_approval_id": null,
+  "baseline_updates_allowed": true,
+  "accept_freeze_approval_id": null
+}

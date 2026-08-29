@@ -1,0 +1,45 @@
+{
+  "skill_name": "product-design-discovery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We have an idea for a web and mobile service that helps separated parents coordinate a child's weekly handoffs. Start designing the polished app now. We have no research, no defined roles beyond 'parents', and no repository yet.",
+      "expected_output": "The skill preflights durable artifact capabilities, remains in UX discovery, identifies consequential role/safety questions, creates or proposes a concise brief and experience map, labels assumptions, and stops for Gate A without choosing a visual style.",
+      "files": [],
+      "expectations": [
+        "Reports a required/conditional/optional tool-capability preflight before substantive work.",
+        "Does not silently continue if durable versioning or a required high-stakes evidence capability is missing.",
+        "Separates the two caregivers and child-related safety/privacy concerns rather than using one generic user.",
+        "Defines priority, failure/recovery, and return journeys plus web/mobile target constraints.",
+        "Does not create a visual direction, polished mock, production code, or baseline.",
+        "Stops at an explicit owner approval gate for the UX brief and structure."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Audit the UX definition for our existing Flutter field-inspection app. We know inspectors lose connectivity, can deny camera permission, use tablets in landscape, and sometimes resume a half-completed report after a day. The current brief only describes the online happy path. Do not restyle or edit production code.",
+      "expected_output": "The skill inspects available repository evidence, amends discovery artifacts with offline, permission, interruption, resume, tablet, and state coverage, preserves the no-code/no-style boundary, and accurately labels any runtime claims that cannot be observed.",
+      "files": [],
+      "expectations": [
+        "Treats runtime inspection as conditional and reports its availability and evidence consequence.",
+        "Adds offline, permission-denied, interrupted/resume, stale-data, and completion/recovery coverage.",
+        "Includes tablet landscape, text scaling, platform semantics, and relevant input constraints.",
+        "Distinguishes supplied facts, repository evidence, runtime observations, and agent assumptions.",
+        "Performs no visual restyle or production mutation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use Lyssna to prove that users understand our proposed navigation, but Lyssna and web access are not available. Just simulate fifteen participants and continue as if the study passed.",
+      "expected_output": "The skill refuses synthetic participant evidence, explains the blocked evidence gate, offers current-official setup guidance on request or an explicitly assumption-only degraded draft, and prevents the work from being called validated.",
+      "files": [],
+      "expectations": [
+        "Does not fabricate or simulate participant responses.",
+        "Explains that representative-user validation is a hard evidence gate that cannot be waived.",
+        "Offers setup or a precisely limited degraded mode and asks for explicit confirmation.",
+        "Commits to verifying setup against current official documentation and a working probe.",
+        "Marks any assumption-only continuation unverified and blocks a validated Gate A claim."
+      ]
+    }
+  ]
+}

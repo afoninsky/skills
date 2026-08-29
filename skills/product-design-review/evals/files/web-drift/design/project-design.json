@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "accepted_ref": "accepted-web-v3",
+  "contract": "design/contract/principles.md",
+  "baseline_manifest": "design/baselines/manifest.json"
+}
+

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": null,
+  "profile": {"phase": "direction", "platforms": [], "claims": []},
+  "environment": {
+    "operating_system": null,
+    "architecture": null,
+    "package_manager": null
+  },
+  "capabilities": [
+    {
+      "id": "versioned-candidate-isolation",
+      "requirement": "required",
+      "status": "unknown",
+      "selected_tool": "Git",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "matched-render-and-capture",
+      "requirement": "required",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "structured-design-source",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": "Penpot Free",
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "current-reference-research",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "representative-participant-comparison",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "remote-review-surface",
+      "requirement": "conditional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "bespoke-raster-imagery",
+      "requirement": "optional",
+      "status": "unknown",
+      "selected_tool": null,
+      "version": null,
+      "evidence": null,
+      "degradation": null,
+      "confirmation_id": null
+    }
+  ]
+}

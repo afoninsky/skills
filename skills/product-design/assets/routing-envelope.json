@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "REQ-000",
+  "original_prompt_sha256": "9d574b68cbd30a5efc344ffdcbd74a787c9ce9873056495fd1db2c53e750ccf2",
+  "route": [
+    "product-design-discovery"
+  ],
+  "route_reason": "No accepted UX brief exists.",
+  "mode": "atomic",
+  "current_phase": "discovery",
+  "requested_scope": "product",
+  "mutation_authority": "design-artifacts-only",
+  "accepted_inputs": [],
+  "fixed_constraints": [],
+  "working_assumptions": [],
+  "blocking_unknowns": [],
+  "platforms": [],
+  "toolchain_record": "design/toolchain.json",
+  "degradation_confirmation_ids": [],
+  "writes_allowed": [
+    "design/"
+  ],
+  "protected_paths": [],
+  "stop_condition": "Gate A: owner approves UX brief and structure.",
+  "owner_gate": "A",
+  "implementation_entry_basis": null,
+  "implementation_entry_approval_id": null,
+  "baseline_updates_allowed": false,
+  "accept_freeze_approval_id": null
+}

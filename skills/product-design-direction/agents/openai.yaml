@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Design Direction"
+  short_description: "Compare distinct visual backbones"
+  default_prompt: "Use $product-design-direction to create matched, isolated visual directions from my accepted UX brief, recommend one, and stop for my selection."

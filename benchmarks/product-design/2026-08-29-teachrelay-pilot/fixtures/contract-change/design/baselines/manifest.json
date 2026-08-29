@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "accepted",
+  "candidate_id": "candidate-001",
+  "approval_id": "FREEZE-APPROVAL-PILOT",
+  "accepted_by": "Benchmark Owner",
+  "accepted_at": "2026-08-29T12:00:00+02:00",
+  "accepted_ref": "fixture-base",
+  "approval_record": "design/decisions/acceptance-record.md",
+  "hard_gates": {
+    "accessibility": {
+      "status": "not-evidenced",
+      "evidence": []
+    },
+    "content_truth": {
+      "status": "not-evidenced",
+      "evidence": []
+    },
+    "privacy_and_safety": {
+      "status": "not-applicable",
+      "evidence": [],
+      "rationale": "Disposable local UI fixture contains no product data or behavior."
+    },
+    "representative_user_evidence": {
+      "status": "not-evidenced",
+      "evidence": []
+    }
+  },
+  "entries": [
+    {
+      "id": "home-default-web",
+      "kind": "asserted-golden",
+      "surface_id": "home",
+      "state": "default",
+      "target": "chromium-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "path": "design/baselines/home-default.png",
+      "sha256": "82b181403b0d1109e54d861aff8aae9c7d8e9be4e7063805cf2d8c03f2e9fc9d",
+      "assertion_source": "tests/visual.spec.ts"
+    }
+  ]
+}

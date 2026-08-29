@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "current_phase": "implementation",
+  "accepted_ref": "accepted-design-v1",
+  "contract": "design/contract/components.md",
+  "baseline_manifest": "design/baselines/manifest.json",
+  "platform_map": {
+    "web": "src",
+    "android": "Capacitor wrapper of dist"
+  }
+}
+

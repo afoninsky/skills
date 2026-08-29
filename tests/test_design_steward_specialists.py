@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-DESIGN_STEWARD = REPOSITORY_ROOT / "skills" / "design-steward"
+DESIGN_STEWARD = REPOSITORY_ROOT / "deprecated" / "design-steward"
 PROVENANCE_PATH = DESIGN_STEWARD / "references" / "specialist-provenance.json"
 VERIFY_SPECIALISTS = DESIGN_STEWARD / "scripts" / "verify_specialists.py"
 
@@ -28,7 +28,10 @@ class DesignStewardSpecialistTests(unittest.TestCase):
             ),
         }
 
-        self.assertEqual(set(self.lock["skills"]), set(expected))
+        self.assertTrue(
+            set(expected).issubset(self.lock["skills"]),
+            "the deprecated workflow's pinned specialists must remain in the repository lock",
+        )
         for name, (source, skill_path) in expected.items():
             entry = self.lock["skills"][name]
             self.assertEqual(entry["source"], source)
@@ -64,7 +67,7 @@ class DesignStewardSpecialistTests(unittest.TestCase):
             self.assertIn(required, skill + contract)
 
     def test_license_evidence_is_stable_and_documented(self) -> None:
-        notice = REPOSITORY_ROOT.joinpath("THIRD_PARTY_SKILLS.md").read_text(encoding="utf-8")
+        notice = DESIGN_STEWARD.joinpath("THIRD_PARTY_SKILLS.md").read_text(encoding="utf-8")
         for record in self.provenance["skills"].values():
             self.assertRegex(record["license_evidence"], r"github\.com/.+/blob/[0-9a-f]{40}/")
             self.assertIn(record["license"], notice)

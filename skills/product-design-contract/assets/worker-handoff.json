@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "REQ-000",
+  "worker": "product-design-contract",
+  "status": "needs-owner",
+  "input_hashes": {"original_prompt": "9d574b68cbd30a5efc344ffdcbd74a787c9ce9873056495fd1db2c53e750ccf2"},
+  "artifacts_created_or_changed": [],
+  "production_mutations": [],
+  "evidence": [],
+  "missing_evidence": [],
+  "degraded_capabilities": [],
+  "baseline_changed": false,
+  "gate": null,
+  "recommended_next_worker": null,
+  "exact_next_action": "Owner reviews the named contract or candidate and supplies the next explicit decision."
+}

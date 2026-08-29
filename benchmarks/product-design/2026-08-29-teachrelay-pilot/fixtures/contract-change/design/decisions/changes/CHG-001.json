@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "change_id": "CHG-001",
+  "status": "approved",
+  "base_ref": "fixture-base",
+  "intent": "Increase Card padding while preserving accepted baseline identity and covering both shared web and Android-wrapper targets.",
+  "change_kind": "local-component",
+  "approval": {
+    "approval_id": "CHANGE-APPROVAL-PILOT",
+    "approved_by": "Benchmark Owner",
+    "approved_at": "2026-08-29T12:05:00+02:00",
+    "approval_record": "design/decisions/change-approval.md"
+  },
+  "contract_manifest": "design/contract/manifest.json",
+  "contract_manifest_sha256": "fbdaec822d6d17511911f106e29eca4f666489c3b12c4f90c1ddfd469493977a",
+  "source_map": "design/contract/source-map.json",
+  "source_map_sha256": "bf39a47d24478e0b8117d370083122ece6887ac9df0baaddb82fc6a2c59774af",
+  "baseline_manifest": "design/baselines/manifest.json",
+  "baseline_manifest_sha256": "a5573024991a85dea44fc59584a87dec2cec8492c8d4c434f8fabfafaf09a98b",
+  "allowed_files": [
+    "src/Card.vue"
+  ],
+  "allowed_components": [
+    "Card"
+  ],
+  "allowed_tokens": [],
+  "surfaces_may_change": [
+    "home"
+  ],
+  "surfaces_must_not_change": [],
+  "required_states": [
+    "default",
+    "loading"
+  ],
+  "required_targets": [
+    "chromium-desktop",
+    "android-webview-smoke"
+  ],
+  "required_checks": [
+    "playwright-home-default",
+    "maestro-android-webview-smoke"
+  ],
+  "protected_paths": [
+    "design/baselines/**",
+    "design/references/approved/**",
+    "design/contract/manifest.json",
+    "design/contract/source-map.json"
+  ],
+  "baseline_updates_allowed": false,
+  "capability_confirmation_ids": []
+}

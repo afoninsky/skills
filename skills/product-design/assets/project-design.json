@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "product-design-state",
+  "phase": "uninitialized",
+  "mode": "atomic",
+  "objective_summary": "",
+  "original_prompt_sha256": null,
+  "accepted": {
+    "brief": null,
+    "direction": null,
+    "contract": null,
+    "baseline_manifest": null,
+    "git_ref": null
+  },
+  "superseded_decisions": [],
+  "platforms": [],
+  "source_sharing": [],
+  "active_request": null,
+  "toolchain_record": "design/toolchain.json",
+  "approvals": [],
+  "blocking_unknowns": [],
+  "exact_next_action": "Route the first product-design request."
+}

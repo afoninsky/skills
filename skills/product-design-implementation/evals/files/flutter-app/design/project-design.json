@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "current_phase": "implementation",
+  "accepted_ref": "accepted-filter-v1",
+  "contract": "design/contract/components.md",
+  "platform_map": {
+    "android": "shared Flutter UI",
+    "ios": "shared Flutter UI"
+  }
+}
+

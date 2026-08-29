@@ -1,0 +1,19 @@
+{
+  "name": "portable-goals-client",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.0.0",
+    "@capacitor/core": "8.0.0",
+    "vue": "3.5.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.0",
+    "@playwright/test": "1.61.0",
+    "vite": "7.0.0"
+  }
+}
+

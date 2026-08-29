@@ -1,0 +1,10 @@
+:root {
+  --surface: #eef5f4;
+  --radius-card: 24px;
+  --font-display: Arial, sans-serif;
+}
+
+.card {
+  box-shadow: 0 14px 40px rgb(0 0 0 / 18%);
+}
+

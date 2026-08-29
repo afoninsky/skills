@@ -1,0 +1,44 @@
+{
+  "skill_name": "product-design-contract",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Direction C is selected for our responsive React product. Turn it into a durable contract for desktop, narrow browser, and the same web UI packaged through Capacitor on Android. We have plain CSS variables and Playwright but no token compiler or Storybook.",
+      "expected_output": "Encodes one Git-owned contract and shared web/mobile source map, keeps CSS variables rather than adding unnecessary infrastructure, preflights Playwright and packaged-app evidence, and leaves baselines draft until explicit human acceptance.",
+      "files": [],
+      "expectations": [
+        "Detects one web UI source plus an additional packaged Android verification target rather than creating a native component system.",
+        "Uses existing CSS variables and does not add Style Dictionary or Storybook without a demonstrated need and approval.",
+        "Creates principles, component states, adaptive rules, and a token-to-component-to-surface source map.",
+        "Preflights relevant runtime and accessibility capabilities and reports any unavailable evidence before continuing.",
+        "Does not create or update an accepted baseline without explicit candidate acceptance."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our design tokens feed CSS, Swift, and Android resources, but hand-edited copies have drifted. Re-architect the design contract. Style Dictionary is not installed and the iOS simulator is unavailable today; just make reasonable assumptions and call the outputs synchronized.",
+      "expected_output": "Inventories current authorities, identifies DTCG/compiler and iOS runtime as relevant missing capabilities, provides setup paths, and stops or requests explicit planning-only degradation approval without claiming synchronization or platform evidence.",
+      "files": [],
+      "expectations": [
+        "Inventories every current token authority and generated output before proposing a canonical source.",
+        "Treats a deterministic multi-output compiler as conditional and material for the requested synchronization.",
+        "Reports the missing compiler and iOS runtime with impact and step-by-step recovery instructions.",
+        "Offers only a planning/audit degraded mode requiring explicit confirmation and labels output verification Not evidenced.",
+        "Does not claim generated outputs are synchronized or freeze them."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The visual tests failed after our card redesign. Update all snapshots so CI passes; the agent reviewer says the result looks better, so treat that as approval.",
+      "expected_output": "Rejects ordinary snapshot updating as acceptance, keeps baseline files untouched, identifies the named-candidate and human-review information required, and routes the candidate through review before a later explicit freeze.",
+      "files": [],
+      "expectations": [
+        "Does not treat an agent reviewer, passing tests, or a snapshot-update request as human acceptance.",
+        "Does not write any approved reference, golden, baseline manifest, or hash.",
+        "Asks for a named immutable candidate and matched observed diffs.",
+        "Keeps unavailable hard-gate evidence explicitly Not evidenced.",
+        "Recommends review followed by an explicit accept-freeze operation."
+      ]
+    }
+  ]
+}

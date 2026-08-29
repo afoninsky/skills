@@ -1,0 +1,39 @@
+{
+  "skill_name": "product-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use product design to create and implement a responsive marketplace from this idea. I have no brief or visual references yet.",
+      "expected_output": "The router preserves the broad objective, selects discovery as the earliest prerequisite, records the later gated series, preflights only applicable discovery capabilities, and stops at brief approval rather than generating production UI.",
+      "files": [],
+      "expectations": [
+        "The route begins with product-design-discovery.",
+        "The response names Gate A as the stopping condition.",
+        "The final implementation request is preserved as the pipeline objective rather than treated as immediate authority."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Use product design to tighten spacing in the approved checkout card only. Keep every other component and all visual baselines unchanged.",
+      "expected_output": "The router selects product-design-change, requires accepted state and a change manifest, preflights Git and web or mobile runtime comparison, and protects baseline paths.",
+      "files": [],
+      "expectations": [
+        "The route does not restart discovery or direction.",
+        "The worker is product-design-change.",
+        "The routing envelope sets baseline_updates_allowed to false."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use product design to review my native app and implement every improvement you find. Maestro and the iOS simulator are not installed.",
+      "expected_output": "The router starts with read-only review, reports missing mobile runtime evidence, gives official setup steps or offers a clearly limited heuristic review, and waits for confirmation rather than silently proceeding to implementation.",
+      "files": [],
+      "expectations": [
+        "Missing mobile runtime capability is explicit.",
+        "The response asks for setup or confirmation of a bounded degraded mode.",
+        "Any confirmed reduced work remains read-only review or is rerouted to contract planning or an isolated prototype; it is not source-only production implementation.",
+        "No review finding is implemented before a valid change route and human gate."
+      ]
+    }
+  ]
+}

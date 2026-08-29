@@ -1,0 +1,14 @@
+[
+  {
+    "query": "Audit this existing app for visual drift and accessibility problems without changing anything.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use $product-design-review directly against this immutable build and keep the task strictly read-only.",
+    "should_trigger": true
+  },
+  {
+    "query": "The product-design router selected product-design-review. Execute the attached valid routing envelope against the frozen target and return the suite handoff.",
+    "should_trigger": true
+  }
+]

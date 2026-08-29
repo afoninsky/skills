@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "current_phase": "implementation",
+  "accepted_ref": "accepted-checkout-v2",
+  "contract": "design/contract/components.md",
+  "baseline_manifest": "design/baselines/manifest.json",
+  "platform_map": {
+    "ios": "UIKit coordinator hosting SwiftUI content"
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "capabilities": {
+    "git": {
+      "status": "available",
+      "last_observed": "2026-07-01"
+    },
+    "clarity": {
+      "status": "unknown",
+      "purpose": "post-launch behavioral signals"
+    },
+    "representative_user_evidence": {
+      "status": "missing-blocking",
+      "purpose": "navigation comprehension claim"
+    }
+  }
+}
+

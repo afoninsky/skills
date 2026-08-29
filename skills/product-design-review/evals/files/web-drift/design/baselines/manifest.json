@@ -1,0 +1,10 @@
+{
+  "accepted_ref": "accepted-web-v3",
+  "entries": [
+    {
+      "surface": "home-default",
+      "path": "tests/visual.spec.ts-snapshots/home-default.png"
+    }
+  ]
+}
+

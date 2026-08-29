@@ -1,0 +1,67 @@
+{
+  "skill_name": "product-design-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit this responsive web UI for visual-system drift and visual-test coverage. I especially want to know whether all the screenshots protect the product. Do not change or fix anything, and tell me before doing a source-only review if the browser or accessibility path is unavailable.",
+      "expected_output": "The reviewer freezes the target, preflights real browser and accessibility capabilities, inspects runtime before rationale when available, reports competing token authorities/import order, distinguishes the active Playwright golden from capture-only output, performs no writes, and limits claims when runtime is missing.",
+      "files": [
+        "evals/files/web-drift/package.json",
+        "evals/files/web-drift/src/base.css",
+        "evals/files/web-drift/src/feature.css",
+        "evals/files/web-drift/src/main.css",
+        "evals/files/web-drift/tests/visual.spec.ts",
+        "evals/files/web-drift/design/project-design.json",
+        "evals/files/web-drift/design/contract/principles.md",
+        "evals/files/web-drift/design/baselines/manifest.json"
+      ],
+      "assertions": [
+        "Uses the canonical capability statuses and does not silently replace runtime/accessibility review with source inspection.",
+        "Identifies the later global token overrides and import order as evidence of competing style authority.",
+        "Classifies toHaveScreenshot as a possible asserted golden only after active execution and baseline identity checks.",
+        "Classifies page.screenshot output as capture-only rather than protected visual coverage.",
+        "Separates fidelity, quality, and design-system drift findings.",
+        "Does not edit CSS, tests, manifests, or baseline files and verifies end Git state."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Perform a pre-release UI and accessibility review of this Compose screen and its Maestro flow. The test team says the saved device image is our mobile golden. Keep the review read-only and do not accept or regenerate anything.",
+      "expected_output": "The reviewer uses the Android adapter, requires an installed candidate and Android accessibility path for acceptance, recognizes Maestro takeScreenshot as capture-only, identifies absent active accessibility checks/manual TalkBack evidence, and returns blocked rather than release-ready if those hard gates cannot run.",
+      "files": [
+        "evals/files/compose-review/settings.gradle.kts",
+        "evals/files/compose-review/app/build.gradle.kts",
+        "evals/files/compose-review/app/src/main/java/dev/example/account/AccountScreen.kt",
+        "evals/files/compose-review/app/src/androidTest/java/dev/example/account/AccountScreenTest.kt",
+        "evals/files/compose-review/.maestro/account.yaml",
+        "evals/files/compose-review/design/baselines/manifest.json"
+      ],
+      "assertions": [
+        "Loads the Android/Compose review path and requires real installed-app evidence for release acceptance.",
+        "Classifies Maestro takeScreenshot as capture-only despite the team's golden label.",
+        "Does not update the image, switch to assertScreenshot, or edit tests during review.",
+        "Reports the missing Compose accessibility checks and manual TalkBack/font-scaling coverage.",
+        "Provides official setup/probe steps and blocks the accessibility/release conclusion when unavailable.",
+        "Produces evidence-backed findings and bounded change briefs without implementation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Run our periodic product-design review. The attached summary says 27 Clarity sessions showed repeated taps, so declare the new navigation validated and recommend rolling it out everywhere. We have no participant study, release segmentation, consent record, or direct Clarity access in this environment.",
+      "expected_output": "The reviewer refuses the validation and rollout claim, preflights Clarity and representative-user evidence separately, treats the summary as limited behavioral signal with privacy/provenance gaps, requests authorized setup or scoped evidence, and proposes a small decision-focused study/change brief without touching instrumentation or product source.",
+      "files": [
+        "evals/files/periodic-review/design/toolchain.json",
+        "evals/files/periodic-review/evidence/clarity-summary.md",
+        "evals/files/periodic-review/design/project-design.json"
+      ],
+      "assertions": [
+        "Does not call 27 unsegmented sessions representative-user validation or evidence for global rollout.",
+        "Uses unknown or missing-blocking for unverified Clarity access and missing claim-relevant user evidence.",
+        "Names consent, masking, release, population, task, denominator, and recency gaps.",
+        "Does not install Clarity, access sessions, contact participants, or modify the product.",
+        "Offers official setup/access steps or a small consented study and asks for a specific owner decision.",
+        "Returns the validation conclusion blocked while preserving a limited behavioral hypothesis."
+      ]
+    }
+  ]
+}

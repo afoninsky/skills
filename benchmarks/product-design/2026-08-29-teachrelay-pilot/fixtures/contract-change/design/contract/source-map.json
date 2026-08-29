@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "platform_architecture": [
+    {
+      "id": "web-ui",
+      "kind": "vue-web",
+      "source_roots": [
+        "src"
+      ],
+      "shares_ui_with": [
+        "android-wrapper"
+      ]
+    },
+    {
+      "id": "android-wrapper",
+      "kind": "capacitor-android-shared-web-wrapper",
+      "source_roots": [
+        "src"
+      ],
+      "shares_ui_with": [
+        "web-ui"
+      ]
+    }
+  ],
+  "tokens": {
+    "color.surface.primary": {
+      "canonical_path": "src/styles.css",
+      "generated_outputs": [],
+      "components": [
+        "Card"
+      ]
+    }
+  },
+  "components": {
+    "Card": {
+      "source_files": [
+        "src/Card.vue"
+      ],
+      "token_dependencies": [
+        "color.surface.primary"
+      ],
+      "states": [
+        "default",
+        "loading"
+      ],
+      "surfaces": [
+        "home"
+      ]
+    }
+  },
+  "surfaces": {
+    "home": {
+      "platforms": [
+        "web-ui",
+        "android-wrapper"
+      ],
+      "components": [
+        "Card"
+      ],
+      "targets": [
+        "chromium-desktop",
+        "android-webview-smoke"
+      ],
+      "baseline_entry_ids": [
+        "home-default-web"
+      ]
+    }
+  },
+  "intentional_variants": []
+}

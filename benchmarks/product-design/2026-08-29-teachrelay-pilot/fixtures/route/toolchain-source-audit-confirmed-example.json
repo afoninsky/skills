@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-08-29T12:00:00+02:00",
+  "profile": {
+    "phase": "review",
+    "platforms": [],
+    "claims": []
+  },
+  "environment": {
+    "operating_system": "Darwin 25.5.0",
+    "architecture": "arm64",
+    "package_manager": "Bun 1.3.13"
+  },
+  "capabilities": [
+    {
+      "id": "versioning-and-rollback",
+      "requirement": "required",
+      "status": "available",
+      "selected_tool": "Git",
+      "version": "2.55.0",
+      "evidence": "HEAD and clean target were verified",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "accepted-contract-and-baseline-identity",
+      "requirement": "conditional",
+      "status": "missing-degradable",
+      "selected_tool": "Product Design contract and baseline manifests",
+      "version": null,
+      "evidence": null,
+      "degradation": "Limit execution to a current-source authority inventory; do not call any difference accepted-design drift.",
+      "confirmation_id": "EXAMPLE-CONFIRM-SOURCE-ONLY"
+    },
+    {
+      "id": "web-runtime-and-visual-regression",
+      "requirement": "optional",
+      "status": "not-applicable",
+      "selected_tool": "Playwright Test",
+      "version": "1.61.1",
+      "evidence": "The selected accepted-state test did not reach its screenshot assertion.",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "mobile-runtime-and-visual-regression",
+      "requirement": "optional",
+      "status": "not-applicable",
+      "selected_tool": "Maestro CLI plus Android emulator/device",
+      "version": null,
+      "evidence": "This synthetic record represents an explicitly narrowed source-only inventory, not a mobile acceptance review.",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "scope-and-hash-validation",
+      "requirement": "optional",
+      "status": "not-applicable",
+      "selected_tool": "Python bundled validators",
+      "version": "3.9.6",
+      "evidence": "The narrowed worker is read-only review; no authoritative contract or change operation is attempted.",
+      "degradation": null,
+      "confirmation_id": null
+    }
+  ]
+}

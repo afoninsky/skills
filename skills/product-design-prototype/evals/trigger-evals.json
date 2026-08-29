@@ -1,0 +1,14 @@
+[
+  {
+    "query": "Build a clickable phone and desktop mock for the approved account-recovery flow before production work.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use $product-design-prototype directly to build this one isolated representative slice and stop at Gate C.",
+    "should_trigger": true
+  },
+  {
+    "query": "The product-design router selected product-design-prototype. Execute the attached valid routing envelope with the accepted input hashes and return the suite handoff.",
+    "should_trigger": true
+  }
+]

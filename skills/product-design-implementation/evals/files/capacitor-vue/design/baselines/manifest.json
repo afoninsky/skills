@@ -1,0 +1,10 @@
+{
+  "accepted_ref": "accepted-design-v1",
+  "entries": [
+    {
+      "surface": "goal-card-default",
+      "path": "tests/goal-card.spec.ts-snapshots/goal-card-default.png"
+    }
+  ]
+}
+

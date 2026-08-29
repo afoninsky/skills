@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "workers": [
+    "product-design-discovery",
+    "product-design-direction",
+    "product-design-contract",
+    "product-design-prototype",
+    "product-design-implementation",
+    "product-design-change",
+    "product-design-review"
+  ],
+  "allowed_transitions": {
+    "product-design-discovery": [
+      "product-design-direction",
+      "product-design-prototype"
+    ],
+    "product-design-direction": [
+      "product-design-contract"
+    ],
+    "product-design-contract": [
+      "product-design-prototype",
+      "product-design-implementation",
+      "product-design-review",
+      "product-design-change"
+    ],
+    "product-design-prototype": [
+      "product-design-review",
+      "product-design-implementation"
+    ],
+    "product-design-implementation": [
+      "product-design-review"
+    ],
+    "product-design-change": [
+      "product-design-review"
+    ],
+    "product-design-review": [
+      "product-design-change",
+      "product-design-contract"
+    ]
+  },
+  "human_gates": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ]
+}

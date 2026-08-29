@@ -1,0 +1,69 @@
+{
+  "skill_name": "product-design-implementation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use product-design-implementation directly. The compact GoalCard design and its loading, error, and long-title states are approved. Implement it in this Vue product and cover both responsive web and the Android app. Do not change any accepted screenshots. If a named tool is unavailable, tell me before reducing verification.",
+      "expected_output": "The worker recognizes Capacitor as a wrapper around the one Vue UI source, implements the approved slice in the existing component system, preflights Playwright/axe and packaged-app execution separately, never creates a parallel native screen or edits goldens, and blocks runtime-complete status if Android execution/accessibility cannot be verified.",
+      "files": [
+        "evals/files/capacitor-vue/package.json",
+        "evals/files/capacitor-vue/capacitor.config.ts",
+        "evals/files/capacitor-vue/src/components/GoalCard.vue",
+        "evals/files/capacitor-vue/tests/goal-card.spec.ts",
+        "evals/files/capacitor-vue/design/project-design.json",
+        "evals/files/capacitor-vue/design/contract/components.md",
+        "evals/files/capacitor-vue/design/baselines/manifest.json"
+      ],
+      "assertions": [
+        "Identifies the Vue source tree as canonical for both web and the Capacitor-packaged app.",
+        "Does not create a native Android UI duplicate or treat responsive browser emulation as packaged-app evidence.",
+        "Uses exactly the canonical capability statuses and asks for setup or explicit reduced-scope confirmation when a selected capability is missing.",
+        "Implements real loading, error, and long-title states through the existing component architecture.",
+        "Runs or proposes Playwright plus axe for web and a packaged-app Maestro/native accessibility smoke for Android.",
+        "Does not update the asserted screenshot or any baseline-manifest path.",
+        "Returns blocked rather than complete when a claimed runtime or accessibility hard gate cannot run."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Implement the accepted checkout-summary reference as reusable SwiftUI production components. Keep the existing coordinator and UIKit hosting boundary. Include large Dynamic Type, error, and disabled confirmation states. Treat the current snapshot references as read-only.",
+      "expected_output": "The worker extends the mixed SwiftUI/UIKit architecture without migration, adds framework-native components and previews/states, uses XCTest/XCUITest and Accessibility Inspector/audits when available, protects snapshot references, and does not claim acceptance from source or previews alone.",
+      "files": [
+        "evals/files/swiftui-app/Package.swift",
+        "evals/files/swiftui-app/Sources/Checkout/CheckoutCoordinator.swift",
+        "evals/files/swiftui-app/Sources/Checkout/CheckoutSummaryView.swift",
+        "evals/files/swiftui-app/design/project-design.json",
+        "evals/files/swiftui-app/design/contract/components.md",
+        "evals/files/swiftui-app/design/baselines/manifest.json"
+      ],
+      "assertions": [
+        "Detects and preserves the mixed UIKit coordinator and SwiftUI view boundary.",
+        "Uses native SwiftUI controls and project conventions rather than tracing the reference with positioned layers.",
+        "Creates deterministic previews for required states and treats previews as workbench rather than runtime acceptance.",
+        "Includes Dynamic Type and platform accessibility audit/manual VoiceOver coverage.",
+        "Never re-records or updates native snapshot references.",
+        "Stops before production writes and returns blocked with no production mutations if Xcode/simulator or accessibility capability is unavailable, offering setup or a router-owned review, contract-planning, or isolated-prototype route."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The filter sheet behavior and visuals in the contract are approved. Build it as a real Flutter widget for Android and iOS using our existing ThemeExtension and Riverpod state. Add deterministic empty, offline, keyboard-open, and text-scale states. Do not add tools just because the skill mentions them.",
+      "expected_output": "The worker extends the existing Flutter architecture, loads only the Flutter adapter, makes Widgetbook conditional, implements semantic real widgets and fixtures, preflights both claimed platforms plus accessibility, and leaves goldens untouched.",
+      "files": [
+        "evals/files/flutter-app/pubspec.yaml",
+        "evals/files/flutter-app/lib/design/app_theme_extension.dart",
+        "evals/files/flutter-app/lib/features/filter/filter_sheet.dart",
+        "evals/files/flutter-app/design/project-design.json",
+        "evals/files/flutter-app/design/contract/components.md"
+      ],
+      "assertions": [
+        "Extends the existing ThemeExtension and Riverpod patterns without adding a parallel design or state system.",
+        "Implements empty, offline, keyboard-open, and text-scale fixtures with real Flutter widgets and Semantics.",
+        "Does not add Widgetbook when existing widget fixtures are sufficient.",
+        "Uses Flutter tests/guidelines and real Android/iOS runtime checks appropriate to the claimed targets.",
+        "Explains any unavailable Maestro/native capability and obtains a specific reduced-scope decision instead of silently continuing.",
+        "Does not update Flutter goldens or call the result usable/validated."
+      ]
+    }
+  ]
+}

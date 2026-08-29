@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_set_id": "FIXTURE-000",
+  "synthetic_data": true,
+  "seed": "fixed",
+  "fixtures": [
+    {
+      "id": "default",
+      "role": "primary-role",
+      "initial_state": "ready",
+      "content_case": "typical",
+      "permissions": {},
+      "environment": {},
+      "actions": [],
+      "expected_transitions": []
+    },
+    {
+      "id": "recovery",
+      "role": "primary-role",
+      "initial_state": "error",
+      "content_case": "long",
+      "permissions": {},
+      "environment": {
+        "network": "offline"
+      },
+      "actions": [],
+      "expected_transitions": []
+    }
+  ]
+}

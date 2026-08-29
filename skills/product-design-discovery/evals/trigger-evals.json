@@ -1,0 +1,14 @@
+[
+  {
+    "query": "Research our users, journeys, information architecture, and required mobile states before designing the app.",
+    "should_trigger": false
+  },
+  {
+    "query": "Use $product-design-discovery directly to audit the accepted UX brief. Keep visual styling and production code out of scope.",
+    "should_trigger": true
+  },
+  {
+    "query": "The product-design router selected product-design-discovery. Execute the attached valid routing envelope for Gate A and return the suite handoff.",
+    "should_trigger": true
+  }
+]

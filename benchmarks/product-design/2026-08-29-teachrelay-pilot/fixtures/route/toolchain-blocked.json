@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-08-29T12:00:00+02:00",
+  "profile": {
+    "phase": "review",
+    "platforms": [
+      "shared-web-wrapper"
+    ],
+    "claims": [
+      "visual-acceptance"
+    ]
+  },
+  "environment": {
+    "operating_system": "Darwin 25.5.0",
+    "architecture": "arm64",
+    "package_manager": "Bun 1.3.13"
+  },
+  "capabilities": [
+    {
+      "id": "versioning-and-rollback",
+      "requirement": "required",
+      "status": "available",
+      "selected_tool": "Git",
+      "version": "2.55.0",
+      "evidence": "HEAD fe9c88d12f8f74bdada638b59409247c195d9a66; working tree clean",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "accepted-contract-and-baseline-identity",
+      "requirement": "conditional",
+      "status": "missing-degradable",
+      "selected_tool": "Product Design contract and baseline manifests",
+      "version": null,
+      "evidence": null,
+      "degradation": "A source-only current-state inventory can continue after confirmation, but accepted-design drift and baseline-preservation claims remain Not evidenced.",
+      "confirmation_id": null
+    },
+    {
+      "id": "web-runtime-and-visual-regression",
+      "requirement": "required",
+      "status": "missing-blocking",
+      "selected_tool": "Playwright Test 1.61.1",
+      "version": "1.61.1 / Chromium 149.0.7827.55",
+      "evidence": "Browser launch and 60-test discovery succeeded; the selected accepted-Home test failed before reaching toHaveScreenshot because '/' rendered 'Your goals' instead of the expected accepted title.",
+      "degradation": "No degraded execution can preserve a visual-acceptance claim. The router may instead offer a separately confirmed source-only inventory with visual preservation marked Not evidenced.",
+      "confirmation_id": null
+    },
+    {
+      "id": "mobile-runtime-and-visual-regression",
+      "requirement": "required",
+      "status": "missing-blocking",
+      "selected_tool": "Maestro CLI plus Android emulator/device",
+      "version": null,
+      "evidence": "maestro, adb, Java runtime, and a usable Android device are absent; the project requires Java 21 and Android API 36.",
+      "degradation": "A separately confirmed source-only architecture inventory is possible, but packaged WebView, safe-area, keyboard, back-navigation, bridge, and mobile visual claims remain Not evidenced.",
+      "confirmation_id": null
+    },
+    {
+      "id": "scope-and-hash-validation",
+      "requirement": "optional",
+      "status": "not-applicable",
+      "selected_tool": "Python 3.10+ bundled validators",
+      "version": "3.9.6",
+      "evidence": "The active worker is read-only review; the later contract phase receives a separate preflight.",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "web-accessibility",
+      "requirement": "conditional",
+      "status": "not-applicable",
+      "selected_tool": "@axe-core/playwright",
+      "version": null,
+      "evidence": "The bounded pilot asks only for visual-system architecture and does not make an accessibility or release-readiness claim.",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "structured-visual-context",
+      "requirement": "optional",
+      "status": "not-applicable",
+      "selected_tool": "Penpot MCP",
+      "version": null,
+      "evidence": "No exact selected-layer question is required for the source-authority inventory.",
+      "degradation": null,
+      "confirmation_id": null
+    },
+    {
+      "id": "token-compilation",
+      "requirement": "conditional",
+      "status": "not-applicable",
+      "selected_tool": "Style Dictionary",
+      "version": null,
+      "evidence": "TeachRelay packages one CSS UI source into web and Capacitor; no generated multi-platform token pipeline exists or is needed for this audit.",
+      "degradation": null,
+      "confirmation_id": null
+    }
+  ]
+}

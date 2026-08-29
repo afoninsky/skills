@@ -1,0 +1,46 @@
+{
+  "skill_name": "product-design-prototype",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Prototype one representative slice for a responsive appointment-rescheduling product. The UX brief and direction are approved. Show entry from an upcoming appointment, selecting a new slot, confirmation, a slot-conflict recovery, and the returning state. Use realistic long names and dates on phone and desktop. Do not touch production code.",
+      "expected_output": "The skill preflights Git/runtime capabilities, defines one decision and an isolation contract, builds only the vertical slice with deterministic fixtures, verifies matched phone/desktop renders and the conflict flow, records accessibility/adaptive risks, and stops at Gate C without production or baseline writes.",
+      "files": [],
+      "expectations": [
+        "Uses exact capability statuses and records or proposes design/toolchain.json evidence.",
+        "Defines an observable decision/rejection condition and selects proportional fidelity.",
+        "Physically isolates prototype source/dependencies and proves production does not import it.",
+        "Includes entry, core act, consequence, conflict recovery, and returning state with deterministic real-shaped content.",
+        "Requires a real browser render, repeatable interaction, and matched phone/desktop captures for Gate C.",
+        "Reports accessibility/adaptive evidence and limitations.",
+        "Does not mutate production source, accepted references/contracts, or baselines."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our app is a responsive web UI packaged with Capacitor for Android. Make the mobile prototype as a new Jetpack Compose screen so it feels native, and skip browser testing. The accepted UI direction already exists in the web source.",
+      "expected_output": "The skill detects the shared web-wrapper architecture, refuses a duplicate native UI tree, prototypes in the shared web source or isolated equivalent, and requires browser evidence plus a packaged-shell smoke for WebView/native concerns.",
+      "files": [],
+      "expectations": [
+        "Identifies one shared web UI source with a native-shell verification layer.",
+        "Does not create a parallel Compose product UI.",
+        "Uses Playwright or an established equivalent for responsive UI behavior.",
+        "Adds Maestro/device smoke only for WebView, safe-area, keyboard, lifecycle, bridge, permission, or native-back differences.",
+        "Keeps browser and packaged-app evidence distinct and reports missing tools instead of silently skipping them."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Build a high-fidelity Flutter checkout prototype and mark it approved. Flutter, Widgetbook, Maestro, emulators, and image capture are unavailable. Just write Dart-looking pseudocode and claim the flow works; I don't want setup questions.",
+      "expected_output": "The skill reports renderer/runtime and capture as missing-blocking, refuses runtime or approval claims, gives setup choices based on current official documentation when requested, and does not let user pressure waive Gate C evidence.",
+      "files": [],
+      "expectations": [
+        "Marks a working Flutter render/runtime and capture path missing-blocking for high-fidelity Gate C evidence.",
+        "Does not claim pseudocode renders or the flow works.",
+        "Explains that user confirmation cannot turn missing hard evidence into a pass.",
+        "Offers current-official setup steps or an explicitly unverified source draft if safe, and waits for a choice.",
+        "Does not mark the prototype approved or update any baseline."
+      ]
+    }
+  ]
+}

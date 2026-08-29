@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "REQ-TEACHRELAY-PILOT",
+  "original_prompt_sha256": "286d12ef4bf6021d24d41ec0db7fba6ae0e9ed7dbf8e860d1f45d2c79a567532",
+  "route": [
+    "product-design-review",
+    "product-design-contract"
+  ],
+  "route_reason": "An existing product asks for a visual-consistency review before a read-only contract re-architecture proposal; no accepted suite contract exists.",
+  "mode": "pipeline",
+  "current_phase": "review",
+  "requested_scope": "TeachRelay web UI and the Android Capacitor package that shares it",
+  "mutation_authority": "read-only",
+  "accepted_inputs": [
+    {
+      "id": "teachrelay_target",
+      "path": "/Users/drago/Documents/teachrelay/teachrelay@fe9c88d12f8f74bdada638b59409247c195d9a66",
+      "sha256": "ac38cab0c6c01db42a216d72e7fd99f411502f88702225c216f39ea548460f2e"
+    }
+  ],
+  "fixed_constraints": [
+    "Do not modify production or baseline files",
+    "Treat the web application as the canonical UI source for the Capacitor package"
+  ],
+  "working_assumptions": [],
+  "blocking_unknowns": [
+    "No suite contract or baseline manifest identifies an accepted cross-product visual authority"
+  ],
+  "platforms": [
+    "shared-web-wrapper"
+  ],
+  "toolchain_record": "fixtures/route/toolchain-blocked.json",
+  "degradation_confirmation_ids": [],
+  "writes_allowed": [],
+  "protected_paths": [
+    "apps/**",
+    "packages/**",
+    "design/**"
+  ],
+  "stop_condition": "Stop before partial review until the owner sets up missing protected capabilities or confirms a named source-only inventory whose runtime, mobile, and drift conclusions remain Not evidenced.",
+  "owner_gate": null,
+  "implementation_entry_basis": null,
+  "implementation_entry_approval_id": null,
+  "baseline_updates_allowed": false,
+  "accept_freeze_approval_id": null
+}

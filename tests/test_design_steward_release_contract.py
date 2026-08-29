@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-DESIGN_STEWARD = REPOSITORY_ROOT / "skills" / "design-steward"
+DESIGN_STEWARD = REPOSITORY_ROOT / "deprecated" / "design-steward"
 
 
 class DesignStewardReleaseContractTests(unittest.TestCase):
@@ -13,7 +13,7 @@ class DesignStewardReleaseContractTests(unittest.TestCase):
         skill = DESIGN_STEWARD.joinpath("SKILL.md").read_text(encoding="utf-8")
 
         for required in (
-            'metadata: {version: "4.0.0"}',
+            'metadata: {version: "4.1.0"}',
             "## Preflight the required grilling skill",
             "## Check every gate response",
             "Blocking Unknowns",
