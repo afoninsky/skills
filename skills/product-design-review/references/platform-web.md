@@ -12,6 +12,8 @@ Inspect console/network/hydration and service-worker/offline behavior when relev
 
 Run axe on the reached states, then exercise keyboard-only operation, visible focus, zoom/reflow, text spacing/scaling, and applicable VoiceOver/NVDA/TalkBack. Static semantics or axe alone cannot support “accessible.”
 
+At the smallest supported layout, flag mobile form-control text below 16 CSS px, essential information available only as microtext, and impractical pointer targets. A compact visual control may use a larger non-overlapping hit area. Keep decorative duplicate captions separate from operational text when reporting minimum sizes.
+
 ## Drift signals
 
 Look for competing `:root`/theme providers, literal values, import/cascade precedence, global overrides, duplicate component implementations, page-local token systems, SSR/client divergence, and missing state stories/fixtures. Distinguish intentional brand/theme variants from accidental override order.
@@ -19,4 +21,3 @@ Look for competing `:root`/theme providers, literal values, import/cascade prece
 ## Screenshot classification
 
 Playwright `expect(...).toHaveScreenshot(...)` in an executed test may be asserted. `page.screenshot(...)`, browser screenshots, trace attachments, or image artifacts without comparison are capture-only. Confirm the test did not run with update mode and that the baseline identity is accepted.
-

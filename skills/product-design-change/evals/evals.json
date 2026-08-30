@@ -39,6 +39,24 @@
         "Presents the candidate as an intentional delta from the still-accepted baseline.",
         "Recommends independent review and a later explicit contract accept-freeze operation."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use product-design-change directly on this accepted kiln-card fixture. Treat the work as two successive bounded turns. Turn 1: add a compact maintenance notice inside .kiln-detail between the status and ledger with the label 'Maintenance tonight · 18:00–20:00' and the separate message 'Reservations stay on the ledger; opening may be delayed.' All existing content and behavior, plus the structure, styling, and appearance of .kiln-identity, must remain unchanged. Turn 2: add a semantic Dismiss button only inside that notice; it hides only the notice for the loaded page and returns focus to the Kiln Zuid heading. Preserve separate original, turn-1, and turn-2 evidence, verify at 375px and 1440px without changing a baseline, and repeat the turn-2 request once to prove it is a no-op. The desktop fixture deliberately couples the two grid columns through stretch and a bottom-anchored nameplate; do not classify movement inside the protected identity as harmless reflow.",
+      "expected_output": "Preflights the grid/flex and intrinsic-height coupling, applies the notice plus only the smallest necessary layout-isolation change, keeps the protected identity locally identical, compares the final candidate with both the original and turn-1 anchors, fails closed on any protected geometry/render difference, and produces no source diff on repetition.",
+      "files": [
+        "evals/files/layout-coupling/index.html",
+        "evals/files/layout-coupling/styles.css"
+      ],
+      "expectations": [
+        "Inspects grid tracks, stretch, intrinsic height, flex distribution, wrapping, overflow, and positioned descendants before editing.",
+        "Turn 1 changes only notice-local markup and styles plus the smallest necessary layout dependency, and keeps the protected identity's structure, computed styles, local geometry, line wrapping, and rendered crop identical at both widths.",
+        "Turn 2 changes only the notice and its smallest necessary handler while preserving both the original protected state and every accepted turn-1 notice decision.",
+        "Uses an insertion-scoped locator for the new notice against the original anchor and for the new button against the turn-1 anchor; it does not omit the broader detail region.",
+        "Uses matched deterministic evidence for the original-to-current and previous-to-current comparisons and treats any non-uniform protected difference as failure.",
+        "Leaves accepted references and baselines unchanged and preserves unrelated source and behavior.",
+        "Repeating the final request produces no source change."
+      ]
     }
   ]
 }

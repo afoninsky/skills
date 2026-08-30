@@ -63,6 +63,7 @@ jobs:
         run: |
           python skills/product-design-contract/scripts/test_validate_design_contract.py
           python skills/product-design-change/scripts/test_change_guard.py
+          python skills/product-design-change/scripts/test_preservation_guard.py
           python skills/product-design-implementation/scripts/test_check_protected_paths.py
           python skills/product-design-review/scripts/test_classify_visual_evidence.py
       - name: Verify deprecated Design Steward specialist integration

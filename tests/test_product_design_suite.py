@@ -115,6 +115,29 @@ class ProductDesignSuiteTests(unittest.TestCase):
         self.assertIn("smallest patch", change)
         self.assertIn("shared dependency", change)
 
+    def test_change_worker_fails_closed_on_local_layout_drift(self) -> None:
+        change = entrypoint("product-design-change").lower()
+        protocol = SKILLS_ROOT.joinpath(
+            "product-design-change", "references", "change-protocol.md"
+        ).read_text(encoding="utf-8").lower()
+        package = package_text("product-design-change").lower()
+        self.assertIn("hidden layout coupling", change)
+        self.assertIn("non-uniform structure", change)
+        self.assertIn("original protected state", change)
+        self.assertIn("immediately previous working candidate", change)
+        self.assertIn("local layout preservation", protocol)
+        self.assertIn("blocks completion", protocol)
+        self.assertIn("preservation_guard.py", package)
+
+    def test_web_review_has_compact_sizing_guard_without_blanket_claims(self) -> None:
+        review = entrypoint("product-design-review").lower()
+        web = SKILLS_ROOT.joinpath(
+            "product-design-review", "references", "platform-web.md"
+        ).read_text(encoding="utf-8").lower()
+        self.assertIn("compact or density-constrained sizing", review)
+        self.assertIn("below 16 css px", web)
+        self.assertIn("decorative duplicate", web)
+
     def test_exploration_is_creative_but_separate_from_implementation(self) -> None:
         direction = entrypoint("product-design-direction").lower()
         prototype = entrypoint("product-design-prototype").lower()

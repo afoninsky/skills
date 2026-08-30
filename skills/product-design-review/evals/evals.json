@@ -62,6 +62,23 @@
         "Offers authorized access or a small consented study when either would resolve the decision.",
         "Returns the validation conclusion blocked while preserving a limited behavioral hypothesis."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Review this Studio Ember reservation fixture at 375px and 1440px for practical typography and control sizing. Keep the review read-only. The tiny kiln-diagram caption duplicates visible operational information; the reservation help, input, and action carry unique task information. Use runtime evidence when available and do not turn a source-only estimate into a rendered-size claim.",
+      "expected_output": "Separates decorative duplicate text from operational text, measures or appropriately bounds the mobile input and control sizes, reports the undersized unique help and action content with practical impact, and avoids an inaccurate blanket minimum-font claim.",
+      "files": [
+        "evals/files/mobile-sizing/index.html",
+        "evals/files/mobile-sizing/styles.css"
+      ],
+      "assertions": [
+        "Distinguishes the 7px decorative duplicate kiln caption from unique operational content instead of treating every visible glyph as equivalent.",
+        "Flags the 13px mobile input text and 25px-high action as practical risks under matched rendered conditions, or labels them source-only when runtime evidence is unavailable.",
+        "Flags the unique 11px preparation instruction rather than excusing it as decorative metadata.",
+        "Checks wrapping, overflow, focus visibility, and adjacent geometry at the smallest supported layout.",
+        "Does not claim an unqualified minimum visible or operational font size that the evidence contradicts.",
+        "Does not edit the fixture or create a baseline."
+      ]
     }
   ]
 }

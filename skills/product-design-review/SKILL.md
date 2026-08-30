@@ -3,7 +3,7 @@ name: product-design-review
 description: Perform a read-only UX/UI, visual-quality, design-system, responsive/adaptive, accessibility, fidelity, or release review and return evidence-backed prioritized findings. Use when routed by product-design or explicitly requested; otherwise use product-design for unqualified UI/UX work. Do not implement findings or update baselines.
 compatibility: Source inspection works with repository read access; visual, interaction, accessibility, fidelity, usability, and release claims additionally require evidence appropriate to those claims.
 license: MIT
-metadata: {version: "1.1.0"}
+metadata: {version: "1.1.1"}
 ---
 
 # Product Design Review
@@ -20,7 +20,7 @@ For “review and fix,” complete the review first. If the request clearly auth
 
 1. **Identify the target.** Record the reviewed commit/build/current working state, surfaces, states, targets, accepted references when present, review question, and explicit exclusions. If the target changes during review, invalidate affected evidence.
 2. **Inspect the runtime before rationale.** When the claim is visual or interactive, open the real target and representative states before reading implementation explanations. Verify the target identity. If runtime evidence is unavailable, a source-only or heuristic review can still be useful but must be labeled accordingly.
-3. **Review the experience.** Examine first-use comprehension, core task, hierarchy, information architecture, content, navigation, interaction affordances, visual system, responsive/adaptive behavior, relevant states and recovery, input methods, text scaling, motion, and accessibility semantics.
+3. **Review the experience.** Examine first-use comprehension, core task, hierarchy, information architecture, content, navigation, interaction affordances, visual system, responsive/adaptive behavior, compact or density-constrained sizing, relevant states and recovery, input methods, text scaling, motion, and accessibility semantics.
 4. **Respect intentional behavior.** Trace suspicious patterns through source, tests, design records, history, platform conventions, and dependent journeys before calling them defects. Distinguish purposeful variants from drift and older constraints from accidental complexity.
 5. **Use relevant guidance and research.** For unfamiliar audiences, domains, accessibility needs, safety, culture, regulation, or current platform conventions, consult credible primary research, standards, official platform guidance, and authoritative organizations. Best practice informs the review; it does not automatically override product context or legacy rationale.
 6. **Separate verdicts.** Keep fidelity to an accepted design distinct from overall quality. Keep heuristic judgment, deterministic runtime evidence, representative-user evidence, and production signals distinct. Screenshots are captures unless an active assertion or explicit approval makes them protected evidence.

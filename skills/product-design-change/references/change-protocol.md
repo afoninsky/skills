@@ -18,9 +18,16 @@ Before editing:
 3. identify environment, viewport/device, theme, locale, data fixture, fonts, and runtime configuration;
 4. run the asserted baseline path or explain why the base is not reproducible;
 5. capture the exact affected states;
-6. isolate from unrelated dirty work.
+6. isolate from unrelated dirty work;
+7. inspect the immediate grid/flex tracks, intrinsic sizing, wrapping/overflow, sibling alignment, positioned descendants, and breakpoints before a geometry-affecting write.
 
 Do not rewrite or update a failed baseline to make reproduction succeed.
+
+On later turns, compare the current candidate under matched conditions with both the original protected state, which exposes cumulative drift, and the immediately previous working candidate, which isolates the incremental delta. A working candidate is an iteration anchor, not an accepted baseline. Keep anchor identities and unchanged evidence by stable locator rather than repeating their contents.
+
+## Local layout preservation
+
+Treat existing siblings and descendants outside the authorized subtree as protected even when their parent is allowed to grow. Compare their structure, computed style, line wrapping, geometry relative to their own component root, and rendered crop. Uniform downstream translation may be authorized; a size change or internal movement is not. A failed protected comparison blocks completion rather than becoming an “elastic” or “incidental” exception.
 
 ## Impact resolution
 
@@ -60,6 +67,8 @@ Stop for revised scope, an updated existing manifest, or an earlier design phase
 ## Evidence matrix
 
 For every `surfaces_may_change`, show matched before/candidate/diff evidence. For representative `surfaces_must_not_change`, run deterministic preservation. Include functional and accessibility checks appropriate to the actual delta.
+
+When project-native capture tooling can emit deterministic JSON, follow [preservation evidence](preservation-evidence.md) and compare the candidate against every applicable anchor with `scripts/preservation_guard.py`. Each case binds either no omission or one stable authorized-subtree locator with an explicit insert, modify, or delete operation; broad ignore masks are invalid. The candidate contains the union of cases named by the original and previous anchors; each case's authorized operation, conditions, channel set, and protected artifact bytes must match exactly.
 
 Capture-only images are useful debugging evidence but do not protect preservation. Keep accepted goldens unchanged until a separate human-approved freeze.
 

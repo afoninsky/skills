@@ -118,6 +118,7 @@ python3 skills/product-design/scripts/test_validate_route.py
 python3 skills/product-design/scripts/test_validate_toolchain.py
 python3 skills/product-design-contract/scripts/test_validate_design_contract.py
 python3 skills/product-design-change/scripts/test_change_guard.py
+python3 skills/product-design-change/scripts/test_preservation_guard.py
 python3 skills/product-design-implementation/scripts/test_check_protected_paths.py
 python3 skills/product-design-review/scripts/test_classify_visual_evidence.py
 python3 skills/agent-work-auditor/scripts/test_generate_report.py

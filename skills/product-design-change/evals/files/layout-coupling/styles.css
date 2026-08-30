@@ -1,0 +1,116 @@
+:root {
+  color: #251f1a;
+  background: #eee4d3;
+  font-family: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: min(100% - 2rem, 54rem);
+  margin: 3rem auto;
+}
+
+.kiln-card {
+  display: grid;
+  grid-template-columns: 14.5rem 1fr;
+  align-items: stretch;
+  border: 1px solid currentColor;
+  background: #f7efe2;
+}
+
+.kiln-identity {
+  display: flex;
+  min-height: 22rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem 1.25rem;
+  border-right: 1px solid currentColor;
+}
+
+.kiln-drawing {
+  display: grid;
+  width: 5rem;
+  height: 7rem;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 2.5rem 2.5rem 0 0;
+  font: 700 2rem/1 ui-monospace, monospace;
+}
+
+.kiln-nameplate p {
+  margin: 0.25rem 0;
+  font: 700 0.75rem/1.2 ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kiln-nameplate h1 {
+  margin: 0.35rem 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.kiln-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-strip,
+.ledger {
+  padding: 1.5rem;
+}
+
+.status-strip {
+  background: #e8b49d;
+}
+
+.status-strip p,
+.ledger h2 {
+  margin: 0;
+  font: 700 0.75rem/1.3 ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-strip strong {
+  display: block;
+  margin: 0.75rem 0;
+  font-size: 3rem;
+}
+
+.ledger {
+  border-top: 1px solid currentColor;
+}
+
+.ledger ol {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: min(100% - 1.5rem, 28rem);
+    margin: 1rem auto;
+  }
+
+  .kiln-card {
+    display: block;
+  }
+
+  .kiln-identity {
+    min-height: 0;
+    flex-direction: row;
+    align-items: end;
+    border-right: 0;
+    border-bottom: 1px solid currentColor;
+  }
+}
