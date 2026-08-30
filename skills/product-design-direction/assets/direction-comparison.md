@@ -1,7 +1,7 @@
 # Direction comparison
 
 Status: Draft | Decision-ready | Working direction selected | Superseded
-Accepted brief/hash:
+Brief/hash:
 Comparison manifest/contact sheet:
 
 ## Matched comparison contract
@@ -15,7 +15,7 @@ Comparison manifest/contact sheet:
 
 ## Candidates
 
-| Direction | Governing idea | Structural distinction | Brief advantage | Material risk | Evidence gaps |
+| Direction | Governing idea | Structural distinction | Evidence/brief fit | Material risk | Evidence gaps |
 | --- | --- | --- | --- | --- | --- |
 
 ## Quality review
@@ -26,7 +26,7 @@ Record task-comprehension, hierarchy, product-specificity, core-act, craft, fami
 
 - Recommended direction:
 - Why it best advances the brief:
-- Accepted tradeoff:
+- Recommendation tradeoff:
 - Why alternatives lose:
 
 ## Direction decision

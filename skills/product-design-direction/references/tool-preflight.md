@@ -8,7 +8,7 @@ Depending on the request, direction work may need:
 
 - an isolated writable medium for candidates;
 - a real render or export path for visual comparison;
-- current web access for unfamiliar audience, platform, font, asset, or domain research;
+- current web access for visual-reference, platform, font, or asset research;
 - an editable design source only when later collaboration requires it;
 - representative participants only for a claimed preference or comprehension result;
 - hosting or device distribution only when the intended reviewers cannot inspect local evidence.

@@ -153,12 +153,14 @@ class ProductDesignSuiteTests(unittest.TestCase):
         for name in (
             "product-design",
             "product-design-discovery",
-            "product-design-direction",
             "product-design-review",
         ):
             text = entrypoint(name).lower()
             self.assertIn("primary", text, name)
             self.assertIn("authoritative", text, name)
+        direction = entrypoint("product-design-direction").lower()
+        self.assertIn("authoritative", direction)
+        self.assertIn("discovery owns unsupported material product premises", direction)
         self.assertIn(
             "not user research", entrypoint("product-design").lower()
         )
@@ -166,6 +168,26 @@ class ProductDesignSuiteTests(unittest.TestCase):
             "never count as user validation",
             entrypoint("product-design-discovery").lower(),
         )
+
+    def test_material_research_precedes_direction_without_restarting_settled_work(self) -> None:
+        router = entrypoint("product-design").lower()
+        discovery = entrypoint("product-design-discovery").lower()
+        direction = entrypoint("product-design-direction").lower()
+        implementation = entrypoint("product-design-implementation").lower()
+        routing = SKILLS_ROOT.joinpath(
+            "product-design", "references", "routing-and-handoffs.md"
+        ).read_text(encoding="utf-8").lower()
+
+        self.assertIn("unsupported premise", router)
+        self.assertIn("business model or trust", router)
+        self.assertIn("skip research that cannot affect the decision", router)
+        self.assertIn("research material gaps", discovery)
+        self.assertIn("constraint, avoid, or testable hypothesis", discovery)
+        self.assertIn("reuse current matching evidence", discovery)
+        self.assertIn("a status label is not readiness", direction)
+        self.assertIn("discovery owns unsupported material product premises", direction)
+        self.assertIn("unsupported material product premise through discovery", implementation)
+        self.assertIn("intentionally remain stricter", routing)
 
     def test_review_and_acceptance_boundaries_remain_strict(self) -> None:
         review = entrypoint("product-design-review").lower()

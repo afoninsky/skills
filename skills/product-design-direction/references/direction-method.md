@@ -4,7 +4,7 @@
 
 Start with one sentence: “We are choosing the visual and structural grammar that best helps [role] perform [core act] while expressing [approved qualities] under [targets/constraints].”
 
-If that sentence requires changing the job, navigation, content hierarchy, or commissioned scope, return to discovery. Direction should express accepted UX, not quietly rewrite it.
+If that sentence requires changing the job, navigation, content hierarchy, or commissioned scope, or depends on a material unsupported product premise, return only that gap to discovery. Direction should express the clear UX brief, not quietly rewrite it.
 
 ## Territory grammar
 
@@ -46,6 +46,8 @@ Common false alternatives:
 The number of options follows uncertainty and consequence. Never force a funnel or finalist count that will not improve the decision.
 
 ## Reference research
+
+Use evidence-linked product and category implications from the brief instead of reconstructing them. Research only the current visual expression and provenance needed to compare candidates.
 
 For each source, record:
 

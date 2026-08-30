@@ -35,7 +35,7 @@ Treat existing behavior as intentional until evidence shows otherwise. Understan
 
 Apply established interaction, information-architecture, content, responsive, platform, and accessibility practices. Use professional judgment for reversible local decisions; do not turn taste into a universal rule.
 
-Research a concrete knowledge gap when the design depends on unfamiliar users, domain behavior, safety, culture, regulation, platform conventions, or current facts. Prefer primary research, standards bodies, official platform guidance, and authoritative domain sources. Use secondary sources for synthesis, not as the sole support for consequential claims. Record what a source supports, its date when relevant, and any limitation or inference. Synthetic personas and agent critique may generate hypotheses but are not user research.
+Research a concrete knowledge gap when an unsupported premise about users or behavior, domain, business model or trust, category conventions, safety, culture, regulation, accessibility, platform behavior, or current facts could materially change the design. Reuse current matching evidence and skip research that cannot affect the decision. Prefer primary research, standards bodies, official platform guidance, and authoritative domain sources. Use secondary sources for synthesis, not as the sole support for consequential claims. Record what a source supports, its date when relevant, and any limitation or inference. Synthetic personas and agent critique may generate hypotheses but are not user research.
 
 Use real product content or realistic edge cases. Consider the core task, information hierarchy, navigation, loading/empty/error/success and recovery states, long or localized content, permissions, destructive actions, keyboard/touch/pointer input, text scaling, reduced motion, and responsive or adaptive behavior when applicable.
 
@@ -61,7 +61,7 @@ Choose by the decision the user needs, not by keywords:
 
 | Need | Worker |
 | --- | --- |
-| Clarify users, jobs, flows, content, states, or an unfamiliar domain | `product-design-discovery` |
+| Clarify users, jobs, flows, content, states, or material product assumptions | `product-design-discovery` |
 | Explore or resolve visual and interaction direction | `product-design-direction` |
 | Define or repair durable design-system rules, tokens, component states, or accepted identities | `product-design-contract` |
 | Answer a design question with an isolated runnable artifact | `product-design-prototype` |

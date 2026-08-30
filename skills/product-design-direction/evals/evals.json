@@ -7,7 +7,7 @@
       "expected_output": "The skill creates three structurally distinct isolated candidates with matched content, states, targets, and rendered comparison evidence, recommends one without selecting it because selection was not delegated, and leaves production and baselines untouched.",
       "files": [],
       "expectations": [
-        "Requires an accepted brief and isolates each candidate from production and other candidates.",
+        "Binds the supplied clear brief and isolates each candidate from production and other candidates.",
         "Directions differ in hierarchy/composition and at least two other grammar dimensions, not only palette.",
         "Uses identical content, states, phone/desktop sizes, and capture rules for comparison.",
         "Shows rendered evidence/contact-sheet requirements rather than text-only mood descriptions.",
@@ -39,6 +39,31 @@
         "Names the missing render evidence and offers a suitable existing tool, setup, or supplied-image path only if needed.",
         "Does not claim matched visual evidence exists.",
         "Does not select B or write a selection record from unsupported comparison evidence."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use product-design-direction directly. The attached brief is marked Accepted and settles the audience, reading hierarchy, content, accessibility, and responsive targets. It proposes a subscription paywall but contains no evidence or decisions for value timing, pricing or renewal transparency, entitlement recognition, cancellation, or recovery. Create and select the visual direction now.",
+      "expected_output": "The skill recognizes that the status label does not make the brief direction-ready, preserves settled decisions, and returns only the material paywall gaps to discovery without rendering, selecting, or implementing a direction.",
+      "files": [],
+      "expectations": [
+        "Does not treat the Accepted label as evidence that the unsupported commercial and trust premises are resolved.",
+        "Returns only value timing, terms, entitlement, cancellation, and recovery gaps to discovery instead of reopening settled audience, content, accessibility, or target decisions.",
+        "The returned gaps require evidence-backed discovery rather than invented answers.",
+        "Does not duplicate foundational audience or business-model research inside direction.",
+        "Creates no candidate, render, selection record, production edit, or baseline change."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Use product-design-direction directly. The clear brief and current matching evidence cover this adult audience, Dutch web market, subscription model, paywall lifecycle, responsive targets, accessibility, and rejection criteria. Its constraints are: show the article's value before the offer; disclose price and renewal beside the subscribe action; recognize existing access before asking for payment; keep cancellation and recovery reachable; never block emergency public-interest information. No material gaps remain. Create two matched directions and select the stronger working direction under delegated judgment. Do not repeat settled research.",
+      "expected_output": "The skill reuses the supplied grounded brief without broad rediscovery, creates two distinct matched candidates that visibly express the constraints, and selects the stronger working direction while preserving normal isolation and authority boundaries.",
+      "files": [],
+      "expectations": [
+        "Performs no broad audience, commercial, or category rediscovery because the supplied evidence matches the decision and remains current.",
+        "Each candidate visibly expresses or explicitly conflicts with the supplied value, transparency, entitlement, cancellation, recovery, and public-interest constraints.",
+        "The two candidates are structurally or interactionally distinct and compared with matched content, states, targets, and real render evidence.",
+        "Selection is allowed because judgment is delegated, but production and accepted baselines remain unchanged."
       ]
     }
   ]

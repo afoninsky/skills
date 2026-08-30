@@ -1,6 +1,6 @@
 ---
 name: product-design-discovery
-description: Clarify users, jobs, journeys, information architecture, content, states, and platform constraints before visual or production work. Use when routed by product-design or explicitly requested; otherwise use product-design for unqualified UI/UX work. Do not choose visual direction or edit production UI.
+description: Clarify users, jobs, journeys, information architecture, content, states, platform constraints, and material product evidence before visual or production work. Use when routed by product-design or explicitly requested; otherwise use product-design for unqualified UI/UX work. Do not choose visual direction or edit production UI.
 compatibility: Uses repository and product evidence already available. Web research, participant research, and runtime inspection are conditional on the question being answered; no particular SaaS or MCP server is required.
 ---
 
@@ -18,10 +18,10 @@ If existing evidence already answers the question, reuse it. Update only gaps th
 
 1. **Frame the decision.** Name the outcome this work must enable, affected people, product stage, target platforms, fixed constraints, and failure costs. Separate fixed decisions, evidence-backed challengeable decisions, open questions, and reversible working assumptions.
 2. **Inspect before asking or researching.** Read the supplied material, product language, source, tests, prior research, support signals, and current runtime when available. Understand why current behavior exists before labeling it accidental. Ask only for missing information that could materially change the design.
-3. **Research relevant gaps.** Browse when the work involves an unfamiliar audience or domain, safety, culture, accessibility, law, current platform behavior, or another consequential unknown. Prefer primary research, standards, official platform guidance, and authoritative domain organizations. Record the design implication, date when relevant, confidence, and limitation. Stakeholder opinion, analytics, participant observation, and agent inference remain distinct evidence types.
+3. **Research material gaps.** Browse when an unsupported premise about audience or behavior, domain, business model or trust, category conventions, safety, culture, accessibility, law, platform behavior, or current facts could materially change the design. Reuse current matching evidence and skip inapplicable lanes. Prefer primary research, standards, official platform guidance, and authoritative domain organizations. Turn each material finding into a constraint, avoid, or testable hypothesis; record its date when relevant, confidence, limitation, and provenance. Stakeholder opinion, analytics, participant observation, and agent inference remain distinct evidence types.
 4. **Model the experience.** Define the primary and secondary roles, priority situations and jobs, core act, entry and completion, alternate and recovery paths, navigation relationships, content hierarchy, and applicable loading, empty, error, offline, permission, interrupted, destructive, and success states.
 5. **Cover real conditions.** Consider representative screen or window sizes, orientation, safe areas, keyboard/pointer/touch, text scaling, localization, assistive technology, privacy, and content extremes when they can affect the experience. Use a text flow or rough wireframe when structure—not visual style—is the question.
-6. **Synthesize the minimum useful artifact.** Adapt the repository's conventions. A concise brief and experience map are usually enough; use the templates in `assets/` only when they help. State assumptions and exclusions instead of filling sections with invented detail.
+6. **Synthesize the minimum useful artifact.** Adapt the repository's conventions. A concise brief and experience map are usually enough; use the templates in `assets/` only when they help. Hand forward only decision-relevant findings and implications, keep source detail in the evidence register, and state assumptions or exclusions instead of inventing detail.
 
 Participant research requires representative people and appropriate consent. Synthetic personas, agent critique, or simulated interviews can generate hypotheses but never count as user validation. External writes, participant contact, or paid research require explicit authority.
 
@@ -31,7 +31,7 @@ Read [discovery method](references/discovery-method.md) for substantial research
 
 - The brief states the intended outcome, people and context, core task, priority journey, important states, constraints, and rejection criteria at useful fidelity.
 - Fixed decisions, evidence, assumptions, inferences, contradictions, and unresolved questions remain distinguishable.
-- Audience- or domain-specific claims are supported by credible sources or clearly labeled as assumptions.
+- Material audience, behavioral, domain, commercial, or category claims are supported by credible sources or clearly labeled as assumptions.
 - Every material role, surface, state, and target is covered, explicitly excluded, or recorded as a gap.
 - Existing visual direction, production behavior, accepted references, and baselines are unchanged.
-- The handoff says what decision is now possible, what remains uncertain, and whether direction, contract, prototype, implementation, or review is the smallest useful next step.
+- The handoff says what decision is now possible, what remains uncertain, and the smallest authorized next worker and scope.

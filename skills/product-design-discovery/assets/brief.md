@@ -49,6 +49,7 @@ Supersedes:
 ## Evidence and uncertainty
 
 - Evidence register:
+- Decision-critical evidence and implications:
 - Blocking unknowns:
 - Working assumptions:
 - Representative-user evidence status:

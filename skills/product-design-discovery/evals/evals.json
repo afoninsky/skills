@@ -38,6 +38,20 @@
         "Uses current official documentation if the user chooses to set up a research tool.",
         "Marks any assumption-only continuation unverified and prevents a validation claim."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use product-design-discovery directly. Our responsive Dutch publication has a current evidence-backed foundation for its adult audience, reading journey, content, accessibility, and web targets, but it was created for the free product. We are now adding a subscription paywall; pricing, entitlements, renewal disclosure, account recognition, cancellation, and recovery have not been researched. Reuse what still applies, research only the material gaps—including representative category journeys—and produce the smallest direction-ready handoff. Do not choose a visual direction or edit production.",
+      "expected_output": "The skill preserves the current matching audience and reading evidence, reopens only the commercial, trust, entitlement, and recovery decisions introduced by the paywall, and returns compact evidence-linked implications without visual or production work.",
+      "files": [],
+      "expectations": [
+        "Reuses settled audience, content, accessibility, journey, and target evidence instead of restarting discovery.",
+        "Research covers the applicable value or preview boundary, offer and renewal terms, subscribe flow, entitlement recognition or restore, cancellation or refund, and failure or recovery states.",
+        "Current legal or platform claims use authoritative sources, while observed product patterns and claimed effectiveness remain distinct.",
+        "Comparison products are justified or labeled representative and inspected at the relevant paywall lifecycle rather than only their homepages.",
+        "The handoff contains only decision-relevant constraints, avoids or testable hypotheses as applicable, plus limitations and unresolved questions; detailed sources stay in the evidence register.",
+        "No visual direction, production edit, participant contact, analytics change, or acceptance claim occurs."
+      ]
     }
   ]
 }

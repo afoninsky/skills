@@ -14,7 +14,7 @@ The suite is intentionally proportional:
 - Treat a narrow request as a closed-world change. Modify only the named element and the dependencies required to make it correct; a repeated run should be a no-op.
 - For greenfield work or a broad redesign, explore a small range of genuinely different structural and visual approaches. Surface alternatives when they reveal a useful tradeoff; otherwise choose the strongest coherent direction and explain why.
 - Keep exploration separate from mutation. Alternative concepts and prototypes stay isolated; only the selected approach enters the authorized product scope.
-- Research concrete gaps when the audience, domain, platform behavior, safety, regulation, or current facts are unfamiliar. Prefer primary research, standards, official platform guidance, and authoritative domain sources.
+- Research concrete gaps when an unsupported audience, behavioral, domain, commercial, category, safety, cultural, regulatory, accessibility, platform, or current-fact premise could materially change the design. Reuse current matching evidence and pass only decision-relevant implications forward.
 - Reuse the project's established framework, components, tokens, tests, and tools. Add a dependency or service only for a real unmet need and with the required authority.
 - Inspect the result in its real medium and run checks proportional to the requested outcome. Missing evidence limits the claim; it does not prevent unrelated useful work.
 

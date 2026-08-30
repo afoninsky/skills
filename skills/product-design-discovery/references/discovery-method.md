@@ -11,6 +11,8 @@ Match effort to uncertainty and consequence:
 
 Do not use a fixed questionnaire or artifact count. A concise complete decision contract is better than a large form filled with guesses.
 
+Activate only lenses that can change the decision: audience and development; behavior, attention, and ethics; domain and task; business model and trust; category patterns; or safety, culture, law, accessibility, and platform behavior. For minors, vulnerable people, or persuasive-attention requests, treat welfare and informed voluntary control as consequential; time spent or compulsion is not a default product outcome.
+
 ## Material-question test
 
 Ask a question only when different plausible answers change one of:
@@ -18,6 +20,7 @@ Ask a question only when different plausible answers change one of:
 - primary user or job;
 - priority journey or navigation;
 - information/content hierarchy;
+- business model, trust, category convention, or differentiation;
 - safety, privacy, legal, accessibility, or welfare handling;
 - platform, input, device, or localization coverage;
 - scope, authority, evidence threshold, or rejection criterion.
@@ -80,7 +83,7 @@ Show only what the next design decision needs:
 1. one-paragraph brief;
 2. priority journey and surface/state coverage;
 3. fixed/challengeable/open decisions;
-4. top evidence and material limitations;
+4. top evidence, design implications, and material limitations;
 5. blocking unknowns and working assumptions;
 6. any material question that still needs the owner, or the smallest useful next design phase when none does.
 

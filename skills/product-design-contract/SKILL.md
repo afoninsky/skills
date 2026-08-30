@@ -60,4 +60,4 @@ python3 <product-design-contract-skill-directory>/scripts/validate_design_contra
 - Re-architecture introduces no unintended visual, behavioral, accessibility, API, or platform regression.
 - The same request and inputs produce no duplicate authority, artifact, or diff on a second run.
 - Baselines changed only in a completed accept-freeze operation for the exact human-approved candidate; otherwise they remain untouched.
-- The handoff names the contract changes, validation performed, consumers affected, remaining uncertainty, and the next implementation, change, prototype, or review decision.
+- The handoff names the contract changes, validation performed, consumers affected, remaining uncertainty, and the smallest authorized next worker and scope.

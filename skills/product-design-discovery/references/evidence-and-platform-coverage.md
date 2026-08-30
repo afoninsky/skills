@@ -20,9 +20,12 @@ Every evidence record needs an ID, claim/finding, level, source or artifact path
 ## Research rules
 
 - Search only after naming the decision and knowledge gap.
+- Reuse evidence only when its audience, decision, business model, geography, platform, and material conditions still apply; refresh only changed or time-sensitive gaps.
 - Prefer standards bodies, platform owners, regulators, first-party product documentation, and original research.
 - When facts may have changed, verify them live and cite the supporting page near the claim.
-- Distinguish “what exists,” “what people do,” “what people say,” and “what we recommend.”
+- Distinguish observed product patterns, research or standards, what people do or say, and what we recommend; one does not prove another.
+- Select comparison products for a named decision. Verify “top” or “leader” claims or call them representative, and inspect the relevant journey rather than only a homepage; use direct, adjacent, or counterexamples only when they clarify a tradeoff.
+- Stop when each activated gap yields a bounded design implication or an explicit unresolved question; more sources without decision value add noise.
 - Do not use generated personas, synthetic interviews, generic critique services, or a model's taste as representative-user evidence.
 - Contacting people, ordering panel responses, spending credits, recording sessions, or accessing sensitive data requires explicit authority.
 

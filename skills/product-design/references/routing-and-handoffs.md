@@ -6,7 +6,7 @@ Use this protocol for a durable multi-worker engagement, automation that needs m
 
 Route by the unresolved decision:
 
-- users, jobs, flows, content, or consequential domain knowledge → discovery;
+- users, jobs, flows, content, or material unsupported product evidence → discovery;
 - visual or interaction grammar → direction;
 - durable tokens, components, source ownership, or accepted identity → contract;
 - an isolated proof of a design question → prototype;
@@ -59,7 +59,7 @@ A useful handoff states:
 
 The router validates that a successor does not broaden authority, hide missing evidence, or mutate a protected baseline.
 
-Formal projects already using the suite's legacy A–F envelope schema may adapt the legacy [routing-envelope](../assets/routing-envelope.json) and [worker-handoff](../assets/worker-handoff.json) assets and use the bundled route and toolchain validators. Those assets intentionally default to Gate A and a `design/toolchain.json` record for compatibility; do not copy those defaults into a new proportional engagement. The schema records some decisions in separate envelopes and applies stricter execution preflight than ordinary routing; a single clear user instruction may still supply multiple explicit decisions without a duplicate conversation turn. The validators preserve compatibility for those projects and do not prove design quality:
+Formal projects already using the suite's legacy A–F envelope schema may adapt the legacy [routing-envelope](../assets/routing-envelope.json) and [worker-handoff](../assets/worker-handoff.json) assets and use the bundled route and toolchain validators. Those assets intentionally default to Gate A and a `design/toolchain.json` record for compatibility; do not copy those defaults into a new proportional engagement. Their transition contract and execution preflight intentionally remain stricter than the ordinary routes above; a single clear user instruction may still supply multiple explicit decisions without a duplicate conversation turn. The validators preserve compatibility for those projects and do not prove design quality:
 
 ```text
 python3 <product-design-skill-directory>/scripts/validate_route.py <routing-envelope> --toolchain <toolchain> --for-execution
@@ -74,7 +74,7 @@ python3 <product-design-skill-directory>/scripts/validate_route.py <routing-enve
 - **Review and fix:** review first. Apply only findings already covered by a clear mutation scope; confirm material redesign, shared impact, dependencies, or baseline changes.
 - **Vague improvement:** inspect the current product and rationale before mutation, then form bounded findings and useful direction alternatives.
 - **Shared dependency:** expand analysis and verification to real consumers. Ask before mutation when that expands the user's scope.
-- **Approved design to code:** implement directly when the design and states are clear enough; use direction, contract, or prototype only for material unresolved decisions.
+- **Approved design to code:** implement directly when the design, states, and supporting product decisions are clear enough; use discovery, direction, contract, or prototype only for material unresolved decisions.
 - **Autonomous design:** a broad or greenfield request may delegate reversible design choices. Explore proportionally, select a working direction, and implement only within the named scope.
 
 ## Protected acceptance

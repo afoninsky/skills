@@ -12,7 +12,7 @@ Translate a clear design decision into maintainable production UI without changi
 
 ## Authority
 
-The user's request may itself authorize implementation when it identifies the desired outcome and mutation scope clearly. An approved mock or contract is useful but not mandatory for a small, well-defined design. For a greenfield or broad redesign, resolve material structural and visual choices through direction or prototype work before committing them; those phases may occur in the same task when the request delegates the choices.
+The user's request may itself authorize implementation when it identifies the desired outcome and mutation scope clearly. An approved mock or contract is useful but not mandatory for a small, well-defined design. Before implementation, resolve any unsupported material product premise through discovery. For a greenfield or broad redesign, resolve material structural and visual choices through direction or prototype before committing them; those phases may occur in the same task when the request delegates the choices.
 
 Use professional judgment for small reversible details that follow the existing system. Stop for a decision only when a gap would materially change behavior, information architecture, brand direction, shared surfaces, dependencies, or the user's stated scope.
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Design Direction"
   short_description: "Explore and converge on direction"
-  default_prompt: "Use $product-design-direction to explore a proportional set of distinct, product-specific visual and interaction directions under matched goals, content, states, and targets. Keep options isolated from production, use relevant research and real renders, surface meaningful tradeoffs, and recommend or choose the strongest coherent direction when that choice is delegated."
+  default_prompt: "Use $product-design-direction to explore a proportional set of distinct, product-specific visual and interaction directions from a clear, grounded brief under matched goals, content, states, and targets. Keep options isolated from production, research visual references only as needed, inspect real renders, surface meaningful tradeoffs, and recommend or choose the strongest coherent direction when that choice is delegated."

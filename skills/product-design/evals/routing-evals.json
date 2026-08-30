@@ -25,8 +25,8 @@
     },
     {
       "id": 3,
-      "prompt": "Our UX brief is approved. Create and compare three visual directions for phone and desktop.",
-      "expected_output": "The router sends the accepted brief and matched phone/desktop constraints to direction, keeps the comparison isolated from production, and presents three genuinely distinct rendered directions.",
+      "prompt": "Our clear UX brief includes current decision-critical audience and category evidence, settles content and states, and has no material gaps. Create and compare three visual directions for phone and desktop.",
+      "expected_output": "The router sends the grounded brief and matched phone/desktop constraints directly to direction without repeating discovery, keeps the comparison isolated from production, and presents three genuinely distinct rendered directions.",
       "files": [],
       "expectations": [
         "product-design-direction is the selected worker.",
@@ -125,12 +125,12 @@
     {
       "id": 12,
       "prompt": "Re-architect our fragmented CSS, Swift, and Android token authorities without intentionally changing the product appearance.",
-      "expected_output": "The router selects contract re-architecture, inventories every authority, and sends any later production migration through a separately authorized implementation or change route.",
+      "expected_output": "The router selects contract re-architecture, inventories every authority, and permits authorized, deterministically verified authority cleanup that preserves appearance and behavior; only an intentional or unavoidable product delta routes onward.",
       "files": [],
       "expectations": [
         "product-design-contract in re-architect mode is the first worker.",
         "The request is not mistaken for an accepted token-value change.",
-        "A later contract-to-change transition is valid when protected existing output must be migrated."
+        "Behavior-preserving cleanup may remain in authorized contract scope; a visual, behavioral, API, or fixed-decision delta routes to direction or change."
       ]
     },
     {
@@ -176,6 +176,18 @@
         "The release evidence packet is bound to a non-empty representative matrix with explicit exclusions.",
         "The recommendation is limited to the matrix and evidence actually inspected.",
         "Missing required release evidence prevents an unsupported rollout recommendation rather than being waived."
+      ]
+    },
+    {
+      "id": 17,
+      "prompt": "Our responsive publication brief is marked approved and settles the audience, reading hierarchy, content, accessibility, and target sizes. We have just decided to add a subscription paywall, but value timing, terms, entitlement recognition, cancellation, and recovery are unsupported. Choose the visual direction now.",
+      "expected_output": "The router treats the material paywall premises as the earliest unresolved work and returns only those gaps to discovery before direction, without reopening settled parts of the brief.",
+      "files": [],
+      "expectations": [
+        "product-design-discovery is selected before product-design-direction despite the brief's approved label.",
+        "Discovery is bounded to the new commercial, trust, entitlement, cancellation, and recovery decisions.",
+        "Settled audience, hierarchy, content, accessibility, and target decisions are reused.",
+        "No visual candidate or production mutation proceeds until the material gaps are resolved or explicitly bounded as safe reversible hypotheses."
       ]
     }
   ]

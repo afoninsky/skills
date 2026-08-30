@@ -3,7 +3,7 @@
 Status: Working direction | Human-selected direction | Superseded
 Owner:
 Decision date:
-Accepted brief/hash:
+Brief/hash:
 
 ## Selected candidate
 
@@ -14,7 +14,7 @@ Accepted brief/hash:
 
 ## Why selected
 
-## Accepted tradeoffs and known risks
+## Selection tradeoffs and known risks
 
 ## Fixed visual decisions
 

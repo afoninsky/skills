@@ -2,7 +2,7 @@
 
 Direction ID:
 Status: Territory | Finalist | Selected | Rejected | Archived
-Related accepted brief/hash:
+Related brief/hash:
 
 ## Governing idea
 
