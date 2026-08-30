@@ -149,6 +149,29 @@ class ProductDesignSuiteTests(unittest.TestCase):
         self.assertIn("material structural and visual choices", implementation)
         self.assertIn("small reversible details", implementation)
 
+    def test_creative_authority_challenges_form_without_weakening_requirements(self) -> None:
+        router = entrypoint("product-design").lower()
+        direction = entrypoint("product-design-direction").lower()
+        self.assertIn("separate the outcome and fixed constraints", router)
+        self.assertIn("suggested ui form", router)
+        self.assertIn("preserve every explicit requirement", router)
+        self.assertIn("within challengeable decisions", direction)
+        self.assertIn("material obstacle or tension", direction)
+        self.assertIn("novelty for its own sake", direction)
+
+    def test_change_carries_semantic_requirements_across_turns(self) -> None:
+        change = entrypoint("product-design-change").lower()
+        self.assertIn("earlier explicit requirements", change)
+        self.assertIn("prior intentional changes as protected constraints", change)
+        self.assertIn("supersedes only an earlier requirement it explicitly contradicts", change)
+        self.assertIn("naming an element authorizes only the stated delta", change)
+
+    def test_implementation_binds_claims_to_observable_semantics(self) -> None:
+        implementation = entrypoint("product-design-implementation").lower()
+        self.assertIn("observable platform semantics", implementation)
+        self.assertIn("targeted check", implementation)
+        self.assertIn("visible copy alone does not prove", implementation)
+
     def test_research_rules_prioritize_credible_evidence(self) -> None:
         for name in (
             "product-design",

@@ -19,7 +19,7 @@ Use this skill as the public entrypoint. Select the smallest applicable worker o
 Distinguish **exploration scope** from **mutation scope**.
 
 - A narrow request is a closed-world change: modify the named element and only the dependencies necessary to make that change correct. Do not restyle adjacent surfaces, clean up unrelated code, or broaden the product decision.
-- A new design or broad redesign permits creative interpretation within the named product, audience, surfaces, and constraints. Explore materially different approaches when that can improve the outcome; do not treat palette swaps as alternatives.
+- A new design or broad redesign permits creative interpretation within the named product, audience, surfaces, and constraints. When the user delegates design judgment, separate the outcome and fixed constraints from any suggested UI form. Treat that form as a candidate only when the request leaves it challengeable; choose the strongest in-scope solution for the outcome and preserve every explicit requirement. Explore materially different approaches when that can improve the outcome; do not treat palette swaps as alternatives.
 - The user's current request can authorize its stated scope. Do not invent approval ceremonies. Ask only when impact analysis reveals a material decision or production change outside that scope.
 - Keep exploratory artifacts isolated. Exploring an alternative does not authorize production writes, baseline replacement, deployment, participant contact, analytics changes, or spend.
 
