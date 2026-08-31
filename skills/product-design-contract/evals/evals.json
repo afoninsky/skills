@@ -39,6 +39,22 @@
         "Keeps unsupported evidence claims explicit.",
         "Recommends review followed by an explicit accept-freeze operation."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use product design. The responsive Quiet Shelf redesign is implemented, reviewed, and human accepted for Browse, Saved, and Item Detail at compact and wide targets. Its accepted references and hashes are already recorded under design/. Production source and behavior tests include later implementation corrections and are the exact current behavior. The design directory also contains exploration notes and prototype CSS that must remain history, not implementation authority. Finalize this redesign for ongoing maintenance: create the smallest durable, discoverable guidance future agents need to preserve the experience and make granular changes. Use the repository's existing documentation, agent-instruction, and guidance-test conventions. Do not change product code, behavior tests, accepted references, hashes, or baselines; do not add another token system or design-artifact hierarchy. Verify local links, and a second run must be a no-op.",
+      "expected_output": "Uses product-design-contract in maintenance-handoff mode to reconcile the accepted records with the implemented product, update one concise code-first routine design guide and one existing agent-entrypoint pointer, and leave production, tests, historical provenance, references, and baselines untouched. Future bounded changes can locate current owners and preservation checks without treating the guide as an exact styling authority.",
+      "files": [],
+      "expectations": [
+        "Inspects rendered production source and behavior tests before extracting stable design consequences; prototype and exploration artifacts remain historical evidence.",
+        "Uses one existing agent or contributor entrypoint to reach one routine guide instead of creating parallel instructions, token roots, manifests, or document hierarchies.",
+        "The guide covers the product-specific experience pattern, authority order, canonical source and consumer ownership, relevant states, responsive or adaptive behavior, accessibility, verification commands, accepted-reference status, and intentional legacy boundaries.",
+        "Exact styling values and component implementation stay in production code and tests rather than being copied into prose.",
+        "Local accepted-surface changes route to product-design-change with a closed-world delta and preservation boundary; ordinary fixes do not edit the guide.",
+        "A current-looking guide or passing link check is not sufficient for a no-op: retained contracts, provenance, source maps, validators, and current-authority claims are classified and checked against current code, tests, and acceptance records.",
+        "No product source, behavior test, historical provenance, accepted reference, hash, golden, or baseline changes, and no historical artifact is deleted without authority; a lightweight existing-style guidance integrity check may be updated.",
+        "Local links and named sources resolve, evidence limitations remain explicit, and repeating the finalization request produces no diff."
+      ]
     }
   ]
 }

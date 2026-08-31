@@ -58,6 +58,22 @@ A baseline record distinguishes active deterministic goldens, explicitly approve
 
 Only `product-design-contract` accept-freeze may change accepted baseline identity, and only for the exact reviewed candidate the human approved. Candidate captures should remain outside protected paths. A later change derives a new candidate; it does not overwrite the accepted comparison state.
 
+## Maintenance entrypoint
+
+When a broad implemented and reviewed design is explicitly finalized for
+future maintenance, use `product-design-contract` maintenance-handoff to leave
+one routine code-first guide. Prefer the project's existing guide and add only
+one short pointer from an existing agent, contributor, or documentation
+entrypoint. Do not create separate instructions per agent or duplicate exact
+token, component, or breakpoint values that current source and tests already
+own.
+
+Keep detailed approval provenance separate from routine guidance. A resumable
+`project-design.json` may link to the guide; it should not copy the guide's
+contents. Update the guide only when an approved implemented cross-surface rule,
+canonical owner, representative target, or verification path changes. Ordinary
+local fixes should leave it untouched.
+
 ## Existing repositories
 
 Before adding or replacing records:

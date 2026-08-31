@@ -10,5 +10,9 @@
   {
     "query": "The product-design router selected product-design-contract in accept-freeze mode. Execute the attached valid envelope containing the human approval ID and return the suite handoff.",
     "should_trigger": true
+  },
+  {
+    "query": "Use $product-design-contract directly in maintenance-handoff mode to finalize this implemented and reviewed redesign into durable guidance for future agents.",
+    "should_trigger": true
   }
 ]

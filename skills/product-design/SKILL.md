@@ -1,9 +1,9 @@
 ---
 name: product-design
-description: Design, redesign, prototype, implement, or review production-quality UI/UX for web and mobile products. Use for product flows, visual direction, design systems, responsive interfaces, design-to-code work, and scoped UI improvements. Route focused work to the product-design-* workers. Do not use for standalone graphics or non-visual code architecture.
+description: Design, redesign, prototype, implement, finalize, or review production-quality UI/UX for web and mobile products. Use for product flows, visual direction, design systems, responsive interfaces, design-to-code work, design maintenance handoffs, and scoped UI improvements. Route focused work to the product-design-* workers. Do not use for standalone graphics or non-visual code architecture.
 license: MIT
 compatibility: Works with repository-native design and development tools. Browser, app-runtime, accessibility, research, and visual-comparison capabilities are required only when the requested outcome depends on their evidence.
-metadata: {version: "1.2.0"}
+metadata: {version: "1.3.0"}
 ---
 
 # Product Design
@@ -63,7 +63,7 @@ Choose by the decision the user needs, not by keywords:
 | --- | --- |
 | Clarify users, jobs, flows, content, states, or material product assumptions | `product-design-discovery` |
 | Explore or resolve visual and interaction direction | `product-design-direction` |
-| Define or repair durable design-system rules, tokens, component states, or accepted identities | `product-design-contract` |
+| Define or repair durable design-system rules, accepted identities, or a finalized design's maintenance guidance | `product-design-contract` |
 | Answer a design question with an isolated runnable artifact | `product-design-prototype` |
 | Build a clear or approved new, previously unimplemented surface in the real product | `product-design-implementation` |
 | Modify or redesign an existing or accepted UI while protecting everything outside the authorized delta | `product-design-change` |
@@ -74,6 +74,8 @@ Use the earliest unresolved worker, but continue through later workers when the 
 Before handing work to a selected worker, confirm that skill is available. If it is missing, stop and provide the suite installation command instead of silently impersonating the worker.
 
 After direction, route a new surface to implementation and an existing-surface redesign to change. The latter preserves current behavior and makes the wider impact of the redesign explicit.
+
+When a broad implemented design has been reviewed and the engagement reaches finalization, finish with `product-design-contract` in maintenance-handoff mode. Leave one discoverable code-first guide that maps stable design intent to current source and tests. This mode does not imply acceptance, change UI, or update baselines. Skip it for prototypes and routine bounded changes unless an approved implemented cross-surface decision changed the stable guidance.
 
 For an existing formal product-design engagement, resume its accepted artifacts and use [project protocol](references/project-protocol.md). Read [routing and handoffs](references/routing-and-handoffs.md) only for multi-worker automation, resumable pipelines, or accepted-baseline transitions. Read [evidence and gates](references/evidence-and-gates.md) only when a human acceptance, release, research, or baseline decision needs durable evidence. Use [platform detection](references/platform-detection.md) for repository or multi-platform work.
 
@@ -93,5 +95,6 @@ When selecting or replacing tools, use [tool capability preflight](references/to
 - Existing behavior, conventions, accepted design decisions, and out-of-scope surfaces are preserved or any necessary deviation is explicit.
 - The result forms one coherent product-specific system and covers the relevant responsive/adaptive, interaction, content, error, recovery, and accessibility conditions.
 - The real output was inspected and the smallest relevant functional, visual, responsive, and accessibility checks passed.
+- A finalized broad design leaves one concise routine guide reachable from the project's agent or contributor entrypoint; exact details remain owned by current code and tests, and superseded guidance does not compete with it.
 - Research, assumptions, professional judgment, and user evidence are distinguished; unsupported claims and untested conditions are named.
 - The handoff states what changed, what was explored but not committed, what evidence was run, remaining limitations, and any decision still needed.

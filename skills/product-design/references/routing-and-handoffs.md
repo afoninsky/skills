@@ -9,6 +9,7 @@ Route by the unresolved decision:
 - users, jobs, flows, content, or material unsupported product evidence → discovery;
 - visual or interaction grammar → direction;
 - durable tokens, components, source ownership, or accepted identity → contract;
+- finalized broad design needing code-first guidance for granular future maintenance → contract in maintenance-handoff mode;
 - an isolated proof of a design question → prototype;
 - a clear new product surface → implementation;
 - a bounded delta to existing or accepted UI → change;
@@ -23,9 +24,12 @@ discovery → direction → prototype → implementation → review
 direction → contract → implementation
 review → bounded change → review
 reviewed candidate → contract:accept-freeze
+implemented and reviewed broad design → contract:maintenance-handoff
 ```
 
 These are useful paths, not mandatory pipelines. Skip resolved phases and do not create a worker handoff solely because a phase exists.
+
+Maintenance-handoff is a closeout for a durable design identity, not a mandatory phase after every UI task. Use it only when the implemented design has been reviewed and the user is finalizing it for future work. It may follow accept-freeze, but it neither requires nor grants baseline acceptance. Keep its routine guide separate from detailed acceptance provenance, and leave exact styling and interaction behavior in production code and tests.
 
 ## Preserve identity proportionally
 

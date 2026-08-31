@@ -68,7 +68,7 @@ Research is triggered by a concrete unfamiliar audience, domain, platform, safet
 
 Tool choice is capability-based and existing-project-first: reuse the repository's mature tools, choose a maintained package when needed, and build custom infrastructure only for a concrete unmet requirement. Missing evidence limits the corresponding claim or edit instead of blocking unrelated useful work.
 
-Review is read-only. Implementation and change never overwrite accepted screenshots or baselines to make a candidate pass. Only contract `accept-freeze` may record an exact reviewed candidate that a human explicitly approved as the accepted identity.
+Review is read-only. Implementation and change never overwrite accepted screenshots or baselines to make a candidate pass. Only contract `accept-freeze` may record an exact reviewed candidate that a human explicitly approved as the accepted identity. Contract maintenance-handoff can finalize a broad implemented and reviewed design into one discoverable code-first guide for granular future work without changing UI or baseline identity.
 
 [Read the entrypoint](skills/product-design/SKILL.md)
 

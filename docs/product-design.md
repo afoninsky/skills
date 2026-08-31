@@ -1,6 +1,6 @@
 # Product Design skill suite
 
-`product-design` is the public entrypoint for designing, redesigning, prototyping, implementing, and reviewing web and mobile interfaces. It routes the request to the smallest useful specialist or sequence while keeping the user's objective and mutation scope authoritative.
+`product-design` is the public entrypoint for designing, redesigning, prototyping, implementing, finalizing, and reviewing web and mobile interfaces. It routes the request to the smallest useful specialist or sequence while keeping the user's objective and mutation scope authoritative.
 
 ```text
 $product-design <your request>
@@ -27,7 +27,7 @@ Clear ordinary requests do not require a formal pipeline or approval at every ph
 | `product-design` | Public entrypoint, proportional routing, shared scope and quality principles |
 | `product-design-discovery` | Users, jobs, flows, content, states, constraints, and relevant research |
 | `product-design-direction` | Distinct visual and interaction directions, comparison, and convergence |
-| `product-design-contract` | Durable principles, tokens, component states, source maps, and accepted identities |
+| `product-design-contract` | Durable principles, tokens, component states, source maps, accepted identities, and finalized maintenance guidance |
 | `product-design-prototype` | Isolated wireframes, mocks, interaction proofs, and runnable decision slices |
 | `product-design-implementation` | Clear or approved designs implemented in the real product architecture |
 | `product-design-change` | Narrow, impact-aware changes that preserve everything outside the intended delta |
@@ -68,6 +68,20 @@ $product-design Direction B is approved. Continue from the recorded design state
 ```
 
 For a durable multi-stage engagement, the router resumes named artifacts and accepted identities rather than reconstructing decisions from chat. Formal routing envelopes, evidence gates, and source maps remain available when they protect resumability or high-risk decisions.
+
+### Finalize a broad design for maintenance
+
+```text
+$product-design The redesign is implemented and reviewed. Finalize it so future agents preserve the current pattern and make granular changes. Do not change the UI or baselines.
+```
+
+The router uses contract maintenance-handoff mode to leave one concise routine
+guide reachable from the project's existing agent or contributor instructions.
+The guide records stable product consequences, canonical code and test owners,
+preservation boundaries, representative verification, and truthful reference
+status. Production code and tests remain the exact implementation authority.
+Routine fixes do not regenerate the guide, and this closeout does not imply
+baseline acceptance or release approval.
 
 ## Protected boundaries
 

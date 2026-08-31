@@ -67,9 +67,12 @@ class ProductDesignSuiteTests(unittest.TestCase):
                     encoding="utf-8"
                 )
             )
-            self.assertEqual(
-                [item["should_trigger"] for item in triggers], [False, True, True], worker
+            expected = (
+                [False, True, True, True]
+                if worker == "product-design-contract"
+                else [False, True, True]
             )
+            self.assertEqual([item["should_trigger"] for item in triggers], expected, worker)
 
     def test_router_centralizes_requested_design_principles(self) -> None:
         router = entrypoint("product-design").lower()
@@ -228,6 +231,36 @@ class ProductDesignSuiteTests(unittest.TestCase):
         self.assertIn("formal schemas", contract)
         for name in ("product-design-implementation", "product-design-change"):
             self.assertIn("never update", entrypoint(name).lower(), name)
+
+    def test_material_finalization_gets_one_code_first_maintenance_handoff(self) -> None:
+        router = entrypoint("product-design").lower()
+        contract = entrypoint("product-design-contract").lower()
+        project_protocol = SKILLS_ROOT.joinpath(
+            "product-design", "references", "project-protocol.md"
+        ).read_text(encoding="utf-8").lower()
+        handoff = SKILLS_ROOT.joinpath(
+            "product-design-contract", "references", "maintenance-handoff.md"
+        ).read_text(encoding="utf-8").lower()
+        default_prompt = SKILLS_ROOT.joinpath(
+            "product-design", "agents", "openai.yaml"
+        ).read_text(encoding="utf-8").lower()
+
+        self.assertIn("maintenance-handoff", router)
+        self.assertIn("broad implemented design", router)
+        self.assertIn("skip it for prototypes and routine bounded changes", router)
+        self.assertIn("maintenance-handoff", contract)
+        self.assertIn("one discoverable code-first guide", contract)
+        self.assertIn("one routine code-first guide", project_protocol)
+        self.assertIn("production code and behavior-focused tests", handoff)
+        self.assertIn("do not create parallel guides", handoff)
+        self.assertIn("granular change protocol", handoff)
+        self.assertIn("ordinary local changes", handoff)
+        self.assertIn("source-map consumer", handoff)
+        self.assertIn("guidance check", handoff)
+        self.assertIn("current routine guide does not prove", handoff)
+        self.assertIn("retained-artifact classification", handoff)
+        self.assertIn("do not treat implementation completion as human acceptance", handoff)
+        self.assertIn("without changing ui or baselines", default_prompt)
 
     def test_optional_legacy_protocol_does_not_become_the_default(self) -> None:
         routing = SKILLS_ROOT.joinpath(

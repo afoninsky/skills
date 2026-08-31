@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Design"
   short_description: "Design and evolve production UI/UX"
-  default_prompt: "Use $product-design for this UI/UX request. Inspect the existing product, route proportionally, explore creatively when the scope is broad, keep production changes narrow and idempotent, reuse established tools, research relevant unknowns, and verify the real result. Preserve accepted baselines unless I explicitly approve the exact reviewed candidate and its observed diffs as the new accepted baseline."
+  default_prompt: "Use $product-design for this UI/UX request. Inspect the existing product, route proportionally, explore creatively when the scope is broad, keep production changes narrow and idempotent, reuse established tools, research relevant unknowns, and verify the real result. When finalizing a broad implemented and reviewed design for future maintenance, leave one discoverable code-first guide without changing UI or baselines. Preserve accepted baselines unless I explicitly approve the exact reviewed candidate and its observed diffs as the new accepted baseline."

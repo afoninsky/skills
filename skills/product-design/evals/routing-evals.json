@@ -42,7 +42,8 @@
       "expectations": [
         "product-design-prototype is the selected worker when the supplied product and direction inputs are sufficient.",
         "The prototype remains isolated and disposable.",
-        "No production implementation or baseline update occurs because the prompt explicitly excludes production."
+        "No production implementation or baseline update occurs because the prompt explicitly excludes production.",
+        "No maintenance-handoff guide is created for an unimplemented prototype."
       ]
     },
     {
@@ -188,6 +189,21 @@
         "Discovery is bounded to the new commercial, trust, entitlement, cancellation, and recovery decisions.",
         "Settled audience, hierarchy, content, accessibility, and target decisions are reused.",
         "No visual candidate or production mutation proceeds until the material gaps are resolved or explicitly bounded as safe reversible hypotheses."
+      ]
+    },
+    {
+      "id": 18,
+      "prompt": "Our responsive redesign is implemented and reviewed, and its accepted references are already recorded. Finalize it for ongoing maintenance so future agents preserve the current pattern and make granular changes. Use our existing agent and documentation conventions. Production code and behavior tests are the exact current implementation. Historical prototypes must not become implementation authority. Do not change product UI, behavior tests, references, hashes, or baselines.",
+      "expected_output": "The router selects product-design-contract in maintenance-handoff mode and limits writes to one repository-native routine guide, its minimal discoverability pointer, and authorized reconciliation of stale guidance. The result maps stable intent to current code and tests without becoming another exact visual specification.",
+      "files": [],
+      "expectations": [
+        "product-design-contract in maintenance-handoff mode is the first and only worker.",
+        "The route does not repeat discovery, direction, implementation, review, or accept-freeze for an already implemented and reviewed identity.",
+        "Production UI, behavior tests, accepted references, hashes, and baselines remain outside mutation scope; an existing-style guidance integrity check may change when it durably protects the handoff.",
+        "One existing agent or contributor entrypoint reaches one concise code-first guide; prototype and exploration artifacts remain non-authoritative.",
+        "The guide records stable experience rules, canonical owners, preservation boundaries, representative verification, reference status, and when the guide itself may change.",
+        "Retained design contracts, provenance records, source maps, and validators are audited for stale current-authority claims even when the routine guide already looks correct.",
+        "If current guidance already matches the implemented design, finalization is a verified no-op."
       ]
     }
   ]

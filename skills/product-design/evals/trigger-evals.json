@@ -56,6 +56,10 @@
     "should_trigger": true
   },
   {
+    "query": "The redesign is implemented and reviewed. Finalize its design guidance so future agents preserve the pattern and make only granular changes.",
+    "should_trigger": true
+  },
+  {
     "query": "Generate a standalone watercolor illustration of a fox with a transparent background.",
     "should_trigger": false
   },
